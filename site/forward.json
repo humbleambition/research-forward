@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T23:52:04-03:00",
+ "updated": "2026-11-03T15:39:37-03:00",
  "tests": [
   {
    "id": "orb_rotation",
@@ -103,8 +103,8 @@
     "result": "night +$390"
    },
    "backtest_pace": "+$793/yr (QQQ proxy); real NQ −$378/yr",
-   "status": "running",
-   "note": "7 nights scored, 0 stops. 20:00–04:00 ET unseen, so stops look better than real."
+   "status": "retired",
+   "note": "Retired Nov 3 2026: the $100 stop lost money on real 24h NQ data (−$378/yr). Replaced by the $500-stop NQ test. Results frozen at retirement."
   },
   {
    "id": "keltner_5m",
