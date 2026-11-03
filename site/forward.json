@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T18:44:30-03:00",
+ "updated": "2026-11-03T20:04:04-03:00",
  "tests": [
   {
    "id": "orb_rotation",
@@ -8,12 +8,12 @@
    "what": "$10k: 50% stocks-in-play ORB (5 slots, 0.2 ATR stop, 3R), 50% QQQ rotation",
    "data": "Alpaca SIP, 1 day behind; IBKR Tiered fees + 1bp",
    "started": "Oct 21 2026",
-   "unit": "account $9,599.32",
+   "unit": "account $9,624.46",
    "trades": 40,
    "wins": 7,
    "win_rate": 17.5,
-   "cum": -4.01,
-   "cum_label": "−4.01%",
+   "cum": -3.76,
+   "cum_label": "−3.76%",
    "last_trade": {
     "date": "2026-11-02",
     "result": "WRBY target +$29.30"
@@ -609,6 +609,13 @@
      ],
      "rows": [
       [
+       "2026-11-03",
+       "0",
+       "6 QQQ",
+       "$9,624.46",
+       "−3.76%"
+      ],
+      [
        "2026-11-02",
        "5",
        "6 QQQ",
@@ -707,10 +714,10 @@
    "trades": 264,
    "wins": 57,
    "win_rate": 21.6,
-   "cum": -3.09,
-   "cum_label": "best 2s/$10k −3.09% · worst 1s/$50k −4.99%",
+   "cum": -2.8,
+   "cum_label": "best 2s/$10k −2.80% · worst 1s/$50k −4.71%",
    "last_trade": {
-    "date": "2026-11-02",
+    "date": "2026-11-03",
     "result": "12 cells marked"
    },
    "backtest_pace": "combo 15.3–17.8%/yr ($10k→$50k)",
@@ -728,85 +735,85 @@
      [
       "1",
       "$10,000",
-      "$9,530.26",
-      "−4.70%",
+      "$9,555.40",
+      "−4.45%",
       "$31.25"
      ],
      [
       "1",
       "$20,000",
-      "$19,024.24",
-      "−4.88%",
+      "$19,078.71",
+      "−4.61%",
       "$60.81"
      ],
      [
       "1",
       "$50,000",
-      "$47,504.34",
-      "−4.99%",
+      "$47,646.80",
+      "−4.71%",
       "$150.03"
      ],
      [
       "2",
       "$10,000",
-      "$9,690.80",
-      "−3.09%",
+      "$9,720.13",
+      "−2.80%",
       "$27.60"
      ],
      [
       "2",
       "$20,000",
-      "$19,358.85",
-      "−3.21%",
+      "$19,417.51",
+      "−2.91%",
       "$48.84"
      ],
      [
       "2",
       "$50,000",
-      "$48,361.45",
-      "−3.28%",
+      "$48,508.10",
+      "−2.98%",
       "$115.24"
      ],
      [
       "3",
       "$10,000",
-      "$9,678.46",
-      "−3.22%",
+      "$9,707.79",
+      "−2.92%",
       "$28.72"
      ],
      [
       "3",
       "$20,000",
-      "$19,340.18",
-      "−3.30%",
+      "$19,398.84",
+      "−3.01%",
       "$45.15"
      ],
      [
       "3",
       "$50,000",
-      "$48,319.46",
-      "−3.36%",
+      "$48,466.11",
+      "−3.07%",
       "$99.76"
      ],
      [
       "5",
       "$10,000",
-      "$9,599.32",
-      "−4.01%",
+      "$9,624.46",
+      "−3.76%",
       "$37.22"
      ],
      [
       "5",
       "$20,000",
-      "$19,172.96",
-      "−4.14%",
+      "$19,227.43",
+      "−3.86%",
       "$49.08"
      ],
      [
       "5",
       "$50,000",
-      "$47,895.38",
-      "−4.21%",
+      "$48,037.84",
+      "−3.92%",
       "$94.39"
      ]
     ]
@@ -831,7 +838,7 @@
    },
    "backtest_pace": "≈ +0.16R/trade, ~52/yr (QQQ OOS)",
    "status": "running",
-   "note": "9 sessions so far. 1 of ~1,300 variants: selection-bias risk.",
+   "note": "10 sessions so far. 1 of ~1,300 variants: selection-bias risk.",
    "log": {
     "columns": [
      "Date",
@@ -880,7 +887,7 @@
    },
    "backtest_pace": "+0.21R OOS (−0.03R IS)",
    "status": "running",
-   "note": "9 sessions so far. 1 of ~1,300 variants: selection-bias risk. SPY added at Jen's request.",
+   "note": "10 sessions so far. 1 of ~1,300 variants: selection-bias risk. SPY added at Jen's request.",
    "log": {
     "columns": [
      "Date",
@@ -1042,7 +1049,7 @@
    },
    "backtest_pace": "+$823/yr per MNQ (OOS, t 1.5)",
    "status": "running",
-   "note": "3 sessions. Backtest win ≈43%; real-NQ re-run weaker (+$181/yr). Expect flat stretches.",
+   "note": "4 sessions. Backtest win ≈43%; real-NQ re-run weaker (+$181/yr). Expect flat stretches.",
    "log": {
     "columns": [
      "Date",
