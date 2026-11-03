@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>190 Trading Strategies, Honestly Tested</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      .x-tools { display: flex; flex-wrap: wrap; gap: 8px; }
+      .x-toc { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); column-gap: 24px; font: var(--type-small); }
+      .x-toc a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: var(--tap); border-bottom: 1px solid var(--stroke-secondary); color: var(--text-primary); text-decoration: none; }
+      .x-toc a:hover { color: var(--text-secondary); }
+      .x-toc b { font: var(--type-caption); color: var(--text-secondary); white-space: nowrap; }
+      .x-acc { border-top: 1px solid var(--stroke-primary); scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 72px); }
+      .x-acc:last-child { border-bottom: 1px solid var(--stroke-primary); }
+      .section > .x-acc + .x-acc { margin-top: 0; }
+      .x-acc > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: var(--tap); padding: 16px 0; cursor: pointer; list-style: none; }
+      .x-acc > summary::-webkit-details-marker { display: none; }
+      .x-acc > summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: var(--r-pill); border: 1px solid var(--stroke-primary); font: var(--type-body); color: var(--text-secondary); transition: transform var(--dur-quick) var(--ease-out); }
+      .x-acc[open] > summary::after { transform: rotate(45deg); }
+      .x-acc__title { display: block; font: var(--type-heading); }
+      .x-acc__count { display: block; margin-top: 4px; font: var(--type-caption); color: var(--text-secondary); }
+      .x-acc__body { display: grid; gap: 20px; padding: 0 0 36px; min-width: 0; }
+      .x-acc__body .prose ul { margin: 0; padding-left: 1.2em; }
+      .x-search { display: grid; gap: 8px; }
+      .x-search__label { font: var(--type-label); color: var(--text-primary); }
+      .x-search__input { box-sizing: border-box; width: 100%; max-width: 480px; min-height: var(--tap); padding: 0 16px; border: 1px solid var(--stroke-primary); border-radius: var(--r-pill); background: var(--fill-primary-on); color: var(--text-primary); font: var(--type-body); font-family: var(--sans); }
+      .x-search__input::placeholder { color: var(--text-secondary); }
+      .x-search__input:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
+      .x-search__status { margin: 0; font: var(--type-caption); color: var(--text-secondary); }
+      .x-search__status:empty { display: none; }
+      .x-search__empty { margin: 0; font: var(--type-body); color: var(--text-primary); }
+      .x-search [hidden], #results [hidden] { display: none !important; }
+      .x-fwd { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 20px 24px; border-radius: var(--r-l); background: var(--fill-tertiary); }
+      .x-fwd table { min-width: 1080px; }
+      .x-fwd tbody th small + small { margin-top: 0; }
+      .x-fwd td.x-up { color: color-mix(in srgb, var(--fill-system-green) 65%, var(--text-primary)); }
+      .x-fwd td.x-down { color: color-mix(in srgb, var(--fill-system-red) 85%, var(--text-primary)); }
+      .x-fwd tr.x-retired > * { color: var(--text-secondary); }
+      .x-fwd__meta { margin: 0; }
+      .x-fwd__meta + .x-fwd__meta { margin-top: 4px; }
+      #x-fwd-status[hidden] { display: none; }
+      @media (max-width: 599px) { .x-fwd { padding: 16px; border-radius: var(--r-m); } }
+    </style>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <header class="nav glass" data-auto></header>
+      <main class="main">
+        <section class="hero">
+          <div class="hero__copy">
+            <p class="hero__eyebrow">Jennifer Hsieh, PhD · systematic trading research</p>
+            <h1>190 Trading Strategies, Honestly Tested</h1>
+            <p class="hero__sub">YouTube strategies, book setups, chart patterns and indicators, run with real costs, settings picked only on 2016–2020, and a blind test on 2021–2026. Most fail. Know that before you spend months on one.</p>
+            <p class="hero__meta">190 tests · costs included · Benjamini-Hochberg false-discovery correction · updated Oct 29 2026</p>
+          </div>
+          <aside class="callout" aria-label="Next step">
+            <p class="callout__head"><span class="hark-mark" data-size="16"></span> Next step</p>
+            <p class="callout__lead"><strong>Want your strategy tested?</strong> Send a strategy video or rule set and get a costed, blind out-of-sample verdict.</p>
+            <a class="btn" href="mailto:jen@striatumos.consulting?subject=Strategy%20test%20request">Email Jen</a>
+            <p class="fineprint"><a class="link" href="#pricing">See pricing</a></p>
+          </aside>
+        </section>
+
+        <section class="section" id="scorecard" data-nav="Scorecard">
+          <div class="head">
+            <p class="head__eyebrow">Scorecard</p>
+            <h2>Of 190 tests, 12 passed and 118 failed.</h2>
+          </div>
+          <section class="stats">
+            <div class="stat"><span class="stat__fig">190</span><span class="stat__label">Tests</span></div>
+            <div class="stat"><span class="stat__fig">12</span><span class="stat__label">Pass</span></div>
+            <div class="stat"><span class="stat__fig">51</span><span class="stat__label">Weak</span></div>
+            <div class="stat"><span class="stat__fig">118</span><span class="stat__label">Fail</span></div>
+            <div class="stat"><span class="stat__fig">9</span><span class="stat__label">Inconclusive</span></div>
+          </section>
+          <p class="fineprint"><b>PASS</b> holds in-sample and out-of-sample after costs and is useful. <b>WEAK</b> is positive but small, fragile, or below buy-and-hold. <b>FAIL</b> has no edge out-of-sample after costs. <b>INCONCLUSIVE</b> means not enough data, rules not disclosed, or not testable as specified. None of the 55 tests added since Oct 24 passed. Of the 12 passes, 5 are small-cap short setups that can't be traded in a long-only cash account, and 1 is a sizing overlay that only matters with leverage.</p>
+        </section>
+
+        <section class="section" id="takeaways" data-nav="Takeaways">
+          <div class="head">
+            <p class="head__eyebrow">Key takeaways</p>
+            <h2>What 190 tests say about popular setups.</h2>
+          </div>
+          <div class="cards">
+            <div>
+              <h3>Costs kill most intraday edges</h3>
+              <p>The best intraday edge found (a stocks-in-play opening-range breakout) makes about +0.1R a trade, and each basis point of slippage costs about 0.06R: 12.8% a year at 1bp, 4.7% at 3bp, negative at 5bp. Buying the open and selling the close earns about 2bp a day against about 3bp of cost.</p>
+            </div>
+            <div>
+              <h3>A high win rate is not an edge</h3>
+              <p>Win rate mostly reflects where the entry sits between stop and target. A fade-to-POC rule won 84% of trades and made +0.007R each, below zero at 3bp. The ORB wins only 32% but makes money, because its winners are 3x its losers.</p>
+            </div>
+            <div>
+              <h3>Chart patterns don't beat random entries</h3>
+              <p>Triangles, wedges, flags, cup &amp; handle: 0 of 892 pass. Their excess over date-matched random entries with the same bracket is about zero. Support bases: 0 of 336. YouTube ICT/sweep/FVG index setups lost in both periods, several 75–100% at 1% risk.</p>
+            </div>
+            <div>
+              <h3>Oscillators fail on 5-min bars; daily RSI2 holds</h3>
+              <p>Book RSI setups (regime switching, double bottoms, divergence) on 5-minute bars: 0 of 35,514 variants pass. Daily RSI2 on SPY (buy RSI2 &lt; 20 above the 200-day, exit RSI2 &gt; 70) made 8.2% a year out-of-sample with an −8.4% drawdown.</p>
+            </div>
+            <div>
+              <h3>In-sample rank barely predicts the future</h3>
+              <p>Ranking variants on 2016–2020 told you little about 2021–2026: rank correlations of 0.25, −0.02, −0.07 and 0.26 across four screens. A result only counts if it holds in both halves.</p>
+            </div>
+            <div>
+              <h3>Famous anomalies have faded</h3>
+              <p>Intraday momentum, turn-of-month, index inclusion and the pre-earnings reversal were strong in their papers' years and mostly gone since. Growth-momentum swing setups did well in 2016–20 and went flat or negative after.</p>
+            </div>
+            <div>
+              <h3>What survives is simple and slow</h3>
+              <p>A weekly QQQ rotation (QQQ above its 200-day, else the strongest of IEF/TLT/GLD/UUP, else BIL) made 24.2% a year with a −25% drawdown, against 20.7% and −35% for buy-and-hold. Paired 50/50 with the ORB: 19.1%, −12.5% drawdown, no losing year.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="methods" data-nav="Methods">
+          <div class="head">
+            <p class="head__eyebrow">Methods</p>
+            <h2>Every rule is picked on 2016–2020, then run once, blind, on 2021–2026.</h2>
+            <p class="head__sub">If you try many variants, some look great by luck. The unseen years show which survive.</p>
+          </div>
+          <div class="cards">
+            <div>
+              <h3>In-sample / out-of-sample</h3>
+              <p>Settings are chosen on 2016–2020 only (Oct 20 2016 to Dec 31 2020 for daily tests), then tested unchanged on 2021 to Oct 20 2026. Exceptions where data starts later: earnings options (IS 2024-01 to 2025-07), options footprints (IS 2024-02 to 2025-06), short interest (IS 2018–20), prediction markets (earlier vs later half of events).</p>
+            </div>
+            <div>
+              <h3>Multiple testing</h3>
+              <p>Where hundreds of variants or buckets are tested, Benjamini-Hochberg false-discovery correction (q &lt; 0.10) decides whether anything is real, not the best-looking variant.</p>
+            </div>
+            <div>
+              <h3>Controls</h3>
+              <p>Signals are compared against random entries matched on date and volatility with the same stop and target, random price levels at the same distance, plain 20-bar breakouts and NR7 bars, and buy-and-hold over the same days.</p>
+            </div>
+            <div>
+              <h3>Design constraints</h3>
+              <ul>
+                <li>Long-only cash account, max 1x, settled cash (T+1)</li>
+                <li>No margin, no short selling, no leveraged ETFs</li>
+                <li>No averaging down; hard stops</li>
+                <li>Shorts tested separately as CFDs; leverage kept for a later futures study</li>
+              </ul>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Costs charged on every trade</caption>
+              <thead>
+                <tr><th scope="col">Market</th><th scope="col">Cost</th><th scope="col">Stress test</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">US stocks and ETFs</th><td>1bp per side + IBKR Pro Tiered fees ($0.0035–0.005/share)</td><td>3bp per side</td></tr>
+                <tr><th scope="row">Futures <small>QQQ/SPY as MNQ/MES proxies, MNQ = $82 per QQQ point</small></th><td>1 tick + $1.30 round trip (≈ $2.30 total)</td><td></td></tr>
+                <tr><th scope="row">CFD shorts</th><td>5bp per side + about 8%/yr financing</td><td></td></tr>
+                <tr><th scope="row">Small-cap shorts</th><td>3bp per side + $0.005/share</td><td>borrow stress</td></tr>
+                <tr><th scope="row">Rotation</th><td>5bp per unit of turnover</td><td></td></tr>
+                <tr><th scope="row">Early swing tests</th><td>5–10bp</td><td></td></tr>
+                <tr><th scope="row">Options</th><td>2.5% of each leg per side + $0.65/contract</td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pair">
+            <div class="prose">
+              <p><b>Data.</b> Daily and 1-minute SIP bars from Alpaca's market data API: a survivorship-free daily universe of about 14.6k active and delisted US stocks from late 2015, 1-minute bars Feb 2016 to Oct 2026 (04:00–20:00 for SPY/QQQ), tick data to resolve entry-minute stops, and split-adjusted daily bars with ETF total-return series. Also: the Nasdaq earnings calendar (156k rows), Alpaca options bars from 2024-01 (trade prints only), Yahoo ^NDX from 1985 and real TQQQ/SQQQ, SEC Form 4 and XBRL filings, Wikipedia pageviews, FINRA short interest and Reg SHO, Congress trading disclosures (78.7k rows), Polymarket and Kalshi, govinfo bill status, USAspending DoD awards and LDA lobbying filings. No paid data was bought.</p>
+              <p><b>Tools.</b> Python (pandas) and custom backtest scripts. Each test's script is named under it in the results tables. Portfolio sims mark to market daily, use T+1 cash settlement and equal slots, and count idle cash at 0%.</p>
+            </div>
+            <div class="aside">
+              <h3>Why the data isn't shared</h3>
+              <p class="fineprint">Alpaca's data license doesn't allow redistributing the raw data, so the data isn't shared here. Anyone can pull the same bars with a free Alpaca account.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="results" data-nav="Results">
+          <div class="head">
+            <p class="head__eyebrow">Full results</p>
+            <h2>All 190 tests, in 25 areas.</h2>
+            <p class="head__sub">Open an area for its tests and why each verdict. "→" reads in-sample → out-of-sample.</p>
+          </div>
+          <div class="x-search" role="search">
+            <label class="x-search__label" for="x-q">Search the tests</label>
+            <input class="x-search__input" id="x-q" type="search" placeholder="Try ORB, RSI, earnings, pass…" autocomplete="off" />
+            <p class="x-search__status" id="x-status" aria-live="polite"></p>
+            <p class="x-search__empty" id="x-empty" hidden>No match. It may not have been tested yet. <a class="link" href="mailto:jen@striatumos.consulting?subject=Strategy%20test%20request">Email Jen</a>.</p>
+          </div>
+          <ol class="x-toc">
+            <li><a href="#r1">3.1 Trend, rotation, leverage <b>2 pass</b></a></li>
+            <li><a href="#r2">3.2 ORB intraday <b>1 pass</b></a></li>
+            <li><a href="#r3">3.3 Swing, RSI2, mean reversion <b>0 pass</b></a></li>
+            <li><a href="#r4">3.4 Earnings <b>0 pass</b></a></li>
+            <li><a href="#r5">3.5 Chart Fanatics videos <b>8 pass</b></a></li>
+            <li><a href="#r6">3.6 Malik TQQQ video <b>1 pass</b></a></li>
+            <li><a href="#r7">3.7 Big-move precursors <b>0 pass</b></a></li>
+            <li><a href="#r8">3.8 CFD shorts <b>0 pass</b></a></li>
+            <li><a href="#r9">3.9 Insider footprints <b>0 pass</b></a></li>
+            <li><a href="#r10">3.10 Policy signals <b>0 pass</b></a></li>
+            <li><a href="#r11">3.11 POC and morning bounces <b>0 pass</b></a></li>
+            <li><a href="#r12">3.12 Bottoms <b>0 pass</b></a></li>
+            <li><a href="#r13">3.13 Index day vs night <b>0 pass</b></a></li>
+            <li><a href="#r14">3.14 Contrarian / sentiment <b>0 pass</b></a></li>
+            <li><a href="#r15">3.15 AI agents and ML <b>0 pass</b></a></li>
+            <li><a href="#r16">3.16 Lobbying <b>0 pass</b></a></li>
+            <li><a href="#r17">3.17 KoliEr Bands <b>0 pass</b></a></li>
+            <li><a href="#r18">3.18 Sympathy / lead-lag <b>0 pass</b></a></li>
+            <li><a href="#r19">3.19 Intraday momentum, calendar <b>0 pass</b></a></li>
+            <li><a href="#r20">3.20 Put-writing, index events <b>0 pass</b></a></li>
+            <li><a href="#r21">3.21 Keltner Channels <b>0 pass</b></a></li>
+            <li><a href="#r22">3.22 Volatility squeeze <b>0 pass</b></a></li>
+            <li><a href="#r23">3.23 RSI regime / multi-timeframe <b>0 pass</b></a></li>
+            <li><a href="#r24">3.24 Classic chart patterns <b>0 pass</b></a></li>
+            <li><a href="#r25">3.25 News-driven 1-min spikes <b>0 pass</b></a></li>
+          </ol>
+          <div class="x-tools">
+            <button class="btn" type="button" id="x-open">Open all</button>
+            <button class="btn" type="button" id="x-close">Close all</button>
+          </div>
+          <div>
+          <details class="x-acc" id="r1">
+            <summary><span><span class="x-acc__title">3.1 Trend, rotation, leverage</span><span class="x-acc__count">13 tests · 2 pass · 5 weak · 5 fail · 1 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>QQQ rotation is the strongest single sleeve: 24.2% CAGR, −25% DD, Sharpe 1.25, and it held up out-of-sample (22.4%, −17%, Sharpe 1.24). In 2022 it lost only −3.4% while QQQ fell far more. Weekly checks beat monthly in every pair, and the "best defensive" choice beat plain BIL/IEF in every pair.</p>
+                <ul>
+                  <li>Sector picking and BAN-style mixes fell below SPY.</li>
+                  <li>Early re-entry on breadth washouts whipsawed in 2022 and stopped out of the 2025 V-bottom: of 192 variants, 135 beat the base in-sample, only 28 out-of-sample.</li>
+                  <li>3x leverage lifts CAGR to 23–45% only with −31 to −70% drawdowns, and QQQ's decade flatters it (the SPY controls are far weaker).</li>
+                </ul>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">T1 Time-series momentum, 16 ETFs, long/short<small>yfinance daily 2006–2026</small><small>trend.py</small></th><td></td><td></td><td></td><td>4.3% (Sh 0.38)</td><td></td><td class="muted">+12.9% in 2022 (hedge)</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">T2 Buy &amp; hold vs &gt;MA200 timing<small>QQQ/SPY 2016-10 to 2026-10</small><small>bh.py</small></th><td></td><td></td><td></td><td>QQQ 17.5% vs B&amp;H 19.8%</td><td>−21.9% vs −35.6%</td><td class="muted">MA200 costs return at 1x; survival insurance at 3x</td><td class="num">WEAK</td></tr>
+                    <tr class="is-highlight"><th scope="row">T3 QQQ rotation: QQQ &gt; MA200, else best of IEF/TLT/GLD/UUP, else BIL (weekly)<small>ETF total return 2016-10 to 2026-10</small><small>rotation.py</small></th><td>2.8 switches</td><td></td><td></td><td class="num">24.2% (Sh 1.25)</td><td>−25.2%</td><td class="muted">IS 26.7% Sh 1.26 → OOS 22.4%, DD −17%, Sh 1.24</td><td class="num">PASS</td></tr>
+                    <tr><th scope="row">T4 SPY rotation, same rule<small>ETF total return 2016-10 to 2026-10</small><small>rotation.py</small></th><td></td><td></td><td></td><td>15.2% (Sh 1.06)</td><td>−18.6%</td><td class="muted">≈ SPY B&amp;H 15.5% with lower DD</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">T5 BAN approximation / sector top-N momentum<small>ETF total return 2016-10 to 2026-10</small><small>rotation.py</small></th><td></td><td></td><td></td><td>9–13% (sectors 4–12%)</td><td>−15 to −22%</td><td class="muted">below SPY B&amp;H</td><td class="num">FAIL</td></tr>
+                    <tr class="is-highlight"><th scope="row">T6 1x combo: ORB + QQQ rotation 50/50<small>2016-10 to 2026-10</small><small>ibkr_1x.py</small></th><td></td><td></td><td></td><td class="num">19.1% (Sh 1.69)</td><td>−12.5%</td><td class="muted">0 losing years; ORB at 3bp 15.2% / −13.1%</td><td class="num">PASS</td></tr>
+                    <tr><th scope="row">T7 Thirds ORB + RSI2 + rotation (and 40/20/40)<small>2016-10 to 2026-10</small><small>ibkr_1x.py</small></th><td></td><td></td><td></td><td>18.2% (Sh 1.48); 40/20/40 18.6%</td><td>−24.8%; −19.7%</td><td class="muted">RSI2 adds drawdown</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">T8 Rotation + breadth early QQQ re-entry (192 variants)<small>breadth of top 500 / N100, 2016–2026</small><small>rot_breadth.py</small></th><td>3</td><td></td><td></td><td>IS pick OOS 15.1% (Sh 0.77)</td><td>−39%</td><td class="muted">IS 30.9% Sh 1.38 → OOS 15.1% vs base 22.7%; rank corr −0.07</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">T9 Leveraged combo: ORB + RSI2 + QQQ 3x &gt; MA200 (1/3 each); ORB + QQQ 3x 50/50<small>synthetic 3x, 2016–2026</small><small>combo.py</small></th><td></td><td></td><td></td><td>23.6% (Sh 1.27); 29.0%</td><td>−33.5%; −31.4%</td><td class="muted">IS 25.5% → OOS 22.4%; QQQ hindsight (SPY 3x much weaker)</td><td class="num">WEAK<small>leverage not allowed in a cash account</small></td></tr>
+                    <tr><th scope="row">T10 Stacking on QQQ in 3x (trend + RSI2 + ORB)<small>QQQ/SPY 1-min + daily</small><small>qqq_stack.py</small></th><td></td><td></td><td></td><td>22.8–45.1% (Sh ~0.9)</td><td>−39 to −70%</td><td class="muted">Sharpe stays ~0.9 = more leverage, not edge; SPY 14–22% / −58 to −81%</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">T11 Stacking stocks in one pool (ORB + RSI2)<small>stocks 2016–2026</small><small>qqq_stack.py</small></th><td></td><td></td><td></td><td>14.3% (Sh 1.07)</td><td>−25.5%</td><td class="muted">IS 23.3% → OOS 7.1%; split 50/50 13.1% Sh 1.48 is better</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">T12 Trend exits at MA10/MA20/MA50 (3x QQQ)<small>2016–2026</small><small>trend_ma.py</small></th><td>17.5 trips (MA10)</td><td></td><td></td><td>20.4–25.7% vs 41.7%</td><td>−48 to −54% vs −55%</td><td class="muted">2021–26 collapses to 7–8% (whipsaw)</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">T13 Chandelier 3 ATR trail on 3x QQQ / in the 1/3 combo<small>2016–2026</small><small>trend_atr.py</small></th><td></td><td></td><td></td><td>35–38%; combo 21.8–22.7% (Sh 1.38–1.39)</td><td>−46/−50%; combo −20/−21%</td><td class="muted">picked from 10 variants; hurts on SPY; needs walk-forward</td><td class="num">INCONCLUSIVE</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r2">
+            <summary><span><span class="x-acc__title">3.2 ORB intraday (stocks in play)</span><span class="x-acc__count">16 tests · 1 pass · 5 weak · 8 fail · 2 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>The edge is real but thin: about +0.1R a trade, and costs run about 0.06R per bp of slippage. A 0.2 ATR stop with a 3R target is the best balance: 12.8% at 1bp, 4.7–5.7% at 3bp, negative at 5bp. Skipping Tuesdays and monthly OpEx Fridays helps.</p>
+                <ul>
+                  <li>Partials, trailing stops and overnight holds raise the win rate (to ~39%) but cut return.</li>
+                  <li>ETFs have no edge after fees.</li>
+                  <li>Fees are a fixed-ish cost per share and per order, so small slots pay more: at $10k (5 slots of about $1k) the ORB sleeve nets about +1.9% a year; at $50k about +10.5%. Fewer slots keep the edge per trade but make the sleeve bumpier (1 slot: −28% worst drawdown vs −16% with 5).</li>
+                  <li>The stop-run re-entry (buying back at the old stop) turns the edge negative: trades that come back to the stop are mostly the failing ones.</li>
+                  <li>Real fills are the main unknown, which is why the forward test matters.</li>
+                </ul>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">O1 5-min ORB, 46 days (pessimistic vs optimistic intrabar)<small>yfinance 60-day 5-min</small><small>orb.py, orb_v2.py, orb_1m.py</small></th><td></td><td></td><td></td><td></td><td></td><td class="muted">too short; pessimistic/optimistic disagree</td><td class="num">INCONCLUSIVE</td></tr>
+                    <tr><th scope="row">O2 Wide-stop ORB (K × 5-day range)<small>743 trades, 46 days</small><small>orb_wide.py</small></th><td></td><td>49.8% (K=2)</td><td>+0.01R</td><td>+2.0% total (−2.7% at 2bp)</td><td>−10.6%</td><td class="muted">wide stop removes edge</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">O3 10-yr ORB, hold to close, 0.1 ATR stop<small>Alpaca 1-min 2016-02 to 2026-10, 22,163 trades</small><small>orb10.py, orb10_analyze.py</small></th><td>~2,100</td><td>13.6%</td><td>+0.07R net</td><td></td><td></td><td class="muted">edge ~0 net in 2024–26</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">O4 10-yr ORB, fixed 2R/3R/4R targets, 0.1 ATR stop<small>Alpaca 1-min 2016–2026</small><small>orb10_combo.py</small></th><td></td><td>40.7 / 31.7 / 26%</td><td>+0.09 / +0.12 / +0.13R</td><td>3R 11.0%; 4R 12.0%</td><td>−9.5%; −12.7%</td><td class="muted">every year positive at 1bp; ≈0 at 3bp, −9% at 5bp</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">O5 ORB filters chosen in-sample (gap, rel vol, prior range)<small>Alpaca 1-min 2016–2026</small><small>orb10_analyze.py</small></th><td>100–140</td><td>28.7% OOS</td><td>IS 0.9R → OOS 0.12R; robust set +0.30R OOS</td><td></td><td></td><td class="muted">IS/OOS corr 0.26; one losing year (2023)</td><td class="num">INCONCLUSIVE</td></tr>
+                    <tr class="is-highlight"><th scope="row">O6 Stop width 0.1/0.2/0.3/0.5 ATR + 3R, skip Tue/OpEx<small>16,599 trades</small><small>orb_sl_compare.py</small></th><td></td><td>32.0% (0.2 ATR)</td><td class="num">+0.095R</td><td class="num">12.8% at 1bp; 4.7% at 3bp</td><td>−13.0%; −17.3% at 3bp</td><td class="muted">0 losing years at 1bp; all negative at 5bp</td><td class="num">PASS</td></tr>
+                    <tr><th scope="row">O7 Exit variants: partials, chandelier, EMA9, VWAP, overnight hold<small>0.2 ATR, 8 slots, T+1</small><small>orb_exits.py, orb_exits_eval.py</small></th><td></td><td>~39% with partials</td><td></td><td>9.2–11.0% (fixed 3R 12.8%; chandelier 13.0%)</td><td>−10.3% (3R) to −17.9%</td><td class="muted">partials raise win rate, cut return</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">O8 Calendar: skip Tue + OpEx Fri; FOMC<small>0.2 ATR, 8 slots, T+1</small><small>orb10_analyze.py, orb_sl_compare.py</small></th><td></td><td></td><td>OpEx −0.17R (985 tr); Tue ~0; Wed +0.14R; FOMC +0.12R</td><td>slightly lower CAGR</td><td></td><td class="muted">net R 0.122 → 0.137 when skipped</td><td class="num">WEAK<small>rule kept</small></td></tr>
+                    <tr><th scope="row">O9 ORB on 32 unleveraged ETFs<small>1-min 2016–2026, 27k trades</small><small>orb_etf.py</small></th><td></td><td>33%</td><td>+0.045R gross, −0.016R at 1bp</td><td>−32%/yr with IBKR fees ($5k)</td><td></td><td class="muted">rel vol ≥ 3: ~0%/yr</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">O10 IBKR minimum commission vs slot count<small>$5k sleeve</small><small>forward-test sims</small></th><td></td><td></td><td></td><td>5 slots ≈ +1.7%/yr; 3 slots +9.3%/yr</td><td></td><td class="muted">needs ≥ $2.5k per trade</td><td class="num">WEAK<small>sizing constraint</small></td></tr>
+                    <tr><th scope="row">O11 Initial Balance breakout (SPY/QQQ/stocks)<small>1-min 2016–2026</small><small>ib.py</small></th><td></td><td></td><td>SPY −0.01 to −0.04R; QQQ ~0</td><td></td><td></td><td class="muted">no edge</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">O12 IB width buckets and IB fade<small>1-min 2016–2026</small><small>ib2.py</small></th><td></td><td></td><td>narrow IB −0.06 to −0.10R; fade −0.05 to −0.29R</td><td></td><td></td><td class="muted">no bar-only edge</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">O13 ORB on QQQ in 3x (Zarattini style)<small>QQQ 1-min</small><small>qqq_stack.py</small></th><td>127</td><td>25.6%</td><td>+0.10R</td><td>6.8%</td><td>−28.8%</td><td class="muted">5 losing years; SPY ≈ 0</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">O14 BB + ADX intraday<small>QQQ 5-min 2016–2026</small><small>bb_adx.py</small></th><td></td><td></td><td>≈0 gross</td><td>−2 to −6%</td><td></td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">O15 ORB slots × account size × real IBKR fees (combo 50/50; 1/2/3/5 slots; $10k/$20k/$50k)<small>0.2 ATR/3R trades 2016-10 to 2026-10, whole shares, IBKR Tiered</small><small>orb_size_matrix.py</small></th><td>917 (5 slots)</td><td>30.5%</td><td>5 slots $10k: −0.063R → −0.008R; $50k +0.050 → +0.055R</td><td>combo 15.3% ($10k) / 17.1% ($20k) / 17.8% ($50k); ORB sleeve alone 1.9% at $10k</td><td>−12.6 to −12.8% (5 slots); −17.8% (1 slot)</td><td class="muted">combo 5 slots $10k 14.1% → 16.4%; $50k 18.3% → 17.6%; 1 slot 19.8% → 19.8%</td><td class="num">WEAK<small>size-dependent; 5 slots weakest at $10k</small></td></tr>
+                    <tr><th scope="row">O16 Stop-run ORB: after the breakout, rest a buy limit at the old stop, new stop 1 unit lower, target 4R<small>same engine, 5 slots $10k</small><small>orb_stoprun.py</small></th><td>554</td><td>22.8%</td><td>gross −0.015R (touch) / −0.059R (through) vs +0.15R original</td><td>combo 0.7% vs 15.3% original</td><td>ORB sleeve −99%</td><td class="muted">loses IS and OOS; 73% of orders fill</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r3">
+            <summary><span><span class="x-acc__title">3.3 Swing, RSI2, mean reversion</span><span class="x-acc__count">9 tests · 1 weak · 8 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Stock RSI2 makes 12–15% a year but with −41 to −49% drawdowns, below SPY on risk. Filters (volume, calendar, trend), Bollinger/ADX variants and other exits don't fix that. Only index-level RSI2 (Noel SPY in 3.5, Malik's QQQ proxy in 3.6) gives a clean low-exposure sleeve: 8–12% out-of-sample at −8% DD.</p>
+                <p>Support + accumulation: a tight week-long base on support, with or without volume accumulation, does no better than a random entry on the same day. Any 20-day long in a rising market "works" about as often.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">S1 RSI2 &lt; 10 stocks, MA5 exit, stop variants<small>daily 2016–2026, 10 slots, 5bp</small><small>swing.py</small></th><td></td><td>~65%</td><td></td><td>3 ATR stop best: 7.2% (pre-bugfix)</td><td>−34.7%</td><td class="muted">stops hurt; all ≤ 3% at 10bp</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">S2 RSI2 trend filters, 3 ATR stop (corrected after bugfix)<small>daily 2016–2026, 10 slots, 5bp</small><small>swing_trend.py</small></th><td></td><td></td><td></td><td>none 12.3%; &gt;MA200 9.3%; near-high 6.8%</td><td>−41.5%; −35.5%; −14.0%</td><td class="muted">below SPY 14.0%</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">S3 RSI2 volume split<small>daily 2016–2026, 10 slots, 5bp</small><small>swing_vol.py</small></th><td></td><td>67.7% (low vol)</td><td>+0.31% / +0.44%</td><td>5.5% / 2.5%</td><td></td><td class="muted">filter doesn't help</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">S4 RSI2 calendar filters (skip OpEx/FOMC)<small>daily 2016–2026, 10 slots, 5bp</small><small>swing_cal.py</small></th><td></td><td></td><td></td><td>9.8% vs 12.3% all days</td><td></td><td class="muted">doesn't help</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">S5 RSI2 exits: MA5 vs BB mid vs upper band<small>stocks + QQQ/SPY</small><small>rsi2_exit_run.py</small></th><td></td><td>64% (MA5); 78–81% (mid, QQQ)</td><td></td><td>MA5 15.2%; mid 6.3%; upper 7.6%</td><td>−49%; −43%; −48%</td><td class="muted">high-win-rate exits make less</td><td class="num">FAIL<small>MA5 kept</small></td></tr>
+                    <tr><th scope="row">S6 BB(20,2) + low ADX mean reversion (72 variants)<small>QQQ/SPY/stocks</small><small>bb_adx.py</small></th><td>2–3 (ETFs)</td><td></td><td></td><td>ETFs 3–4%; stocks 8–13%</td><td>−10%; −24 to −36%</td><td class="muted">IS pick 22.2% → OOS 6.2%; ≈ RSI2 clone</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">S7 Gap drift (earnings proxy)<small>daily stocks</small><small>swing.py</small></th><td>~140</td><td></td><td></td><td>best 4.7%</td><td>−23 to −38%</td><td class="muted">below SPY</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">S8 Gap pullback limit buys<small>daily stocks, 10 slots, 5bp</small><small>gap_pullback.py</small></th><td>18 (full fill)</td><td>41%</td><td>+1.2% (full fill)</td><td>~0–2%</td><td>−6 to −42%</td><td class="muted">selects weaker gaps</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">S9 Support + accumulation base (336 versions), buy next open, sell 20 sessions later<small>US stocks &gt; $5, $vol &gt; $5M, incl. delisted, 10 slots $10k</small><small>support_accum.py</small></th><td>14.6</td><td>41%</td><td>0/336 beat date-matched random entries (min q 0.99)</td><td>3.8% → −1.9% (2026: −5.0%)</td><td>−4% → −10%</td><td class="muted">Sharpe 0.97 → −0.67; accumulation and stop filters flip sign</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r4">
+            <summary><span><span class="x-acc__title">3.4 Earnings (gaps, PEAD, pre-earnings, options)</span><span class="x-acc__count">16 tests · 5 weak · 11 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Nothing beats SPY.</p>
+                <ul>
+                  <li>A pre-earnings run-up predicts a bigger gap but not its direction. The quick gap trade is ~0 after costs out-of-sample, and shorts lose because pre-earnings drift is upward for everyone.</li>
+                  <li>PEAD tops out at 12.5% with a −25% DD.</li>
+                  <li>Options price the move fairly-to-rich: implied 6–7% vs realized 4.5% median. Realized beats implied only 33–35% of the time, and long straddles lose 8–11% a trade. Short straddles are about break-even with catastrophic tails, and not possible in a cash account.</li>
+                  <li>The Quantpedia pre-earnings reversal is gone in this data. Earnings-date shifts and PEAD with high volume show positive books, but the per-event edge is near zero and nothing survives the multiple-testing check. 10-slot books with fixed holds can beat random books by luck of which early reporters they lock onto, so trust the per-event numbers.</li>
+                </ul>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">E1 PEAD (surprise &gt; 0, hold 60d, stop at reaction-day low)<small>Nasdaq calendar, 24,650 events</small><small>pead.py</small></th><td>~1,800</td><td></td><td></td><td>12.5% (best)</td><td>−24.9%</td><td class="muted">below SPY 14%; control shows gapper beta</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E2 Pre-earnings run-up long (10d ≥ +5%, buy open S, sell gap open)<small>~112k events 2016–2026</small><small>pre_earn.py</small></th><td>1,101 → 1,874</td><td>53.2 → 50.3%</td><td>+0.49% → −0.04%</td><td>10.4% → 1.6%</td><td>−17% → −24%</td><td class="muted">run-up predicts a bigger gap, not its direction</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E3 Run-up long held to G+10 (IS pick)<small>~112k events 2016–2026</small><small>pre_earn.py</small></th><td>1,101 → 1,874</td><td>53 → 52%</td><td>+1.15% → +0.94% raw (SPY-excess +0.38% → −0.19%)</td><td>−4.8% → 3.9%</td><td>−49% → −37%</td><td class="muted">beta of momentum names</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E4 Unconditional buy 10d before earnings, sell gap open<small>~112k events 2016–2026</small><small>pre_earn.py</small></th><td></td><td></td><td>+1.24% → +0.90% (excess +0.64% → +0.15%)</td><td>35% → 12.6%</td><td>−41%</td><td class="muted">below SPY TR 15.0% OOS</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">E5 Pre-earnings downtrend short (CFD)<small>$vol &gt; $50M</small><small>pre_earn.py</small></th><td>36 → 38</td><td>57.3 → 42.5%</td><td>+1.0% → −0.65%</td><td>3.5% → −2.6%</td><td>−20%</td><td class="muted">93% of short variants negative OOS</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E6 Buy beaten-down stocks into earnings<small>$vol &gt; $50M</small><small>pre_earn_dip.py</small></th><td>~520</td><td>51%</td><td>+0.22% → +0.19%</td><td></td><td>worst trade −57 to −67%</td><td class="muted">IS/OOS corr −0.38</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E7 Long ATM straddle before earnings<small>Alpaca options 2024-01 to 2026-10, 4,930 events</small><small>earn_options.py</small></th><td>1,660 → 1,950</td><td>30%</td><td>−11.2% → −8.6% of premium</td><td></td><td></td><td class="muted">implied 6–7% vs realized 4.5% median</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E8 Short ATM straddle into earnings, hold to expiry<small>Alpaca options 2024-01 to 2026-10</small><small>earn_options.py</small></th><td>1,660 → 1,950</td><td>57–59%</td><td>−0.8% → +2.6% (t +1.7)</td><td></td><td>worst −353% to −780% of premium</td><td class="muted">catastrophic tails; not allowed in a cash account</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">E9 Iron condor / iron fly<small>Alpaca options 2024-01 to 2026-10</small><small>earn_options.py</small></th><td>1,660 → 1,950</td><td>65–68% (condor)</td><td>−4.3% → −2.8% / −5.0% → −1.8%</td><td></td><td>worst −100%</td><td class="muted">4 legs × spread kills it</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E10 Predictors of realized &gt; implied (run-up, own history, rel vol, liquidity)<small>Alpaca options 2024-01 to 2026-10</small><small>earn_options.py</small></th><td></td><td>beat 33–35%</td><td></td><td></td><td></td><td class="muted">Spearman ≤ 0.10 everywhere</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E11 Quantpedia pre-earnings reversal, long losers (5-day bottom decile, buy close before, sell day after)<small>Nasdaq calendar 2016–2026, 10 slots $10k</small><small>earn_quantpedia.py</small></th><td>300 → 352</td><td>49 → 51%</td><td>excess vs other announcers +0.01% → +0.03% (t 0.3)</td><td>−8.1% → −0.9%</td><td>−66% → −39%</td><td class="muted">decile spread +0.37% → −0.12% (paper era 1.3–1.45%); 0/60 pass FDR</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E12 Pre-earnings reversal long/short on CFDs<small>CFD 5bp + 8%/yr financing</small><small>earn_quantpedia.py</small></th><td>105</td><td>49%</td><td>gross spread +0.14% → −0.13%</td><td>OOS −12.8%</td><td>−68%</td><td class="muted">effect gone</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">E13 Earnings date moved earlier by 3+ days, buy close the day before, sell day after<small>Nasdaq calendar 2016–2026</small><small>earn_quantpedia.py</small></th><td>198 → 274</td><td>52 → 50%</td><td>event excess +0.41% → −0.05% (not significant)</td><td>9.9% → 9.4% (random 1.6% → 0.1%)</td><td>−23% → −28%</td><td class="muted">Sharpe 0.80 → 0.55; beats random but &lt; SPY; free calendar lacks "date announced"</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">E14 Same, entered 5 sessions earlier<small>Nasdaq calendar 2016–2026</small><small>earn_quantpedia.py</small></th><td>162</td><td>54%</td><td>event excess +0.15% (t 0.9)</td><td>11.7% → 36.5%</td><td>−20.7%</td><td class="muted">assumes the date was public 5 days ahead (unverifiable)</td><td class="num">WEAK<small>look-ahead risk</small></td></tr>
+                    <tr><th scope="row">E15 PEAD × volume: top-20% EPS surprise + high reaction-day volume, hold 60 days<small>Nasdaq calendar 2016–2026</small><small>earn_quantpedia.py</small></th><td>38</td><td>63 → 60%</td><td>excess +2.3% → +0.6% per 60d</td><td>17.9% → 26.1% (2021–25 only 17.6%; 2026 +92%)</td><td>−34% → −31%</td><td class="muted">volume split flips IS → OOS; q 0.39</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">E16 PEAD long/short on CFDs<small>CFD 5bp + 8%/yr financing</small><small>earn_quantpedia.py</small></th><td>133</td><td>40%</td><td>gross +2.0%/60d vs paper 3.55%</td><td>OOS −12.8%</td><td>−56%</td><td class="muted">two-leg financing makes it negative</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+          <details class="x-acc" id="r5">
+            <summary><span><span class="x-acc__title">3.5 Chart Fanatics video screen (51 videos)</span><span class="x-acc__count">42 tests · 8 pass · 14 weak · 19 fail · 1 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Index setups were run on QQQ (NQ proxy) and SPY (ES proxy), 1-min 2016–2026, risking 1% per trade. Buy &amp; hold out-of-sample: QQQ 15.6% / −35.6%, SPY 13.5% / −25.4%. Out-of-sample values are shown; the verdict is the better of the two markets. None beat buy-and-hold out-of-sample.</p>
+                <ul>
+                  <li>Intraday index setups (ICT sweeps, FVG, break-and-retest) were almost all negative in both periods. Several lost 75–100% at 1% risk per trade.</li>
+                  <li>Growth-momentum swing setups (Clement, Bates, Harvell, Weinstein, Bonde) did well in 2016–20 and went flat or negative in 2021–26.</li>
+                  <li>Two passes worth keeping as small sleeves: Noel SPY RSI2 and Noel GLD Thursday. Ariel's undercut &amp; rally is a borderline pass with a −36% DD.</li>
+                  <li>The small-cap short setups (Verma, Temiz, Mario, Dux) pass on paper but need locates or margin, are almost surely not shortable as CFDs, and borrow fees were not modelled.</li>
+                </ul>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">C1 Conte S1 30m ORB long, 1R<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>168</td><td>55% (QQQ)</td><td>+0.04R (QQQ); −0.04R (SPY)</td><td>6.5% QQQ</td><td>−9%</td><td class="muted">QQQ IS −0.05R → +0.04R; −0.03R at 3bp</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C2 Conte S1 30m ORB long, 2R<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>168</td><td>51%</td><td>+0.03R (QQQ)</td><td>5.0%</td><td>−12%</td><td class="muted">IS −0.04R; SPY FAIL</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C3 Conte S2 1-min VWAP cross, always in<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>~3,400</td><td>13%</td><td>−1.5 to −1.9bp</td><td>−42 to −46%</td><td>−96%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C4 Conte S4 overnight (buy close, sell open)<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>251</td><td>53–54%</td><td>+1.7bp QQQ / +0.9bp SPY</td><td>3.4% / 1.7%</td><td>−33% / −27%</td><td class="muted">negative at 3bp</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C5 JJ Simon first-candle continuation + reversion<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>714–805</td><td>31–39%</td><td>−0.19R</td><td>−75 to −81%</td><td>−100%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C6 Candice PDH/PDL sweep → 1m FVG, 2R<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>88–100</td><td>31–33%</td><td>−0.23 to −0.25R</td><td>−20 to −21%</td><td>−74%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C7 Jadecap setup 1: PDH/PDL failed break<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>135</td><td>19–21%</td><td>−0.25 to −0.50R</td><td>−31 to −50%</td><td>−90 to −98%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C8 Jadecap setup 2: premarket raid + 5m IFVG<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>115–118</td><td>28–31%</td><td>−0.10 to −0.17R</td><td>−12 to −19%</td><td>−58 to −72%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C9 Omar 15m PDH/PDL run, 62% entry<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>0.5–5</td><td></td><td></td><td>~0</td><td></td><td class="muted">n &lt; 30</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C10 Trader Kane SMT + 5m IFVG<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>7.8 (QQQ)</td><td>44%</td><td>+0.17R (QQQ); SPY −0.14R</td><td>1.2%</td><td>−6%</td><td class="muted">QQQ IS −0.15R → +0.17R</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C11 Marco sweep &amp; reclaim, min 2R<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>393–401</td><td>16–17%</td><td>−0.36 to −0.55R</td><td>−79 to −91%</td><td>−100%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C12 Desi break &amp; retest PDH/PDL<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>58–62</td><td>38–45%</td><td>−0.19 to −0.23R</td><td>−12 to −13%</td><td>−51 to −55%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C13 Gala 1H trend + body pivots<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>25–36</td><td>34–35%</td><td>−0.18 to −0.31R</td><td>−6.5 to −7.7%</td><td>−40 to −41%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C14 Forest Knight volume-profile shelf<small>QQQ/SPY 1-min</small><small>cf_index.py</small></th><td>&lt; 1</td><td></td><td></td><td>~0</td><td></td><td class="muted">n &lt; 30</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C15 Okala 80/20 NQ round levels; Dylan O'Neal ES + VIX; Darcy multi-TF FVG<small>cf_index.py</small></th><td></td><td></td><td></td><td></td><td></td><td class="muted">untestable / skipped</td><td class="num">INCONCLUSIVE</td></tr>
+                    <tr class="is-highlight"><th scope="row">C16 Noel (a) SPY RSI2 &lt; 20 above SMA200, exit RSI2 &gt; 70<small>SPY daily</small><small>cf_daily.py</small></th><td>14</td><td>81%</td><td>+0.59% (+0.55% at 3bp)</td><td class="num">2.3% → 8.2%</td><td>−8.4%</td><td class="muted">Sharpe 0.31 → 1.07</td><td class="num">PASS</td></tr>
+                    <tr class="is-highlight"><th scope="row">C17 Noel (b) GLD Thursday RSI &lt; 40, 1 ATR stop, 3 bars<small>GLD daily</small><small>cf_daily.py</small></th><td>7</td><td>60%</td><td>+0.49%</td><td class="num">4.7% → 3.5%</td><td>−4.4%</td><td class="muted">Sharpe 1.12 → 0.83</td><td class="num">PASS</td></tr>
+                    <tr><th scope="row">C18 Ted Zhang Weinstein stage-2 breakout<small>stocks</small><small>cf_daily.py</small></th><td>44</td><td>37%</td><td>−0.19%</td><td>6.5% → −1.8%</td><td>−40.5%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C19 Harvell 200-day-high breakout, index ETFs<small>SPY/QQQ/IWM/DIA</small><small>cf_daily.py</small></th><td>4</td><td>58%</td><td>+1.43%</td><td>9.0% → 3.9%</td><td>−9.1%</td><td class="muted">Sharpe 1.01 → 0.44</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C20 Harvell 100-day-high breakout, stocks<small>stocks, $50M</small><small>cf_daily.py</small></th><td>23</td><td>31%</td><td>−1.86%</td><td>21.0% → −2.8%</td><td>−50.5%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C21 Harvell 3-day −6% mean reversion, index ETFs<small>index ETFs</small><small>cf_daily.py</small></th><td>5</td><td>70%</td><td>+1.19%</td><td>1.1% → 1.3%</td><td>−7.3%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C22 Harvell 3-day −6% mean reversion, stocks<small>stocks</small><small>cf_daily.py</small></th><td>566</td><td>52%</td><td>−0.53%</td><td>−0.9% → −31.0%</td><td>−90%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C23 Crudele BB squeeze breakout (ETFs / stocks)<small>ETFs; stocks</small><small>cf_daily.py</small></th><td>38; 153</td><td>38%; 37%</td><td></td><td>6.6% → 2.1%; 10.6% → 2.8%</td><td>−12%; −33%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C24 Breitstein capitulation long<small>stocks</small><small>cf_daily.py</small></th><td>56</td><td>39%</td><td></td><td>−0.5% → 1.4%</td><td>−19%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C25 Clement wedge pop / EMA crossback<small>stocks</small><small>cf_daily.py</small></th><td>85</td><td>25%</td><td></td><td>13.2% → −3.5%</td><td>−35%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C26 Connor Bates high-tight-flag breakout<small>stocks</small><small>cf_daily.py</small></th><td>54</td><td>30%</td><td></td><td>22.3% → 2.3%</td><td>−39%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C27 Connor Bates pullback to rising 50 SMA<small>stocks</small><small>cf_daily.py</small></th><td>279</td><td>34%</td><td></td><td>18.1% → 2.1%</td><td>−56%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C28 Pradeep Bonde episodic pivot<small>stocks</small><small>cf_daily.py</small></th><td>81</td><td>19%</td><td></td><td>12.1% → 1.3% (gap + earnings, hold 60d: 13.4% → 7.4%)</td><td>−22%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C29 Ariel buy close of high-volume up day<small>stocks</small><small>cf_daily.py</small></th><td>194</td><td>34%</td><td></td><td>1.0% → −16.5%</td><td>−76.5%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C30 Ariel delayed HVC reclaim<small>stocks</small><small>cf_daily.py</small></th><td>281</td><td>27%</td><td></td><td>7.5% → −11.3%</td><td>−65.5%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C31 Ariel flat-base breakout<small>stocks</small><small>cf_daily.py</small></th><td>266</td><td>30%</td><td></td><td>3.6% → 0.7%</td><td>−22.6%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr class="is-highlight"><th scope="row">C32 Ariel undercut &amp; rally (above SMA200)<small>stocks</small><small>cf_daily.py</small></th><td>204</td><td>43%</td><td></td><td class="num">3.8% → 12.2%</td><td>−35.8%</td><td class="muted">Sharpe 0.29 → 0.59 (borderline)</td><td class="num">PASS</td></tr>
+                    <tr><th scope="row">C33 Marci Silfrain trendline/BB (long inversion)<small>index ETFs</small><small>cf_daily.py</small></th><td>14</td><td>52%</td><td></td><td>4.3% → 2.2%</td><td>−10.6%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">C34 Tori Trades 3-touch trendline break<small>index ETFs</small><small>cf_daily.py</small></th><td>1</td><td>33%</td><td></td><td>1.2% → 0.2%</td><td>−1.8%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr class="is-highlight"><th scope="row">C35 Chris Verma gap ≥ 100% open short, cover close<small>small caps 1-min, 3bp + $0.005</small><small>cf_smallcap.py</small></th><td>57</td><td>72%</td><td>+0.083R / +6.2%</td><td>4.8% (1% risk)</td><td>−5.4%</td><td class="muted">all 9 variants positive; edge decaying 2024–26</td><td class="num">PASS<small>not tradable</small></td></tr>
+                    <tr class="is-highlight"><th scope="row">C36 Verma + 10:00 rule<small>small caps 1-min, 3bp + $0.005</small><small>cf_smallcap.py</small></th><td>57</td><td>56%</td><td>+0.052R / +3.9%</td><td>3.0%</td><td>−4.8%</td><td class="muted">2026 negative</td><td class="num">PASS<small>not tradable</small></td></tr>
+                    <tr class="is-highlight"><th scope="row">C37 Alex Temiz first red day after ≥ 4 up days<small>small caps 1-min, 3bp + $0.005</small><small>cf_smallcap.py</small></th><td>16</td><td>27%</td><td>+4.0% per trade</td><td>62% (inflated by tight stop)</td><td>−27%</td><td class="muted">positive in all 48 variants</td><td class="num">PASS<small>not tradable</small></td></tr>
+                    <tr><th scope="row">C38 Kyle Williams intraday failure short<small>small caps 1-min, 3bp + $0.005</small><small>cf_smallcap.py</small></th><td>61</td><td>52%</td><td>+0.019R / +1.2%</td><td>0.9%</td><td>−19.5%</td><td class="muted">IS +0.25R → OOS +0.02R; write-up says treat as FAIL</td><td class="num">FAIL</td></tr>
+                    <tr class="is-highlight"><th scope="row">C39 Mario parabolic VWAP-loss short<small>small caps 1-min, 3bp + $0.005</small><small>cf_smallcap.py</small></th><td>66</td><td>49%</td><td>+0.156R / +2.3%</td><td>10.2%</td><td>−16%</td><td class="muted">top 5% of trades = 94% of profit</td><td class="num">PASS<small>not tradable</small></td></tr>
+                    <tr class="is-highlight"><th scope="row">C40 Steven Dux gap-up consolidation break short<small>small caps 1-min, 3bp + $0.005</small><small>cf_smallcap.py</small></th><td>4.5</td><td>54%</td><td>+0.23R / +5.0%</td><td>1.0%</td><td>−2.1%</td><td class="muted">15 IS / 26 OOS trades</td><td class="num">PASS<small>not tradable</small></td></tr>
+                    <tr><th scope="row">C41 Steven Dux first red day, daily bars<small>small caps, 3bp + $0.005</small><small>cf_smallcap.py</small></th><td>18</td><td>52%</td><td>−0.063R / −3.0%</td><td>−1.1%</td><td>−6.5%</td><td class="muted">negative in every variant</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">C42 Rajan D mega-cap gap continuation<small>10 mega caps</small><small>cf_smallcap.py</small></th><td>15</td><td>38%</td><td>−0.21R</td><td>−3.3%</td><td>−21%</td><td class="muted">all 8 variants negative</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+          <details class="x-acc" id="r6">
+            <summary><span><span class="x-acc__title">3.6 Malik "Real TQQQ Trader" video (7 strategies)</span><span class="x-acc__count">6 tests · 1 pass · 3 weak · 1 fail · 1 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Only one rule was disclosed (TQQQ above the 250-day average). At 3x it made 25.8% out-of-sample with a −63% DD, and −83% in 2000–02. Volatility sizing is the best drawdown reducer. Nothing at 1x beats the QQQ rotation, and the claimed 62% CAGR can't be verified.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">M1 Trend: 100% TQQQ when QQQ &gt; MA250 (only disclosed rule)<small>real TQQQ 2016–2026; synthetic 1986–2026</small><small>malik.py</small></th><td>2.6</td><td>27%</td><td></td><td>3x 57.4% → 25.8%; 1x 21.6% → 14.0%</td><td>3x −63%; 1x −26%</td><td class="muted">1986–2026 3x 23.2% / −87%</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">M2 SQQQ below MA250 (mirror)<small>real TQQQ/SQQQ 2016–2026</small><small>malik.py</small></th><td>2.4</td><td>0%</td><td></td><td>L/S 3x OOS 3.3%</td><td>−80%</td><td class="muted">inverse leg −15 to −22%/yr</td><td class="num">FAIL</td></tr>
+                    <tr class="is-highlight"><th scope="row">M3 Volatility sizing min(1, 15%/σ20)<small>real TQQQ 2016–2026; synthetic 1986–2026</small><small>malik.py</small></th><td>2.6</td><td>27%</td><td></td><td class="num">3x OOS 28.1%; 1x 13.5%</td><td>−46%; −16%</td><td class="muted">best DD reducer; 1986–2026 −71%</td><td class="num">PASS<small>overlay, leveraged only</small></td></tr>
+                    <tr><th scope="row">M4 Mean-reversion proxy: RSI2 &lt; 15 &amp; above SMA250<small>real TQQQ 2016–2026</small><small>malik.py</small></th><td>13.2</td><td>72%</td><td></td><td>3x 11.2% → 28.2%; 1x OOS 12.2% (Sh 1.32)</td><td>−23%; 1x −8%</td><td class="muted">≈ Noel RSI2 sleeve</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">M5 Short proxy: bear-rally fade into SQQQ<small>real SQQQ 2016–2026</small><small>malik.py</small></th><td>2.1</td><td>67%</td><td></td><td>OOS 5.6% (1x 4.3%)</td><td>−21%</td><td></td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">M6 Combos and the claimed 62% CAGR / −51% DD (strategies 6–7 never described)<small>real TQQQ 2016–2026; synthetic 1986–2026</small><small>malik.py</small></th><td>4.5</td><td>42%</td><td></td><td>combo B 3x OOS 28.7%</td><td>−61% (1986–2026 −88%)</td><td class="muted">can't reproduce; rules private</td><td class="num">INCONCLUSIVE</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r7">
+            <summary><span><span class="x-acc__title">3.7 Big-move precursors and attention</span><span class="x-acc__count">7 tests · 1 weak · 5 fail · 1 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>The size of a move is partly predictable: a known earnings date, volatility expansion, relative volume and VIX/breadth give AUC 0.64–0.66. Its direction is not, and buying the flagged names makes nothing beyond SPY on the same days. Use it as a risk flag only.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">B1 Detecting big moves (P(move in next 5 days))<small>57,915 events, 4.38M stock-days 2016–2026</small><small>bigmove_study.py, bigmove_tests.py</small></th><td></td><td></td><td></td><td></td><td></td><td class="muted">earnings date AUC 0.66; unscheduled model 0.84 → 0.64, lift 1.8</td><td class="num">WEAK<small>risk flag only</small></td></tr>
+                    <tr><th scope="row">B2 Direction of big moves<small>57,915 events 2016–2026</small><small>bigmove_tests.py</small></th><td></td><td>hit 55% vs 53% majority</td><td></td><td></td><td></td><td class="muted">earnings: none (0.51); unscheduled AUC 0.57 → 0.61</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">B3 Trading the detection / direction picks<small>57,915 events 2016–2026</small><small>bigmove_tests.py</small></th><td></td><td></td><td>top 10% +1.43%/10d vs SPY +1.67%</td><td></td><td></td><td class="muted">t vs random −1.3</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">B4 Straddles on model top-10% earnings<small>earnings options 2024–26</small><small>bigmove_tests.py</small></th><td></td><td>realized &gt; implied 41%</td><td>−5.0% vs −8.2% all</td><td></td><td></td><td class="muted">still negative</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">B5 Insider buys (Form 4), NR7/squeeze<small>57,915 events 2016–2026</small><small>bigmove_f4.py</small></th><td></td><td></td><td></td><td></td><td></td><td class="muted">AUC ≈ 0.50</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">B6 Wikipedia attention spikes<small>2,172 names</small><small>bigmove_attn.py</small></th><td></td><td></td><td>wiki trend +0.19% excess (t 1.4)</td><td></td><td></td><td class="muted">AUC 0.49–0.52</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">B7 Google Trends / Reddit attention<small>bigmove_attn.py</small></th><td></td><td></td><td></td><td></td><td></td><td class="muted">Trends blocked (429); Reddit sources dead</td><td class="num">INCONCLUSIVE</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r8">
+            <summary><span><span class="x-acc__title">3.8 CFD shorts (Capital.com)</span><span class="x-acc__count">7 tests · 6 fail · 1 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>A 5bp spread on a 0.65% stop costs about 0.15R, which wipes out the ORB-short edge. Every bear filter is ≤ 0 out-of-sample. RSI2 shorts get squeezed (−77% DD on the $250 path). At full 20:1 margin the account is almost certainly closed out. Adding a short sleeve cuts CAGR by 4–5 points for about 2 points less DD; the rotation's defensive switch already does that job.</p>
+                <p class="fineprint">The CFD instrument list could not be fetched, so a proxy universe was used: price ≥ $10 and ADV ≥ $25M.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">X1 ORB short (red first bar), IS pick: SPY red &amp; below open<small>Capital.com proxy, 2016–2026</small><small>shorts_cfd.py</small></th><td>387 → 367</td><td>32.7 → 28.6%</td><td>+0.05 → −0.06R at 5bp</td><td>4.1% → −3.3%</td><td>−31.8%</td><td class="muted">5bp ≈ 0.15R of cost</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">X2 ORB short only when QQQ &lt; MA200<small>Capital.com proxy, 2016–2026</small><small>shorts_cfd.py</small></th><td>74 → 188</td><td>28–30%</td><td>−0.08 → −0.00R at 5bp</td><td>~0%</td><td>−15.1%</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">X3 RSI2 &gt; 98 overbought short below MA200<small>price ≥ $10, $vol ≥ $25M</small><small>shorts_cfd.py</small></th><td>264 → 261</td><td>59 → 62%</td><td>IS ≤ 0; OOS +18bp</td><td>−12.3% → 2.0%</td><td>−70.8%</td><td class="muted">$250 path −77% DD</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">X4 Verma / Temiz small-cap shorts re-costed as CFDs<small>entry ≥ $5 subset</small><small>shorts_cfd.py</small></th><td>25 / 9</td><td>73% / 25%</td><td>+4 to +6% at 25bp spread</td><td>Verma +$70/yr on $250</td><td>−$174</td><td class="muted">names very likely not on Capital.com</td><td class="num">INCONCLUSIVE<small>not tradable</small></td></tr>
+                    <tr><th scope="row">X5 $250 account, $50 per position<small>OOS 2021–2026</small><small>shorts_cfd.py</small></th><td>342</td><td></td><td>−$0.013 per trade</td><td>−$4/yr (ORB short)</td><td>−27%</td><td class="muted">spread eats 70–170% of the edge</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">X6 $1,000 per position at 20:1<small>OOS 2021–2026</small><small>shorts_cfd.py</small></th><td></td><td></td><td></td><td>$250 → $47</td><td>−94%</td><td class="muted">92% chance of close-out in 3 years</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">X7 Adding a 20% short sleeve to ORB + rotation<small>2016–2026</small><small>shorts_cfd.py</small></th><td></td><td></td><td></td><td>19.1% → 15.1%</td><td>−12.5% → −10.8%</td><td class="muted">helps only 2018 / 2025</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r9">
+            <summary><span><span class="x-acc__title">3.9 Insider footprints</span><span class="x-acc__count">8 tests · 1 weak · 6 fail · 1 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Informed money shows up as activity (options and short volume flag that a move is coming), not as direction.</p>
+                <ul>
+                  <li>Congress buys flip sign between in-sample and out-of-sample.</li>
+                  <li>Pelosi's returns are a concentrated big-tech book; QQQ gets most of it with a smaller DD.</li>
+                  <li>NANC/KRUZ lag QQQ/SPY.</li>
+                  <li>Prediction-market odds don't lead ETFs.</li>
+                </ul>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">I1 Options flow/skew before big moves (call/put volume, OTM skew, IV)<small>7,219 events + 3,904 controls, 2024-02 to 2026-10</small><small>insider_opt.py, insider_footprints.py</small></th><td></td><td></td><td>no long top-20% beats universe (best t +1.1)</td><td></td><td></td><td class="muted">best direction AUC 0.71 → 0.62 (= vol level); +0.005 over controls</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">I2 FINRA short interest + Reg SHO short volume<small>2017-12 / 2018-08 to 2026</small><small>insider_footprints.py</small></th><td></td><td></td><td>no decile beats random</td><td></td><td></td><td class="muted">SI% 0.52 → 0.56, nothing beyond controls</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">I3 Congress disclosures (buys long, sells short)<small>78.7k disclosures, 40,268 trades</small><small>insider_footprints.py</small></th><td></td><td></td><td>buys vs random IS −0.4/−0.5/−0.7% → OOS +0.3/+0.6/+1.0%</td><td></td><td></td><td class="muted">sign flips; sells not bearish</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">I4 Copy Pelosi portfolio<small>31 tickers 2016-02 to 2026-10</small><small>insider_footprints.py</small></th><td></td><td></td><td>per trade ≈ QQQ</td><td>23.6% (vs QQQ 20.9%)</td><td>−48% (vs −35%)</td><td class="muted">concentrated big tech</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">I5 Trump OGE 278-T filings<small>5,400 trades on 13 filing dates</small><small>insider_footprints.py</small></th><td></td><td></td><td>CI spans 0</td><td></td><td></td><td class="muted">too few dates</td><td class="num">INCONCLUSIVE</td></tr>
+                    <tr><th scope="row">I6 NANC / KRUZ congress ETFs<small>2023-02 to 2026-10</small><small>insider_footprints.py</small></th><td></td><td></td><td></td><td>NANC 20.9%/yr vs SPY 19.7%, QQQ 26.2%; KRUZ 10.1% vs SPY 17.3%</td><td></td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">I7 Prediction-market odds (Polymarket/Kalshi) → mapped ETFs<small>556 markets, 3,942 triggers, 2022–2026</small><small>insider_pm.py</small></th><td></td><td></td><td>80/20 cross 20d +0.02% [−0.40, +0.65]</td><td></td><td></td><td class="muted">≈ 0 in both halves</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">I8 Prediction markets: fast 1–10 min entries<small>556 markets, 2022–2026</small><small>insider_pm.py</small></th><td></td><td></td><td>captures ~100% of a ≈ 0 move</td><td></td><td></td><td></td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r10">
+            <summary><span><span class="x-acc__title">3.10 Policy signals</span><span class="x-acc__count">6 tests · 2 weak · 4 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <ul>
+                  <li>Bills: no run-up and no follow-through.</li>
+                  <li>Pentagon contracts: a small +0.4% 20-day drift out-of-sample, not significant. Speed doesn't help, because 87% of the move comes after the next open.</li>
+                  <li>Lobbying: the only lead, statistically weak; see 3.16 for the full quarterly data.</li>
+                </ul>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">P1 Bill milestones → sector ETFs (181 events, 41 bills)<small>govinfo 2016–2025</small><small>policy_signals.py</small></th><td>1.6 → 2.9</td><td>62.5 → 23.5%</td><td>IS pick +0.19% → −0.86% (t −2.3)</td><td></td><td></td><td class="muted">IS sell-the-news −2.2%/20d → OOS −0.2%</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">P2 Bills: fast entry after House floor timestamps<small>46 timed events</small><small>policy_fast.py</small></th><td></td><td></td><td>fast +10 min ≈ next open</td><td></td><td></td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">P3 DoD contract ≥ 0.98% of market cap, buy next open, hold 20d<small>USAspending, 60 tickers</small><small>policy_signals.py</small></th><td>152 → 140</td><td>51 → 49%</td><td>+0.89% (t 2.35) → +0.37% (t 1.0)</td><td></td><td></td><td class="muted">not significant OOS</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">P4 DoD after-hours fast entry (17:10 ET)<small>1,572 large awards</small><small>policy_fast.py</small></th><td></td><td></td><td>print within 10 min on 5.9% only; below after-hours cost</td><td></td><td></td><td class="muted">87% of move after next open</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">P5 Lobbying spend jump, top decile, Aug rebalance<small>LDA Q2 ≥ $250k, 367 tickers</small><small>policy_signals.py</small></th><td>1</td><td>60% (yrs)</td><td>+2.7%/yr → +8.5%/yr vs lobbyers (ex-2025 +1.2%)</td><td>top 18.4% → 19.1%</td><td></td><td class="muted">10 annual points; small-cap tilt</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">P6 Lobbying intensity (spend / market cap)<small>LDA Q2 ≥ $250k, 367 tickers</small><small>policy_signals.py</small></th><td>1</td><td></td><td>+2.5%/yr → +5.9%/yr</td><td>OOS 16.3% vs universe 11.7%, SPY 13.1%</td><td></td><td class="muted">rank IC flips sign</td><td class="num">WEAK</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r11">
+            <summary><span><span class="x-acc__title">3.11 Market profile POC and morning bounces</span><span class="x-acc__count">10 tests · 2 weak · 8 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>The prior POC is tested about as often as a random level at the same distance from the open, so distance is what matters. Bounce and fade rules hit their targets at exactly the random-walk odds from the entry position. The one exception is short rejections on gap-up days, which reflect gap-fill drift; it is now in a paper forward test. Filtering out gap-ups in strong uptrends (V10) makes it worse: gap-ups in downtrends are the losing trades.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">V1 Prior RTH POC gets tested in RTH<small>SPY/QQQ 1-min 2016–2026</small><small>poc_test.py</small></th><td></td><td>SPY 53.8%, QQQ 55.9%</td><td>random level 53.1% / 54.3%</td><td></td><td></td><td class="muted">distance from open is what matters</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">V2 Overnight (16:00–09:30) POC<small>SPY/QQQ 1-min 2016–2026</small><small>poc_test.py</small></th><td></td><td>60–62% vs 58–60%</td><td>+2–3pp (t ≈ 3)</td><td></td><td></td><td class="muted">stable 8–9 of 11 years, too small to trade</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">V3 Open location, weekday, Monday → Friday POC<small>SPY/QQQ 1-min 2016–2026</small><small>poc_test.py</small></th><td></td><td>inside VA 78–79%</td><td>≈ random</td><td></td><td></td><td class="muted">nothing survives FDR</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">V4 Reaction after POC touch<small>SPY/QQQ 1-min 2016–2026</small><small>poc_test.py</small></th><td></td><td></td><td>−5 to +1.5pp vs random OOS</td><td></td><td></td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">V5 Fade from open to overnight POC (IS pick of 663)<small>SPY</small><small>poc_test.py</small></th><td>53</td><td class="num">84%</td><td>+0.007R (+2bp) at 1bp; −1.9bp at 3bp</td><td></td><td></td><td class="muted">high win rate, no edge</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">V6 First-touch fade of prior POC<small>SPY</small><small>poc_test.py</small></th><td>136</td><td>46%</td><td>−0.171R</td><td></td><td></td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">V7 Early-range bounce → early high (09:45–10:30 cutoffs)<small>SPY/QQQ</small><small>poc_early.py</small></th><td>105</td><td>47%</td><td>−0.129R</td><td></td><td></td><td class="muted">= random-walk odds from entry position</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">V8 Morning bounces #1/#2/#3 tracked live (3,788 variants)<small>SPY/QQQ</small><small>poc_bounce.py</small></th><td>33</td><td>46%</td><td>IS +0.33R → OOS −0.044R net</td><td></td><td></td><td class="muted">0 of 1,344 cells beat implied in IS and OOS</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">V9 Gap-up first-rejection short → overnight low (QQQ = NQ proxy)<small>QQQ 1-min</small><small>poc_bounce.py, poc_bounce_gapcheck.py</small></th><td>52</td><td>46%</td><td>+0.17R → +0.16R gross; +0.104R net OOS</td><td></td><td></td><td class="muted">found in splits; SPY IS −0.03R / OOS +0.21R</td><td class="num">WEAK<small>paper forward test</small></td></tr>
+                    <tr><th scope="row">V10 Gap-up rejection short + 12 trend/regime skip filters ("don't short gap-ups in a strong uptrend")<small>QQQ + SPY 1-min, micro-futures costs</small><small>gap_trend_filter.py</small></th><td>76 (VIX skip)</td><td>49%</td><td>base +0.149R micro (QQQ) / +0.167R (SPY) OOS; VIX &gt; 20 skip +0.203 / +0.228R</td><td></td><td></td><td class="muted">trend skips cut total R in 22/22 OOS cells; VIX skip raises R/trade but total R flat (q 0.38)</td><td class="num">FAIL<small>forward test unchanged</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+          <details class="x-acc" id="r12">
+            <summary><span><span class="x-acc__title">3.12 Bottoms (small/mid chips, energy)</span><span class="x-acc__count">5 tests · 2 weak · 3 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>No entry method beat simply owning the sector ETF (XSD 20%, SMH 33% out-of-sample). Hold-forever leaves 30–40% of entries under water. Only the group-breadth gate helped in both periods; it is now used as a scan condition, not a system.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">D1 Confirmation signals A–G event study (60-day median)<small>516 SIC names 2016–2026</small><small>bottoms.py</small></th><td></td><td></td><td>A60 +7.9%, D +1.6%, E +1.3%, F −0.8% vs random +1.0%</td><td></td><td>knife 61–71%</td><td class="muted">28–43% of entries never recover entry</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">D2 IS-best system: structure flip + sector ETF filter + stop + 20d exit<small>516 names, 10 slots</small><small>bottoms.py</small></th><td></td><td></td><td></td><td>28.5% → 11.8%</td><td>−44% OOS</td><td class="muted">XSD B&amp;H OOS 20.0%; rank corr −0.02 (264 variants)</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">D3 Group breadth gate (% &gt; SMA50 turning up from &lt; 20%)<small>516 names 2016–2026</small><small>bottoms.py</small></th><td></td><td>54–62%</td><td>OOS 60d: D +8.5% vs −5.1% without</td><td>gated staged plan OOS 18.3% (IS ~5%)</td><td>−29%</td><td class="muted">only robust filter in both periods</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">D4 0–5 bottom score; sector-ETF filter; IWM filter<small>516 names 2016–2026</small><small>bottoms.py</small></th><td></td><td></td><td>score 4–5 negative OOS</td><td></td><td></td><td class="muted">score doesn't rank; ETF filter hurts</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">D5 RSI14 &lt; 20 inside setup (watch alert)<small>516 names 2016–2026</small><small>bottoms.py</small></th><td></td><td></td><td>OOS 60d median +8.3% (n=153)</td><td></td><td></td><td class="muted">alert only, not a buy</td><td class="num">WEAK</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r13">
+            <summary><span><span class="x-acc__title">3.13 Index day vs night timing (QQQ/SPY; MNQ proxy)</span><span class="x-acc__count">7 tests · 2 weak · 5 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Most of QQQ's long-run gain happens overnight (close to next open), not during the trading day. Buying the open and selling the close in an uptrend captures only the weak daytime half (about 2bp a day), which ETF costs wipe out. Holding overnight in an ETF cash account also nets almost nothing after fees and T+1 settlement. Only the MNQ futures version is cheap enough to keep the overnight drift, and even then the drawdown is about the size of a prop firm's trailing limit. Tight stops make it worse: overnight noise hits a $100 stop on most nights (70% in 2026), so you pay the loss and then miss the recovery by the open.</p>
+                <p class="fineprint">ETF results use a $10k cash account (T+1-safe "halves"). MNQ = 1 micro Nasdaq future, simulated as QQQ points × $82 ($2/pt × 41), $2.30 round trip; $ figures are per micro per year.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">N1 Trend-day long: buy 09:30 open, sell 15:59 close in an uptrend (200 cells: 5 filters × 5 stops × 4 gap rules)<small>QQQ/SPY 1-min 2016–2026</small><small>trend_day_long.py</small></th><td>143</td><td>48%</td><td>intraday edge ~2bp/day gross vs ~3bp cost</td><td>IS pick 2.6% → −0.8% (2026 −1.7%); literal C &gt; SMA200 + 1 ATR QQQ −0.9% → −3.6%</td><td>−15% → −21%</td><td class="muted">0/200 cells pass FDR; all 200 negative at 3bp; rank corr −0.28</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">N2 Hold QQQ every night (buy close, sell next open)<small>QQQ 1-min ETH</small><small>overnight_gap.py</small></th><td>251</td><td>52%</td><td>+6.1bp → +4.1bp gross per night</td><td>halves at 1bp: OOS −0.3%</td><td></td><td class="muted">night carries ~60% of QQQ's return, but fees eat it</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">N3 Overnight hold on model top-30% nights (logistic P(gap-up)), ETF<small>QQQ 1-min ETH</small><small>overnight_gap.py</small></th><td>76 → 81</td><td>62 → 56%</td><td>gap-up AUC 0.58 → 0.54</td><td>5.9% → 2.3% (3bp 0.8%)</td><td>−3.8% → −3.5%</td><td class="muted">Sharpe 1.40 → 0.78; 0/34 conditions survive FDR in both periods; QQQ B&amp;H 15.7%, rotation 22.3% OOS</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">N4 Same rule on 1 MNQ, no stop<small>MNQ via QQQ proxy</small><small>overnight_gap.py, overnight_mnq_stop.py</small></th><td>81</td><td>65 → 58%</td><td></td><td>$2,519/yr → $2,462/yr (2026 YTD $4,777)</td><td>−$1.3k → −$2.6k</td><td class="muted">positive every OOS year; DD ≈ $2–3k trailing limit; 20:00–04:00 unobserved</td><td class="num">WEAK<small>paper forward test</small></td></tr>
+                    <tr><th scope="row">N5 Same, $100 hard stop<small>MNQ via QQQ proxy</small><small>overnight_mnq_stop.py</small></th><td>81</td><td>54 → 42%</td><td>28% → 53% of trades stopped (2026: 70%)</td><td>$345/yr → $793/yr</td><td>−$1.8k → −$1.9k</td><td class="muted">cuts OOS income 68% vs no stop, no DD saving</td><td class="num">FAIL<small>still forward-tested</small></td></tr>
+                    <tr><th scope="row">N6 Same, $250 hard stop<small>MNQ via QQQ proxy</small><small>overnight_mnq_stop.py</small></th><td>81</td><td>62 → 53%</td><td>9% → 23% stopped</td><td>$1,468/yr → $526/yr</td><td>−$1.1k → −$2.5k</td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">N7 Same, $500 hard stop<small>MNQ via QQQ proxy</small><small>overnight_mnq_stop.py</small></th><td>81</td><td>64 → 57%</td><td>2% → 7% stopped</td><td>$2,331/yr → $1,760/yr</td><td>−$1.1k → −$2.5k</td><td class="muted">close to no stop</td><td class="num">WEAK</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r14">
+            <summary><span><span class="x-acc__title">3.14 Contrarian / sentiment (buy fear, trim euphoria)</span><span class="x-acc__count">7 tests · 2 weak · 5 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Buying fear pays in sharp V-shaped bottoms (2018, 2020, 2024, 2025, 2026) and loses in slow bear markets (2000–02, 2008, 2022). 2021–26 had more V-bottoms, so out-of-sample looks good; the 1993–2015 check ("PRE") shows the other side. No overlay improved the rotation. VIX ≥ 30 stays a watch item.</p>
+                <p class="fineprint">3,200 standalone variants + 1,116 overlays on the QQQ rotation; cash account, 1x. Out-of-sample benchmarks: rotation 22.6–22.9% / DD −16.6%; QQQ buy-and-hold 15.8% / −35%.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">K1 Buy QQQ after VIX closes ≥ 30; exit when VIX is back in its top-20% calm zone or after 120 days<small>CBOE VIX, QQQ daily</small><small>contrarian.py</small></th><td>0.8 → 1.2</td><td>100 → 86%</td><td>random same exposure 7.1% → 6.3%</td><td>14.3% → 15.4% (27% time in market; 2026 +42%)</td><td>−22% → −27%</td><td class="muted">OOS p 0.005 but q 0.24; PRE −0.3% vs random 1.8% (−56% 2000–01)</td><td class="num">WEAK<small>watch item</small></td></tr>
+                    <tr><th scope="row">K2 Same signal on SPY<small>SPY daily</small><small>contrarian.py</small></th><td>1.2</td><td>86%</td><td>random 6.0% OOS</td><td>9.7% → 14.3%</td><td>−21%</td><td class="muted">PRE 3.1% vs random 3.6%</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">K3 Buy QQQ when equity put/call 5d average ≥ 0.9, hold 250 days<small>Cboe put/call</small><small>contrarian.py</small></th><td>0.35</td><td>100%</td><td>random 11.3% OOS</td><td>26.3% → 13.2%</td><td>−14%</td><td class="muted">2 OOS trades; q 0.45</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">K4 Buy QQQ when a rebuilt CNN-style fear gauge is in its bottom 20%, hold 120 days<small>7-part composite</small><small>contrarian.py</small></th><td>1.6</td><td>78%</td><td>random 11.2% OOS (p 0.42)</td><td>17.3% → 12.0%</td><td>−33%</td><td class="muted">below QQQ B&amp;H</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">K5 Buy QQQ when the AAII bull-bear spread is in its bottom 5%, hold 120 days<small>AAII survey (gap 2024-07 to 2026-05)</small><small>contrarian.py</small></th><td>0.5</td><td>33%</td><td></td><td>21.6% → 0.1%</td><td>−37%</td><td class="muted">collapses OOS</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">K6 Rotation + buy QQQ on RSI2 fear below MA200 + trim 50% on euphoria (IS pick of 1,116 overlays)<small>QQQ rotation ETFs</small><small>contrarian.py</small></th><td></td><td></td><td></td><td>32.6% → 22.5% (rotation 26.9% → 22.9%)</td><td>−21.1% vs −16.6%</td><td class="muted">0/1,116 overlays significant OOS</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">K7 Rotation + trim 50% QQQ when 52-week net new highs are extreme<small>QQQ rotation ETFs</small><small>contrarian.py</small></th><td></td><td></td><td></td><td>26.9% → 23.6% (rotation 26.9% → 22.9%)</td><td>−16.6%</td><td class="muted">+0.7pp OOS = noise (t 0.24)</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r15">
+            <summary><span><span class="x-acc__title">3.15 AI trading agents and machine learning</span><span class="x-acc__count">5 tests · 4 fail · 1 inconclusive</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Machine-learning stock rankers (Qlib/LightGBM) learn 2016–20 by heart (in-sample rank IC 0.33) and keep only a tiny edge after (0.014), not enough to beat QQQ or the rotation after costs and drawdowns. Reinforcement learning (PPO) overfits the training years, and results swing with the random seed. LLM agents can't be backtested at all, so the only honest test is a forward paper test.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">A1 Qlib Alpha158 + LightGBM stock ranker, weekly top-20 swap (IS pick of 12)<small>top-1000 US stocks incl. delisted, 3bp, $10k</small><small>ai_agents.py</small></th><td>1,910</td><td>62%</td><td>OOS rank IC 0.014 (IS 0.33 = memorised)</td><td>374% (fitted) → −0.2%</td><td>−40% → −55%</td><td class="muted">95x turnover a year; 0/12 beat equal-weight or QQQ after FDR</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">A2 Same model, qlib default-style TopkDropout (50 names, drop 5 a week)<small>top-1000 US stocks</small><small>ai_agents.py</small></th><td>527</td><td>61%</td><td></td><td>OOS 8.6%</td><td>−39%</td><td class="muted">2022 −24%; &lt; QQQ 16.4% and rotation 22.9%</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">A3 Same model, best-of-12 OOS (10 names, drop 1) = hindsight pick<small>top-1000 US stocks</small><small>ai_agents.py</small></th><td>107</td><td>64%</td><td></td><td>OOS 16.2%</td><td>−48%</td><td class="muted">2025 +65% carries it; loses to rotation 4 of 6 years</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">A4 FinRL-style PPO reinforcement learning, 9 ETFs, weekly weights, 3 seeds<small>2016–20 train, 3bp</small><small>ai_agents_rl.py</small></th><td></td><td></td><td></td><td>131–140% (overfit) → 5.6 / 10.0 / 15.5% by seed</td><td>−37 to −42%</td><td class="muted">equal-weight 9 ETFs 11.5%; 0/3 pass FDR</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">A5 LLM multi-agent traders (TradingAgents, FinMem, FinAgent, ai-hedge-fund…) survey<small>literature + live 2025 benchmarks</small><small>literature survey</small></th><td></td><td></td><td></td><td>FINSABER 2004–24: FinMem/FinAgent &lt; buy &amp; hold</td><td></td><td class="muted">can't backtest (training data contains the future); live records weeks long and mixed</td><td class="num">INCONCLUSIVE<small>paper forward test of TradingAgents</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r16">
+            <summary><span><span class="x-acc__title">3.16 Lobbying, full quarterly LDA data (Oct 27)</span><span class="x-acc__count">2 tests · 1 weak · 1 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Top decile of lobbying spend / market cap, rebalanced quarterly: +15.8%/yr vs other lobbyers in-sample, then +5.4%/yr out-of-sample (t 0.67, 23 quarters), almost all from 2024–25. Not traded. The spend-jump version failed on the full data.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">L1 Lobbying intensity (spend / mcap) top decile, quarterly rebalance after LD-2 due date<small>full LDA LD-2, ~450–680 listed lobbyers</small><small>policy_lda_full_run.py</small></th><td>180 → 275</td><td>75 → 48% (qtrs)</td><td>+15.8%/yr → +5.4%/yr vs lobbyers (t 0.67)</td><td>38.3% → 12.2%</td><td>−24% → −46%</td><td class="muted">OOS edge almost all 2024–25</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">L2 Lobbying spend jump top decile, quarterly<small>full LDA LD-2</small><small>policy_lda_full_run.py</small></th><td></td><td></td><td>+7.4%/yr → −3.1%/yr</td><td></td><td></td><td class="muted">annual-data lead gone</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r17">
+            <summary><span><span class="x-acc__title">3.17 KoliEr Bands mean reversion (Oct 28)</span><span class="x-acc__count">2 tests · 1 weak · 1 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>QQQ daily mean reversion made 9.3% out-of-sample with a −9.8% DD at about 3 trades a year: weaker than RSI2 and essentially the Bollinger Band trade again. SPY, stock and 5-minute versions fail.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">KB1 KoliEr Bands N14, buy at lower band, exit at upper, no stop/ADX (IS pick)<small>QQQ daily</small><small>kolier.py</small></th><td>2.6</td><td>80%</td><td></td><td>18.0% → 9.3%</td><td>−12.0% → −9.8%</td><td class="muted">below RSI2; B&amp;H OOS 15.3% / −35.6%</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">KB2 Same rule on SPY, US stocks (10 slots), QQQ 5-min<small>daily / 5-min</small><small>kolier.py</small></th><td></td><td></td><td></td><td>SPY 6.9 → 0.5%; stocks 31.4 → −2.8% (DD −50%); 5-min −3.9% OOS</td><td></td><td class="muted">ADX &lt; 25 filter adds nothing; overlaps BB(20,2) 37–88%</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r18">
+            <summary><span><span class="x-acc__title">3.18 Sympathy / lead-lag (Oct 28)</span><span class="x-acc__count">4 tests · 4 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Buying a lagging sibling after a peer spikes fails intraday and daily. Ideas that look good out-of-sample (SPCX sympathy) usually turn out to be stale prices or too few events: the JETS "lag" was stale prices, and median gross follow-through of 0.5–1.6bp sits below about 4bp of cost.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">SY1 Sector pairs: leader 5-min move ≥ 3–4σ, peer &lt; 1σ → buy peer next 1-min open, exit +1 to +60 min (1,640 tests)<small>1-min 2016–2026</small><small>symp_*.py</small></th><td>12–117</td><td>38–59%</td><td>IS survivors (airlines → JETS) +17bp → −7.1bp net OOS</td><td></td><td></td><td class="muted">JETS "lag" = stale prices (traded 14% of minutes in 2017)</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">SY2 Correlation-picked pairs (540 tests)<small>1-min 2016–2026</small><small>symp_an.py</small></th><td>4</td><td>56%</td><td>0 BH survivors IS; top-5 OOS −2.4bp net</td><td></td><td></td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">SY3 Daily sympathy, next day or 3 days (144 tests)<small>daily</small><small>symp_daily.py</small></th><td></td><td></td><td>0 BH survivors IS; best IS pick +180bp → +10bp</td><td></td><td></td><td></td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">SY4 SPCX → RKLB/ASTS/LUNR; PARA → NFLX (opposite)<small>since 2026-06-12 / 2016–2026</small><small>symp_stats.py</small></th><td></td><td></td><td>SPCX +12–20bp gross at 15 min (t 0.9–1.6), below small-cap costs; PARA → NFLX −3 to −5bp, n.s.</td><td></td><td></td><td class="muted">median gross follow-through 0.5–1.6bp vs ~4bp cost</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+          <details class="x-acc" id="r19">
+            <summary><span><span class="x-acc__title">3.19 Intraday momentum and calendar effects (Oct 29)</span><span class="x-acc__count">5 tests · 2 weak · 3 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Famous academic anomalies (last-half-hour intraday momentum, turn-of-month) were strong in the papers' sample years and are mostly arbitraged away since. The calendar sleeve (QQQ only on turn-of-month, pre-holiday and pre-FOMC days, otherwise BIL) made 10.2% out-of-sample with a −11.8% DD, in the market 27% of days, but the source of the edge changed: turn-of-month in-sample, pre-FOMC and pre-holiday out-of-sample. As a third sleeve it trades about 2.6pp of combo CAGR for about 2.6pp less drawdown.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">IM1 Gao et al. literal: prior close → 10:00 sets the 15:30 → 16:00 trade, long/short<small>QQQ 1-min</small><small>calmom.py</small></th><td>252</td><td>44%</td><td>+1.5bp → −1.4bp gross (t −1.8)</td><td>−1.5% → −8.3%</td><td>−42% OOS</td><td class="muted">SPY negative both periods</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">IM2 IS pick of 100 variants (signals agree, VIX &gt; 20), long-only and long/short<small>QQQ/SPY 1-min</small><small>calmom.py</small></th><td>25–84</td><td>38–50%</td><td>QQQ long +7.2bp → −7.5bp (t −2.4); SPY L/S +0.9 → +0.3bp</td><td>1.6% → −1.9%</td><td>−11%</td><td class="muted">0 BH survivors IS</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">IM3 Futures proxy, $1.20/side + 1 tick<small>MNQ / MES</small><small>calmom.py</small></th><td>35–252</td><td></td><td>MNQ pick +$256 → −$357/yr; literal −$1.7k/yr (DD −$13k); MES −$5/yr</td><td></td><td></td><td class="muted">not usable for futures</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">IM4 Calendar sleeve: turn-of-month + pre-holiday + pre-FOMC, else BIL<small>QQQ / SPY total return</small><small>calmom.py</small></th><td>~68 days</td><td></td><td>QQQ 13.3 → 11.9bp/day in vs 9.7 / 6.9 average</td><td>QQQ 9.2% → 10.2%; SPY 6.8 → 7.9%</td><td>−9.2 → −11.8%</td><td class="muted">edge source shifted (TOM IS, FOMC/holiday OOS)</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">IM5 Calendar sleeve as a third of the ORB + rotation combo<small>combo</small><small>calmom.py</small></th><td></td><td></td><td></td><td>18.8% → 16.2% OOS</td><td>−12.5 → −9.9%</td><td class="muted">Sharpe 1.71 → 1.77; BIL overlay does nothing (0.2% of days in BIL)</td><td class="num">WEAK<small>not added</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r20">
+            <summary><span><span class="x-acc__title">3.20 Put-writing and index-membership events (Oct 29)</span><span class="x-acc__count">4 tests · 4 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Put-writing is a real risk premium, but it earns less than simply holding the index, still falls hard in crashes, and needs about $72k of cash per QQQ contract, so it doesn't fit a small cash account. Index inclusion trades were strong in their papers' years and are mostly arbitraged away; the S&amp;P additions result that looks good out-of-sample is look-ahead.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">PW1 Cash-secured monthly ATM put-write: Cboe PUT (SPX) and simulated QQQ (VXN-priced, IS pick)<small>Cboe indexes, 2016–2026</small><small>putwrite.py</small></th><td>12</td><td></td><td>IBKR costs ≈ 0.3%/yr</td><td>PUT 6.9 → 11.2%; QQQ sim 11.0 → 11.4%</td><td>−29% / −24% IS</td><td class="muted">vs SPY 15.0%, QQQ 16.3%, rotation 22.6% OOS; ~$72k cash per QQQ contract</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">IX1 S&amp;P 500 additions run-up (effective date − 5 days proxy)<small>Wikipedia changes, 170 adds</small><small>indexevents.py</small></th><td></td><td></td><td>IS −0.25% (t −0.6); OOS +2.5% is look-ahead; scheduled adds +0.7–0.9% (t ≈ 1)</td><td></td><td></td><td class="muted">needs real announcement dates</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">IX2 S&amp;P 500 deletions rebound, 20 days, 5 slots (IS pick of 12)<small>81 deletions</small><small>indexevents.py</small></th><td></td><td></td><td>20-day abnormal −2.75% OOS (keep falling)</td><td>3.5% → −2.0%</td><td>−30% OOS</td><td class="muted">25 IS events only</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">IX3 Russell recon: IWM instead of SPY, end of April → June recon<small>IWM/SPY</small><small>indexevents.py</small></th><td>1</td><td></td><td>+0.91%/yr → +0.35%/yr (t 0.24)</td><td></td><td></td><td class="muted">July leg flat to negative</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r21">
+            <summary><span><span class="x-acc__title">3.21 Keltner Channels (Oct 29)</span><span class="x-acc__count">3 tests · 2 weak · 1 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Keltner mean reversion is the Bollinger Band trade again (tight bands are 82–100% inside BB signals) and collapses out-of-sample like BB and KoliEr. The daily breakouts are slow trend filters that lag buy-and-hold and the rotation (QQQ 8.6% out-of-sample, DD −20%, correlation 0.62 with the rotation, so they add little). The one intraday result worth watching is the QQQ 5-min long breakout: positive in 5 of 6 out-of-sample years and in all 36 long-breakout variants, but t 1.5, and its profit comes almost entirely from the 09:35 opening-strength entries, so it depends on the volatility regime. It is paper forward-tested, not deployed.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">KC1 Keltner mean reversion: buy close ≤ EMA(N) − k·ATR(M), exit middle/upper (96 variants)<small>QQQ, SPY daily; US stocks (10 slots, IBKR fees); QQQ 5-min</small><small>keltner.py</small></th><td>1–171</td><td>46–88%</td><td>stocks +160bp (t 4.2) → +45bp (t 1.4); 5-min long +$384 → −$280/yr per MNQ</td><td>QQQ 3.9 → 1.6%; SPY 4.2 → 2.7%; stocks 27.2 → 5.3%</td><td>−7.8% QQQ; −29% stocks OOS</td><td class="muted">82–100% the same signals as BB(20,2); KoliEr QQQ 9.3% OOS was better</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">KC2 Keltner daily breakout: buy close &gt; upper (QQQ pick KC20/1.5/20, exit &lt; lower)<small>QQQ, SPY daily; US stocks</small><small>keltner.py</small></th><td>2.6–17</td><td>41–82%</td><td></td><td>QQQ 16.4 → 8.6%; SPY 7.1 → 3.1%; stocks 22.4 → 14.3%</td><td>QQQ −20.9 → −20.0%; stocks −39% OOS</td><td class="muted">a slow trend filter below B&amp;H (QQQ TR 16.0% OOS); corr 0.62 with the rotation</td><td class="num">WEAK</td></tr>
+                    <tr><th scope="row">KC3 QQQ 5-min long breakout KC10/2.5/10, exit &lt; middle, 2 ATR stop, QQQ &gt; MA200, flat 15:55<small>QQQ 5-min as MNQ proxy, $1.20/side + 1 tick</small><small>keltner.py</small></th><td>73 → 64</td><td>43%</td><td>+4.5bp → +3.2bp net; +$574 → +$823/yr per MNQ (t 2.1 → 1.5)</td><td></td><td>−$425 → −$1.3k</td><td class="muted">all 36 long-BO variants positive OOS; ~76% of trades are the 09:35 entry; corr with ORB + rotation 0.0–0.2</td><td class="num">WEAK<small>paper forward test</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r22">
+            <summary><span><span class="x-acc__title">3.22 Volatility squeeze → expansion breakout (Oct 29)</span><span class="x-acc__count">3 tests · 3 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>The squeeze idea fails at the root: after a squeeze, volatility just returns to normal (moves 0.7–1.1x usual, not bigger), and the breakout side calls direction no better than drift. The best in-sample picks were mostly the NR7 control, not a true squeeze.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">SQ1 Squeeze (TTM / BB-width 10–20th pct / NR7 control) → first close outside BB or KC, long and long/short (160 variants each)<small>QQQ, SPY daily, 1bp</small><small>squeeze.py</small></th><td>2–11</td><td>33–69%</td><td>SPY long pick (NR7) +64bp (t 2.7) → +26bp (t 1.0)</td><td>QQQ 1.5 → 0.4%; SPY 6.9 → 2.3%; L/S 3.1 → −1.2%</td><td>−8.2% SPY OOS</td><td class="muted">moves after a squeeze 0.7–1.1x normal; IS/OOS rank corr 0.01–0.39</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">SQ2 Same, US stocks long (3bp + IBKR) and short (CFD 5bp + 8%/yr)<small>liquid US stocks, 10 slots</small><small>squeeze.py</small></th><td>200–250</td><td>38–50%</td><td>long +41bp → +16bp (t 0.8); short every variant negative IS</td><td>long 8.9 → 2.2%; short → −15.7%</td><td>−26% long; −67.5% short OOS</td><td class="muted">breakout hit rate 0.2–1.8pp below drift; IS pick was the NR7 control</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">SQ3 Same, QQQ 5-min long/short/both<small>QQQ 5-min as MNQ proxy</small><small>squeeze.py</small></th><td>46–227</td><td>29–42%</td><td>long +$126 → +$381/yr per MNQ (t 0.7); both −$173 → −$106/yr</td><td></td><td>−$4.7k long; −$10.9k both OOS</td><td class="muted">only 43% of variants net positive OOS; 11–33% overlap with KC3</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r23">
+            <summary><span><span class="x-acc__title">3.23 RSI regime switching and multi-timeframe (Oct 29)</span><span class="x-acc__count">1 test · 1 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>The baseline RSI fade is negative in-sample everywhere (2 of 36 positive out-of-sample, median −$2.2k/yr). Regime switches, trend pullbacks, double bottoms/tops and divergence don't rescue it: in-sample picks flip negative, and no variant of 35,514 survives Benjamini-Hochberg (q &lt; 0.10) in either period. Filters only shrink losses by trading less. Correlation with the Keltner 5-min breakout is ≤ 0.03.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">R1 Regime-switched RSI + RSI14 double bottom/top + price/RSI divergence (35,514 variants: baseline 20/80 · 30/70, range fade ADX &lt; 15/20, trend pullback ADX ≥ 20/25/30 + daily/1h direction, combined switch; ADX 5m/1h/D; RSI 2/5/14; stops 1.5/2 ATR; flat 15:55; cap 2 losers/−$300)<small>QQQ 5-min → MNQ</small><small>rsi_regime.py</small></th><td></td><td></td><td>$/yr per MNQ: range fade long −75 → +12, short +322 → +327 (t 0.86), both +251 → −988; trend pullback +125/+247/+402 → −704/−666/−974; combined +185/+373/+451 → −370/−1,060/−656; double bottom +93/−48/+118 → −276/−46/−27; divergence +119/−12/+135 → +63/+167 (t 1.1)/−25</td><td></td><td></td><td class="muted">baseline OOS 2/36 &gt; 0, median −$2.2k/yr; unfiltered DB/DV 0–11 of 24–48 &gt; 0 OOS; 0/35,514 pass BH IS or OOS</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r24">
+            <summary><span><span class="x-acc__title">3.24 Classic chart patterns (Oct 29)</span><span class="x-acc__count">1 test · 1 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Rectangles, ascending/descending/symmetrical triangles, rising/falling wedges, bull/bear flags and cup &amp; handle, found with a zigzag (k·ATR) and trendlines. Their excess R over date- and volatility-matched random entries with the same bracket, and over a plain 20-bar breakout, is about zero: 0 of 892 pass. The one positive book, a QQQ 1-hour bull flag, is just market drift.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">CP1 Classic chart patterns: rectangle, triangles, wedges, flags, cup &amp; handle (892 variants)<small>daily stocks / QQQ-SPY-IWM-GLD; 1-hour QQQ/SPY + 31 full-history stocks</small><small>chart_patterns.py</small></th><td></td><td></td><td>daily-stock longs OOS −0.09 to +0.05R; CFD shorts −0.25 to −0.38R; QQQ 1-hour bull flag +$2.4k/yr per MNQ (drift, ex-random t −0.5)</td><td>books −6.6 to 2.2%</td><td></td><td class="muted">excess R vs matched random and vs 20-bar breakout ≈ 0; 0/892 pass BH</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r25">
+            <summary><span><span class="x-acc__title">3.25 News-driven 1-min spike follow-through (Oct 29)</span><span class="x-acc__count">1 test · 1 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>The first minute after entry is adverse (−0.5 to −4.6bp), so entering one bar later is better. News spikes continue and no-news spikes reverse in energy and metals, but by sign only (t &lt; 2). The best in-sample picks shrink or vanish out-of-sample, and fades lose. 0 of 3,840 variants survive Benjamini-Hochberg in either period. One weak lead remains: energy news continuation, worth testing on CL/NG futures.</p>
+                <p class="fineprint">ETF proxies: futures react first, and overnight shocks are missed. News coverage is thin for CPER/SLV/ags; QQQ/SPY news only runs to 2022-03.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">NS1 News-driven 1-min spikes: |r| ≥ 4/6/8σ and/or $vol ≥ 10× time-of-day median, entry next-bar open or one bar later, continuation vs fade, fixed/trailing/close-against exits ± origin stop, flat 15:55; Alpaca news (−30, +2) min on ETF + related names (3,840 variants)<small>CPER/GLD/SLV/USO/UNG/CORN/WEAT + QQQ/SPY 1-min SIP RTH 2016–26; half NBBO spread + 1bp/side (stress 3bp)</small><small>news_spike.py</small></th><td>71 (energy pick)</td><td></td><td>energy continuation, news, Z6 E2 T30 +12.7 → +5.2bp (t 0.95; +1.2 at 3bp); metals continuation, news +5.9 → +17.9bp (t 1.5, 2025–26 driven); index continuation MNQ +$536 → −$2/yr; fades −1 to −47bp OOS</td><td></td><td></td><td class="muted">0/3,840 pass BH IS or OOS</td><td class="num">FAIL<small>weak lead: energy news continuation</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+          </div>
+        </section>
+
+        <section class="section" id="forward" data-nav="Forward tests">
+          <div class="head">
+            <p class="head__eyebrow">Forward tests (live paper)</p>
+            <h2>Actively forward testing</h2>
+            <p class="head__sub">The only honest check of real fills, and of anything that can't be backtested. Each test has a pre-set review point.</p>
+          </div>
+          <div>
+            <p class="fineprint x-fwd__meta">Last updated: <span id="x-fwd-updated">–</span></p>
+            <p class="fineprint x-fwd__meta">Paper fills, no real orders. Months of trades are needed before any verdict.</p>
+            <p class="fineprint x-fwd__meta" id="x-fwd-status" role="status">Live results load on the published site.</p>
+          </div>
+          <div class="x-fwd">
+            <table>
+              <thead><tr><th scope="col">Test</th><th scope="col">What it trades</th><th scope="col">Started</th><th scope="col">Trades</th><th scope="col">Win rate</th><th scope="col">Result so far</th><th scope="col">Last trade</th><th scope="col">Backtest pace</th><th scope="col">Note</th></tr></thead>
+              <tbody id="x-fwd-body">
+                <tr><th scope="row">ORB + QQQ rotation<small>T6, O6</small></th><td>$10k account: 50% stocks-in-play ORB (0.2 ATR stop, 3R target, 5 slots, skip Tue/OpEx), 50% QQQ rotation</td><td class="rowhead">Oct 21 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="muted">–</td><td class="muted">Frozen rules run one day behind on Alpaca SIP data, 1bp slippage plus IBKR Pro Tiered fees. Judged after several months.</td></tr>
+                <tr><th scope="row">Slots × size shadow matrix<small>O15</small></th><td>Same rules in 12 variants: 1/2/3/5 slots × $10k/$20k/$50k</td><td class="rowhead">Oct 21 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="muted">–</td><td class="muted">Rebuilt each evening from the same code; the base variant matches the main test fill for fill.</td></tr>
+                <tr><th scope="row">Gap-up rejection short (QQQ/SPY proxies)<small>V9</small></th><td>QQQ as NQ proxy (→ MNQ), SPY as ES proxy (→ MES); signals only</td><td class="rowhead">Oct 21 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="muted">–</td><td class="muted">On days the ETF opens above the prior day's high, short the first 0.2 ATR pullback from a new high, stop above the high, target the overnight low, else exit at the close. Replay matched the backtest on 72/72 sessions. About 52 QQQ trades a year expected; 1 of about 1,300 gap-subset variants.</td></tr>
+                <tr><th scope="row">MNQ overnight model, $100 stop (QQQ proxy)<small>N4, N5</small></th><td>1 MNQ on model top-30% nights, close → 09:30 open</td><td class="rowhead">Oct 23 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="muted">–</td><td class="muted">A frozen logistic model (fit on 2016–20, never refit) scores each evening; trades at a score ≥ 0.6152. P&amp;L recorded with a $100 hard stop and with no stop. Replay matched all 37 nights. No QQQ prints 20:00–04:00 ET, so a real stop could fire at a worse price.</td></tr>
+                <tr><th scope="row">QQQ 5-min Keltner long<small>KC3</small></th><td>QQQ 5-min as MNQ proxy: long above KC10/2.5/10 when QQQ &gt; MA200, 2 ATR stop, flat 15:55; signals only, $ per MNQ</td><td class="rowhead">Oct 29 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="muted">–</td><td class="muted">Runs after the close; no new trades after 2 losers or −$300 per MNQ in a day. Replay of 2026-01-02 to 10-20 matched 201/201 sessions.</td></tr>
+                <tr><th scope="row">TradingAgents LLM agent<small>A5</small></th><td>Weekly 5-level ratings on SPY, QQQ, BLDP, GEVO, SPIR, AMKR, ONTO, RMBS, LSCC; equal-weight Buy/Overweight paper book</td><td class="rowhead">Oct 23 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="muted">–</td><td class="muted">One decision per ticker per week on the Friday close, on free OpenRouter NVIDIA Nemotron models. Scored vs SPY at 5, 20 and 60 trading days. Judged after 6 months; dropped if its book trails QQQ by more than 5 points.</td></tr>
+                <tr><th scope="row">Brendan 4h CHoCH (NQ)<small>New · real NQ futures</small></th><td>His rules, both sides, 1R target; $6 round trip per MNQ</td><td class="rowhead">Nov 2 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="num">+$1.4k/yr per MNQ</td><td class="muted">2021–26 t 1.0; flat in 2016–20</td></tr>
+                <tr><th scope="row">Gap-up rejection short (NQ)<small>V9 · New · real NQ futures</small></th><td>Short gap-up rejections, target the overnight low; $6 round trip per MNQ</td><td class="rowhead">Nov 2 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="num">+$1.1k/yr per MNQ</td><td class="muted">t 2.1; 1 of ~1,300 variants</td></tr>
+                <tr><th scope="row">Overnight MNQ model, $500 stop (NQ)<small>New · real NQ futures</small></th><td>Model nights with a $500 hard stop; $6 round trip per MNQ</td><td class="rowhead">Nov 2 2026</td><td class="num">–</td><td class="num">–</td><td class="num">–</td><td class="muted">–</td><td class="num">≈ +$1.1k/yr per MNQ</td><td class="muted">–</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fineprint">New tests from Nov 2 2026 run on real NQ futures prices: Yahoo NQ=F 1-min, checked against Databento (1-min return correlation 0.998).</p>
+          <p class="fineprint">The RSI regime, chart-pattern and news-spike tests (3.23–3.25) made no change to the forward tests.</p>
+        </section>
+
+        <section class="section" id="pricing" data-nav="Pricing">
+          <div class="head">
+            <p class="head__eyebrow">Honest expectations</p>
+            <h2>Before you pay</h2>
+          </div>
+          <div class="prose">
+            <p><strong>Most strategies fail.</strong> Of the 190 tested here, only 12 (6%) passed. 51 (27%) were weak, 118 (62%) failed outright, and 9 (5%) were inconclusive.</p>
+            <p><strong>Check the results first.</strong> If your idea, or something very close to it, is already here, you don't need to pay. Email anyway and I'll point you to the matching test for free.</p>
+            <p><strong>You're paying for an honest answer, not a pass.</strong> A failed test still saves you a prop-firm evaluation fee or a blown account.</p>
+            <p><strong>Every report includes</strong> the exact rules I tested, with any vague rule and the assumption I chose flagged; win rate, average R, CAGR, max drawdown and trades per year against buy-and-hold; a blind 2021–2026 out-of-sample test with transaction costs; and, if it fails, where it broke and the closest tested idea that held up.</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Package</th><th scope="col">Price</th><th scope="col">Per strategy</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1 strategy</th><td class="num">$59</td><td class="muted">$59</td></tr>
+                <tr><th scope="row">3 strategies</th><td class="num">$149</td><td class="muted">About $50 each</td></tr>
+                <tr><th scope="row">5 strategies</th><td class="num">$229</td><td class="muted">About $46 each</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="links">
+            <a class="btn" href="mailto:jen@striatumos.consulting?subject=Strategy%20test%20request">Email Jen</a>
+          </div>
+        </section>
+
+        <section class="section" id="about" data-nav="About">
+          <div class="head">
+            <p class="head__eyebrow">About and disclaimer</p>
+            <h2>Designed and directed by Jennifer Hsieh, PhD.</h2>
+          </div>
+          <div class="pair">
+            <div class="prose">
+              <p>Jen is a neuroscientist turned systematic trader and AI automation consultant. The research was carried out with AI assistance.</p>
+              <p>Want a strategy put through the same tests? Email <a class="link" href="mailto:jen@striatumos.consulting?subject=Strategy%20test%20request">jen@striatumos.consulting</a>.</p>
+              <p>LinkedIn: <a class="link" href="https://www.linkedin.com/in/jennifer-h-hsieh" target="_blank" rel="noopener">https://www.linkedin.com/in/jennifer-h-hsieh</a></p>
+              <p class="fineprint">Research and analysis by Jennifer Hsieh, PhD · StriatumOS Consulting</p>
+            </div>
+            <div class="aside">
+              <h3>Disclaimer</h3>
+              <p class="fineprint">Research and education only; not financial advice. Past and simulated results don't guarantee future returns.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="foot">
+        <nav aria-label="Back to sections" data-auto></nav>
+        <a class="badge" href="https://hark.com/" target="_blank" rel="noopener"><span class="hark-mark"></span><span>built by hark</span></a>
+      </footer>
+    </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        var accs = document.querySelectorAll(".x-acc");
+        function setAll(open) { accs.forEach(function (d) { d.open = open; }); }
+        document.getElementById("x-open").addEventListener("click", function () { setAll(true); });
+        document.getElementById("x-close").addEventListener("click", function () { setAll(false); });
+        function openHash() {
+          var t = location.hash && document.getElementById(location.hash.slice(1));
+          if (t && t.tagName === "DETAILS") t.open = true;
+        }
+        window.addEventListener("hashchange", openHash);
+        document.querySelectorAll(".x-toc a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            var t = document.getElementById(a.getAttribute("href").slice(1));
+            if (t) t.open = true;
+          });
+        });
+        openHash();
+
+        var q = document.getElementById("x-q");
+        var status = document.getElementById("x-status");
+        var empty = document.getElementById("x-empty");
+        var norm = function (s) { return s.toLowerCase().replace(/\s+/g, " "); };
+        var sections = Array.prototype.map.call(accs, function (d) {
+          var head = d.querySelector("summary").textContent;
+          d.querySelectorAll(".prose").forEach(function (p) { head += " " + p.textContent; });
+          return {
+            el: d,
+            head: norm(head),
+            toc: document.querySelector('.x-toc a[href="#' + d.id + '"]'),
+            wraps: Array.prototype.map.call(d.querySelectorAll(".table-wrap"), function (w) {
+              return { el: w, rows: Array.prototype.map.call(w.querySelectorAll("tbody tr"), function (r) { return { el: r, text: norm(r.textContent) }; }) };
+            })
+          };
+        });
+        function run() {
+          var terms = norm(q.value.trim()).split(" ").filter(Boolean);
+          var hits = 0, secs = 0;
+          var has = function (t) { return terms.every(function (w) { return t.indexOf(w) !== -1; }); };
+          sections.forEach(function (s) {
+            if (!terms.length) {
+              s.el.hidden = false;
+              if (s.toc) s.toc.parentNode.hidden = false;
+              s.wraps.forEach(function (w) { w.el.hidden = false; w.rows.forEach(function (r) { r.el.hidden = false; }); });
+              if (s.el.dataset.xOpened) { s.el.open = false; delete s.el.dataset.xOpened; }
+              return;
+            }
+            var headHit = has(s.head), rowHits = 0;
+            s.wraps.forEach(function (w) {
+              var n = 0;
+              w.rows.forEach(function (r) { var m = has(r.text); r.el.hidden = !m; if (m) n++; });
+              w.el.hidden = !n;
+              rowHits += n;
+            });
+            if (!rowHits && headHit) {
+              s.wraps.forEach(function (w) { w.el.hidden = false; w.rows.forEach(function (r) { r.el.hidden = false; }); });
+            }
+            var show = rowHits > 0 || headHit;
+            s.el.hidden = !show;
+            if (s.toc) s.toc.parentNode.hidden = !show;
+            if (show) {
+              secs++;
+              hits += rowHits;
+              if (rowHits && !s.el.open) { s.el.open = true; s.el.dataset.xOpened = "1"; }
+            }
+          });
+          empty.hidden = !terms.length || secs > 0;
+          status.textContent = terms.length && secs ? hits + (hits === 1 ? " test" : " tests") + " in " + secs + (secs === 1 ? " area" : " areas") : "";
+        }
+        q.addEventListener("input", run);
+      })();
+    </script>
+    <script>
+      (function () {
+        var body = document.getElementById("x-fwd-body");
+        var updated = document.getElementById("x-fwd-updated");
+        var status = document.getElementById("x-fwd-status");
+        if (!body || !window.fetch) return;
+        function str(v) { return v === null || v === undefined ? "" : String(v); }
+        function el(tag, text, cls) {
+          var n = document.createElement(tag);
+          if (cls) n.className = cls;
+          if (text !== undefined && text !== "") n.appendChild(document.createTextNode(str(text)));
+          return n;
+        }
+        function small(parent, text) { if (str(text)) parent.appendChild(el("small", text)); }
+        function fmtDate(s) {
+          s = str(s);
+          var m = /^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})(?::\d{2}(?:\.\d+)?)?(Z|[+-]\d{2}:\d{2})?$/.exec(s);
+          if (!m) return s || "–";
+          return m[1] + " " + m[2] + (m[3] ? (m[3] === "Z" ? " UTC" : " UTC" + m[3].replace("-", "−")) : "");
+        }
+        function row(t) {
+          var retired = str(t.status).toLowerCase() === "retired";
+          var trades = Number(t.trades) || 0;
+          var tr = document.createElement("tr");
+          if (retired) tr.className = "x-retired";
+          var th = el("th", str(t.name) + (retired ? " (retired)" : ""));
+          th.setAttribute("scope", "row");
+          small(th, t.code);
+          tr.appendChild(th);
+          var what = el("td", t.what || "–");
+          small(what, t.data);
+          tr.appendChild(what);
+          tr.appendChild(el("td", t.started || "–", "rowhead"));
+          tr.appendChild(el("td", trades, "num"));
+          var wr = Number(t.win_rate);
+          tr.appendChild(el("td", trades === 0 || !isFinite(wr) ? "–" : wr.toFixed(1) + "%", "num"));
+          var cum = Number(t.cum);
+          var cls = "num" + (cum > 0 ? " x-up" : cum < 0 ? " x-down" : "");
+          var res = el("td", trades === 0 ? "–" : (t.cum_label || (isFinite(cum) ? cum : "–")), cls);
+          small(res, t.unit);
+          tr.appendChild(res);
+          var lt = t.last_trade;
+          var last = el("td", lt && lt.date ? lt.date : "–");
+          if (lt) small(last, lt.result);
+          tr.appendChild(last);
+          tr.appendChild(el("td", t.backtest_pace || "–", "num"));
+          tr.appendChild(el("td", t.note || "–", "muted"));
+          return tr;
+        }
+        fetch("forward.json", { cache: "no-store" })
+          .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then(function (d) {
+            if (!d || !Array.isArray(d.tests) || !d.tests.length) throw new Error("empty");
+            var frag = document.createDocumentFragment();
+            d.tests.forEach(function (t) { if (t && typeof t === "object") frag.appendChild(row(t)); });
+            while (body.firstChild) body.removeChild(body.firstChild);
+            body.appendChild(frag);
+            updated.textContent = fmtDate(d.updated);
+            status.hidden = true;
+          })
+          .catch(function () {
+            status.hidden = false;
+            status.textContent = "Live results load on the published site.";
+          });
+      })();
+    </script>
+  </body>
+</html>
