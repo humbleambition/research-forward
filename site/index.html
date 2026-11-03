@@ -46,7 +46,22 @@
       .x-fwd tr.x-retired > * { color: var(--text-secondary); }
       .x-fwd__meta { margin: 0; }
       .x-fwd__meta + .x-fwd__meta { margin-top: 4px; }
-      #x-fwd-status[hidden] { display: none; }
+      #x-fwd-status[hidden], #x-fwd-hint[hidden] { display: none; }
+      .x-fwd__hint { margin: 0 0 12px; }
+      .x-fwd tr.x-fwd__row { cursor: pointer; }
+      .x-fwd tr.x-fwd__row:hover > * { background: color-mix(in srgb, var(--fill-primary-on) 50%, transparent); }
+      .x-fwd tr.x-fwd__row:focus-visible { outline: 2px solid var(--text-primary); outline-offset: -2px; }
+      .x-fwd__chev { display: inline-block; width: 8px; height: 8px; margin: 0 10px 2px 0; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(-45deg); transition: transform var(--dur-quick) var(--ease-out); vertical-align: middle; }
+      .x-fwd tr[aria-expanded="true"] .x-fwd__chev { transform: rotate(45deg); }
+      .x-fwd tr.x-fwd__detail > td { padding: 4px 0 20px; }
+      .x-fwd__panel { position: sticky; left: 0; box-sizing: border-box; max-width: var(--x-fwd-w, 100%); display: grid; gap: 16px; padding: 16px; border-radius: var(--r-m); background: var(--fill-primary-on); border: 1px solid var(--stroke-secondary); }
+      .x-fwd__panel p { margin: 0; font: var(--type-small); color: var(--text-secondary); max-width: 72ch; }
+      .x-fwd__panel h4 { margin: 0 0 8px; font: var(--type-label); color: var(--text-primary); }
+      .x-fwd__log { overflow: auto; -webkit-overflow-scrolling: touch; max-height: 420px; }
+      .x-fwd .x-fwd__log table { min-width: 100%; width: max-content; font: var(--type-caption); }
+      .x-fwd__log th, .x-fwd__log td { white-space: nowrap; padding: 6px 12px 6px 0; }
+      .x-fwd__log thead th { position: sticky; top: 0; z-index: 1; background: var(--fill-primary-on); }
+      @media (prefers-reduced-motion: reduce) { .x-fwd__chev { transition: none; } }
       @media (max-width: 599px) { .x-fwd { padding: 16px; border-radius: var(--r-m); } }
     </style>
   </head>
@@ -862,6 +877,7 @@
             <p class="fineprint x-fwd__meta" id="x-fwd-status" role="status">Live results load on the published site.</p>
           </div>
           <div class="x-fwd">
+            <p class="fineprint x-fwd__hint" id="x-fwd-hint" hidden>Tap a test to see every trade so far.</p>
             <table>
               <thead><tr><th scope="col">Test</th><th scope="col">What it trades</th><th scope="col">Started</th><th scope="col">Trades</th><th scope="col">Win rate</th><th scope="col">Result so far</th><th scope="col">Last trade</th><th scope="col">Backtest pace</th><th scope="col">Note</th></tr></thead>
               <tbody id="x-fwd-body">
@@ -1053,16 +1069,103 @@
           tr.appendChild(el("td", t.note || "–", "muted"));
           return tr;
         }
+        function tint(text) {
+          var s = str(text);
+          if (s.length < 2) return "";
+          var c = s.charAt(0);
+          return c === "+" ? "x-up" : c === "\u2212" || c === "-" ? "x-down" : "";
+        }
+        function logTable(cols, rows) {
+          var wrap = el("div", "", "x-fwd__log");
+          var table = document.createElement("table");
+          var head = document.createElement("tr");
+          (cols || []).forEach(function (c) { var th = el("th", c); th.setAttribute("scope", "col"); head.appendChild(th); });
+          var thead = document.createElement("thead");
+          thead.appendChild(head);
+          table.appendChild(thead);
+          var tb = document.createElement("tbody");
+          rows.forEach(function (r) {
+            var tr = document.createElement("tr");
+            (Array.isArray(r) ? r : []).forEach(function (v) { tr.appendChild(el("td", v, tint(v))); });
+            tb.appendChild(tr);
+          });
+          table.appendChild(tb);
+          wrap.appendChild(table);
+          return wrap;
+        }
+        function detail(t, span) {
+          var tr = document.createElement("tr");
+          tr.className = "x-fwd__detail";
+          var td = document.createElement("td");
+          td.colSpan = span;
+          var panel = el("div", "", "x-fwd__panel");
+          var text = [t.what, t.data, t.note].map(str).filter(function (s) { return s && s !== "–"; }).map(function (s) { return /[.!?]$/.test(s) ? s : s + "."; }).join(" ");
+          if (text) panel.appendChild(el("p", text));
+          var log = t.log && typeof t.log === "object" ? t.log : {};
+          var rows = Array.isArray(log.rows) ? log.rows : [];
+          if (!rows.length) panel.appendChild(el("p", "No trades in the record yet."));
+          else panel.appendChild(logTable(log.columns, rows));
+          [log.extra, log.extra2].forEach(function (x) {
+            if (!x || typeof x !== "object") return;
+            var box = document.createElement("div");
+            if (str(x.title)) box.appendChild(el("h4", x.title));
+            var xr = Array.isArray(x.rows) ? x.rows : [];
+            box.appendChild(xr.length ? logTable(x.columns, xr) : el("p", "No trades in the record yet."));
+            panel.appendChild(box);
+          });
+          td.appendChild(panel);
+          tr.appendChild(td);
+          return tr;
+        }
+        function expandable(tr, t) {
+          var span = tr.children.length;
+          var open = null;
+          tr.classList.add("x-fwd__row");
+          tr.setAttribute("role", "button");
+          tr.setAttribute("tabindex", "0");
+          tr.setAttribute("aria-expanded", "false");
+          var chev = el("span", "", "x-fwd__chev");
+          chev.setAttribute("aria-hidden", "true");
+          tr.firstChild.insertBefore(chev, tr.firstChild.firstChild);
+          function toggle() {
+            if (open) {
+              open.parentNode.removeChild(open);
+              open = null;
+              tr.setAttribute("aria-expanded", "false");
+            } else {
+              open = detail(t, span);
+              tr.parentNode.insertBefore(open, tr.nextSibling);
+              tr.setAttribute("aria-expanded", "true");
+            }
+          }
+          tr.addEventListener("click", toggle);
+          tr.addEventListener("keydown", function (e) {
+            if (e.target !== tr) return;
+            if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") { e.preventDefault(); toggle(); }
+          });
+          return tr;
+        }
+        var box = body.closest ? body.closest(".x-fwd") : null;
+        function fit() {
+          if (!box) return;
+          var cs = getComputedStyle(box);
+          var w = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+          box.style.setProperty("--x-fwd-w", Math.max(0, w) + "px");
+        }
+        fit();
+        if (window.ResizeObserver && box) new ResizeObserver(fit).observe(box);
+        else window.addEventListener("resize", fit);
         fetch("forward.json", { cache: "no-store" })
           .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
           .then(function (d) {
             if (!d || !Array.isArray(d.tests) || !d.tests.length) throw new Error("empty");
             var frag = document.createDocumentFragment();
-            d.tests.forEach(function (t) { if (t && typeof t === "object") frag.appendChild(row(t)); });
+            d.tests.forEach(function (t) { if (t && typeof t === "object") frag.appendChild(expandable(row(t), t)); });
             while (body.firstChild) body.removeChild(body.firstChild);
             body.appendChild(frag);
             updated.textContent = fmtDate(d.updated);
             status.hidden = true;
+            document.getElementById("x-fwd-hint").hidden = false;
           })
           .catch(function () {
             status.hidden = false;
