@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>190 Trading Strategies, Honestly Tested</title>
+    <title>202 Trading Strategies, Honestly Tested</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -72,9 +72,9 @@
         <section class="hero">
           <div class="hero__copy">
             <p class="hero__eyebrow">Jennifer Hsieh, PhD · systematic trading research</p>
-            <h1>190 Trading Strategies, Honestly Tested</h1>
+            <h1>202 Trading Strategies, Honestly Tested</h1>
             <p class="hero__sub">YouTube strategies, book setups, chart patterns and indicators, run with real costs, settings picked only on 2016–2020, and a blind test on 2021–2026. Most fail. Know that before you spend months on one.</p>
-            <p class="hero__meta">190 tests · costs included · Benjamini-Hochberg false-discovery correction · updated Oct 29 2026</p>
+            <p class="hero__meta">202 tests · costs included · Benjamini-Hochberg false-discovery correction · updated Nov 7 2026</p>
           </div>
           <aside class="callout" aria-label="Next step">
             <p class="callout__head"><span class="hark-mark" data-size="16"></span> Next step</p>
@@ -87,22 +87,22 @@
         <section class="section" id="scorecard" data-nav="Scorecard">
           <div class="head">
             <p class="head__eyebrow">Scorecard</p>
-            <h2>Of 190 tests, 12 passed and 118 failed.</h2>
+            <h2>Of 202 tests, 12 passed and 129 failed.</h2>
           </div>
           <section class="stats">
-            <div class="stat"><span class="stat__fig">190</span><span class="stat__label">Tests</span></div>
+            <div class="stat"><span class="stat__fig">202</span><span class="stat__label">Tests</span></div>
             <div class="stat"><span class="stat__fig">12</span><span class="stat__label">Pass</span></div>
-            <div class="stat"><span class="stat__fig">51</span><span class="stat__label">Weak</span></div>
-            <div class="stat"><span class="stat__fig">118</span><span class="stat__label">Fail</span></div>
+            <div class="stat"><span class="stat__fig">52</span><span class="stat__label">Weak</span></div>
+            <div class="stat"><span class="stat__fig">129</span><span class="stat__label">Fail</span></div>
             <div class="stat"><span class="stat__fig">9</span><span class="stat__label">Inconclusive</span></div>
           </section>
-          <p class="fineprint"><b>PASS</b> holds in-sample and out-of-sample after costs and is useful. <b>WEAK</b> is positive but small, fragile, or below buy-and-hold. <b>FAIL</b> has no edge out-of-sample after costs. <b>INCONCLUSIVE</b> means not enough data, rules not disclosed, or not testable as specified. None of the 55 tests added since Oct 24 passed. Of the 12 passes, 5 are small-cap short setups that can't be traded in a long-only cash account, and 1 is a sizing overlay that only matters with leverage.</p>
+          <p class="fineprint"><b>PASS</b> holds in-sample and out-of-sample after costs and is useful. <b>WEAK</b> is positive but small, fragile, or below buy-and-hold. <b>FAIL</b> has no edge out-of-sample after costs. <b>INCONCLUSIVE</b> means not enough data, rules not disclosed, or not testable as specified. None of the 67 tests added since Oct 24 passed. Of the 12 passes, 5 are small-cap short setups that can't be traded in a long-only cash account, and 1 is a sizing overlay that only matters with leverage.</p>
         </section>
 
         <section class="section" id="takeaways" data-nav="Takeaways">
           <div class="head">
             <p class="head__eyebrow">Key takeaways</p>
-            <h2>What 190 tests say about popular setups.</h2>
+            <h2>What 202 tests say about popular setups.</h2>
           </div>
           <div class="cards">
             <div>
@@ -197,7 +197,7 @@
         <section class="section" id="results" data-nav="Results">
           <div class="head">
             <p class="head__eyebrow">Full results</p>
-            <h2>All 190 tests, in 25 areas.</h2>
+            <h2>All 202 tests, in 28 areas.</h2>
             <p class="head__sub">Open an area for its tests and why each verdict. "→" reads in-sample → out-of-sample.</p>
           </div>
           <div class="x-search" role="search">
@@ -232,6 +232,9 @@
             <li><a href="#r23">3.23 RSI regime / multi-timeframe <b>0 pass</b></a></li>
             <li><a href="#r24">3.24 Classic chart patterns <b>0 pass</b></a></li>
             <li><a href="#r25">3.25 News-driven 1-min spikes <b>0 pass</b></a></li>
+            <li><a href="#r26">3.26 NQ/ES open and auction setups <b>0 pass</b></a></li>
+            <li><a href="#r27">3.27 ETF crash entries and trend <b>0 pass</b></a></li>
+            <li><a href="#r28">3.28 Lead-lag and pairs <b>0 pass</b></a></li>
           </ol>
           <div class="x-tools">
             <button class="btn" type="button" id="x-open">Open all</button>
@@ -862,6 +865,66 @@
               </div>
             </div>
           </details>
+
+          <details class="x-acc" id="r26">
+            <summary><span><span class="x-acc__title">3.26 NQ/ES open and auction setups from YouTube (Nov 4–7)</span><span class="x-acc__count">4 tests · 1 weak · 3 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Four video setups on real NQ/ES futures, chosen on 2016–2020 and checked blind on 2021–2026 with costs and Benjamini-Hochberg across variants. Discretion filters, open-manipulation sweeps and B-shape profiles find nothing. The Harry Sharp entry is the one lead: its edge is all out-of-sample and the variant was picked after seeing results, so it goes to a paper forward test, not a pass. "Per MNQ" means per micro Nasdaq futures contract.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">FA1 Initial-balance failed-auction discretion filters: candle body, close location, volume, choppy days, supply/demand zones (402 variants)<small>NQ/ES futures · YouTube LfSeAMzKjwM</small></th><td>≈ 9 (best)</td><td></td><td>best NQ OOS +$172/yr per MNQ (t 1.4)</td><td></td><td></td><td class="muted">0/402 pass BH</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">FA2 LuxAlgo 10:00 ET open manipulation + prior-session/overnight high-low sweep bias (256 variants)<small>real NQ/ES 1-min · YouTube Du_dcXjVeKs</small></th><td></td><td></td><td>NQ IS pick OOS −$931/yr per MNQ; ES negative OOS in every variant</td><td></td><td></td><td class="muted">sweep bias no better than the base up/down rate; 0/256 pass BH</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">FA3 Double-distribution (B-shape) volume profile (64 variants)<small>real NQ/ES · YouTube GEYpdjzUwEc</small></th><td></td><td>47%</td><td>median OOS −0.13R</td><td></td><td></td><td class="muted">0/64 pass BH (min q 0.82)</td><td class="num">FAIL</td></tr>
+                    <tr class="is-highlight"><th scope="row">FA4 Harry Sharp "story/zone" NY-open setup: daily + 4-hour bias; breakout, pullback, re-break at the 09:30–10:30 ET open, 1R target<small>NQ · YouTube Rk2G9E7axXw</small></th><td></td><td>68.5% (2021–26)</td><td>net per MNQ +0.01R → +0.29R</td><td>OOS ≈ $3.2k/yr per MNQ</td><td>≈ −$1k</td><td class="muted">bias alone a coin flip (FAIL); variant chosen after seeing results and all net edge is OOS, so a lead, not a pass</td><td class="num">WEAK<small>promising; paper test from Nov 9 2026</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r27">
+            <summary><span><span class="x-acc__title">3.27 ETF crash-bottom entries and trend following (Nov 4–7)</span><span class="x-acc__count">5 tests · 5 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>Ways to buy XSD/SMH/ICLN/QQQ-type ETFs after a crash, and long-only trend following, all against buy-and-hold at 13.4% a year with a −34% drawdown out-of-sample. None beats it after Benjamini-Hochberg. Staging in with a breadth gate matches buy-and-hold's Sharpe while sitting idle almost half the time, a weak lead only. A cash reserve behaves like a static stock/cash mix, and trend following cuts drawdowns but not much else.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">EC1 Crash-bottom confirmation entries: buy at crash close, staged thirds, staged + breadth gate, DCA after the crash (240 variants)<small>XSD/SMH/ICLN/QQQ-type ETFs</small></th><td></td><td></td><td></td><td>OOS: crash close 2.6%; staged 8.1%; staged + breadth 8.7% (Sh 0.63 vs B&amp;H 0.61); DCA 7.4%</td><td>B&amp;H −34%</td><td class="muted">staged + breadth idle 47% of the time; B&amp;H 13.4%; 0/240 pass BH</td><td class="num">FAIL<small>weak lead: breadth-gated staged entry</small></td></tr>
+                    <tr><th scope="row">EC2 Crash all-in with breadth gate (60 variants)<small>XSD/SMH/ICLN/QQQ-type ETFs</small></th><td></td><td></td><td></td><td>IS pick OOS 2.1%; best like-for-like 10.1%</td><td>−27% (B&amp;H −34%)</td><td class="muted">B&amp;H 13.4%; 0/60 pass BH</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">EC3 Wait for another −10% after the crash signal (limit entry)<small>XSD/SMH/ICLN/QQQ-type ETFs</small></th><td>fills 21% → 60% of signals</td><td></td><td>per signal 25.4% vs 23.9% buying at the signal</td><td></td><td></td><td class="muted">slight OOS edge that reverses in-sample</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">EC4 Cash reserve (10/20/30% in T-bills) deployed on crash signals (225 variants)<small>XSD/SMH/ICLN/QQQ-type ETFs</small></th><td></td><td></td><td></td><td>6 of 225 beat B&amp;H</td><td></td><td class="muted">same as a static stock/cash mix of that size; 200-day MA timing for comparison 11.9%, −23% DD, Sh 0.70 vs B&amp;H 13.4% / −34%; 0/225 pass BH</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">EC5 Long-only multi-asset trend following (16- and 10-ETF sets)<small>ETFs 2007–2026</small></th><td></td><td>26–48%</td><td>winners 2–5x losers</td><td>OOS 1.6–7.0% vs SPY 13.7%; IS pick (200-day MA, inverse-vol) 3.8%</td><td>−10% (IS pick)</td><td class="muted">longest underwater 32 months; 0 pass BH; useful only to cut drawdowns</td><td class="num">FAIL<small>as a return engine</small></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="x-acc" id="r28">
+            <summary><span><span class="x-acc__title">3.28 Lead-lag and pairs trading (Nov 4–7)</span><span class="x-acc__count">3 tests · 3 fail</span></span></summary>
+            <div class="x-acc__body">
+              <div class="prose">
+                <p>The congress-trades ETF doesn't lag the index; its intraday "lag" is stale prints. Supply-chain lead-lag fades out-of-sample and carries look-ahead bias. Cointegrated pairs picked in-sample lose heavily out-of-sample, because most pairs stop being cointegrated within the month.</p>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th scope="col">Test</th><th scope="col">Tr/yr</th><th scope="col">Win %</th><th scope="col">Avg / trade</th><th scope="col">CAGR</th><th scope="col">Max DD</th><th scope="col">IS → OOS</th><th scope="col">Verdict</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">LG1 NANC (congress-trades ETF) lag vs SPY/QQQ<small>daily and intraday</small></th><td></td><td></td><td>same-day correlation 0.96, next day −0.04</td><td></td><td></td><td class="muted">no daily lag; intraday "lag" is stale prints in a thin ETF, gone within 10 minutes</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">LG2 Customer → supplier lead-lag, monthly long/short<small>10-K supply-chain links</small></th><td></td><td></td><td>+56bp/month (t 1.6) → +6bp (t 0.2)</td><td></td><td></td><td class="muted">links mostly from 2025–26 filings (look-ahead bias); next-day carry after a customer's down day 4–7bp vs ~10bp round-trip cost</td><td class="num">FAIL</td></tr>
+                    <tr><th scope="row">LG3 Cointegration pairs (Engle-Granger, monthly refit), 5bp costs (144 variants)<small>stock and ETF pairs</small></th><td></td><td></td><td></td><td>+4.3% (Sh 0.42) → −7.6% (Sh −1.01)</td><td>−46% OOS</td><td class="muted">none positive OOS; only 47% of pairs stay cointegrated through the month; SPY OOS 15.1%; 0/144 pass BH</td><td class="num">FAIL</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </details>
           </div>
         </section>
 
@@ -895,6 +958,15 @@
           </div>
           <p class="fineprint">New tests from Nov 2 2026 run on real NQ futures prices: Yahoo NQ=F 1-min, checked against Databento (1-min return correlation 0.998).</p>
           <p class="fineprint">The RSI regime, chart-pattern and news-spike tests (3.23–3.25) made no change to the forward tests.</p>
+          <div class="aside">
+            <h3>Corrections and data checks (Nov 2026)</h3>
+            <ul class="fineprint">
+              <li>The ORB stock forward simulation now settles entry-minute stops with tick data instead of assuming the stop was hit; the ledger was replayed from Oct 21.</li>
+              <li>It now also adjusts for stock splits before computing ATR and volume filters. No past forward trade was affected.</li>
+              <li>A split audit of all daily stock backtests found no verdict changes. The data is raw (unadjusted) Alpaca bars, and every test either adjusted for splits or was unaffected.</li>
+              <li>New paper forward tests: the Harry Sharp NQ open setup (FA4, from Nov 9 2026) and an ETF crash-bottom staged-entry paper test (EC1, from the Nov 5 2026 signal).</li>
+            </ul>
+          </div>
         </section>
 
         <section class="section" id="pricing" data-nav="Pricing">
@@ -903,7 +975,7 @@
             <h2>Before you pay</h2>
           </div>
           <div class="prose">
-            <p><strong>Most strategies fail.</strong> Of the 190 tested here, only 12 (6%) passed. 51 (27%) were weak, 118 (62%) failed outright, and 9 (5%) were inconclusive.</p>
+            <p><strong>Most strategies fail.</strong> Of the 202 tested here, only 12 (6%) passed. 52 (26%) were weak, 129 (64%) failed outright, and 9 (4%) were inconclusive.</p>
             <p><strong>Check the results first.</strong> If your idea, or something very close to it, is already here, you don't need to pay. Email anyway and I'll point you to the matching test for free.</p>
             <p><strong>You're paying for an honest answer, not a pass.</strong> A failed test still saves you a prop-firm evaluation fee or a blown account.</p>
             <p><strong>Every report includes</strong> the exact rules I tested, with any vague rule and the assumption I chose flagged; win rate, average R, CAGR, max drawdown and trades per year against buy-and-hold; a blind 2021–2026 out-of-sample test with transaction costs; and, if it fails, where it broke and the closest tested idea that held up.</p>
@@ -1026,6 +1098,7 @@
         var updated = document.getElementById("x-fwd-updated");
         var status = document.getElementById("x-fwd-status");
         if (!body || !window.fetch) return;
+        if (/\.s3[.-]/.test(location.hostname) || location.protocol === "file:") return;
         function str(v) { return v === null || v === undefined ? "" : String(v); }
         function el(tag, text, cls) {
           var n = document.createElement(tag);
