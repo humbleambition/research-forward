@@ -529,6 +529,21 @@ tr.is-highlight > :last-child { box-shadow: 12px 0 var(--fill-tertiary); }
 .lb__stage:active { cursor: grabbing; }
 .lb__media { max-width: 100%; max-height: 100%; transform-origin: center; user-select: none; -webkit-user-select: none; }
 body.lb-open { overflow: hidden; }
+.lb__count { align-self: center; min-width: 3.5em; text-align: right; font: var(--type-caption); color: #A0A6B0; white-space: nowrap; }
+.lb__count:empty { display: none; }
+.lb__nav { position: absolute; top: 50%; z-index: 2; width: 44px; height: 64px; margin-top: -32px; border: 1px solid #3A404B; border-radius: 12px; background: color-mix(in srgb, #171A20 85%, transparent); color: #E8EAED; font: 400 34px/1 system-ui, sans-serif; cursor: pointer; }
+.lb__nav:hover { background: #2A2F38; }
+.lb__nav:focus-visible { outline: 2px solid #5B82F5; outline-offset: 2px; }
+.lb__nav[hidden] { display: none; }
+.lb__nav--prev { left: max(6px, env(safe-area-inset-left, 0px)); }
+.lb__nav--next { right: max(6px, env(safe-area-inset-right, 0px)); }
+.x-fwd .x-media--fwd { flex-direction: column; align-items: stretch; gap: 4px; max-width: 100%; min-height: 0; padding: 4px 4px 5px; font: var(--type-caption); }
+.x-fwd .x-media--fwd img { width: 104px; max-width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 6px; }
+.x-fwd .x-media--fwd span { padding: 0 2px; text-align: center; }
+@media (max-width: 640px) {
+  .lb__nav { width: 36px; height: 52px; margin-top: -26px; font-size: 28px; opacity: .85; }
+  .lb__title { white-space: normal; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; font: var(--type-caption); }
+}
 /* StriatumOS house theme for Hark pages. Loaded after hark.css and hark-hero.css.
    Maps Hark's dark-mode tokens to the striatumos.consulting tokens and makes dark the
    default. The theme toggle still offers Hark's light theme, which is left as it was.

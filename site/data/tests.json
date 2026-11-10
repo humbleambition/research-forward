@@ -1,6 +1,7 @@
 {
  "schema": 1,
  "updated": "Nov 7 2026",
+ "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
  "verdicts": [
@@ -712,7 +713,7 @@
    "result": "combo 5 slots $10k 14.1% → 16.4%; $50k 18.3% → 17.6%; 1 slot 19.8% → 19.8%",
    "data": "0.2 ATR/3R trades 2016-10 to 2026-10, whole shares, IBKR Tiered",
    "script": "orb_size_matrix.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -731,7 +732,7 @@
    "result": "loses IS and OOS; 73% of orders fill",
    "data": "same engine, 5 slots $10k",
    "script": "orb_stoprun.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -886,7 +887,7 @@
    "result": "Sharpe 0.97 → −0.67; accumulation and stop filters flip sign",
    "data": "US stocks > $5, $vol > $5M, incl. delisted, 10 slots $10k",
    "script": "support_accum.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -1082,7 +1083,7 @@
    "result": "decile spread +0.37% → −0.12% (paper era 1.3–1.45%); 0/60 pass FDR",
    "data": "Nasdaq calendar 2016–2026, 10 slots $10k",
    "script": "earn_quantpedia.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -1101,7 +1102,7 @@
    "result": "effect gone",
    "data": "CFD 5bp + 8%/yr financing",
    "script": "earn_quantpedia.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -1120,7 +1121,7 @@
    "result": "Sharpe 0.80 → 0.55; beats random but < SPY; free calendar lacks \"date announced\"",
    "data": "Nasdaq calendar 2016–2026",
    "script": "earn_quantpedia.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -1140,7 +1141,7 @@
    "result": "assumes the date was public 5 days ahead (unverifiable)",
    "data": "Nasdaq calendar 2016–2026",
    "script": "earn_quantpedia.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -1159,7 +1160,7 @@
    "result": "volume split flips IS → OOS; q 0.39",
    "data": "Nasdaq calendar 2016–2026",
    "script": "earn_quantpedia.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -1178,7 +1179,7 @@
    "result": "two-leg financing makes it negative",
    "data": "CFD 5bp + 8%/yr financing",
    "script": "earn_quantpedia.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -2796,7 +2797,7 @@
    "result": "trend skips cut total R in 22/22 OOS cells; VIX skip raises R/trade but total R flat (q 0.38)",
    "data": "QQQ + SPY 1-min, micro-futures costs",
    "script": "gap_trend_filter.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -2895,7 +2896,7 @@
    "result": "0/200 cells pass FDR; all 200 negative at 3bp; rank corr −0.28",
    "data": "QQQ/SPY 1-min 2016–2026",
    "script": "trend_day_long.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -2913,7 +2914,7 @@
    "result": "night carries ~60% of QQQ's return, but fees eat it",
    "data": "QQQ 1-min ETH",
    "script": "overnight_gap.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -2932,7 +2933,7 @@
    "result": "Sharpe 1.40 → 0.78; 0/34 conditions survive FDR in both periods; QQQ B&H 15.7%, rotation 22.3% OOS",
    "data": "QQQ 1-min ETH",
    "script": "overnight_gap.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -2951,7 +2952,7 @@
    "result": "positive every OOS year; DD ≈ $2–3k trailing limit; 20:00–04:00 unobserved",
    "data": "MNQ via QQQ proxy",
    "script": "overnight_gap.py, overnight_mnq_stop.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -2971,7 +2972,7 @@
    "result": "cuts OOS income 68% vs no stop, no DD saving",
    "data": "MNQ via QQQ proxy",
    "script": "overnight_mnq_stop.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -2990,7 +2991,7 @@
    "result": null,
    "data": "MNQ via QQQ proxy",
    "script": "overnight_mnq_stop.py",
-   "date": null,
+   "date": "2026-10-24",
    "cls": {
     "result": "plain"
    },
@@ -3012,7 +3013,7 @@
    "result": "close to no stop",
    "data": "MNQ via QQQ proxy",
    "script": "overnight_mnq_stop.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3032,7 +3033,7 @@
    "result": "OOS p 0.005 but q 0.24; PRE −0.3% vs random 1.8% (−56% 2000–01)",
    "data": "CBOE VIX, QQQ daily",
    "script": "contrarian.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3051,7 +3052,7 @@
    "result": "PRE 3.1% vs random 3.6%",
    "data": "SPY daily",
    "script": "contrarian.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3070,7 +3071,7 @@
    "result": "2 OOS trades; q 0.45",
    "data": "Cboe put/call",
    "script": "contrarian.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3089,7 +3090,7 @@
    "result": "below QQQ B&H",
    "data": "7-part composite",
    "script": "contrarian.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3107,7 +3108,7 @@
    "result": "collapses OOS",
    "data": "AAII survey (gap 2024-07 to 2026-05)",
    "script": "contrarian.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3123,7 +3124,7 @@
    "result": "0/1,116 overlays significant OOS",
    "data": "QQQ rotation ETFs",
    "script": "contrarian.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3139,7 +3140,7 @@
    "result": "+0.7pp OOS = noise (t 0.24)",
    "data": "QQQ rotation ETFs",
    "script": "contrarian.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3158,7 +3159,7 @@
    "result": "95x turnover a year; 0/12 beat equal-weight or QQQ after FDR",
    "data": "top-1000 US stocks incl. delisted, 3bp, $10k",
    "script": "ai_agents.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3176,7 +3177,7 @@
    "result": "2022 −24%; < QQQ 16.4% and rotation 22.9%",
    "data": "top-1000 US stocks",
    "script": "ai_agents.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3194,7 +3195,7 @@
    "result": "2025 +65% carries it; loses to rotation 4 of 6 years",
    "data": "top-1000 US stocks",
    "script": "ai_agents.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3210,7 +3211,7 @@
    "result": "equal-weight 9 ETFs 11.5%; 0/3 pass FDR",
    "data": "2016–20 train, 3bp",
    "script": "ai_agents_rl.py",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },
@@ -3226,7 +3227,7 @@
    "result": "can't backtest (training data contains the future); live records weeks long and mixed",
    "data": "literature + live 2025 benchmarks",
    "script": "literature survey",
-   "date": null,
+   "date": "2026-10-24",
    "diagram": null,
    "clip": null
   },

@@ -1,6 +1,7 @@
 /* Trading Strategy Test Results: page behaviour.
    1 theme toggle and nav highlight, 2 Results (rendered from tests.json), 3 search,
-   4 Forward tests (rendered from forward.json), 5 diagram/clip lightbox. No libraries. */
+   4 Forward tests (rendered from forward.json; galleries from the inlined fwd-media JSON),
+   5 lightbox gallery (diagrams, clips; arrows / swipe to switch, zoom and pan). No libraries. */
 (function () {
   "use strict";
   var doc = document, root = doc.documentElement;
@@ -235,6 +236,7 @@
     var th = el("th", str(t.name) + (retired ? " (retired)" : ""));
     th.setAttribute("scope", "row");
     small(th, t.code);
+    fwdThumb(th, t);
     tr.appendChild(th);
     var what = el("td", t.what || "–"); small(what, t.data); tr.appendChild(what);
     tr.appendChild(el("td", t.started || "–", "rowhead"));
@@ -250,6 +252,23 @@
     tr.appendChild(el("td", t.backtest_pace || "–", "num"));
     tr.appendChild(el("td", t.note || "–", "muted"));
     return tr;
+  }
+  var FWD_MEDIA = {};
+  try { FWD_MEDIA = (JSON.parse(($("fwd-media") || {}).textContent || "{}").tests) || {}; } catch (e) { FWD_MEDIA = {}; }
+  function fwdThumb(th, t) {
+    var g = FWD_MEDIA[t.id];
+    if (!g || !g.items || !g.items.length) return;
+    var first = g.items[0], hasClip = g.items.some(function (i) { return i.kind === "clip"; });
+    var b = el("button", "", "x-media x-media--fwd");
+    b.type = "button";
+    b.setAttribute("data-fwd", t.id);
+    b.setAttribute("aria-label", "Example diagrams for " + str(t.name) + " (" + g.items.length + ", opens full screen)");
+    var im = doc.createElement("img");
+    im.src = first.thumb || first.poster || ""; im.alt = ""; im.loading = "lazy"; im.decoding = "async";
+    b.appendChild(im);
+    var n = g.items.length;
+    b.appendChild(el("span", (n > 1 ? n + " views" : "Rules") + (hasClip ? " ▶" : "")));
+    var row = el("span", "", "x-media-row"); row.appendChild(b); th.appendChild(row);
   }
   function logTable(cols, rows) {
     var wrap = el("div", "", "x-fwd__log"), table = doc.createElement("table");
@@ -342,26 +361,43 @@
     apply();
   }
   function reset() { view = { s: 1, x: 0, y: 0 }; apply(); }
-  function openLb(t, kind) {
-    var src = kind === "clip" ? t.clip : t.diagram;
-    lastFocus = doc.activeElement;
+  var gal = { items: [], i: 0, title: "" }, lbCount = $("lb-count"), lbPrev = $("lb-prev"), lbNext = $("lb-next");
+  function showItem(i) {
+    var n = gal.items.length; gal.i = (i + n) % n;
+    var it = gal.items[gal.i];
+    if (media && media.pause) media.pause();
     stage.textContent = "";
-    if (/\.(mp4|webm)$/i.test(src)) {
+    if (/\.(mp4|webm)$/i.test(it.src)) {
       media = doc.createElement("video");
-      media.src = src; media.controls = true; media.autoplay = true; media.muted = true; media.loop = true;
+      media.src = it.src; media.controls = true; media.autoplay = true; media.muted = true; media.loop = true;
+      if (it.poster) media.poster = it.poster;
       media.setAttribute("playsinline", "");
     } else {
       media = doc.createElement("img");
-      media.src = src; media.alt = (kind === "clip" ? "Clip" : "Diagram") + " for " + t.id + " " + t.name;
+      media.src = it.src; media.alt = it.label + " — " + gal.title;
       media.draggable = false;
     }
     media.className = "lb__media";
     stage.appendChild(media);
-    lbTitle.textContent = t.id + " · " + t.name;
+    lbTitle.textContent = gal.title + (it.label ? " · " + it.label : "");
+    lbCount.textContent = n > 1 ? (gal.i + 1) + " / " + n : "";
+    lbPrev.hidden = lbNext.hidden = n < 2;
     reset();
+  }
+  function openGallery(items, i, title) {
+    if (!items.length) return;
+    lastFocus = doc.activeElement;
+    gal = { items: items, i: 0, title: title };
+    showItem(i || 0);
     lb.hidden = false;
     doc.body.classList.add("lb-open");
     lb.querySelector('[data-lb="close"]').focus();
+  }
+  function testItems(t) {
+    var it = [];
+    if (t.diagram) it.push({ kind: "diagram", src: t.diagram, label: "Diagram" });
+    if (t.clip) it.push({ kind: "clip", src: t.clip, label: "Clip" });
+    return it;
   }
   function closeLb() {
     if (lb.hidden) return;
@@ -372,14 +408,28 @@
   }
   doc.addEventListener("click", function (e) {
     var b = e.target.closest && e.target.closest(".x-media[data-test]");
-    if (b && testsById[b.getAttribute("data-test")]) openLb(testsById[b.getAttribute("data-test")], b.getAttribute("data-kind"));
-  });
+    if (b && testsById[b.getAttribute("data-test")]) {
+      var t = testsById[b.getAttribute("data-test")], items = testItems(t);
+      var k = b.getAttribute("data-kind"), i = 0;
+      items.forEach(function (x, j) { if (x.kind === k) i = j; });
+      openGallery(items, i, t.id + " · " + t.name);
+      return;
+    }
+    var f = e.target.closest && e.target.closest(".x-media[data-fwd]");
+    if (f) {
+      e.stopPropagation();            /* don't toggle the row's trade log */
+      var g = FWD_MEDIA[f.getAttribute("data-fwd")];
+      if (g) openGallery(g.items, 0, g.title || "");
+    }
+  }, true);
   lb.addEventListener("click", function (e) {
     var act = e.target.getAttribute && e.target.getAttribute("data-lb");
-    if (act === "close" || e.target === stage && view.s === 1) closeLb();
+    if (act === "close" || e.target === stage && view.s === 1 && Date.now() - swiped > 400) closeLb();
     else if (act === "in") zoomAt(1.5);
     else if (act === "out") zoomAt(1 / 1.5);
     else if (act === "reset") reset();
+    else if (act === "prev") showItem(gal.i - 1);
+    else if (act === "next") showItem(gal.i + 1);
   });
   lb.addEventListener("keydown", function (e) {
     var k = e.key;
@@ -387,6 +437,9 @@
     else if (k === "+" || k === "=") zoomAt(1.25);
     else if (k === "-" || k === "_") zoomAt(0.8);
     else if (k === "0") reset();
+    else if ((k === "ArrowLeft" || k === "ArrowRight") && view.s === 1 && gal.items.length > 1) {
+      e.preventDefault(); showItem(gal.i + (k === "ArrowLeft" ? -1 : 1));
+    }
     else if (/^Arrow/.test(k) && view.s > 1) {
       e.preventDefault();
       var d = 40;
@@ -402,7 +455,9 @@
   });
   stage.addEventListener("wheel", function (e) { e.preventDefault(); zoomAt(e.deltaY < 0 ? 1.15 : 1 / 1.15, e.clientX, e.clientY); }, { passive: false });
   stage.addEventListener("dblclick", function (e) { if (view.s > 1) reset(); else zoomAt(2.5, e.clientX, e.clientY); });
+  var swipe = null, swiped = 0;
   stage.addEventListener("pointerdown", function (e) {
+    swipe = view.s === 1 && e.isPrimary ? { x: e.clientX, y: e.clientY } : null;
     if (!media || media.tagName === "VIDEO" && view.s === 1) return;
     stage.setPointerCapture(e.pointerId);
     pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
@@ -421,7 +476,13 @@
       zoomAt(pinch.s * Math.hypot(a.x - b.x, a.y - b.y) / pinch.d / view.s, (a.x + b.x) / 2, (a.y + b.y) / 2);
     } else if (drag && view.s > 1) { view.x = e.clientX - drag.x; view.y = e.clientY - drag.y; apply(); }
   });
-  function up(e) { delete pointers[e.pointerId]; if (Object.keys(pointers).length < 2) pinch = null; if (!Object.keys(pointers).length) drag = null; }
+  function up(e) {
+    if (swipe && e.type === "pointerup" && view.s === 1 && gal.items.length > 1) {
+      var dx = e.clientX - swipe.x, dy = e.clientY - swipe.y;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > 1.5 * Math.abs(dy)) { showItem(gal.i + (dx < 0 ? 1 : -1)); swiped = Date.now(); }
+    }
+    swipe = null;
+    delete pointers[e.pointerId]; if (Object.keys(pointers).length < 2) pinch = null; if (!Object.keys(pointers).length) drag = null; }
   stage.addEventListener("pointerup", up);
   stage.addEventListener("pointercancel", up);
 
