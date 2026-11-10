@@ -7,5 +7,5 @@ SRC="$HOME/research-forward-src"
 DEST="$HOME/striatum/site/research"
 git -C "$SRC" pull -q --ff-only
 mkdir -p "$DEST"
-find "$SRC/site" -maxdepth 1 -type f -exec cp -f {} "$DEST/" \;
+cp -Rf "$SRC/site/." "$DEST/"   # recursive since Nov 10 2026: the site now has assets/, data/, media/ subfolders
 echo "$(date -Is) research updated ($(git -C "$SRC" rev-parse --short HEAD))"
