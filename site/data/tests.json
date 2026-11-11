@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 7 2026",
+ "updated": "Nov 11 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -453,6 +453,24 @@
    "data": "2016–2026",
    "script": "trend_atr.py",
    "date": null,
+   "diagram": null,
+   "clip": null
+  },
+  {
+   "id": "TUR1",
+   "name": "Turtle 20-day breakout, SPY/QQQ/GLD/SLV/BTC (video H_w4c63UF2c)",
+   "area": "r1",
+   "verdict": "WEAK",
+   "stats": {
+    "tr_yr": "~35",
+    "win": "41%",
+    "cagr": "+27.1% (Sh 0.89)",
+    "max_dd": "−41.7%"
+   },
+   "result": "Video sizing (2% risk, up to 4x leverage): OOS 27.1%/−41.7%, matches claim; per-trade no better than random entries (p 0.29). Cash 1x: OOS 16.4%/−24.7% (3-ATR stop 21.4%/−19.6%) vs equal-weight B&H 19.3%/−35.6%. Flat-at-16:30 version hurts on real NQ/ES futures.",
+   "data": "Alpaca daily ETFs + yfinance BTC 2016–2026; Databento NQ/ES 1-min",
+   "script": "turtle.py",
+   "date": "2026-11-11",
    "diagram": null,
    "clip": null
   },
@@ -3747,6 +3765,22 @@
    "script": null,
    "date": "2026-11-04",
    "highlight": true,
+   "diagram": null,
+   "clip": null
+  },
+  {
+   "id": "OF6F",
+   "name": "Fabervaale OF6 vs plain FVG and strong-candle pullbacks (NQ 2016–26, stocks in play)",
+   "area": "r26",
+   "verdict": "FAIL",
+   "stats": {
+    "win": "31%",
+    "avg": "−0.05R OOS (OF6 no delta)"
+   },
+   "result": "Same entry/stop/3R for all. The low-volume (effort vs result) filter makes it worse, not better; delta adds nothing; FVG zones are worst. NQ 2016–20 all negative; any-strong-candle version positive only since 2021 (post-hoc). Stocks: all negative.",
+   "data": "Databento NQ 1-min 2016–2026 (+aggressor delta Mar–Oct 2026); Alpaca 1-min stocks in play",
+   "script": "of6_vs_fvg.py",
+   "date": "2026-11-11",
    "diagram": null,
    "clip": null
   },

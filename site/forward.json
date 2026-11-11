@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T20:04:03-03:00",
+ "updated": "2026-11-11T20:05:05-03:00",
  "tests": [
   {
    "id": "orb_rotation",
@@ -8,15 +8,15 @@
    "what": "$10k: 50% stocks-in-play ORB (5 slots, 0.2 ATR stop, 3R), 50% QQQ rotation",
    "data": "Alpaca SIP, 1 day behind; IBKR Tiered fees + 1bp",
    "started": "Oct 21 2026",
-   "unit": "account $9,538.36",
-   "trades": 57,
-   "wins": 17,
-   "win_rate": 29.8,
-   "cum": -4.62,
-   "cum_label": "−4.62%",
+   "unit": "account $9,647.58",
+   "trades": 62,
+   "wins": 20,
+   "win_rate": 32.3,
+   "cum": -3.52,
+   "cum_label": "−3.52%",
    "last_trade": {
-    "date": "2026-11-09",
-    "result": "NVDA close +$15.97"
+    "date": "2026-11-11",
+    "result": "GO stop −$11.66"
    },
    "backtest_pace": "combo +15.3%/yr at $10k; ORB win ≈30%",
    "status": "running",
@@ -37,6 +37,76 @@
      "P&L"
     ],
     "rows": [
+     [
+      "2026-11-11",
+      "GO",
+      "09:44",
+      "13.02",
+      "12.88",
+      "13.43",
+      "10:02",
+      "12.88",
+      "stop",
+      "−1.00R",
+      "75",
+      "−$11.66"
+     ],
+     [
+      "2026-11-11",
+      "ERAS",
+      "09:41",
+      "15.99",
+      "15.77",
+      "16.64",
+      "10:01",
+      "16.64",
+      "target",
+      "+3.00R",
+      "61",
+      "+$38.52"
+     ],
+     [
+      "2026-11-11",
+      "GMRS",
+      "09:38",
+      "10.84",
+      "10.68",
+      "11.30",
+      "10:48",
+      "11.30",
+      "target",
+      "+3.00R",
+      "90",
+      "+$40.70"
+     ],
+     [
+      "2026-11-11",
+      "PPC",
+      "09:37",
+      "28.11",
+      "27.86",
+      "28.86",
+      "10:03",
+      "27.82",
+      "stop",
+      "−1.17R",
+      "35",
+      "−$11.34"
+     ],
+     [
+      "2026-11-11",
+      "CNM",
+      "09:35",
+      "45.35",
+      "44.99",
+      "46.42",
+      "14:22",
+      "46.41",
+      "target",
+      "+3.00R",
+      "21",
+      "+$21.40"
+     ],
      [
       "2026-11-09",
       "NVDA",
@@ -847,6 +917,13 @@
      ],
      "rows": [
       [
+       "2026-11-11",
+       "5",
+       "158 UUP",
+       "$9,647.58",
+       "−3.52%"
+      ],
+      [
        "2026-11-10",
        "0",
        "158 UUP",
@@ -1000,13 +1077,13 @@
    "data": "Rebuilt nightly from fwd/ code",
    "started": "Oct 21 2026",
    "unit": "% since start, best / worst cell",
-   "trades": 387,
-   "wins": 90,
-   "win_rate": 23.3,
-   "cum": -4.88,
-   "cum_label": "best 3s/$10k −4.88% · worst 1s/$50k −6.46%",
+   "trades": 420,
+   "wins": 111,
+   "win_rate": 26.4,
+   "cum": -3.71,
+   "cum_label": "best 3s/$10k −3.71% · worst 1s/$50k −5.04%",
    "last_trade": {
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "result": "12 cells marked"
    },
    "backtest_pace": "combo 15.3–17.8%/yr ($10k→$50k)",
@@ -1024,86 +1101,86 @@
      [
       "1",
       "$10,000",
-      "$9,403.75",
-      "−5.96%",
-      "$46.29"
+      "$9,545.12",
+      "−4.55%",
+      "$47.80"
      ],
      [
       "1",
       "$20,000",
-      "$18,745.94",
-      "−6.27%",
-      "$90.53"
+      "$19,028.49",
+      "−4.86%",
+      "$93.55"
      ],
      [
       "1",
       "$50,000",
-      "$46,770.98",
-      "−6.46%",
-      "$223.82"
+      "$47,477.90",
+      "−5.04%",
+      "$231.37"
      ],
      [
       "2",
       "$10,000",
-      "$9,505.05",
-      "−4.95%",
-      "$40.35"
+      "$9,564.90",
+      "−4.35%",
+      "$42.74"
      ],
      [
       "2",
       "$20,000",
-      "$18,990.90",
-      "−5.05%",
-      "$71.56"
+      "$19,112.38",
+      "−4.44%",
+      "$75.51"
      ],
      [
       "2",
       "$50,000",
-      "$47,442.11",
-      "−5.12%",
-      "$169.77"
+      "$47,746.09",
+      "−4.51%",
+      "$179.67"
      ],
      [
       "3",
       "$10,000",
-      "$9,511.50",
-      "−4.88%",
-      "$43.55"
+      "$9,629.18",
+      "−3.71%",
+      "$47.65"
      ],
      [
       "3",
       "$20,000",
-      "$19,010.48",
-      "−4.95%",
-      "$68.56"
+      "$19,248.08",
+      "−3.76%",
+      "$75.48"
      ],
      [
       "3",
       "$50,000",
-      "$47,499.64",
-      "−5.00%",
-      "$154.81"
+      "$48,095.19",
+      "−3.81%",
+      "$171.61"
      ],
      [
       "5",
       "$10,000",
-      "$9,462.53",
-      "−5.37%",
-      "$54.17"
+      "$9,571.09",
+      "−4.29%",
+      "$59.55"
      ],
      [
       "5",
       "$20,000",
-      "$18,885.30",
-      "−5.57%",
-      "$71.32"
+      "$19,105.15",
+      "−4.47%",
+      "$79.65"
      ],
      [
       "5",
       "$50,000",
-      "$47,149.18",
-      "−5.70%",
-      "$138.81"
+      "$47,702.79",
+      "−4.59%",
+      "$158.10"
      ]
     ]
    }
@@ -1116,18 +1193,18 @@
    "data": "Alpaca SIP 1-min; signals only",
    "started": "Oct 21 2026",
    "unit": "R net per micro · $ per 1 MNQ",
-   "trades": 1,
+   "trades": 2,
    "wins": 1,
-   "win_rate": 100.0,
-   "cum": 0.72,
-   "cum_label": "+0.72R · +$163/MNQ",
+   "win_rate": 50.0,
+   "cum": -0.29,
+   "cum_label": "−0.29R · −$126/MNQ",
    "last_trade": {
-    "date": "2026-10-28",
-    "result": "target +0.72R"
+    "date": "2026-11-11",
+    "result": "stop −1.01R"
    },
    "backtest_pace": "≈ +0.16R/trade, ~52/yr (QQQ OOS)",
    "status": "running",
-   "note": "15 sessions so far. 1 of ~1,300 variants: selection-bias risk.",
+   "note": "16 sessions so far. 1 of ~1,300 variants: selection-bias risk.",
    "log": {
     "columns": [
      "Date",
@@ -1142,6 +1219,18 @@
      "$ / micro"
     ],
     "rows": [
+     [
+      "2026-11-11",
+      "09:35",
+      "686.19",
+      "689.69",
+      "674.50",
+      "10:48",
+      "689.69",
+      "stop",
+      "−1.01R",
+      "−$289"
+     ],
      [
       "2026-10-28",
       "09:45",
@@ -1165,18 +1254,18 @@
    "data": "Alpaca SIP 1-min; signals only",
    "started": "Oct 21 2026",
    "unit": "R net per micro · $ per 1 MES",
-   "trades": 2,
+   "trades": 3,
    "wins": 1,
-   "win_rate": 50.0,
-   "cum": -0.4,
-   "cum_label": "−0.40R · −$42/MES",
+   "win_rate": 33.3,
+   "cum": -1.42,
+   "cum_label": "−1.42R · −$171/MES",
    "last_trade": {
-    "date": "2026-11-04",
-    "result": "stop −1.03R"
+    "date": "2026-11-11",
+    "result": "stop −1.02R"
    },
    "backtest_pace": "+0.21R OOS (−0.03R IS)",
    "status": "running",
-   "note": "15 sessions so far. 1 of ~1,300 variants: selection-bias risk. SPY added at Jen's request.",
+   "note": "16 sessions so far. 1 of ~1,300 variants: selection-bias risk. SPY added at Jen's request.",
    "log": {
     "columns": [
      "Date",
@@ -1191,6 +1280,18 @@
      "$ / micro"
     ],
     "rows": [
+     [
+      "2026-11-11",
+      "09:36",
+      "755.90",
+      "758.43",
+      "749.78",
+      "10:56",
+      "758.43",
+      "stop",
+      "−1.02R",
+      "−$129"
+     ],
      [
       "2026-11-04",
       "09:33",
@@ -1350,7 +1451,7 @@
    },
    "backtest_pace": "+$823/yr per MNQ (OOS, t 1.5)",
    "status": "running",
-   "note": "9 sessions. Backtest win ≈43%; real-NQ re-run weaker (+$181/yr). Expect flat stretches.",
+   "note": "10 sessions. Backtest win ≈43%; real-NQ re-run weaker (+$181/yr). Expect flat stretches.",
    "log": {
     "columns": [
      "Date",
@@ -1445,12 +1546,15 @@
    "data": "Yahoo NQ=F 1-min; $6 RT per MNQ",
    "started": "Nov 2 2026",
    "unit": "$ per 1 MNQ, net",
-   "trades": 0,
+   "trades": 1,
    "wins": 0,
-   "win_rate": null,
-   "cum": 0,
-   "cum_label": "$0",
-   "last_trade": null,
+   "win_rate": 0.0,
+   "cum": -300.86,
+   "cum_label": "−$301",
+   "last_trade": {
+    "date": "2026-11-11",
+    "result": "stop −$301"
+   },
    "backtest_pace": "+$1.1k/yr per MNQ (t 2.1)",
    "status": "running",
    "note": "Oct backfill: 3 trades −$264/MNQ. Record from Nov 2.",
@@ -1469,6 +1573,19 @@
      "Period"
     ],
     "rows": [
+     [
+      "2026-11-11",
+      "Short",
+      "09:36",
+      "28,306.25",
+      "28,453.68",
+      "27,823.75",
+      "10:48",
+      "28,453.68",
+      "stop",
+      "−$301",
+      "record"
+     ],
      [
       "2026-10-28",
       "Short",
@@ -1519,11 +1636,11 @@
    "data": "Yahoo NQ=F 1-min; $6 RT per MNQ",
    "started": "Nov 2 2026",
    "unit": "$ per 1 MNQ, net",
-   "trades": 1,
-   "wins": 0,
-   "win_rate": 0.0,
-   "cum": -506.0,
-   "cum_label": "−$506",
+   "trades": 2,
+   "wins": 1,
+   "win_rate": 50.0,
+   "cum": 523.0,
+   "cum_label": "+$523",
    "last_trade": {
     "date": "2026-11-05",
     "result": "stop −$506"
@@ -1566,10 +1683,10 @@
       "27,835.25",
       "27,585.25",
       "",
-      "",
-      "",
-      "open",
-      "",
+      "09:30",
+      "28,352.75",
+      "open_0930",
+      "+$1,029",
       "record"
      ],
      [
@@ -1780,14 +1897,14 @@
    "data": "QQQ SIP 1-min scaled to NQ (k 41.31), tick-rule delta; $6 RT per MNQ",
    "started": "Nov 2 2026",
    "unit": "$ per 1 MNQ, net",
-   "trades": 27,
-   "wins": 13,
-   "win_rate": 48.1,
-   "cum": 1526.0,
-   "cum_label": "+$1,526",
+   "trades": 31,
+   "wins": 15,
+   "win_rate": 48.4,
+   "cum": 1728.5,
+   "cum_label": "+$1,728",
    "last_trade": {
-    "date": "2026-11-10",
-    "result": "Short −1.10R −$60"
+    "date": "2026-11-11",
+    "result": "Long −1.32R −$22"
    },
    "backtest_pace": "NQ OOS Jul–Oct 2026: +$1.9/trade (t 0.68), WEAK",
    "status": "running",
@@ -1807,6 +1924,58 @@
      "Period"
     ],
     "rows": [
+     [
+      "2026-11-11",
+      "Long",
+      "12:52",
+      "12:57",
+      "12:59",
+      "28,678.50",
+      "28,670.25",
+      "28,704.25",
+      "−1.32R",
+      "−$22",
+      "record"
+     ],
+     [
+      "2026-11-11",
+      "Long",
+      "11:49",
+      "12:06",
+      "12:22",
+      "28,626.50",
+      "28,609.50",
+      "28,678.50",
+      "+2.84R",
+      "+$98",
+      "record"
+     ],
+     [
+      "2026-11-11",
+      "Long",
+      "09:55",
+      "10:10",
+      "10:35",
+      "28,324.75",
+      "28,287.50",
+      "28,437.50",
+      "+2.93R",
+      "+$220",
+      "record"
+     ],
+     [
+      "2026-11-11",
+      "Short",
+      "09:43",
+      "09:50",
+      "09:56",
+      "28,298.25",
+      "28,341.50",
+      "28,167.50",
+      "−1.06R",
+      "−$92",
+      "record"
+     ],
      [
       "2026-11-10",
       "Short",
@@ -3250,7 +3419,7 @@
    },
    "backtest_pace": "+0.048R IS → +0.093R/trade OOS (BH fail)",
    "status": "running",
-   "note": "2 record sessions, regime on 1. About 1 day in 5 qualifies. Oct backfill: 2 trades −$480/MNQ.",
+   "note": "3 record sessions, regime on 1. About 1 day in 5 qualifies. Oct backfill: 2 trades −$480/MNQ.",
    "log": {
     "columns": [
      "Date",
@@ -3322,6 +3491,15 @@
       "Period"
      ],
      "rows": [
+      [
+       "2026-11-11",
+       "4.55",
+       "off",
+       "long",
+       "no",
+       "$0",
+       "record"
+      ],
       [
        "2026-11-10",
        "4.96",
@@ -3595,14 +3773,14 @@
    "data": "Yahoo NQ=F 1-min; $6 RT per MNQ",
    "started": "Nov 10 2026",
    "unit": "$ per 1 MNQ, net",
-   "trades": 1,
+   "trades": 2,
    "wins": 0,
    "win_rate": 0.0,
-   "cum": -125.75,
-   "cum_label": "−$126",
+   "cum": -279.5,
+   "cum_label": "−$280",
    "last_trade": {
-    "date": "2026-11-10",
-    "result": "long stop −$126"
+    "date": "2026-11-11",
+    "result": "short stop −$154"
    },
    "backtest_pace": "+$2.0k/yr per MNQ OOS 2021–26 (t 1.5); −$823/yr IS",
    "status": "running",
@@ -3622,6 +3800,19 @@
      "Period"
     ],
     "rows": [
+     [
+      "2026-11-11",
+      "Short",
+      "147.75",
+      "28,246.75",
+      "28,320.62",
+      "10:04",
+      "28,320.62",
+      "stop",
+      "−1.04R",
+      "−$154",
+      "record"
+     ],
      [
       "2026-11-10",
       "Long",
