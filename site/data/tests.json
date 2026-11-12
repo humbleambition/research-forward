@@ -768,7 +768,7 @@
    },
    "result": "IS/OOS corr 0.26; one losing year (2023)",
    "data": "Alpaca 1-min 2016–2026",
-   "script": "orb10_analyze.py",
+   "script": "orb10_combo.py",
    "date": null,
    "diagram": null,
    "clip": null,
@@ -914,11 +914,11 @@
    "verdict": "WEAK",
    "verdict_note": "sizing constraint",
    "stats": {
-    "cagr": "5 slots ≈ +1.7%/yr; 3 slots +9.3%/yr"
+    "cagr": "5 slots ≈ +1.7%/yr; 3 slots +7.2%/yr (rerun; first check said 9.3%)"
    },
    "result": "needs ≥ $2.5k per trade",
    "data": "$5k sleeve",
-   "script": "forward-test sims",
+   "script": "orb_size_matrix.py (rerun)",
    "date": null,
    "diagram": null,
    "clip": null,
@@ -1540,7 +1540,7 @@
     "max_dd": "worst trade −57 to −67%"
    },
    "result": "IS/OOS corr −0.38",
-   "data": "$vol > $50M",
+   "data": "$vol > $5M (literal idea); $20M universe also run",
    "script": "pre_earn_dip.py",
    "date": null,
    "diagram": null,
@@ -1555,7 +1555,7 @@
     "costs": "1bp/side + $0.005/sh.",
     "variants": "Entry close/open S x universe $5M/$20M x 5 exits x 3 lookbacks x 9 thresholds x 2 x 2 filters (~2,160). IS-best 3-day ≤ −10% shrank OOS; IS/OOS corr −0.38. No FDR.",
     "baseline": "No-filter pre-earnings long (+0.10%/trade).",
-    "notes": "Script pre_earn_dip.py. Code uses $vol > $5M or > $20M universes; the '$vol > $50M' on the row could not be confirmed."
+    "notes": "Script pre_earn_dip.py. Literal-idea stats use the >$5M dollar-volume universe; a >$20M universe was also run."
    }
   },
   {
@@ -2934,7 +2934,7 @@
   },
   {
    "id": "C34",
-   "name": "Tori Trades 3-touch trendline break",
+   "name": "Tori Trades trendline break (3-touch idea; IS picked 2-touch)",
    "area": "r5",
    "verdict": "WEAK",
    "stats": {
