@@ -91,6 +91,21 @@
     });
   }
 
+  var MKEYS = [["universe", "Market / data"], ["period", "Test periods"], ["entry", "Entry"], ["exit", "Exit"],
+    ["stop", "Stop"], ["sizing", "Sizing / limits"], ["costs", "Costs"], ["variants", "Variants tried"],
+    ["baseline", "Compared with"], ["notes", "Notes"]];
+  function methodBlock(host, m) {
+    if (!m) return;
+    var d = doc.createElement("details"); d.className = "x-method";
+    d.appendChild(el("summary", "Method"));
+    var dl = doc.createElement("dl");
+    MKEYS.forEach(function (k) {
+      if (!str(m[k[0]])) return;
+      dl.appendChild(el("dt", k[1])); dl.appendChild(el("dd", m[k[0]]));
+    });
+    d.appendChild(dl); host.appendChild(d);
+  }
+
   function testRow(t) {
     var tr = doc.createElement("tr");
     if (t.highlight) tr.className = "is-highlight";
@@ -99,6 +114,7 @@
     small(th, t.data);
     small(th, t.script);
     mediaButtons(th, t);
+    methodBlock(th, t.method);
     tr.appendChild(th);
     var stats = t.stats || {}, cls = t.cls || {};
     COLS.forEach(function (c) {
@@ -173,7 +189,7 @@
   function prose(d) { return d.querySelector(".prose").textContent; }
   function rowText(t) {
     var s = t.stats || {};
-    return [t.id, t.name, t.data, t.script, s.tr_yr, s.win, s.avg, s.cagr, s.max_dd, t.result, t.verdict, t.verdict_note].map(str).join(" ");
+    return [t.id, t.name, t.data, t.script, s.tr_yr, s.win, s.avg, s.cagr, s.max_dd, t.result, t.verdict, t.verdict_note].concat(t.method ? MKEYS.map(function (k) { return t.method[k[0]]; }) : []).map(str).join(" ");
   }
 
   function openHash() {
