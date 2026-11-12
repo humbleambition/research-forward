@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 11 2026",
+ "updated": "Nov 12 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -6045,6 +6045,63 @@
     "variants": "Fixed mechanics; 7 signal definitions compared side by side. No BH.",
     "baseline": "BIG (any strong candle) as the plain baseline for OF6's filters.",
     "notes": "NQ improvement after 2021 tracks rising price level vs fixed $6 cost; IS negative, so any positive version is post-hoc."
+   }
+  },
+  {
+   "id": "FEN1",
+   "name": "Fence bar: first 5-min range break and retest (Steven, NQ 2016–26)",
+   "area": "r26",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "~120",
+    "win": "30–42%",
+    "avg": "−0.05R IS → +0.01R OOS (IS pick)",
+    "cagr": "−$573/yr per MNQ OOS (IS pick)",
+    "max_dd": "−$4,080 OOS"
+   },
+   "result": "0 of 24 variants positive OOS; every variant negative IS. IS pick −$830 → −$573/yr per MNQ; video default −$1,257 → −$201/yr. Random-direction baseline about as bad (−$505 to −$751/yr).",
+   "data": "Databento NQ 1-min RTH 2016–2026 → 5-min",
+   "script": "fence_bar.py",
+   "date": "2026-11-12",
+   "diagram": null,
+   "clip": null,
+   "method": {
+    "universe": "NQ futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted, aggregated to 5-min bars.",
+    "period": "IS 2016–2020 chooses the variant (highest $/yr); OOS 2021–2026-10 blind.",
+    "entry": "Fence = high and low of the 09:30–09:35 bar. Direction = latest 5-min close outside the fence. Retest bar must open outside, wick back into the fence and close outside again; enter at that bar's close. One trade a day; retest must come before the cutoff.",
+    "exit": "Target 2R (variant 1.5R); else flat 15:55 ET.",
+    "stop": "50% into the fence (video default) or 1 tick beyond the retest bar's extreme (variant for 'nearby support').",
+    "sizing": "1 MNQ, one position at a time.",
+    "costs": "$6 round trip per MNQ; $2 per NQ point.",
+    "variants": "24: stop {half, bar} × cutoff {10:30, 11:00, 12:00} × 20-SMA filter {skip trades against a sloping 20-SMA, none} × target {1.5R, 2R}.",
+    "baseline": "Same entries and stop distance with a coin-flip direction (20 runs).",
+    "notes": "Video's 'nearby support' stop and retest timing are vague; assumptions as above. Video shows 4 of 5 recent winners on QQQ; not a sample."
+   }
+  },
+  {
+   "id": "RAS1",
+   "name": "Linda Raschke: '80% of volume spikes land on a prior swing high/low' (NQ 2016–26)",
+   "area": "r26",
+   "verdict": "FAIL",
+   "verdict_note": "claim overstated; no trade edge",
+   "stats": {
+    "tr_yr": "~1,600 spikes/yr (4×)",
+    "win": "39% hit vs 20% base"
+   },
+   "result": "Spikes touch a prior 1-min swing level 39% of the time vs 20% for normal bars (5-min swings: 17% vs 4%). Real effect, far from 80%. Trading the break after a spike: +0.17 pts IS → +0.65 pts OOS over 15 min (t < 1), below costs.",
+   "data": "Databento NQ 1-min RTH 2016–2026",
+   "script": "raschke_volspike.py",
+   "date": "2026-11-12",
+   "diagram": null,
+   "clip": null,
+   "method": {
+    "universe": "NQ futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted, 2016-01 to 2026-10.",
+    "period": "Whole period for the hit rate; IS 2016–2020 / OOS 2021–2026 for follow-through. No parameters chosen.",
+    "entry": "Spike = 1-min volume ≥ 4× (also 3×, 6×) the median volume of the same minute over the prior 20 sessions. Swing levels = fractal highs/lows (beats 2 bars each side) on today's 1-min or 5-min bars, usable only once confirmed and until broken. Hit = spike bar touches such a level within 1 tick.",
+    "exit": "Measurement: signed move 5, 15 and 30 min after the spike bar's close, in the direction of the level it broke.",
+    "baseline": "Hit rate of non-spike bars, also weighted to the spikes' time-of-day mix.",
+    "costs": "Moves in points before costs; $6 RT per MNQ = 3 pts.",
+    "notes": "Interview claim (Titans of Tomorrow, caLSbXnkaj4). Her 'near a swing' may be looser than our 1-tick touch, which would raise both rates."
    }
   },
   {
