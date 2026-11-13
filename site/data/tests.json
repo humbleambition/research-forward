@@ -6105,6 +6105,36 @@
    }
   },
   {
+   "id": "EV1",
+   "name": "9 EMA × session VWAP cross, 3-min ($255k/month claim; NQ and ES 2016–26)",
+   "area": "r26",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "~700 (video rules)",
+    "win": "24–32%",
+    "cagr": "−$3,421/yr per MNQ OOS (video rules)",
+    "max_dd": "−$20,408 OOS (NQ)"
+   },
+   "result": "Video rules (exit on close back through the 9 EMA, all day): NQ −$4,061 → −$3,421/yr per MNQ, ES −$3,219 → −$2,344/yr per MES; ~700 trades/yr, 24–32% wins. 0 of 24 variants positive IS; ES 1.5 ATR/3R variants scrape +$7 to +$301/yr OOS (t ≤ 0.5).",
+   "data": "Databento NQ/ES 1-min RTH 2016–2026 → 3-min",
+   "script": "ema9_vwap.py",
+   "date": "2026-11-12",
+   "diagram": null,
+   "clip": null,
+   "method": {
+    "universe": "NQ and ES futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted, aggregated to 3-min bars.",
+    "period": "IS 2016–2020 picks; OOS 2021–2026-10 blind.",
+    "entry": "VWAP anchored at 09:30 on OHLC4 with volume; EMA9 of close reset each session. Long when EMA9 closes above VWAP after being at or below it; short the reverse; enter at that bar's close.",
+    "exit": "Video: first 3-min bar that closes back through the EMA9. Variant (presenter's optimisation): 1.5 ATR(14) stop, 3R target. Flat at the close.",
+    "stop": "Video rule has none beyond the EMA9 exit; variant 1.5 ATR.",
+    "sizing": "1 MNQ or 1 MES, one position at a time; optional cap of 2 losing trades a day.",
+    "costs": "$6 RT per MNQ ($2/pt), $4 RT per MES ($5/pt).",
+    "variants": "12 per market: exit {EMA9 close, 1.5 ATR/3R} × entry window {first 60, 120 min, all day} × daily cap {2 losers, none}.",
+    "baseline": "Same entry times, random direction.",
+    "notes": "Original trader used options; we test the underlying futures. ADX chop filter (presenter's ≥36) not tested. Presenter's own longer backtest also failed."
+   }
+  },
+  {
    "id": "EC1",
    "name": "Crash-bottom confirmation entries: buy at crash close, staged thirds, staged + breadth gate, DCA after the crash (240 variants)",
    "area": "r27",
