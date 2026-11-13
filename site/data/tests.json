@@ -6135,6 +6135,34 @@
    }
   },
   {
+   "id": "AMT1",
+   "name": "Fabio Valentini AMT: value accepted outside prior value area → next session expands that way (NQ 2016–26)",
+   "area": "r26",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "~180",
+    "win": "45% IS / 51% OOS",
+    "cagr": "−$3,203 → +$928/yr per MNQ"
+   },
+   "result": "'Acceptance' (POC beyond prior VAH/VAL) happens on ~73% of days, so it isn't a rare signal. Next RTH session in signal direction: IS up −3.5 pts, down −9.6 pts (reverses); OOS up +12.0 pts (t 1.7, mostly bull drift), down −2.8. Trading it open→close: IS −$3,203/yr → OOS +$928/yr per MNQ.",
+   "data": "Databento NQ 1-min RTH 2016–2026",
+   "script": "amt_acceptance.py",
+   "date": "2026-11-12",
+   "diagram": null,
+   "clip": null,
+   "method": {
+    "universe": "NQ futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted.",
+    "period": "IS 2016–2020; OOS 2021–2026-10. No parameters chosen.",
+    "entry": "Daily RTH volume profile from 1-min bars (volume at bar close, 1-pt bins), 70% value area. Signal: today's POC above yesterday's VAH = up acceptance; below yesterday's VAL = down. Measured on the next RTH session; trade variant enters at the next open in signal direction.",
+    "exit": "Next RTH close.",
+    "stop": "None (direction test).",
+    "sizing": "1 MNQ.",
+    "costs": "$6 RT per MNQ ($2/pt).",
+    "baseline": "All days' next-session open→close (drift +2.0 IS, +2.8 OOS pts).",
+    "notes": "Tests only the daily bias claim. His intraday entries (pullback to low value area / delta peak after acceptance) overlap earlier FAIL tests: Cimi VA acceptance + pullback, Kammerer POC migration, and OF6 (his own setup)."
+   }
+  },
+  {
    "id": "EC1",
    "name": "Crash-bottom confirmation entries: buy at crash close, staged thirds, staged + breadth gate, DCA after the crash (240 variants)",
    "area": "r27",
