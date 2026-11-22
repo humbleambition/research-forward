@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 12 2026",
+ "updated": "Nov 22 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -251,6 +251,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T1/schematic.webp",
+     "thumb": "media/tests/T1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "16 ETFs (SPY, QQQ, IWM, EFA, EEM, TLT, IEF, LQD, GLD, SLV, DBC, USO, UUP, FXE, FXY, VNQ), daily adjusted closes from yfinance, 2006-06 to 2026; trades monthly.",
     "period": "Full-sample only (2006-2026); no in-sample/out-of-sample split recorded.",
@@ -279,6 +287,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T2/schematic.webp",
+     "thumb": "media/tests/T2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY daily closes, 2016-10-20 to 2026-10-20, price only (no dividends); 1x and synthetic 3x.",
     "period": "Full sample only; no in-sample/out-of-sample split.",
@@ -312,6 +328,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T3/schematic.webp",
+     "thumb": "media/tests/T3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "ETF total-return daily data from Alpaca (adjusted for dividends), 2016-10-20 to 2026-10-20: SPY, QQQ, sector SPDRs, IEF, TLT, GLD, UUP, BIL and others.",
     "period": "Full sample 2016-10 to 2026-10; IS 2016-20 / OOS 2021-26 figures reported where shown, but the rule was not chosen by a formal IS fit.",
@@ -340,6 +364,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T4/schematic.webp",
+     "thumb": "media/tests/T4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "ETF total-return daily data from Alpaca (adjusted for dividends), 2016-10-20 to 2026-10-20: SPY, QQQ, sector SPDRs, IEF, TLT, GLD, UUP, BIL and others.",
     "period": "Full sample 2016-10 to 2026-10; IS 2016-20 / OOS 2021-26 figures reported where shown, but the rule was not chosen by a formal IS fit.",
@@ -368,6 +400,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T5/schematic.webp",
+     "thumb": "media/tests/T5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "ETF total-return daily data from Alpaca (adjusted for dividends), 2016-10-20 to 2026-10-20: SPY, QQQ, sector SPDRs, IEF, TLT, GLD, UUP, BIL and others.",
     "period": "Full sample 2016-10 to 2026-10; IS 2016-20 / OOS 2021-26 figures reported where shown, but the rule was not chosen by a formal IS fit.",
@@ -400,6 +440,32 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/T6/win.webp",
+     "thumb": "media/tests/T6/win_t.webp",
+     "label": "Winning day (paper forward test) · Thu 22 Oct 2026 · RCUS +3.0R · +$53"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/T6/loss.webp",
+     "thumb": "media/tests/T6/loss_t.webp",
+     "label": "Losing day (paper forward test) · Mon 26 Oct 2026 · MET −1.0R · −$5"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/T6/win.mp4",
+     "poster": "media/tests/T6/win.webp",
+     "label": "Clip · winning day, Thu 22 Oct 2026"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/T6/schematic.webp",
+     "thumb": "media/tests/T6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Two sleeves, 2016-10-20 to 2026-10-20: (1) stocks-in-play ORB on Alpaca 1-min data; (2) QQQ weekly rotation on ETF total-return data.",
     "period": "Full sample with IS 2016-20 / OOS 2021-26 columns; weights fixed, not optimised.",
@@ -428,6 +494,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T7/schematic.webp",
+     "thumb": "media/tests/T7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Three sleeves, 2016-10-20 to 2026-10-20: stocks-in-play ORB (Alpaca 1-min), RSI2 stocks (daily), QQQ weekly rotation (ETF total return).",
     "period": "Full sample with IS 2016-20 / OOS 2021-26 columns; weights fixed.",
@@ -457,6 +531,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T8/schematic.webp",
+     "thumb": "media/tests/T8/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ rotation (ETF total return) plus a breadth series: % of stocks above their 50-day MA among the top 500 NYSE/Nasdaq/AMEX common stocks (B500) or top 100 Nasdaq stocks (N100), re-ranked daily by prior 20-day $ volume, price > $5; 2016-10 to 2026-10.",
     "period": "Choose on IS 2016-20, test OOS 2021-26.",
@@ -486,6 +568,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T9/schematic.webp",
+     "thumb": "media/tests/T9/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Sleeves 2016-2026: stocks-in-play ORB (Alpaca 1-min), RSI2 stocks (daily), and synthetic 3x QQQ/SPY from price-only ETF data.",
     "period": "Full sample; halves 2016-20 vs 2021-26 reported as a robustness check, not a formal IS selection.",
@@ -514,6 +604,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T10/schematic.webp",
+     "thumb": "media/tests/T10/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY RTH 1-min (Alpaca) and daily bars, 2016-2026; daily legs in synthetic 3x QQQ/SPY (also rerun on actual TQQQ/UPRO).",
     "period": "Full sample, with 2016-20 and 2021-26 halves reported.",
@@ -542,6 +640,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T11/schematic.webp",
+     "thumb": "media/tests/T11/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks (Alpaca), 2016-2026: stocks-in-play ORB trades plus daily RSI2 stock trades sharing one cash pool.",
     "period": "Full sample; 2016-20 vs 2021-26 halves reported (23.3% → 7.1%).",
@@ -571,6 +677,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T12/schematic.webp",
+     "thumb": "media/tests/T12/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY daily closes, 2016-10-20 to 2026-10-20, synthetic 3x (price only).",
     "period": "Full sample; 2021-26 sub-period reported.",
@@ -599,6 +713,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/T13/schematic.webp",
+     "thumb": "media/tests/T13/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY daily closes, 2016-10 to 2026-10, synthetic 3x; also inside the 1/3 ORB + RSI2 combo.",
     "period": "Full sample; no IS/OOS walk-forward (flagged as needed).",
@@ -629,6 +751,14 @@
    "date": "2026-11-11",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/TUR1/schematic.webp",
+     "thumb": "media/tests/TUR1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY, QQQ, GLD, SLV (Alpaca daily, unadjusted, dividends ignored) + BTC-USD (yfinance), 2016-2026-10; second test on Databento NQ/ES 1-min back-adjusted futures, Globex-session daily bars.",
     "period": "IS 2016-2020 / OOS 2021-2026-10.",
@@ -654,6 +784,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O1/schematic.webp",
+     "thumb": "media/tests/O1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "S&P 1500 stocks (universe.txt), yfinance 5-min bars, last 60 days (46 trading days, 743 trades in the wide-stop rerun).",
     "period": "46 days only; no split.",
@@ -684,6 +822,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O2/schematic.webp",
+     "thumb": "media/tests/O2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same 743 stocks-in-play trades over 46 days (yfinance 5-min, S&P 1500).",
     "period": "46 days; no split.",
@@ -713,6 +859,26 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/O3/win.webp",
+     "thumb": "media/tests/O3/win_t.webp",
+     "label": "Winning day · Thu 29 Dec 2022 · +5.16R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/O3/loss.webp",
+     "thumb": "media/tests/O3/loss_t.webp",
+     "label": "Losing day · Fri 24 Nov 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/O3/schematic.webp",
+     "thumb": "media/tests/O3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks in play: US-listed common stocks incl. delisted names (no ETFs), prior close > $5, 14-day avg volume >= 1M shares, ATR14 > $0.50; ranked by relative volume of the 09:30-09:35 ET bar vs its 14-day average (>= 1x), top 20 per day; Alpaca 1-min SIP bars 2016-02 to 2026-10-20.",
     "period": "IS 2016-2020 / OOS 2021-2026 split used for filter tests.",
@@ -743,6 +909,32 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/O4/win.webp",
+     "thumb": "media/tests/O4/win_t.webp",
+     "label": "Winning day · Wed 15 Nov 2023 · +3.00R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/O4/loss.webp",
+     "thumb": "media/tests/O4/loss_t.webp",
+     "label": "Losing day · Tue 14 Nov 2023 · −1.00R"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/O4/win.mp4",
+     "poster": "media/tests/O4/win.webp",
+     "label": "Clip · winning day, Wed 15 Nov 2023"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/O4/schematic.webp",
+     "thumb": "media/tests/O4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks in play: US-listed common stocks incl. delisted names (no ETFs), prior close > $5, 14-day avg volume >= 1M shares, ATR14 > $0.50; ranked by relative volume of the 09:30-09:35 ET bar vs its 14-day average (>= 1x), top 20 per day; Alpaca 1-min SIP bars 2016-02 to 2026-10-20.",
     "period": "IS 2016-2020 / OOS 2021-2026 split used for filter tests.",
@@ -772,6 +964,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O5/schematic.webp",
+     "thumb": "media/tests/O5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks in play: US-listed common stocks incl. delisted names (no ETFs), prior close > $5, 14-day avg volume >= 1M shares, ATR14 > $0.50; ranked by relative volume of the 09:30-09:35 ET bar vs its 14-day average (>= 1x), top 20 per day; Alpaca 1-min SIP bars 2016-02 to 2026-10-20.",
     "period": "IS 2016-2020 / OOS 2021-2026 split used for filter tests.",
@@ -807,6 +1007,32 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/O6/win.webp",
+     "thumb": "media/tests/O6/win_t.webp",
+     "label": "Winning day (paper forward test) · Thu 22 Oct 2026 · RCUS +3.0R · +$53"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/O6/loss.webp",
+     "thumb": "media/tests/O6/loss_t.webp",
+     "label": "Losing day (paper forward test) · Mon 26 Oct 2026 · MET −1.0R · −$5"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/O6/win.mp4",
+     "poster": "media/tests/O6/win.webp",
+     "label": "Clip · winning day, Thu 22 Oct 2026"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/O6/schematic.webp",
+     "thumb": "media/tests/O6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks in play: US-listed common stocks incl. delisted names (no ETFs), prior close > $5, 14-day avg volume >= 1M shares, ATR14 > $0.50; ranked by relative volume of the 09:30-09:35 ET bar vs its 14-day average (>= 1x), top 20 per day; Alpaca 1-min SIP bars 2016-02 to 2026-10-20.",
     "period": "IS 2016-2020 / OOS 2021-2026 split used for filter tests.",
@@ -836,6 +1062,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O7/schematic.webp",
+     "thumb": "media/tests/O7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks in play: US-listed common stocks incl. delisted names (no ETFs), prior close > $5, 14-day avg volume >= 1M shares, ATR14 > $0.50; ranked by relative volume of the 09:30-09:35 ET bar vs its 14-day average (>= 1x), top 20 per day; Alpaca 1-min SIP bars 2016-02 to 2026-10-20.",
     "period": "IS 2016-2020 / OOS 2021-2026 split used for filter tests.",
@@ -865,6 +1099,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O8/schematic.webp",
+     "thumb": "media/tests/O8/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks in play: US-listed common stocks incl. delisted names (no ETFs), prior close > $5, 14-day avg volume >= 1M shares, ATR14 > $0.50; ranked by relative volume of the 09:30-09:35 ET bar vs its 14-day average (>= 1x), top 20 per day; Alpaca 1-min SIP bars 2016-02 to 2026-10-20.",
     "period": "IS 2016-2020 / OOS 2021-2026 split used for filter tests.",
@@ -894,6 +1136,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O9/schematic.webp",
+     "thumb": "media/tests/O9/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "32 unleveraged ETFs (sectors, SMH, XBI, KRE, XOP, GDX/GDXJ/SIL, GLD/SLV, USO/UNG, TLT, IWM/DIA, EEM/FXI/KWEB, ARKK, COPX, URA), Alpaca 1-min 2016-2026.",
     "period": "Full sample; no IS pick.",
@@ -922,6 +1172,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O10/schematic.webp",
+     "thumb": "media/tests/O10/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks-in-play ORB trades (0.2 ATR / 3R), $5k ORB sleeve.",
     "period": "not recorded",
@@ -949,6 +1207,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O11/schematic.webp",
+     "thumb": "media/tests/O11/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY and QQQ (as ES/NQ proxies, long and short) and top-20 rel-vol stocks in play (long only), Alpaca 1-min 2016-2026.",
     "period": "Full sample; no IS pick.",
@@ -976,6 +1242,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O12/schematic.webp",
+     "thumb": "media/tests/O12/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY, QQQ and top-20 rel-vol stocks in play, Alpaca 1-min 2016-2026.",
     "period": "Full sample.",
@@ -1007,6 +1281,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O13/schematic.webp",
+     "thumb": "media/tests/O13/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (and SPY control) RTH 1-min Alpaca bars 2016-2026, traded as synthetic 3x.",
     "period": "Full sample; IS-best variant by 2016-20 net R also labelled.",
@@ -1038,6 +1320,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O14/schematic.webp",
+     "thumb": "media/tests/O14/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ 5-min bars built from Alpaca 1-min RTH data, 2016-2026.",
     "period": "Full sample.",
@@ -1070,6 +1360,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O15/schematic.webp",
+     "thumb": "media/tests/O15/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks-in-play ORB trades (0.2 ATR / 3R) plus QQQ weekly rotation, 2016-10-20 to 2026-10-20.",
     "period": "Full sample, IS 2016-10-20 to 2020 and OOS 2021-26 columns; nothing selected on IS.",
@@ -1101,6 +1399,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O16/schematic.webp",
+     "thumb": "media/tests/O16/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same stocks-in-play ORB candidates as the forward test, Alpaca 1-min, 2016-10 to 2026-10.",
     "period": "IS 2016-20 / OOS 2021-26.",
@@ -1130,6 +1436,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S1/schematic.webp",
+     "thumb": "media/tests/S1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks from Alpaca (all NYSE/Nasdaq/ARCA/AMEX/BATS symbols incl. inactive), raw daily bars; eligible: prior close > $5, 14-day avg volume ≥ 1M shares, ATR14 > $0.50, no ETFs; windows with >35% 1-day moves dropped (split proxy). 2016-2026.",
     "period": "Full sample; no split.",
@@ -1158,6 +1472,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S2/schematic.webp",
+     "thumb": "media/tests/S2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks from Alpaca (all NYSE/Nasdaq/ARCA/AMEX/BATS symbols incl. inactive), raw daily bars; eligible: prior close > $5, 14-day avg volume ≥ 1M shares, ATR14 > $0.50, no ETFs; windows with >35% 1-day moves dropped (split proxy). 2016-2026.",
     "period": "Full sample; no split.",
@@ -1187,6 +1509,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S3/schematic.webp",
+     "thumb": "media/tests/S3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks from Alpaca (all NYSE/Nasdaq/ARCA/AMEX/BATS symbols incl. inactive), raw daily bars; eligible: prior close > $5, 14-day avg volume ≥ 1M shares, ATR14 > $0.50, no ETFs; windows with >35% 1-day moves dropped (split proxy). 2016-2026.",
     "period": "Full sample.",
@@ -1214,6 +1544,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S4/schematic.webp",
+     "thumb": "media/tests/S4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks from Alpaca (all NYSE/Nasdaq/ARCA/AMEX/BATS symbols incl. inactive), raw daily bars; eligible: prior close > $5, 14-day avg volume ≥ 1M shares, ATR14 > $0.50, no ETFs; windows with >35% 1-day moves dropped (split proxy). 2016-2026.",
     "period": "Full sample.",
@@ -1244,6 +1582,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S5/schematic.webp",
+     "thumb": "media/tests/S5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Stocks (swing.py universe) and QQQ/SPY daily, 2016-10-20 to 2026-10-20.",
     "period": "Full sample; no IS pick.",
@@ -1273,6 +1619,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S6/schematic.webp",
+     "thumb": "media/tests/S6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ/SPY daily (1x and synthetic 3x) and stocks (swing.py universe), evaluated 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-20 pick by Sharpe → OOS 2021-26.",
@@ -1302,6 +1656,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S7/schematic.webp",
+     "thumb": "media/tests/S7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks from Alpaca (all NYSE/Nasdaq/ARCA/AMEX/BATS symbols incl. inactive), raw daily bars; eligible: prior close > $5, 14-day avg volume ≥ 1M shares, ATR14 > $0.50, no ETFs; windows with >35% 1-day moves dropped (split proxy). 2016-2026.",
     "period": "Full sample.",
@@ -1333,6 +1695,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S8/schematic.webp",
+     "thumb": "media/tests/S8/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks from Alpaca (all NYSE/Nasdaq/ARCA/AMEX/BATS symbols incl. inactive), raw daily bars; eligible: prior close > $5, 14-day avg volume ≥ 1M shares, ATR14 > $0.50, no ETFs; windows with >35% 1-day moves dropped (split proxy). 2016-2026.",
     "period": "Full sample.",
@@ -1364,6 +1734,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/S9/schematic.webp",
+     "thumb": "media/tests/S9/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US common stocks ever raw > $5 and 20-day $ volume > $5M, incl. delisted (4,992 tickers), split-adjusted daily, 2016-10 to 2026.",
     "period": "IS 2016-10 to 2020 choose; OOS 2021-25 blind; 2026 YTD separate.",
@@ -1393,6 +1771,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E1/schematic.webp",
+     "thumb": "media/tests/E1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar (actual vs consensus EPS), 24,650 matched eligible events; swing.py stock universe, daily, 2016-2026.",
     "period": "Full sample; no split.",
@@ -1424,6 +1810,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E2/schematic.webp",
+     "thumb": "media/tests/E2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "Pick on IS 2016-04 to 2020 (t-stat, ≥ 20 trades/yr); OOS 2021-2026-10-20 blind.",
@@ -1455,6 +1849,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E3/schematic.webp",
+     "thumb": "media/tests/E3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "Pick on IS 2016-04 to 2020 (t-stat, ≥ 20 trades/yr); OOS 2021-2026-10-20 blind.",
@@ -1484,6 +1886,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E4/schematic.webp",
+     "thumb": "media/tests/E4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "Pick on IS 2016-04 to 2020 (t-stat, ≥ 20 trades/yr); OOS 2021-2026-10-20 blind.",
@@ -1515,6 +1925,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E5/schematic.webp",
+     "thumb": "media/tests/E5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $50M, 2016-2026-10-20.",
     "period": "Pick on IS 2016-04 to 2020 (t-stat, ≥ 20 trades/yr); OOS 2021-2026-10-20 blind.",
@@ -1545,6 +1963,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E6/schematic.webp",
+     "thumb": "media/tests/E6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "IS 2016-20 / OOS 2021-26.",
@@ -1574,6 +2000,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E7/schematic.webp",
+     "thumb": "media/tests/E7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Earnings events with S ≥ 2024-01-19, 20-day $vol ≥ $100M, price ≥ $5; Alpaca option bars (trade prints, no quotes), 2024-01 to 2026-10; 4,930 events.",
     "period": "IS = S before 2025-07-16; OOS after.",
@@ -1604,6 +2038,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E8/schematic.webp",
+     "thumb": "media/tests/E8/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Earnings events with S ≥ 2024-01-19, 20-day $vol ≥ $100M, price ≥ $5; Alpaca option bars (trade prints, no quotes), 2024-01 to 2026-10; 4,930 events.",
     "period": "IS = S before 2025-07-16; OOS after.",
@@ -1634,6 +2076,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E9/schematic.webp",
+     "thumb": "media/tests/E9/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Earnings events with S ≥ 2024-01-19, 20-day $vol ≥ $100M, price ≥ $5; Alpaca option bars (trade prints, no quotes), 2024-01 to 2026-10; 4,930 events.",
     "period": "IS = S before 2025-07-16; OOS after.",
@@ -1661,6 +2111,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E10/schematic.webp",
+     "thumb": "media/tests/E10/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Earnings events with S ≥ 2024-01-19, 20-day $vol ≥ $100M, price ≥ $5; Alpaca option bars (trade prints, no quotes), 2024-01 to 2026-10; 4,930 events.",
     "period": "IS = S before 2025-07-16; OOS after.",
@@ -1692,6 +2150,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E11/schematic.webp",
+     "thumb": "media/tests/E11/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "IS 2016-04 to 2020; OOS 2021-2026-10-20; 2026 YTD separate.",
@@ -1723,6 +2189,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E12/schematic.webp",
+     "thumb": "media/tests/E12/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "IS 2016-04 to 2020; OOS 2021-2026-10-20; 2026 YTD separate.",
@@ -1754,6 +2228,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E13/schematic.webp",
+     "thumb": "media/tests/E13/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "IS 2016-04 to 2020; OOS 2021-2026-10-20; 2026 YTD separate.",
@@ -1786,6 +2268,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E14/schematic.webp",
+     "thumb": "media/tests/E14/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "IS 2016-04 to 2020; OOS 2021-2026-10-20; 2026 YTD separate.",
@@ -1817,6 +2307,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E15/schematic.webp",
+     "thumb": "media/tests/E15/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "IS 2016-04 to 2020; OOS 2021-2026-10-20; 2026 YTD separate.",
@@ -1848,6 +2346,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/E16/schematic.webp",
+     "thumb": "media/tests/E16/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nasdaq earnings calendar; BMO/AMC timing inferred from each ticker's past reactions (~7% wrong). G = reaction day, S = G−1. Split-adjusted stocks incl. delisted, ever > $5 and 20-day $vol > $5M, 2016-2026-10-20.",
     "period": "IS 2016-04 to 2020; OOS 2021-2026-10-20; 2026 YTD separate.",
@@ -1879,6 +2385,32 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C1/win.webp",
+     "thumb": "media/tests/C1/win_t.webp",
+     "label": "Winning day · Mon 20 Nov 2023 · +1.00R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C1/loss.webp",
+     "thumb": "media/tests/C1/loss_t.webp",
+     "label": "Losing day · Tue 24 Oct 2023 · −1.00R"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/C1/win.mp4",
+     "poster": "media/tests/C1/win.webp",
+     "label": "Clip · winning day, Mon 20 Nov 2023"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C1/schematic.webp",
+     "thumb": "media/tests/C1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -1910,6 +2442,26 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C2/win.webp",
+     "thumb": "media/tests/C2/win_t.webp",
+     "label": "Winning day · Thu 2 Nov 2023 · +0.65R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C2/loss.webp",
+     "thumb": "media/tests/C2/loss_t.webp",
+     "label": "Losing day · Tue 24 Oct 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C2/schematic.webp",
+     "thumb": "media/tests/C2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -1944,6 +2496,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C3/win.webp",
+     "thumb": "media/tests/C3/win_t.webp",
+     "label": "Winning day · Tue 19 May 2026 · +0.19%"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C3/loss.webp",
+     "thumb": "media/tests/C3/loss_t.webp",
+     "label": "Losing day · Thu 17 Sep 2026 · −0.04%"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C3/schematic.webp",
+     "thumb": "media/tests/C3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -1975,6 +2547,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C4/schematic.webp",
+     "thumb": "media/tests/C4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2009,6 +2589,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C5/win.webp",
+     "thumb": "media/tests/C5/win_t.webp",
+     "label": "Winning day · Wed 6 Sep 2023 · +1.52R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C5/loss.webp",
+     "thumb": "media/tests/C5/loss_t.webp",
+     "label": "Losing day · Wed 9 Aug 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C5/schematic.webp",
+     "thumb": "media/tests/C5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2043,6 +2643,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C6/win.webp",
+     "thumb": "media/tests/C6/win_t.webp",
+     "label": "Winning day · Thu 4 Apr 2024 · +2.00R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C6/loss.webp",
+     "thumb": "media/tests/C6/loss_t.webp",
+     "label": "Losing day · Fri 3 May 2024 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C6/schematic.webp",
+     "thumb": "media/tests/C6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2077,6 +2697,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C7/win.webp",
+     "thumb": "media/tests/C7/win_t.webp",
+     "label": "Winning day · Wed 18 Sep 2024 · +2.23R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C7/loss.webp",
+     "thumb": "media/tests/C7/loss_t.webp",
+     "label": "Losing day · Fri 22 Sep 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C7/schematic.webp",
+     "thumb": "media/tests/C7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2111,6 +2751,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C8/win.webp",
+     "thumb": "media/tests/C8/win_t.webp",
+     "label": "Winning day · Fri 30 Apr 2021 · +1.88R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C8/loss.webp",
+     "thumb": "media/tests/C8/loss_t.webp",
+     "label": "Losing day · Fri 3 Nov 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C8/schematic.webp",
+     "thumb": "media/tests/C8/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2139,6 +2799,26 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C9/win.webp",
+     "thumb": "media/tests/C9/win_t.webp",
+     "label": "Winning day · Wed 15 Oct 2025 · +0.74R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C9/loss.webp",
+     "thumb": "media/tests/C9/loss_t.webp",
+     "label": "Losing day · Tue 10 Sep 2024 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C9/schematic.webp",
+     "thumb": "media/tests/C9/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2170,6 +2850,26 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C10/win.webp",
+     "thumb": "media/tests/C10/win_t.webp",
+     "label": "Winning day · Tue 4 Apr 2023 · +1.47R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C10/loss.webp",
+     "thumb": "media/tests/C10/loss_t.webp",
+     "label": "Losing day · Tue 25 Jul 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C10/schematic.webp",
+     "thumb": "media/tests/C10/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2204,6 +2904,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C11/win.webp",
+     "thumb": "media/tests/C11/win_t.webp",
+     "label": "Winning day · Mon 2 Jun 2025 · +3.77R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C11/loss.webp",
+     "thumb": "media/tests/C11/loss_t.webp",
+     "label": "Losing day · Fri 3 Nov 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C11/schematic.webp",
+     "thumb": "media/tests/C11/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2238,6 +2958,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C12/win.webp",
+     "thumb": "media/tests/C12/win_t.webp",
+     "label": "Winning day · Fri 15 Sep 2023 · +0.34R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C12/loss.webp",
+     "thumb": "media/tests/C12/loss_t.webp",
+     "label": "Losing day · Tue 12 Dec 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C12/schematic.webp",
+     "thumb": "media/tests/C12/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2272,6 +3012,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C13/win.webp",
+     "thumb": "media/tests/C13/win_t.webp",
+     "label": "Winning day · Wed 11 Aug 2021 · +2.30R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C13/loss.webp",
+     "thumb": "media/tests/C13/loss_t.webp",
+     "label": "Losing day · Mon 6 Nov 2023 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C13/schematic.webp",
+     "thumb": "media/tests/C13/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2300,6 +3060,26 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C14/win.webp",
+     "thumb": "media/tests/C14/win_t.webp",
+     "label": "Winning day · Thu 7 Aug 2025 · +1.80R"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C14/loss.webp",
+     "thumb": "media/tests/C14/loss_t.webp",
+     "label": "Losing day · Fri 6 Jun 2025 · −1.00R"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C14/schematic.webp",
+     "thumb": "media/tests/C14/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (Nasdaq-100 / NQ proxy) and SPY (S&P 500 / ES proxy), 1-minute Alpaca SIP bars 04:00-20:00 ET, raw with volume, 2016-01-04 to 2026-10-20 (2,715 days). Trades in the 09:30-16:00 ET session; half days cut at 13:00. Script backtests/cf_index.py + cf_index_lib.py.",
     "period": "In-sample 2016-01-04 to 2020-12-31 picks parameters (best IS average R net at 1 bp among combos with at least 30 IS trades), separately for each ETF; out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2325,6 +3105,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C15/schematic.webp",
+     "thumb": "media/tests/C15/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Intended for NQ/ES futures intraday; no backtest data run. Listed with the QQQ/SPY 1-min screen (backtests/cf_index.py, SKIPPED list).",
     "entry": "Not backtested. Rules from the videos: Okala, reactions at NQ round-number '80/20' levels (3-point touch tolerance, 10-point stop, 15-point first target); Dylan O'Neal, ES break of prior-day low/high confirmed by VIX at its prior-day high/low, plus fading when ES and VIX are both +/-1%; Darcy, monthly/daily liquidity sweep then 4H FVG inversion, 15m FVG, 1m inverse FVG.",
@@ -2353,6 +3141,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C16/schematic.webp",
+     "thumb": "media/tests/C16/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY daily bars, Alpaca SIP (split-adjusted, price only), 2016-01-04 to 2026-10-20. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2388,6 +3184,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C17/schematic.webp",
+     "thumb": "media/tests/C17/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "GLD daily bars, Alpaca SIP (split-adjusted, price only), 2016-01-04 to 2026-10-20. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2422,6 +3226,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C18/schematic.webp",
+     "thumb": "media/tests/C18/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $20M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2453,6 +3265,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C19/schematic.webp",
+     "thumb": "media/tests/C19/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY, QQQ, IWM, DIA daily bars, Alpaca SIP (split-adjusted, price only), 2016-01-04 to 2026-10-20. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2487,6 +3307,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C20/schematic.webp",
+     "thumb": "media/tests/C20/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $50M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2521,6 +3349,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C21/schematic.webp",
+     "thumb": "media/tests/C21/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY, QQQ, IWM, DIA daily bars, Alpaca SIP (split-adjusted, price only), 2016-01-04 to 2026-10-20. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2555,6 +3391,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C22/schematic.webp",
+     "thumb": "media/tests/C22/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $50M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2588,6 +3432,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C23/schematic.webp",
+     "thumb": "media/tests/C23/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Two universes: SPY/QQQ/IWM/DIA/SMH + 11 sector SPDRs, and US stocks (raw close > $5, prior 20-day $ volume >= $50M, point-in-time). Alpaca SIP daily bars, split-adjusted, 2016-01-04 to 2026-10-20. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2621,6 +3473,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C24/schematic.webp",
+     "thumb": "media/tests/C24/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $20M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2654,6 +3514,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C25/schematic.webp",
+     "thumb": "media/tests/C25/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 50-day average dollar volume >= $50M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py. Also ADR(20) >= 3%, close above a rising 200-day SMA, 20-day return above QQQ's.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2687,6 +3555,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C26/schematic.webp",
+     "thumb": "media/tests/C26/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 50-day average dollar volume >= $80M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py. Also ATR(20)/price >= 5% and SMA50 > SMA200.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2720,6 +3596,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C27/schematic.webp",
+     "thumb": "media/tests/C27/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 50-day average dollar volume >= $80M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py. Also ATR(20)/price >= 5% and SMA50 > SMA200.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2753,6 +3637,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C28/schematic.webp",
+     "thumb": "media/tests/C28/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: prior raw close > $5 and prior 20-day average dollar volume >= $20M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2786,6 +3678,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C29/schematic.webp",
+     "thumb": "media/tests/C29/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $20M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2819,6 +3719,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C30/schematic.webp",
+     "thumb": "media/tests/C30/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $20M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2852,6 +3760,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C31/schematic.webp",
+     "thumb": "media/tests/C31/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $20M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2886,6 +3802,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C32/schematic.webp",
+     "thumb": "media/tests/C32/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks, Alpaca SIP daily bars (raw, split-adjusted with Alpaca's split calendar; active and delisted), 2016-01-04 to 2026-10-20. Point-in-time filter: raw close > $5 and prior 20-day average dollar volume >= $20M (measured before the signal day); ETFs excluded. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2919,6 +3843,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C33/schematic.webp",
+     "thumb": "media/tests/C33/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY, QQQ, IWM, DIA daily bars, Alpaca SIP (split-adjusted, price only), 2016-01-04 to 2026-10-20. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2952,6 +3884,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C34/schematic.webp",
+     "thumb": "media/tests/C34/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY, QQQ, IWM, DIA daily bars, Alpaca SIP (split-adjusted, price only), 2016-01-04 to 2026-10-20. Script backtests/cf_daily.py.",
     "period": "Free parameters picked by in-sample Sharpe at 1 bp, 2016-10-20 to 2020-12-31 (after 200-day warm-up); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -2985,6 +3925,32 @@
    "highlight": true,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C35/win.webp",
+     "thumb": "media/tests/C35/win_t.webp",
+     "label": "Winning day · Fri 18 Jul 2025 · +24.9% on the short"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C35/loss.webp",
+     "thumb": "media/tests/C35/loss_t.webp",
+     "label": "Losing day · Mon 5 May 2025 · −75.0% on the short"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/C35/win.mp4",
+     "poster": "media/tests/C35/win.webp",
+     "label": "Clip · winning day, Fri 18 Jul 2025"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C35/schematic.webp",
+     "thumb": "media/tests/C35/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US small caps from Alpaca SIP raw daily bars incl. delisted (ETFs/funds/SPACs removed), 1-minute SIP bars 04:00-16:00 ET for every candidate day, 2016 to 2026-10-20. No market-cap data: base filters are 20-day avg volume >= 100k shares, prior close >= $0.30, split days excluded. Script backtests/cf_smallcap.py (candidates from cf_screen.py / cf_dl.py).",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3018,6 +3984,26 @@
    "highlight": true,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C36/win.webp",
+     "thumb": "media/tests/C36/win_t.webp",
+     "label": "Winning day · Tue 6 Jan 2026 · +26.8% on the short"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C36/loss.webp",
+     "thumb": "media/tests/C36/loss_t.webp",
+     "label": "Losing day · Fri 6 Mar 2026 · −16.0% on the short"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C36/schematic.webp",
+     "thumb": "media/tests/C36/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US small caps from Alpaca SIP raw daily bars incl. delisted (ETFs/funds/SPACs removed), 1-minute SIP bars 04:00-16:00 ET for every candidate day, 2016 to 2026-10-20. No market-cap data: base filters are 20-day avg volume >= 100k shares, prior close >= $0.30, split days excluded. Script backtests/cf_smallcap.py (candidates from cf_screen.py / cf_dl.py).",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3051,6 +4037,32 @@
    "highlight": true,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C37/win.webp",
+     "thumb": "media/tests/C37/win_t.webp",
+     "label": "Winning day · Thu 7 Mar 2024 · +20.1% on the short"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C37/loss.webp",
+     "thumb": "media/tests/C37/loss_t.webp",
+     "label": "Losing day · Wed 20 Jan 2021 · −2.1% on the short"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/C37/win.mp4",
+     "poster": "media/tests/C37/win.webp",
+     "label": "Clip · winning day, Thu 7 Mar 2024"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C37/schematic.webp",
+     "thumb": "media/tests/C37/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US small caps from Alpaca SIP raw daily bars incl. delisted (ETFs/funds/SPACs removed), 1-minute SIP bars 04:00-16:00 ET for every candidate day, 2016 to 2026-10-20. No market-cap data: base filters are 20-day avg volume >= 100k shares, prior close >= $0.30, split days excluded. Script backtests/cf_smallcap.py (candidates from cf_screen.py / cf_dl.py).",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3082,6 +4094,26 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C38/win.webp",
+     "thumb": "media/tests/C38/win_t.webp",
+     "label": "Winning day · Fri 7 Feb 2025 · +9.1% on the short"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C38/loss.webp",
+     "thumb": "media/tests/C38/loss_t.webp",
+     "label": "Losing day · Fri 14 Oct 2022 · −10.3% on the short"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C38/schematic.webp",
+     "thumb": "media/tests/C38/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US small caps from Alpaca SIP raw daily bars incl. delisted (ETFs/funds/SPACs removed), 1-minute SIP bars 04:00-16:00 ET for every candidate day, 2016 to 2026-10-20. No market-cap data: base filters are 20-day avg volume >= 100k shares, prior close >= $0.30, split days excluded. Script backtests/cf_smallcap.py (candidates from cf_screen.py / cf_dl.py).",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3115,6 +4147,32 @@
    "highlight": true,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C39/win.webp",
+     "thumb": "media/tests/C39/win_t.webp",
+     "label": "Winning day · Mon 15 Jun 2026 · +11.8% on the short"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C39/loss.webp",
+     "thumb": "media/tests/C39/loss_t.webp",
+     "label": "Losing day · Tue 27 Jun 2023 · −8.2% on the short"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/C39/win.mp4",
+     "poster": "media/tests/C39/win.webp",
+     "label": "Clip · winning day, Mon 15 Jun 2026"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C39/schematic.webp",
+     "thumb": "media/tests/C39/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US small caps from Alpaca SIP raw daily bars incl. delisted (ETFs/funds/SPACs removed), 1-minute SIP bars 04:00-16:00 ET for every candidate day, 2016 to 2026-10-20. No market-cap data: base filters are 20-day avg volume >= 100k shares, prior close >= $0.30, split days excluded. Script backtests/cf_smallcap.py (candidates from cf_screen.py / cf_dl.py).",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3148,6 +4206,32 @@
    "highlight": true,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/C40/win.webp",
+     "thumb": "media/tests/C40/win_t.webp",
+     "label": "Winning day · Tue 14 Jan 2025 · +13.6% on the short"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/C40/loss.webp",
+     "thumb": "media/tests/C40/loss_t.webp",
+     "label": "Losing day · Wed 9 Oct 2024 · −10.0% on the short"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/C40/win.mp4",
+     "poster": "media/tests/C40/win.webp",
+     "label": "Clip · winning day, Tue 14 Jan 2025"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/C40/schematic.webp",
+     "thumb": "media/tests/C40/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US small caps from Alpaca SIP raw daily bars incl. delisted (ETFs/funds/SPACs removed), 1-minute SIP bars 04:00-16:00 ET for every candidate day, 2016 to 2026-10-20. No market-cap data: base filters are 20-day avg volume >= 100k shares, prior close >= $0.30, split days excluded. Script backtests/cf_smallcap.py (candidates from cf_screen.py / cf_dl.py).",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3179,6 +4263,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C41/schematic.webp",
+     "thumb": "media/tests/C41/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US small caps, Alpaca SIP raw daily bars incl. delisted (daily bars only for this test), 2016 to 2026-10-20; 20-day avg volume >= 100k shares, prior close >= $0.30, split days excluded. Script backtests/cf_smallcap.py.",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3210,6 +4302,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/C42/schematic.webp",
+     "thumb": "media/tests/C42/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "10 US mega caps (AAPL, MSFT, NVDA, AMZN, META, GOOGL, TSLA, AMD, NFLX, AVGO): 1-minute Alpaca SIP bars 09:30-11:59 ET on all 2,715 days plus split-adjusted daily bars, 2016-02-15 to 2026-10-20. Script backtests/cf_smallcap.py.",
     "period": "In-sample 2016-01-01 to 2020-12-31 picks parameters (highest avg R at base cost among combos with >= 15 IS trades); out-of-sample 2021-01-01 to 2026-10-20 run blind.",
@@ -3240,6 +4340,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/M1/schematic.webp",
+     "thumb": "media/tests/M1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ total return (Nasdaq-100 price index before 1999) as the signal; trades real TQQQ daily (Yahoo adjusted closes) 2016-10-20 to 2026-10-20, plus a synthetic 3x series (3×QQQ − 2×T-bill − 0.95%/yr fee) 1986-2026. 1x version applies identical weights to QQQ.",
     "period": "In-sample 2016-10-20 to 2020-12-31 (parameters picked by IS Sharpe on real TQQQ); out-of-sample 2021-01-01 to 2026-10-20 blind. Extra stress windows: 1986-2015, 2000-02 and 2007-10 to 2009-03 (synthetic).",
@@ -3270,6 +4378,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/M2/schematic.webp",
+     "thumb": "media/tests/M2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same as M1: QQQ total-return signal; real TQQQ and SQQQ daily 2016-10-20 to 2026-10-20; synthetic −3x (−3×QQQ + 4×T-bill − 0.95%/yr) for 1986-2026; 1x version uses a synthetic −1x (PSQ-like) inverse.",
     "period": "IS 2016-10-20 to 2020-12-31 picks parameters by Sharpe; OOS 2021-01-01 to 2026-10-20 blind; 1986-2026 and 2000-02 stress tests on synthetic data.",
@@ -3305,6 +4421,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/M3/schematic.webp",
+     "thumb": "media/tests/M3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same as M1 (QQQ signal, real TQQQ 2016-10-20 to 2026-10-20, synthetic 3x 1986-2026, 1x on QQQ).",
     "period": "IS 2016-10-20 to 2020-12-31 picks the volatility target by Sharpe; OOS 2021-01-01 to 2026-10-20 blind; 1986-2026 synthetic stress test.",
@@ -3335,6 +4459,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/M4/schematic.webp",
+     "thumb": "media/tests/M4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ total-return index as signal; trades real TQQQ (3x) or QQQ (1x) daily, 2016-10-20 to 2026-10-20; synthetic 3x for 1986-2026.",
     "period": "IS 2016-10-20 to 2020-12-31 picks thresholds by Sharpe; OOS 2021-01-01 to 2026-10-20 blind.",
@@ -3368,6 +4500,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/M5/schematic.webp",
+     "thumb": "media/tests/M5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ total-return index as signal; trades real SQQQ (−3x) or a synthetic −1x inverse daily, 2016-10-20 to 2026-10-20; synthetic −3x for 1986-2026.",
     "period": "IS 2016-10-20 to 2020-12-31 picks the RSI threshold by Sharpe; OOS 2021-01-01 to 2026-10-20 blind.",
@@ -3398,6 +4538,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/M6/schematic.webp",
+     "thumb": "media/tests/M6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same as M1-M5: QQQ signal, real TQQQ/SQQQ 2016-10-20 to 2026-10-20, synthetic 3x/−3x 1986-2026, 1x on QQQ.",
     "period": "Component parameters picked in-sample 2016-10-20 to 2020-12-31; combos tested OOS 2021-01-01 to 2026-10-20 and on 1986-2026.",
@@ -3424,6 +4572,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/B1/schematic.webp",
+     "thumb": "media/tests/B1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US common stocks on NYSE/Nasdaq/AMEX including delisted names, daily bars 2016-2026; a day counts only if close > $5, 20-day average dollar volume > $10M and ≥ 250 bars of history. 4,521 stocks, 4.38M stock-days, 57,915 big-move events.",
     "period": "Rules, bucket cut-offs and models fit on 2016-2020 (effectively 2017-2020 after the 250-day warm-up); judged blind on 2021-2026.",
@@ -3447,6 +4603,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/B2/schematic.webp",
+     "thumb": "media/tests/B2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same 57,915 big-move events in US common stocks (close > $5, $10M 20-day dollar volume, ≥ 250 bars), daily bars 2016-2026.",
     "period": "Fit on 2016-2020, judged blind on 2021-2026.",
@@ -3470,6 +4634,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/B3/schematic.webp",
+     "thumb": "media/tests/B3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US common stocks as in B1 (close > $5, $10M 20-day dollar volume), daily bars; trades evaluated OOS 2021-2026 only.",
     "period": "Models and top-10% cut-offs set on 2016-2020; trades only in 2021-2026.",
@@ -3497,6 +4669,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/B4/schematic.webp",
+     "thumb": "media/tests/B4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US earnings events Jan 2024 to Oct 2026 with option prints (Alpaca free plan, trade-based option bars, no quotes), from the earnings-options test: 828 names with 20-day dollar volume > $100M and an expiry within 10 days.",
     "period": "The detection model was trained on 2016-2020 stock data; the straddle test uses the 2024-26 option sample only.",
@@ -3522,6 +4702,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/B5/schematic.webp",
+     "thumb": "media/tests/B5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same US common-stock universe and 57,915 events as B1; insider data from SEC Form 4 quarterly datasets 2016Q1 to 2026Q1.",
     "period": "2016-2020 in-sample, 2021-2026 out-of-sample (insider data stops 2026-03).",
@@ -3545,6 +4733,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/B6/schematic.webp",
+     "thumb": "media/tests/B6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "2,172 of the 4,521 study stocks mapped to their English Wikipedia article via Wikidata (SEC CIK or ticker), 71% of stock-days; daily Wikimedia page views 2015-07 to 2026-10.",
     "period": "2016-2020 in-sample, 2021-2026 out-of-sample.",
@@ -3569,6 +4765,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/B7/schematic.webp",
+     "thumb": "media/tests/B7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Planned: Google Trends search interest for a sample of consumer names, and Reddit ticker mentions.",
     "entry": "Not run. Google Trends returned HTTP 429 (blocked) twice so it was dropped; Reddit was skipped because Pushshift is dead and Arctic Shift timed out on the test query.",
@@ -3593,6 +4797,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/X1/schematic.webp",
+     "thumb": "media/tests/X1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks-in-play: the top-20 relative-volume names per day from the project's ORB pipeline, Alpaca 1-minute data, 2016-2026. 'Capital.com proxy' universe keeps names with price ≥ $10 and 20-day average dollar volume ≥ $25M (no instrument list available).",
     "period": "IS 2016-2020 picks the filter (highest average net R at 5 bp with ≥ 25 trades/yr); OOS 2021-01-01 to 2026-10-20 blind.",
@@ -3627,6 +4839,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/X2/schematic.webp",
+     "thumb": "media/tests/X2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same ORB-short trades as X1 (top-20 relative-volume names, Alpaca 1-minute, 2016-2026; Capital.com proxy price ≥ $10 and $25M daily dollar volume).",
     "period": "IS 2016-2020, OOS 2021-01-01 to 2026-10-20 (this filter is one of the 9 IS candidates, not the IS pick).",
@@ -3657,6 +4877,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/X3/schematic.webp",
+     "thumb": "media/tests/X3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US common stocks, daily bars 2016-2026 (project panel), close ≥ $5 and 20-day dollar volume ≥ $10M; Capital.com proxy keeps price ≥ $10 and 20-day dollar volume ≥ $25M.",
     "period": "IS 2016-2020 picks the variant (best average net return at 5 bp + funding, ≥ 25 trades/yr); OOS 2021-2026 blind.",
@@ -3688,6 +4916,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/X4/schematic.webp",
+     "thumb": "media/tests/X4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Trade lists from the earlier small-cap screen (Alpaca 1-minute, 2016-2026): Verma gap ≥ 100% shorts and Temiz first-red-day shorts; subset with entry price ≥ $5 as a generous proxy for names Capital.com might list.",
     "period": "Parameters were chosen in-sample 2016-2020 in the small-cap screen; OOS 2021-2026.",
@@ -3718,6 +4954,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/X5/schematic.webp",
+     "thumb": "media/tests/X5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "The X1-X4 short sleeves on Capital.com-proxy names (price ≥ $10, $25M daily dollar volume; Verma entry ≥ $5), OOS 2021-2026.",
     "period": "Sleeve variants IS-picked on 2016-2020; account result reported OOS 2021-01-01 to 2026-10-20.",
@@ -3746,6 +4990,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/X6/schematic.webp",
+     "thumb": "media/tests/X6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same sleeves as X5 (Capital.com-proxy names), 2016-2026.",
     "period": "Sleeve variants IS-picked on 2016-2020; reported IS, OOS 2021-2026 and full period.",
@@ -3774,6 +5026,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/X7/schematic.webp",
+     "thumb": "media/tests/X7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Daily returns of the live ORB long sleeve and the QQQ>MA200 rotation, plus the short sleeves (ORB short IS pick, ORB short when QQQ < MA200, RSI2 short), 2016-10-20 to 2026.",
     "period": "Sleeve rules IS-picked on 2016-2020; combo results shown for 2016-20 and 2021-26.",
@@ -3800,6 +5060,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I1/schematic.webp",
+     "thumb": "media/tests/I1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US stocks with 20-day dollar volume > $100M: 7,219 big-move events (1,126 names) plus 3,904 matched control days (same stock, ≥ 10 bars from any event). Alpaca free option trade bars, 2 expiries (first ≥ 5 and first ≥ 25 days out), strikes within ±12% of the close, 2024-02-20 to 2026-10-16.",
     "period": "Short history, so no 2016-2020 split: IS 2024-02-20 to 2025-06-30, OOS 2025-07-01 to 2026-10-16.",
@@ -3827,6 +5095,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I2/schematic.webp",
+     "thumb": "media/tests/I2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US common stocks (big-move study universe); FINRA consolidated short interest, 211 reports 2017-12-29 to 2026-09-30; FINRA Reg SHO daily off-exchange short-sale volume from 2018-08-01; shares outstanding from SEC XBRL frames.",
     "period": "IS 2018-2020, OOS 2021-2026.",
@@ -3854,6 +5130,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I3/schematic.webp",
+     "thumb": "media/tests/I3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "78,689 disclosed trades (House Clerk PTRs, Senate eFD, OGE 278-T) filed 2014-01 to 2026-10-22, from the kadoa-org congress-trading-monitor dataset; 40,268 congressional stock trades matched to split-adjusted daily prices (incl. delisted).",
     "period": "IS 2016-2020, OOS 2021-2026.",
@@ -3883,6 +5167,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I4/schematic.webp",
+     "thumb": "media/tests/I4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Nancy/Paul Pelosi disclosed trades, 143 trades in 31 tickers, 2016-02 to 2026-10 (97 buys, 45 sells with prices); daily stock prices.",
     "period": "Full period 2016-02 to 2026-10, with a since-2021 comparison; no parameter fitting.",
@@ -3910,6 +5202,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I5/schematic.webp",
+     "thumb": "media/tests/I5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Trump OGE 278-T filings: 10,468 rows, 5,400 stock trades matched in 854 tickers, filed on only 13 dates (2025-08-19 to 2026-10-08).",
     "period": "No split possible; all 13 filing dates.",
@@ -3938,6 +5238,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I6/schematic.webp",
+     "thumb": "media/tests/I6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NANC (Democrat-trades ETF) and KRUZ (Republican-trades ETF, closed 2025-03-20), daily, from launch 2023-02-07 to 2026-10-20 (KRUZ to 2025-03-20).",
     "entry": "Buy and hold the ETF from 2023-02-07.",
@@ -3963,6 +5271,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I7/schematic.webp",
+     "thumb": "media/tests/I7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Kalshi and Polymarket public APIs: 556 macro/political markets with daily history (Polymarket CLOB from late 2022, Kalshi from 2022-08/2023-05), mapped before testing to ETFs (e.g. Fed cut → TLT/IEF/GLD/QQQ up; Middle-East strike → USO/XLE/ITA/GLD up). 3,942 raw triggers.",
     "period": "Earlier half vs later half of events by entry date (parameter picked on the early half).",
@@ -3993,6 +5309,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/I8/schematic.webp",
+     "thumb": "media/tests/I8/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "918 asset legs on 205 dates from the I7 triggers (cross-up 80, cross-down 20, jump 15 points), with minute prediction-market history and Alpaca 1-minute SIP data including extended hours.",
     "period": "2022-2026; no IS/OOS split recorded for this step.",
@@ -4020,6 +5344,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/P1/schematic.webp",
+     "thumb": "media/tests/P1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "41 pre-registered bill → asset records (38 bills, e.g. NDAA, CHIPS, IRA, TCJA, IIJA, cannabis, crypto bills) mapped to sector ETFs or baskets (ITA, SMH, TAN, ICLN, PPH, hospitals, IWM, KRE, PAVE, cannabis, crypto, etc.); bill actions from govinfo BILLSTATUS bulk XML; daily prices. 181 asset-day events 2016-05 to 2025-10.",
     "period": "IS 2016-2020 (72 events), OOS 2021-2025 (109 events).",
@@ -4050,6 +5382,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/P2/schematic.webp",
+     "thumb": "media/tests/P2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "House floor actions that carry a timestamp (52% of House events) from the P1 bill set: 46 timed events, 31 with a print in the first 10 minutes; Alpaca 1-minute SIP bars incl. extended hours.",
     "period": "2016-2025; too few events for an IS/OOS split.",
@@ -4078,6 +5418,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/P3/schematic.webp",
+     "thumb": "media/tests/P3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "DoD contract transactions ≥ $7.5M from USAspending (contract types A-D), 2015-01 to 2026-09, mapped to 60 listed defense contractors with merger dates; 17,963 ticker-day award events. Daily prices.",
     "period": "IS 2016-2020 (7,611 events), OOS 2021-2026 (10,352 events).",
@@ -4105,6 +5453,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/P4/schematic.webp",
+     "thumb": "media/tests/P4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "1,572 large DoD awards (from P3) with Alpaca 1-minute SIP data including after-hours.",
     "period": "2016-2026; no IS/OOS split for the fast test.",
@@ -4134,6 +5490,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/P5/schematic.webp",
+     "thumb": "media/tests/P5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Senate LDA (lda.gov) LD-2 filings with reported amount ≥ $250k for the second quarter of each year 2015-2025: 7,936 filings, client names matched to tickers; 367 tickers ('large lobbyers', 130-230 a year).",
     "period": "IS formation years 2016-2020, OOS 2021-2025 (5 annual formations each).",
@@ -4163,6 +5527,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/P6/schematic.webp",
+     "thumb": "media/tests/P6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same LDA Q2 ≥ $250k lobbying universe as P5 (367 tickers), 2015-2025.",
     "period": "IS formation years 2016-2020, OOS 2021-2025.",
@@ -4191,6 +5563,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V1/schematic.webp",
+     "thumb": "media/tests/V1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY (ES proxy) and QQQ (NQ proxy), Alpaca SIP 1-minute bars, raw prices, 04:00-20:00 ET, 2016-01-04 to 2026-10-21 (~2,700 days each).",
     "period": "IS 2016-2020 vs OOS 2021-2026 reported side by side; also year by year.",
@@ -4215,6 +5595,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V2/schematic.webp",
+     "thumb": "media/tests/V2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY and QQQ Alpaca SIP 1-minute bars incl. extended hours, 2016-01-04 to 2026-10-21.",
     "period": "IS 2016-2020 vs OOS 2021-2026, plus per-year edge over random.",
@@ -4239,6 +5627,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V3/schematic.webp",
+     "thumb": "media/tests/V3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY and QQQ Alpaca SIP 1-minute bars, 2016-01-04 to 2026-10-21.",
     "period": "IS 2016-2020 vs OOS 2021-2026.",
@@ -4264,6 +5660,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V4/schematic.webp",
+     "thumb": "media/tests/V4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY and QQQ Alpaca SIP 1-minute bars, 2016-01-04 to 2026-10-21; 4 levels (prior RTH POC, overnight POC, extended overnight POC, nearest naked POC).",
     "period": "IS 2016-2020 vs OOS 2021-2026.",
@@ -4291,6 +5695,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V5/schematic.webp",
+     "thumb": "media/tests/V5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY (and QQQ) Alpaca SIP 1-minute bars, 2016-01-04 to 2026-10-21.",
     "period": "IS 2016-2020 picks the rule from the grid; OOS 2021-2026 blind.",
@@ -4323,6 +5735,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V6/schematic.webp",
+     "thumb": "media/tests/V6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY and QQQ Alpaca SIP 1-minute bars, 2016-01-04 to 2026-10-21.",
     "period": "IS 2016-2020 picks; OOS 2021-2026 blind.",
@@ -4350,6 +5770,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V7/schematic.webp",
+     "thumb": "media/tests/V7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY and QQQ Alpaca SIP 1-minute bars, 2016-01-04 to 2026-10-21.",
     "period": "IS 2016-2020 vs OOS 2021-2026.",
@@ -4377,6 +5805,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V8/schematic.webp",
+     "thumb": "media/tests/V8/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY and QQQ Alpaca SIP 1-minute bars, raw, 04:00-20:00 ET, 2016-01 to 2026-10-21 (days with ≥ 380 RTH bars and valid ATR, ~2,690 per ticker).",
     "period": "IS 2016-2020, OOS 2021-2026.",
@@ -4405,6 +5841,32 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/V9/win.webp",
+     "thumb": "media/tests/V9/win_t.webp",
+     "label": "Winning day (paper forward test) · Wed 28 Oct 2026 · +0.72R · +$163 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/V9/loss.webp",
+     "thumb": "media/tests/V9/loss_t.webp",
+     "label": "Losing day (paper forward test) · Fri 2 Oct 2026 · −1.01R · −$218 per MNQ"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/V9/win.mp4",
+     "poster": "media/tests/V9/win.webp",
+     "label": "Clip · winning day, Wed 28 Oct 2026"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/V9/schematic.webp",
+     "thumb": "media/tests/V9/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (NQ proxy) and SPY (ES proxy) Alpaca SIP 1-minute bars incl. extended hours, 2016-2026.",
     "period": "IS 2016-2020, OOS 2021-2026; found by looking at splits, not pre-registered.",
@@ -4435,6 +5897,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V10/schematic.webp",
+     "thumb": "media/tests/V10/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "The V9 gap-up rejection-short trades on QQQ and SPY (1-minute, 2016 to 2026-10-21); daily filter data from RTH aggregates, Yahoo daily for pre-2016 warm-up, CBOE VIX.",
     "period": "IS 2016-2020 picks the filter (best pooled IS average micro R, ≥ 30 kept trades per ticker); OOS 2021-2026 blind; 2026 YTD separately.",
@@ -4463,6 +5933,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/D1/schematic.webp",
+     "thumb": "media/tests/D1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "516 US stocks classified by SEC SIC code (chips/memory 159, oil & gas 156, clean energy 87, utilities 113, plus SPIR), incl. delisted names; Alpaca SIP daily bars, split-adjusted, 2016-01-04 to 2026-10-21. A day is eligible if raw close > $1 and prior-day 20-day dollar volume is $2M-$300M.",
     "period": "IS 2016-01-04 to 2020-12-31 (signals start ~2017-01 after the 252-day warm-up); OOS 2021-01-01 to 2026-10-21 blind.",
@@ -4491,6 +5969,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/D2/schematic.webp",
+     "thumb": "media/tests/D2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same 516-stock SIC universe (chips, oil & gas, clean energy, utilities), Alpaca daily bars 2016-2026; eligibility raw close > $1 and 20-day dollar volume $2M-$300M.",
     "period": "Configuration picked by best IS Sharpe at 1 bp on 2016-2020; OOS 2021-01-01 to 2026-10-21 blind.",
@@ -4520,6 +6006,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/D3/schematic.webp",
+     "thumb": "media/tests/D3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same 516-stock SIC universe, Alpaca daily bars 2016-2026.",
     "period": "IS 2016-2020, OOS 2021-2026.",
@@ -4546,6 +6040,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/D4/schematic.webp",
+     "thumb": "media/tests/D4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same 516-stock SIC universe, Alpaca daily bars 2016-2026.",
     "period": "IS 2016-2020, OOS 2021-2026.",
@@ -4573,6 +6075,14 @@
    "date": null,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/D5/schematic.webp",
+     "thumb": "media/tests/D5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same 516-stock SIC universe, Alpaca daily bars 2016-2026.",
     "period": "IS 2016-2020, OOS 2021-2026.",
@@ -4604,6 +6114,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/N1/schematic.webp",
+     "thumb": "media/tests/N1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY, Alpaca SIP regular-hours 1-minute bars (raw), 2016-01-04 to 2026-10-20; daily RTH bars built from them, Yahoo 2014-11 to 2015 for SMA/ATR warm-up; total-return closes for buy-and-hold.",
     "period": "IS 2016-2020 picks (best IS Sharpe, full size, 1 bp); OOS 2021-01-01 to 2026-10-20 blind; 2026 YTD separately.",
@@ -4634,6 +6152,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/N2/schematic.webp",
+     "thumb": "media/tests/N2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ (and SPY) Alpaca SIP 1-minute bars incl. extended hours 04:00-20:00 ET, 2016-01-04 to 2026-10-23; official raw and dividend-adjusted daily closes.",
     "period": "IS 2016-2020, OOS 2021-2026, 2026 YTD separately.",
@@ -4664,6 +6190,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/N3/schematic.webp",
+     "thumb": "media/tests/N3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ Alpaca SIP 1-minute bars incl. extended hours, 2016-01-04 to 2026-10-23; CBOE VIX (prior day), FOMC and CPI dates, megacap earnings calendar.",
     "period": "Model fit and threshold set on IS 2016-2020 nights; OOS 2021-2026 blind.",
@@ -4694,6 +6228,26 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/N4/win.webp",
+     "thumb": "media/tests/N4/win_t.webp",
+     "label": "Winning night · Thu 4 Apr 2024 · +$124 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/N4/loss.webp",
+     "thumb": "media/tests/N4/loss_t.webp",
+     "label": "Losing night · Mon 10 Oct 2022 · −$120 per MNQ"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/N4/schematic.webp",
+     "thumb": "media/tests/N4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Micro Nasdaq future (MNQ) simulated from QQQ 1-minute bars incl. extended hours: 1 QQQ point = 41 NQ points = $82 per MNQ; 2016-2026.",
     "period": "Model frozen from IS 2016-2020; OOS 2021-2026; 2026 YTD separately.",
@@ -4726,6 +6280,26 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/N5/win.webp",
+     "thumb": "media/tests/N5/win_t.webp",
+     "label": "Winning night · Thu 4 Apr 2024 · +$124 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/N5/loss.webp",
+     "thumb": "media/tests/N5/loss_t.webp",
+     "label": "Losing night · Tue 30 Jul 2024 · −$102 per MNQ"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/N5/schematic.webp",
+     "thumb": "media/tests/N5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "MNQ simulated from QQQ 1-minute bars incl. extended hours ($82 per QQQ point per MNQ), 2016-2026.",
     "period": "IS 2016-2020, OOS 2021-2026, 2026 YTD.",
@@ -4760,6 +6334,26 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/N6/win.webp",
+     "thumb": "media/tests/N6/win_t.webp",
+     "label": "Winning night · Mon 26 Jun 2023 · +$122 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/N6/loss.webp",
+     "thumb": "media/tests/N6/loss_t.webp",
+     "label": "Losing night · Mon 16 Aug 2021 · −$234 per MNQ"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/N6/schematic.webp",
+     "thumb": "media/tests/N6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "MNQ simulated from QQQ 1-minute bars incl. extended hours ($82 per QQQ point), 2016-2026.",
     "period": "IS 2016-2020, OOS 2021-2026, 2026 YTD.",
@@ -4791,6 +6385,26 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/N7/win.webp",
+     "thumb": "media/tests/N7/win_t.webp",
+     "label": "Winning night · Thu 4 Apr 2024 · +$124 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/N7/loss.webp",
+     "thumb": "media/tests/N7/loss_t.webp",
+     "label": "Losing night · Thu 10 Apr 2025 · −$129 per MNQ"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/N7/schematic.webp",
+     "thumb": "media/tests/N7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "MNQ simulated from QQQ 1-minute bars incl. extended hours ($82 per QQQ point), 2016-2026.",
     "period": "IS 2016-2020, OOS 2021-2026, 2026 YTD.",
@@ -4823,6 +6437,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/K1/schematic.webp",
+     "thumb": "media/tests/K1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ daily total return (Alpaca; Yahoo adjusted closes for the 1999-2015 check), CBOE VIX daily closes; cash in BIL.",
     "period": "IS 2016-2020 picks (this was the IS-best QQQ variant by permutation p); OOS 2021-01 to 2026-10-20 blind; 2026 YTD; extra blind check 1999-2015 (never used to pick).",
@@ -4854,6 +6476,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/K2/schematic.webp",
+     "thumb": "media/tests/K2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY daily total return, CBOE VIX; cash in BIL.",
     "period": "Rule copied from the QQQ IS pick; OOS 2021-2026 and the 1993-2015 blind check.",
@@ -4884,6 +6514,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/K3/schematic.webp",
+     "thumb": "media/tests/K3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ daily total return; Cboe equity put/call ratio (equitypc.csv 2006-11 to 2019-10-04, then Cboe daily JSON to 2026-10-23, spliced); cash in BIL.",
     "period": "IS 2016-2020 picks (QQQ IS-best Sharpe); OOS 2021-2026 blind; 1999-2015 blind check.",
@@ -4915,6 +6553,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/K4/schematic.webp",
+     "thumb": "media/tests/K4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ daily total return; a rebuilt CNN-style fear-and-greed composite (cnn7) from free data, 2016 onward; cash in BIL.",
     "period": "IS 2016-2020 picks (QQQ cnn7 IS-best Sharpe); OOS 2021-2026 blind; no pre-2016 history.",
@@ -4945,6 +6591,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/K5/schematic.webp",
+     "thumb": "media/tests/K5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ daily total return; AAII bull-bear spread (GitHub mirror 1987 to 2024-06-27, plus aaii.com's last 22 weeks from 2026-05-28); cash in BIL.",
     "period": "IS 2016-2020 (strong IS result); OOS 2021-2026 blind; 1999-2015 blind check.",
@@ -4973,6 +6627,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/K6/schematic.webp",
+     "thumb": "media/tests/K6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "The project's weekly QQQ>MA200 rotation (QQQ when above its 200-day MA, otherwise defensive ETFs/BIL), daily total returns 2016-2026; QQQ RSI(2).",
     "period": "IS 2016-2020 picks the overlay (best IS Sharpe among 1,116); OOS 2021-01 to 2026-10-20 blind; 1999-2015 check.",
@@ -5000,6 +6662,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/K7/schematic.webp",
+     "thumb": "media/tests/K7/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "The weekly QQQ>MA200 rotation, daily 2016-2026; 52-week new highs minus new lows from the survivorship-free Alpaca top-500 panel.",
     "period": "IS 2016-2020 picks (best IS trim-only overlay); OOS 2021-2026 blind.",
@@ -5030,6 +6700,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/A1/schematic.webp",
+     "thumb": "media/tests/A1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Daily top 1,000 US stocks by 20-day dollar volume (price > $5, dollar volume >= $5M), delisted names included; Alpaca daily bars; weekly signal at Friday close, traded Monday open. Data 2016-04 to 2026-10-20.",
     "period": "Model trained 2016-04 to 2019-12, validation year 2020 (used only to pick the number of boosting rounds), then frozen. Portfolio IS 2016-10-20 to 2020; blind OOS 2021-01 to 2026-10-20.",
@@ -5060,6 +6738,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/A2/schematic.webp",
+     "thumb": "media/tests/A2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Daily top 1,000 US stocks by 20-day dollar volume (price > $5, dollar volume >= $5M), delisted names included; Alpaca daily bars; weekly signal at Friday close, traded Monday open. Data 2016-04 to 2026-10-20.",
     "period": "Model trained 2016-04 to 2019-12, validation year 2020 (used only to pick the number of boosting rounds), then frozen. Portfolio IS 2016-10-20 to 2020; blind OOS 2021-01 to 2026-10-20.",
@@ -5090,6 +6776,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/A3/schematic.webp",
+     "thumb": "media/tests/A3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Daily top 1,000 US stocks by 20-day dollar volume (price > $5, dollar volume >= $5M), delisted names included; Alpaca daily bars; weekly signal at Friday close, traded Monday open. Data 2016-04 to 2026-10-20.",
     "period": "Model trained 2016-04 to 2019-12, validation year 2020 (used only to pick the number of boosting rounds), then frozen. Portfolio IS 2016-10-20 to 2020; blind OOS 2021-01 to 2026-10-20.",
@@ -5118,6 +6812,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/A4/schematic.webp",
+     "thumb": "media/tests/A4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "9 ETFs: SPY, QQQ, IWM, XLE, XLV, TLT, IEF, GLD, BIL (cash); Alpaca total-return daily bars, 2016-10 to 2026-10-20.",
     "period": "Trained on 2016-2020 only (first decision ~2016-10 because features need ~200 sessions); frozen and tested 2021-01 to 2026-10-20.",
@@ -5146,6 +6848,14 @@
    "date": "2026-10-24",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/A5/schematic.webp",
+     "thumb": "media/tests/A5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "LLM trading agents (TradingAgents, ai-hedge-fund, FinMem, FinAgent, FinRobot, AI-Trader, Vibe-Trading); published live/post-cutoff benchmarks (StockBench 82 days 2025, AI-Trader 5 weeks, Alpha Arena 2-week contests) and FINSABER (S&P 500 incl. delisted, 2004-2024).",
     "period": "No in-sample/out-of-sample backtest possible: the models' training data contains the future, so only live or post-cutoff evidence counts.",
@@ -5172,6 +6882,14 @@
    "date": "2026-10-27",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/L1/schematic.webp",
+     "thumb": "media/tests/L1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US listed companies that file lobbying reports: all Senate LDA LD-2 filings 2015Q1-2026Q3 mapped to tickers (~450-680 lobbyers per quarter); Alpaca daily prices; SEC share counts for market cap.",
     "period": "IS = formations 2016-2020 (used to choose between the two signals); OOS = formations 2021-2026.",
@@ -5199,6 +6917,14 @@
    "date": "2026-10-27",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/L2/schematic.webp",
+     "thumb": "media/tests/L2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "US listed companies that file lobbying reports: all Senate LDA LD-2 filings 2015Q1-2026Q3 mapped to tickers (~450-680 lobbyers per quarter); Alpaca daily prices; SEC share counts for market cap.",
     "period": "IS = formations 2016-2020 (used to choose between the two signals); OOS = formations 2021-2026.",
@@ -5229,6 +6955,14 @@
    "date": "2026-10-28",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/KB1/schematic.webp",
+     "thumb": "media/tests/KB1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ daily bars (project's Alpaca daily data), evaluated 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020 (pick by IS Sharpe); blind OOS 2021 to 2026-10-20.",
@@ -5256,6 +6990,14 @@
    "date": "2026-10-28",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/KB2/schematic.webp",
+     "thumb": "media/tests/KB2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "SPY daily; US stocks (price > $5, ADV > $20M, 10 slots); QQQ 5-min RTH bars from the project's 1-min file. Evaluated from 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020 (pick by IS Sharpe); blind OOS 2021 to 2026-10-20.",
@@ -5284,6 +7026,14 @@
    "date": "2026-10-28",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/SY1/schematic.webp",
+     "thumb": "media/tests/SY1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Alpaca SIP 1-min RTH bars, 65 tickers in 12 peer groups (banks, oil, gold, airlines, semis, space, quantum, nuclear, etc.), 2016-01-04 to 2026-10-27. Sector pairs = all directed pairs within a group.",
     "period": "Pairs selected on IS 2016-2020; blind OOS 2021-2026.",
@@ -5316,6 +7066,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/SY2/schematic.webp",
+     "thumb": "media/tests/SY2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Alpaca SIP 1-min RTH bars, 65 tickers in 12 peer groups (banks, oil, gold, airlines, semis, space, quantum, nuclear, etc.), 2016-01-04 to 2026-10-27. Pairs = top 30 by IS 5-min return correlation, both directions.",
     "period": "Pairs selected on IS 2016-2020; blind OOS 2021-2026.",
@@ -5345,6 +7103,14 @@
    },
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/SY3/schematic.webp",
+     "thumb": "media/tests/SY3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Adjusted daily bars for the same 65 tickers / 12 peer groups, 2016-2026.",
     "period": "Pairs selected on IS 2016-2020; blind OOS 2021-2026.",
@@ -5370,6 +7136,14 @@
    "date": "2026-10-28",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/SY4/schematic.webp",
+     "thumb": "media/tests/SY4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Alpaca 1-min bars: SPCX (listed 2026-06-12, ~95 days) as leader for RKLB, ASTS, LUNR; PARA (Paramount, spliced to PSKY from 2025-08-07) as leader for NFLX, 2016-2026.",
     "period": "SPCX: descriptive only, no split (sample too short). PARA->NFLX: IS 2016-2020 / OOS 2021-2026 as in the main sympathy test.",
@@ -5400,6 +7174,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IM1/schematic.webp",
+     "thumb": "media/tests/IM1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY 1-min RTH bars (Alpaca; price at time T = close of the prior minute bar), 2016-2026-10-20; CBOE VIX prior-day close.",
     "period": "IS 2016-2020 picks; blind OOS 2021-01 to 2026-10-20.",
@@ -5431,6 +7213,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IM2/schematic.webp",
+     "thumb": "media/tests/IM2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY 1-min RTH bars (Alpaca; price at time T = close of the prior minute bar), 2016-2026-10-20; CBOE VIX prior-day close.",
     "period": "IS 2016-2020 picks; blind OOS 2021-01 to 2026-10-20.",
@@ -5457,6 +7247,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IM3/schematic.webp",
+     "thumb": "media/tests/IM3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Same QQQ/SPY 1-min signals used as proxies for MNQ ($82 per QQQ point) and MES ($50 per SPY point), 2016-2026-10-20.",
     "period": "IS 2016-2020 picks; blind OOS 2021-01 to 2026-10-20.",
@@ -5487,6 +7285,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IM4/schematic.webp",
+     "thumb": "media/tests/IM4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY total-return daily bars (1-min bars for the FOMC window); idle cash in BIL; FOMC dates from the Fed calendar (2016-01 to 2026-09-16, incl. 2020-03-03 intermeeting).",
     "period": "IS 2016-2020 picks; blind OOS 2021-01 to 2026-10-20.",
@@ -5516,6 +7322,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IM5/schematic.webp",
+     "thumb": "media/tests/IM5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Portfolio of sleeves: QQQ opening-range breakout (ORB, 1bp), QQQ>MA200 rotation, and the QQQ calendar sleeve (turn of month + pre-holiday + pre-FOMC), from 2016-10-20.",
     "period": "IS 2016-2020 picks; blind OOS 2021-01 to 2026-10-20.",
@@ -5546,6 +7360,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/PW1/schematic.webp",
+     "thumb": "media/tests/PW1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Free Cboe index histories (PUT, PUTY, WPUT, PUTR, BXM, BXMD) plus a simulated QQQ (and IWM) monthly put-write priced with Black-Scholes from VXN/RVX, 2016-2026-10-20; collateral earns actual BIL total return.",
     "period": "IS 2016-2020 (strike rule and simulator calibration); blind OOS 2021 to 2026-10-20.",
@@ -5573,6 +7395,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IX1/schematic.webp",
+     "thumb": "media/tests/IX1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "S&P 500 additions from Wikipedia 'Historical components of the S&P 500' (170 adds matched to prices, 2016-2026); Alpaca daily prices.",
     "period": "IS 2016-2020; OOS 2021 to 2026-10-20.",
@@ -5602,6 +7432,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IX2/schematic.webp",
+     "thumb": "media/tests/IX2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "S&P 500 non-M&A deletions from Wikipedia (81 matched to prices, 2016-2026); Alpaca daily prices.",
     "period": "IS 2016-2020 (25 events); OOS 2021 to 2026-10-20.",
@@ -5629,6 +7467,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/IX3/schematic.webp",
+     "thumb": "media/tests/IX3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "IWM and SPY total-return daily, 2016-2026.",
     "period": "IS 2016-2020 (5 years); OOS 2021-2026 (6 years).",
@@ -5660,6 +7506,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/KC1/schematic.webp",
+     "thumb": "media/tests/KC1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY daily; liquid US stocks (price >= $10, ADV >= $25M, 10 slots, $10k); QQQ 5-min RTH bars from the project's 1-min file. Evaluated 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020, pick by Sharpe (intraday: >= 20 trades/yr); blind OOS 2021 to 2026-10-20.",
@@ -5689,6 +7543,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/KC2/schematic.webp",
+     "thumb": "media/tests/KC2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY daily; liquid US stocks (price >= $10, ADV >= $25M, 10 slots, $10k); QQQ 5-min RTH bars from the project's 1-min file. Evaluated 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020, pick by Sharpe (intraday: >= 20 trades/yr); blind OOS 2021 to 2026-10-20.",
@@ -5719,6 +7581,32 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/KC3/win.webp",
+     "thumb": "media/tests/KC3/win_t.webp",
+     "label": "Winning day (paper forward test) · Wed 4 Nov 2026 · +2.70 QQQ pts · +$218 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/KC3/loss.webp",
+     "thumb": "media/tests/KC3/loss_t.webp",
+     "label": "Losing day (paper forward test) · Tue 27 Oct 2026 · −2.14 QQQ pts · −$179 per MNQ"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/KC3/win.mp4",
+     "poster": "media/tests/KC3/win.webp",
+     "label": "Clip · winning day, Wed 4 Nov 2026"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/KC3/schematic.webp",
+     "thumb": "media/tests/KC3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ 5-min RTH bars as an MNQ proxy, 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020, pick by Sharpe (intraday: >= 20 trades/yr); blind OOS 2021 to 2026-10-20.",
@@ -5750,6 +7638,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/SQ1/schematic.webp",
+     "thumb": "media/tests/SQ1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ and SPY daily bars, 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020; blind OOS 2021 to 2026-10-20.",
@@ -5781,6 +7677,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/SQ2/schematic.webp",
+     "thumb": "media/tests/SQ2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Liquid US stocks (price >= $10, ADV >= $25M), 10 slots, $10k; 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020; blind OOS 2021 to 2026-10-20.",
@@ -5810,6 +7714,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/SQ3/schematic.webp",
+     "thumb": "media/tests/SQ3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ 5-min RTH bars as an MNQ proxy, 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020; blind OOS 2021 to 2026-10-20.",
@@ -5836,6 +7748,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/R1/schematic.webp",
+     "thumb": "media/tests/R1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "QQQ 5-min RTH bars (from the project's 1-min file) as an MNQ proxy, 2016-10-20 to 2026-10-20.",
     "period": "IS 2016-10-20 to 2020, pick by Sharpe (>= 20 trades/yr); blind OOS 2021 to 2026-10-20.",
@@ -5864,6 +7784,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/CP1/schematic.webp",
+     "thumb": "media/tests/CP1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Daily liquid stocks (adj. close >= $10, ADV >= $25M, survivorship-free); QQQ/SPY/IWM/GLD daily; QQQ/SPY 1-hour RTH; 31 stocks with full 1-min history aggregated to 1-hour. 2016-02 to 2026-10-20.",
     "period": "IS 2016-02-01 to 2020-12-31 (parameter pick); blind OOS 2021-01-01 to 2026-10-20.",
@@ -5893,6 +7821,14 @@
    "date": "2026-10-29",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/NS1/schematic.webp",
+     "thumb": "media/tests/NS1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Alpaca SIP 1-min RTH bars for CPER, GLD, SLV, USO, UNG, CORN, WEAT, QQQ, SPY, 2016-01-04 to 2026-10-20; Alpaca news on each ETF and related names.",
     "period": "IS 2016-2020 pick by trade t (>= 30 trades, >= 3/yr); blind OOS 2021-2026.",
@@ -5921,6 +7857,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/FA1/schematic.webp",
+     "thumb": "media/tests/FA1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ and ES Real CME futures 1-min bars (Databento GLBX.MDP3, volume-rolled continuous), 2016-01 to 2026-10.",
     "period": "IS 2016-2020; blind OOS 2021-01 to 2026-10-31.",
@@ -5948,6 +7892,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/FA2/schematic.webp",
+     "thumb": "media/tests/FA2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ and ES Real CME futures 1-min bars (Databento GLBX.MDP3, volume-rolled continuous), 2016-01 to 2026-10.",
     "period": "IS 2016-2020; blind OOS 2021-01 to 2026-10-31.",
@@ -5975,6 +7927,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/FA3/schematic.webp",
+     "thumb": "media/tests/FA3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ and ES Real CME futures 1-min bars (Databento GLBX.MDP3, volume-rolled continuous), 2016-01 to 2026-10. Profile from day D's RTH 1-min bars; trades on day D+1 RTH 5-min bars.",
     "period": "IS 2016-2020; blind OOS 2021-01 to 2026-10-31.",
@@ -6006,6 +7966,32 @@
    "highlight": true,
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/FA4/win.webp",
+     "thumb": "media/tests/FA4/win_t.webp",
+     "label": "Winning day (paper forward test) · Tue 6 Oct 2026 · +34.8 pts · +$64 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/FA4/loss.webp",
+     "thumb": "media/tests/FA4/loss_t.webp",
+     "label": "Losing day (paper forward test) · Fri 2 Oct 2026 · −44.8 pts · −$96 per MNQ"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/FA4/win.mp4",
+     "poster": "media/tests/FA4/win.webp",
+     "label": "Clip · winning day, Tue 6 Oct 2026"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/FA4/schematic.webp",
+     "thumb": "media/tests/FA4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ (ES also run) Real CME futures 1-min bars (Databento GLBX.MDP3, volume-rolled continuous), 2016-01 to 2026-10. Trading window 07:30-12:00 ET.",
     "period": "IS 2016-2020; blind OOS 2021-01 to 2026-10-31.",
@@ -6034,6 +8020,32 @@
    "date": "2026-11-11",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/OF6F/win.webp",
+     "thumb": "media/tests/OF6F/win_t.webp",
+     "label": "Winning day (paper forward test) · Fri 30 Oct 2026 · +2.9R · +$231.50 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/OF6F/loss.webp",
+     "thumb": "media/tests/OF6F/loss_t.webp",
+     "label": "Losing day (paper forward test) · Wed 14 Oct 2026 · −1.1R · −$45.50 per MNQ"
+    },
+    {
+     "kind": "clip",
+     "src": "media/tests/OF6F/win.mp4",
+     "poster": "media/tests/OF6F/win.webp",
+     "label": "Clip · winning day, Fri 30 Oct 2026"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/OF6F/schematic.webp",
+     "thumb": "media/tests/OF6F/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ: Databento 1-min RTH 2016-01 to 2026-10 (back-adjusted continuous); real aggressor delta only Mar-Oct 2026. Stocks: Alpaca 1-min 'stocks in play' (~25 names/day, 2017+).",
     "period": "NQ IS 2016-2020, OOS 2021-2025, plus Mar-Oct 2026 with real delta. Stocks IS through 2020, OOS 2021+. No parameter selection.",
@@ -6065,6 +8077,26 @@
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/FEN1/win.webp",
+     "thumb": "media/tests/FEN1/win_t.webp",
+     "label": "Winning day · Fri 9 Feb 2024 · +$123 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/FEN1/loss.webp",
+     "thumb": "media/tests/FEN1/loss_t.webp",
+     "label": "Losing day · Fri 29 Sep 2023 · −$42 per MNQ"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/FEN1/schematic.webp",
+     "thumb": "media/tests/FEN1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted, aggregated to 5-min bars.",
     "period": "IS 2016–2020 chooses the variant (highest $/yr); OOS 2021–2026-10 blind.",
@@ -6094,6 +8126,14 @@
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/RAS1/schematic.webp",
+     "thumb": "media/tests/RAS1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted, 2016-01 to 2026-10.",
     "period": "Whole period for the hit rate; IS 2016–2020 / OOS 2021–2026 for follow-through. No parameters chosen.",
@@ -6121,6 +8161,26 @@
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "win",
+     "src": "media/tests/EV1/win.webp",
+     "thumb": "media/tests/EV1/win_t.webp",
+     "label": "Winning day · Fri 3 Nov 2023 · +$210 per MNQ"
+    },
+    {
+     "kind": "loss",
+     "src": "media/tests/EV1/loss.webp",
+     "thumb": "media/tests/EV1/loss_t.webp",
+     "label": "Losing day · Wed 15 Nov 2023 · −$60 per MNQ"
+    },
+    {
+     "kind": "schematic",
+     "src": "media/tests/EV1/schematic.webp",
+     "thumb": "media/tests/EV1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ and ES futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted, aggregated to 3-min bars.",
     "period": "IS 2016–2020 picks; OOS 2021–2026-10 blind.",
@@ -6150,6 +8210,14 @@
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/AMT1/schematic.webp",
+     "thumb": "media/tests/AMT1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NQ futures, Databento 1-min RTH 09:30–16:00 ET, back-adjusted.",
     "period": "IS 2016–2020; OOS 2021–2026-10. No parameters chosen.",
@@ -6178,6 +8246,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/EC1/schematic.webp",
+     "thumb": "media/tests/EC1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "XSD, SMH, ICLN, QQQ, SPY; Alpaca SIP daily bars adjusted for splits and dividends (total-return OHLC), 2016-01-04 to 2026-11-05; VIX from Cboe/Yahoo.",
     "period": "IS 2016-01-04 to 2020-12-31 (pick by pooled 5-ETF Sharpe at 1bp); blind OOS 2021-01-01 to 2026-11-05.",
@@ -6206,6 +8282,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/EC2/schematic.webp",
+     "thumb": "media/tests/EC2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "XSD, SMH, ICLN, QQQ, SPY; Alpaca SIP daily bars adjusted for splits and dividends (total-return OHLC), 2016-01-04 to 2026-11-05; VIX from Cboe/Yahoo.",
     "period": "IS 2016-01-04 to 2020-12-31 (pick by pooled 5-ETF Sharpe at 1bp); blind OOS 2021-01-01 to 2026-11-05.",
@@ -6233,6 +8317,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/EC3/schematic.webp",
+     "thumb": "media/tests/EC3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "XSD, SMH, ICLN, QQQ, SPY; Alpaca SIP daily bars adjusted for splits and dividends (total-return OHLC), 2016-01-04 to 2026-11-05; VIX from Cboe/Yahoo.",
     "period": "IS 2016-01-04 to 2020-12-31 (pick by pooled 5-ETF Sharpe at 1bp); blind OOS 2021-01-01 to 2026-11-05.",
@@ -6260,6 +8352,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/EC4/schematic.webp",
+     "thumb": "media/tests/EC4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "XSD, SMH, ICLN, QQQ, SPY; Alpaca SIP daily bars adjusted for splits and dividends (total-return OHLC), 2016-01-04 to 2026-11-05; VIX from Cboe/Yahoo. Reserve held in BIL.",
     "period": "IS 2016-01-04 to 2020-12-31 (pick by pooled 5-ETF Sharpe at 1bp); blind OOS 2021-01-01 to 2026-11-05.",
@@ -6290,6 +8390,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/EC5/schematic.webp",
+     "thumb": "media/tests/EC5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "16 ETFs (SPY, QQQ, IWM, EFA, EEM, TLT, IEF, LQD, GLD, SLV, DBC, USO, UUP, FXE, FXY, VNQ) or core 10; yfinance adjusted daily 2005 to 2026-11-05.",
     "period": "IS 2016-2020 (pick by Sharpe); blind OOS 2021 to 2026-11-05; extra history 2007-2015.",
@@ -6316,6 +8424,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/LG1/schematic.webp",
+     "thumb": "media/tests/LG1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "NANC, SPY, QQQ; Alpaca daily bars from 2023-02 and 5-min RTH bars from 2023-03, to 2026-11-05.",
     "period": "No IS/OOS split; descriptive test of the full sample.",
@@ -6342,6 +8458,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/LG2/schematic.webp",
+     "thumb": "media/tests/LG2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "3,219 customer->supplier links (Sampoq 10-K graph + GerritPro edges, CC BY 4.0) with Alpaca adjusted daily prices, 2016 to 2026-11-05; liquid names (20-day median dollar volume > $2M, price > $5).",
     "period": "IS 2016-2020; OOS 2021 to 2026-11-05.",
@@ -6370,6 +8494,14 @@
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/LG3/schematic.webp",
+     "thumb": "media/tests/LG3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
    "method": {
     "universe": "Top 500 US stocks by 60-day dollar volume (price > $5, common/ADR only), paired within correlation clusters (avg corr >= 0.5, < 0.97); plus 13 fixed ETF/stock pairs (e.g. XLE/XOP, GLD/GDX, KO/PEP). Alpaca daily, split-adjusted, from 2016-01.",
     "period": "IS trading from 2016-07 (6-month formation) or 2017-01 (12-month) to 2020; OOS 2021 onward.",

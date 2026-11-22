@@ -66,6 +66,21 @@
   }
 
   function mediaButtons(th, t) {
+    if (t.gallery && t.gallery.length) {   /* backtest-row gallery: example days + rules card (site_update.py --test-media) */
+      var g = t.gallery, first = g[0], hasClip = g.some(function (i) { return i.kind === "clip"; });
+      var charts = g.some(function (i) { return i.kind === "win" || i.kind === "loss"; });
+      var gb = el("button", "", "x-media x-media--fwd");
+      gb.type = "button";
+      gb.setAttribute("data-test", t.id);
+      gb.setAttribute("data-kind", first.kind);
+      gb.setAttribute("aria-label", (charts ? "Example diagrams" : "Rules card") + " for " + t.id + " (opens full screen)");
+      var gi = doc.createElement("img");
+      gi.src = first.thumb || first.poster || ""; gi.alt = ""; gi.loading = "lazy"; gi.decoding = "async";
+      gb.appendChild(gi);
+      gb.appendChild(el("span", (g.length > 1 ? g.length + " views" : "Rules") + (hasClip ? " ▶" : "")));
+      var gr = el("span", "", "x-media-row"); gr.appendChild(gb); th.appendChild(gr);
+      return;
+    }
     var items = [];
     if (t.diagram) items.push(["diagram", "Diagram"]);
     if (t.clip) items.push(["clip", "Clip"]);
@@ -410,6 +425,7 @@
     lb.querySelector('[data-lb="close"]').focus();
   }
   function testItems(t) {
+    if (t.gallery && t.gallery.length) return t.gallery;
     var it = [];
     if (t.diagram) it.push({ kind: "diagram", src: t.diagram, label: "Diagram" });
     if (t.clip) it.push({ kind: "clip", src: t.clip, label: "Clip" });
