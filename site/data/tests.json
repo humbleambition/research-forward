@@ -9229,6 +9229,45 @@
     "baseline": "Same signal above the 200-day and on all days; QQQ buy-and-hold OOS 16.4% (DD −35%); NQ +$4,067/yr per MNQ.",
     "notes": "Below the 200-day moves are ~1.8× bigger (TT3), but none of the five indicators makes their direction predictable. Use the regime for sizing, not direction."
    }
+  },
+  {
+   "id": "V2F",
+   "name": "Short 20>50 rallies below the 200-day, fresh check on SPY/IWM/DIA/ES",
+   "area": "r30",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "3.3 SPY / 7.8 IWM / 3.5 DIA / 4.2 ES",
+    "win": "53% SPY / 39% IWM / 45% DIA / 48% ES",
+    "avg": "+0.06% SPY / −0.32% IWM / −0.16% DIA / +$3.9 per MES; pooled −0.16%",
+    "cagr": "Total 2016-26: SPY +2.0%, IWM −24.7%, DIA −6.0%, ES +$180 per MES",
+    "max_dd": "−5.1% SPY / −24.7% IWM / −9.7% DIA / −$1,379 per MES"
+   },
+   "result": "Frozen rule from the QQQ/NQ hindsight lead (OOS t 2.2 there). Fresh markets, 1-day hold, 2016-10→2026-10: SPY +0.06%/trade (t 0.24), IWM −0.32% (t −1.44), DIA −0.16% (t −0.71), ES +$3.9 per MES (t 0.09). Pooled 204 trades −0.16%/trade, t −1.29; in-sample 2016-20 −0.48% (t −2.19), OOS 2021-26 +0.08% (t 0.61). 5-day hold pooled −0.88%/trade (t −2.97). Not better than shorting random below-200 days",
+   "data": "SPY, IWM, DIA daily total return (Alpaca); ES 1-min futures (Databento) as daily 09:30–16:00 bars",
+   "script": "vol200_short_fresh.py",
+   "date": "2026-11-23",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V2F/schematic.webp",
+     "thumb": "media/tests/V2F/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "SPY, IWM, DIA (shorts are a CFD reference; IBKR cash account is long-only) and ES futures, $ per Micro (MES). QQQ/NQ, where the lead was found, are excluded.",
+    "period": "Whole 2016-10 → 2026-10 (the 200-day average needs 200 bars), split in-sample 2016–2020 / OOS 2021–2026-10. Rules frozen; nothing re-optimised.",
+    "entry": "Close below its 200-day average AND 20-day average above the 50-day AND 20-day average higher than 5 days earlier: short at the next open.",
+    "exit": "At the open 1 trading day later (main); 5-day hold also reported.",
+    "stop": "None (stops did not change the 1-day result in the original test).",
+    "sizing": "One position at a time; ETFs 100% of the account, ES 1 MES.",
+    "costs": "ETFs 1 bp per side plus IBKR fees, stress 3 bp; ES 1 tick + $2.50 per side per MES, stress 2 ticks.",
+    "variants": "None new: one frozen rule, two holds. Pooled t-stat across all four markets, plus a date-clustered t because they signal on mostly the same days.",
+    "baseline": "Shorting random below-200 days with the same hold and costs (5,000 draws): rule beats fewer than 90% of draws in every market (rand p 0.24–0.88 over the whole period).",
+    "notes": "The QQQ/NQ OOS t≈2.2 (26 trades) did not carry over: it was a pattern found by looking, not a transferable edge. Do not trade."
+   }
   }
  ],
  "fwd_sources": {
