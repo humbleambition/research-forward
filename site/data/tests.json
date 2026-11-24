@@ -9266,7 +9266,7 @@
     "costs": "ETFs 1 bp per side plus IBKR fees, stress 3 bp; ES 1 tick + $2.50 per side per MES, stress 2 ticks.",
     "variants": "None new: one frozen rule, two holds. Pooled t-stat across all four markets, plus a date-clustered t because they signal on mostly the same days.",
     "baseline": "Shorting random below-200 days with the same hold and costs (5,000 draws): rule beats fewer than 90% of draws in every market (rand p 0.24–0.88 over the whole period).",
-    "notes": "The QQQ/NQ OOS t≈2.2 (26 trades) did not carry over: it was a pattern found by looking, not a transferable edge. Do not trade."
+    "notes": "The QQQ/NQ OOS t≈2.2 (26 trades) did not carry over: it was a pattern found by looking, not a transferable edge. Do not trade. Exploratory (Jen's last-rally idea, verdict unchanged): losses do pile up in the last rally before the close gets back above the 200-day (pooled 1-day: 28% win, −0.55%/trade, t −2.70), but the earlier rallies only break even (−0.03%/trade, t −0.21), and you can't tell which rally is the last in real time. Covering when the close crosses back above the 200-day barely helps (5-day pooled −0.88% → −0.72% a trade)."
    }
   }
  ],
