@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 22 2026",
+ "updated": "Nov 23 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -234,6 +234,14 @@
    "short": "Lead-lag and pairs",
    "intro_html": "<p>The congress-trades ETF doesn't lag the index; its intraday \"lag\" is stale prints. Supply-chain lead-lag fades out-of-sample and carries look-ahead bias. Cointegrated pairs picked in-sample lose heavily out-of-sample, because most pairs stop being cointegrated within the month.</p>",
    "date_note": "Nov 4–7"
+  },
+  {
+   "id": "r29",
+   "num": "3.29",
+   "title": "Long-term dip buying and key levels from YouTube (Nov 20)",
+   "short": "Dip buying and key levels",
+   "intro_html": "<p>Two videos checked on 2016–2020 and blind on 2021–2026 with costs. Revelio Trading buys mega-caps that fall far below their 10-year trend line: it holds up, with a shallow drawdown, but trails simply holding SPY. Adam Grimes (Titans of Tomorrow) says the prior day's high and low and the 200-day average matter. Prior-day levels behave like random lines and fading them loses money. Below the 200-day, volatility really does run higher, but there is no direction edge to trade.</p>",
+   "date_note": "Nov 20"
   }
  ],
  "tests": [
@@ -8513,6 +8521,242 @@
     "variants": "144 variants (stocks/ETF x 12m/6m x EG/distance x entry 3 x exit 2 x stop 3). IS pick = the stocks 6m EG z2 / exit 0.5 / z4 stop variant (selection metric not recorded); BH: 0 pass (min p 0.54).",
     "baseline": "SPY buy-and-hold (15.1% OOS) and cash (BIL).",
     "notes": "Daily data not dividend-adjusted. Long-only cheap-leg version also tested."
+   }
+  },
+  {
+   "id": "RV1",
+   "name": "Revelio: buy >$50B stocks at −3/−4 sd of a 10-year regression channel, sell at the line (video rule)",
+   "area": "r29",
+   "verdict": "WEAK",
+   "stats": {
+    "tr_yr": "2.6",
+    "cagr": "7.9% → 11.4% (Sh 0.88)",
+    "max_dd": "−16.8% OOS"
+   },
+   "result": "trails SPY OOS 15.1% (−24.5%); never sells losers (worst open −64%); survivor-only universe flatters it",
+   "data": "US stocks >$50B, yfinance daily 2005–2026",
+   "script": "revelio_sd.py",
+   "date": "2026-11-20",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/RV1/schematic.webp",
+     "thumb": "media/tests/RV1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "US stocks with point-in-time market cap > $50B (Alpaca close × SEC shares); yfinance daily prices 2005–2026 for the 10-year look-back. Delisted mega-caps lack pre-2016 history, so the test is survivor-biased.",
+    "period": "IS 2016–2020, OOS 2021 to 2026-10-20 run blind.",
+    "entry": "Channel = OLS regression of close over the last 2,500 daily bars; sd = std of residuals. Buy at the close when the close is ≤ regression − 3 sd for the 10 largest stocks, ≤ −4 sd for the rest. Skip if slope ≤ 0, the buy line is below zero, or < 2,500 bars of history.",
+    "exit": "Sell everything at the close when price closes at or above the regression line.",
+    "stop": "None (as in the video). The AI fundamental check is not modelled.",
+    "sizing": "10% of equity per stock, max 10; idle cash earns T-bills. Long-only cash account.",
+    "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
+    "variants": "12 combos (buy line tiered/−3/−4 × 10%/5% size × close/next open).",
+    "baseline": "SPY buy-and-hold OOS 15.1% (DD −24.5%), QQQ 16.4%, our QQQ rotation 22.3%."
+   }
+  },
+  {
+   "id": "RV2",
+   "name": "Revelio, in-sample pick: all names at −4 sd, 5% each, up to 20",
+   "area": "r29",
+   "verdict": "WEAK",
+   "stats": {
+    "tr_yr": "2.9",
+    "cagr": "8.2% → 7.0% (Sh 0.87)",
+    "max_dd": "−8.9% OOS"
+   },
+   "result": "Sharpe ≈ SPY with a much smaller drawdown, but half the return; 44% invested",
+   "data": "US stocks >$50B, yfinance daily 2005–2026",
+   "script": "revelio_sd.py",
+   "date": "2026-11-20",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/RV2/schematic.webp",
+     "thumb": "media/tests/RV2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "Same as RV1.",
+    "period": "Picked by IS Sharpe (0.72) on 2016–2020; OOS 2021 to 2026-10-20.",
+    "entry": "Buy at the close when close ≤ regression − 4 sd (any name), slope > 0, buy line above zero.",
+    "exit": "Close at or above the regression line.",
+    "stop": "None.",
+    "sizing": "5% of equity per stock, max 20.",
+    "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
+    "baseline": "SPY buy-and-hold OOS 15.1% (DD −24.5%)."
+   }
+  },
+  {
+   "id": "TT1",
+   "name": "Grimes: prior-day high/low act differently from random levels (NQ/ES 1-min)",
+   "area": "r29",
+   "verdict": "WEAK",
+   "stats": {},
+   "result": "bounce rate vs random lines: NQ −2 to −4 pts (slightly more breaks), ES ≈ 0; 30-min move identical; Fibonacci levels faded OOS",
+   "data": "real NQ/ES 1-min 2016–2026",
+   "script": "titans_levels.py",
+   "date": "2026-11-20",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/TT1/schematic.webp",
+     "thumb": "media/tests/TT1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "NQ and ES futures, regular hours, 1-minute bars.",
+    "period": "IS 2016–2020, OOS 2021–2026-10.",
+    "entry": "First touch of the prior day's high or low. Bounce = price moves k × prior range back toward the open before moving k beyond (k 0.05/0.1/0.2).",
+    "exit": "Event study, no trade.",
+    "stop": "n/a",
+    "baseline": "5 random placebo levels per real level, drawn at the same distance from the open."
+   }
+  },
+  {
+   "id": "TT2",
+   "name": "Grimes: fade the first touch of the prior-day high/low, stop 0.2 × range, 1R target (NQ)",
+   "area": "r29",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "198",
+    "win": "44.5%",
+    "avg": "−0.18R"
+   },
+   "result": "OOS −$3,189/yr per MNQ (t −3.6); ES −$1,734/yr per MES; random levels lose about the same",
+   "data": "real NQ/ES 1-min 2016–2026",
+   "script": "titans_levels.py",
+   "date": "2026-11-20",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/TT2/schematic.webp",
+     "thumb": "media/tests/TT2/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "NQ and ES futures, regular hours, 1-minute bars.",
+    "period": "Variant picked on 2016–2020 out of 12 per level set and market; OOS 2021–2026-10.",
+    "entry": "Limit order at the prior-day high (short) or low (long) on the first touch of the session.",
+    "exit": "Target 1R, else the 15:59 ET close.",
+    "stop": "0.2 × prior-day range beyond the level.",
+    "sizing": "1 micro contract.",
+    "costs": "1 tick per side plus $2.50 per side per micro; stress 2 ticks.",
+    "baseline": "NQ buy-and-hold ≈ +$4.2k/yr per MNQ OOS."
+   }
+  },
+  {
+   "id": "TT3",
+   "name": "Grimes: below the 200-day average, indexes are more volatile but have no direction edge",
+   "area": "r29",
+   "verdict": "INCONCLUSIVE",
+   "verdict_note": "true as a description, not a trade",
+   "stats": {},
+   "result": "next-20-day vol below vs above: SPY 1.9×, QQQ 1.8×, IWM 1.3×, DIA 1.6×; same at 150/190/210/250 days; next-day return no consistent sign",
+   "data": "SPY/QQQ/IWM/DIA total-return daily",
+   "script": "titans_daily.py",
+   "date": "2026-11-20",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/TT3/schematic.webp",
+     "thumb": "media/tests/TT3/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "SPY, QQQ, IWM, DIA total-return closes.",
+    "period": "IS 2016–2020, OOS 2021–2026-10.",
+    "entry": "Condition: close below its N-day simple average (N 150/190/200/210/250), or in the lower half of the 52-week range.",
+    "exit": "Event study: next 20-day realized volatility and next 1/20-day return.",
+    "stop": "n/a",
+    "baseline": "The same measures when above the average. Timing with the 200-day is already covered by earlier trend rows."
+   }
+  },
+  {
+   "id": "TT4",
+   "name": "Grimes: buy an index on the close after a big down day (≤ −2 sd), hold 1 day",
+   "area": "r29",
+   "verdict": "WEAK",
+   "stats": {
+    "tr_yr": "7",
+    "cagr": "1.4% OOS (Sh 0.37)",
+    "max_dd": "−6.5% OOS"
+   },
+   "result": "indexes revert slightly more than bonds/FX/gold (+4 to +23 bp, t ≤ 1.4), not significant; QQQ B&H 16.1%",
+   "data": "ETF total-return daily",
+   "script": "titans_daily.py",
+   "date": "2026-11-20",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/TT4/schematic.webp",
+     "thumb": "media/tests/TT4/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "SPY/QQQ/IWM/DIA vs TLT/IEF/UUP/GLD.",
+    "period": "Picked on 2016–2020 (k and hold); OOS 2021–2026-10.",
+    "entry": "Buy at the close when the day's return ≤ −k × 20-day sd (k 1/1.5/2; pick 2).",
+    "exit": "Sell after h closes (1/3/5; pick 1).",
+    "stop": "None.",
+    "sizing": "100% in one ETF.",
+    "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
+    "baseline": "QQQ buy-and-hold OOS 16.1% (DD −35%)."
+   }
+  },
+  {
+   "id": "TT5",
+   "name": "Grimes: below the 200-day, buy when the 3-day average crosses above the 5-day, hold 10 days (stocks)",
+   "area": "r29",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "259",
+    "win": "50%",
+    "cagr": "4.3% OOS (3.2% at 3 bp)",
+    "max_dd": "−37% OOS"
+   },
+   "result": "+0.23% a trade vs −0.15% for random below-200 entries, but far below SPY 15.0%; SPY-only version 0.9%",
+   "data": "US stocks incl. delisted",
+   "script": "titans_daily.py, titans_port.py",
+   "date": "2026-11-20",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/TT5/schematic.webp",
+     "thumb": "media/tests/TT5/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "US stocks incl. delisted, raw price > $5, 20-day dollar volume > $20M; also SPY/QQQ.",
+    "period": "Exit picked on 2016–2020 (3 options); OOS 2021–2026-10.",
+    "entry": "Close below its 200-day average and the 3-day average crosses above the 5-day: buy at the next open.",
+    "exit": "After 10 trading days (exit not given in the video).",
+    "stop": "None.",
+    "sizing": "10 slots, 10% each, long-only cash account.",
+    "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
+    "baseline": "SPY buy-and-hold OOS 15.0% (DD −24.5%); random below-200 entries with the same hold."
    }
   }
  ]
