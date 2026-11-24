@@ -778,7 +778,11 @@
     "variants": "8 variants: entry 20/55, trail 10/20, stop 2/3 N; IS pick by Sharpe (3N for cash). No FDR.",
     "baseline": "Random entries (same count and hold, 300 sims), equal-weight buy-and-hold of the 5 assets, QQQ rotation.",
     "notes": "Script turtle.py / turtle_fut.py. Video used CFDs on SPX, NDX, gold, silver, BTC; ETFs are proxies. BTC drives IS."
-   }
+   },
+   "video": [
+    "H_w4c63UF2c"
+   ],
+   "source": "Reveglio"
   },
   {
    "id": "O1",
@@ -1761,7 +1765,8 @@
     "variants": "336 rules; IS pick by Sharpe; event tests with BH FDR (0/336 pass).",
     "baseline": "Date-matched random entries, SPY 20-day, SPY/QQQ, rotation.",
     "notes": "Script support_accum.py."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E1",
@@ -1837,7 +1842,8 @@
     "variants": "Grid: run-up over 3/5/10 days as raw return, excess vs SPY (≥ 5/10%) or z-score vs 60-day vol (≥ 1/2); optional rel vol > 1.5x and close vs 20-day MA; entry open S or close S; exits open G, close G, close G+2/5/10, 5/3% and 10/5% target/stop. Quick exit was the IS-best for this signal. No FDR.",
     "baseline": "Unconditional pre-earnings long; SPY TR.",
     "notes": "Script pre_earn.py. Events with < 2 prior reports or a suspected missed split dropped."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E3",
@@ -1876,7 +1882,8 @@
     "variants": "Same pre_earn grid; this was the best long variant on IS t-stat (≥ 20 trades/yr). Ranking by $ volume gave 16.6% OOS but was not the IS choice.",
     "baseline": "SPY over the same window (SPY-excess reported) and SPY total return 15.0% OOS.",
     "notes": "Script pre_earn.py. Raw gains are mostly the beta of momentum names."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E4",
@@ -1913,7 +1920,8 @@
     "variants": "Unconditional baseline in the pre_earn grid; not selected.",
     "baseline": "SPY TR (15.0% OOS).",
     "notes": "Script pre_earn.py. This is the earnings-announcement premium; OOS it is mostly market beta."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E5",
@@ -1952,7 +1960,8 @@
     "variants": "Mirror of the long grid (3/5/10-day return, excess or z; rel vol; MA20); IS pick by t-stat. 93% of short variants negative OOS. No FDR.",
     "baseline": "Unconditional pre-earnings short.",
     "notes": "Script pre_earn.py. CFD list and costs are assumptions; downtrends gap slightly up on average."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E6",
@@ -1990,7 +1999,8 @@
     "variants": "Entry close/open S x universe $5M/$20M x 5 exits x 3 lookbacks x 9 thresholds x 2 x 2 filters (~2,160). IS-best 3-day ≤ −10% shrank OOS; IS/OOS corr −0.38. No FDR.",
     "baseline": "No-filter pre-earnings long (+0.10%/trade).",
     "notes": "Script pre_earn_dip.py. Literal-idea stats use the >$5M dollar-volume universe; a >$20M universe was also run."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E7",
@@ -2027,7 +2037,8 @@
     "variants": "3 exits x base/stress costs; no parameter search.",
     "baseline": "Gross (no-cost) version; implied move (straddle / stock price) vs realized move.",
     "notes": "Script earn_options.py. No bid/ask history, so spreads are assumed; ~36% of events lack a weekly expiry, so larger names dominate. 2.75 years only."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E8",
@@ -2065,7 +2076,8 @@
     "variants": "3 exits x base/stress costs.",
     "baseline": "Long straddle mirror and gross version.",
     "notes": "Script earn_options.py. Worst trades lose 3.5-7.8x the premium. Naked short options are not allowed in her IBKR cash account. Early assignment ignored."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E9",
@@ -2103,7 +2115,8 @@
     "variants": "2 structures x 3 exits.",
     "baseline": "Short straddle.",
     "notes": "Script earn_options.py. Usually needs a margin account."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E10",
@@ -2138,7 +2151,8 @@
     "variants": "Each feature tested IS and OOS, plus combined splits (e.g. run-up > 5% and own history > 1.1x implied).",
     "baseline": "Unconditional share of events where realized beat implied (34.7% IS / 32.7% OOS).",
     "notes": "Script earn_options.py."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "E11",
@@ -2430,7 +2444,11 @@
     "stop": "Opening-range low.",
     "variants": "No grid: fixed 1R (2R tested as a separate row).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Row reports QQQ; SPY failed (OOS -0.04R)."
-   }
+   },
+   "video": [
+    "yW6c0K8uGvw"
+   ],
+   "source": "Chart Fanatics · Matteo Conte"
   },
   {
    "id": "C2",
@@ -2481,7 +2499,11 @@
     "stop": "Opening-range low.",
     "variants": "No grid: fixed 2R (1R tested as a separate row).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Row reports QQQ; SPY OOS -0.00R (FAIL)."
-   }
+   },
+   "video": [
+    "yW6c0K8uGvw"
+   ],
+   "source": "Chart Fanatics · Matteo Conte"
   },
   {
    "id": "C3",
@@ -2535,7 +2557,11 @@
     "stop": "none",
     "variants": "Warm-up 0/5/15/30 minutes; IS picked 15 for QQQ and 30 for SPY.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Gross edge real (QQQ +20%/+26% CAGR at 1x, about 3,500 flips/yr) but costs make it untradeable."
-   }
+   },
+   "video": [
+    "yW6c0K8uGvw"
+   ],
+   "source": "Chart Fanatics · Matteo Conte"
   },
   {
    "id": "C4",
@@ -2574,7 +2600,11 @@
     "stop": "none",
     "variants": "None.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. QQQ gross 14.5%/yr IS and 9.4% OOS, below buy-and-hold; turns negative at 3 bp."
-   }
+   },
+   "video": [
+    "yW6c0K8uGvw"
+   ],
+   "source": "Chart Fanatics · Matteo Conte"
   },
   {
    "id": "C5",
@@ -2628,7 +2658,11 @@
     "stop": "S = stop % x open (continuation stop doubled if the first candle's range exceeds S).",
     "variants": "Stop 0.08% or 0.125% of price (25/38 NQ points scaled) x target open/fixed = 4 combos. IS picked 0.125% with target = open for QQQ, 0.125% with fixed target for SPY.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. NQ point distances converted to % of price."
-   }
+   },
+   "video": [
+    "KHEQ5g55dQ4"
+   ],
+   "source": "Chart Fanatics · JJ Simon"
   },
   {
    "id": "C6",
@@ -2682,7 +2716,11 @@
     "stop": "Sweep extreme minus 1 cent; trade skipped if risk > 0.2% of price (40 NQ points).",
     "variants": "Premarket pool on/off x 'discount' filter (longs only below prior-day midpoint) on/off = 4 combos. IS picked premarket on, no discount (QQQ); premarket off, no discount (SPY).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. No trailing; NY window only."
-   }
+   },
+   "video": [
+    "-kGVL93XfyE"
+   ],
+   "source": "Chart Fanatics · Candice"
   },
   {
    "id": "C7",
@@ -2736,7 +2774,11 @@
     "stop": "Lowest low (highest high) since the sweep, plus/minus 1 cent.",
     "variants": "Day filter (longs only below the day's open) on/off; IS picked off for both ETFs.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md."
-   }
+   },
+   "video": [
+    "8OX-mcSHWhg"
+   ],
+   "source": "Chart Fanatics · Jadecap"
   },
   {
    "id": "C8",
@@ -2790,7 +2832,11 @@
     "stop": "Highest high (lowest low) since the raid, plus/minus 1 cent.",
     "variants": "None (single rule set).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Proxy for the video's setup 2 (session-range raid)."
-   }
+   },
+   "video": [
+    "8OX-mcSHWhg"
+   ],
+   "source": "Chart Fanatics · Jadecap"
   },
   {
    "id": "C9",
@@ -2838,7 +2884,11 @@
     "stop": "90% retracement of the range.",
     "variants": "Body k 0.5/1.0/1.5 x extension 0/0.28 = 6 combos; no combo had 30 IS trades. Picked k 1.5, ext 0.28 (QQQ); k 0.5, ext 0.28 (SPY).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Requiring all conditions on one bar gives about 0.5-5 trades/yr; not loosened (would be tuning). Forced FAIL on n < 30."
-   }
+   },
+   "video": [
+    "IB-fyWI5j8w"
+   ],
+   "source": "Chart Fanatics · Omar"
   },
   {
    "id": "C10",
@@ -2889,7 +2939,11 @@
     "stop": "Sweep extreme plus/minus 1 cent.",
     "variants": "Level (09:00 hour / prior day) x trend filter (prior close vs EMA20 and prior candle colour) on/off x target (day / prior-day mid) = 8 combos. IS picked 09:00 hour, no filter, prior-day mid (QQQ); prior day, no filter, prior-day mid (SPY).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Setup cancelled if the other ETF sweeps before the trigger; break-even rule not modelled. QQQ about 45 OOS trades; SPY failed."
-   }
+   },
+   "video": [
+    "HNuRp9Z1bMs"
+   ],
+   "source": "Chart Fanatics · Trader Kane"
   },
   {
    "id": "C11",
@@ -2943,7 +2997,12 @@
     "stop": "Sweep bar's high (low) plus/minus 1 cent.",
     "variants": "ATR multiple k 0.5/1.0; IS picked 1.0 for both ETFs.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Covers two videos (DAnXM7C16h0, T_djSNBmV00); the 'after a BOS' qualifier and the limit order at the engineered low are not modelled."
-   }
+   },
+   "video": [
+    "DAnXM7C16h0",
+    "T_djSNBmV00"
+   ],
+   "source": "Chart Fanatics · Marco"
   },
   {
    "id": "C12",
@@ -2997,7 +3056,11 @@
     "stop": "Lower of the retest low and level minus 0.2 ATR (mirrored for shorts).",
     "variants": "Exit mode full/half; IS picked half for QQQ, full for SPY.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. The setup is cancelled if price closes back through the level; the video's no-trade zone is not modelled."
-   }
+   },
+   "video": [
+    "SMSqQTBxjc0"
+   ],
+   "source": "Chart Fanatics · Desi"
   },
   {
    "id": "C13",
@@ -3051,7 +3114,11 @@
     "stop": "Retest bar's low (high) minus/plus 1 cent.",
     "variants": "None.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md."
-   }
+   },
+   "video": [
+    "70UtrLU6RAg"
+   ],
+   "source": "Chart Fanatics · Gala"
   },
   {
    "id": "C14",
@@ -3099,7 +3166,11 @@
     "stop": "Signal bar's high (low) plus/minus 1 cent.",
     "variants": "None.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Volume profile is an approximation of true volume-at-price. Under 1 trade/yr, forced FAIL on n < 30."
-   }
+   },
+   "video": [
+    "q_MdVlZ1SH4"
+   ],
+   "source": "Chart Fanatics · Forest Knight"
   },
   {
    "id": "C15",
@@ -3125,7 +3196,13 @@
     "universe": "Intended for NQ/ES futures intraday; no backtest data run. Listed with the QQQ/SPY 1-min screen (backtests/cf_index.py, SKIPPED list).",
     "entry": "Not backtested. Rules from the videos: Okala, reactions at NQ round-number '80/20' levels (3-point touch tolerance, 10-point stop, 15-point first target); Dylan O'Neal, ES break of prior-day low/high confirmed by VIX at its prior-day high/low, plus fading when ES and VIX are both +/-1%; Darcy, monthly/daily liquidity sweep then 4H FVG inversion, 15m FVG, 1m inverse FVG.",
     "notes": "Okala untestable: mapping QQQ to NQ levels via the NQ/QQQ ratio is off by a median 4-14 NQ points/day, larger than the touch tolerance. Dylan untestable: needs intraday VIX, only daily VIX available. Darcy skipped: five nested multi-timeframe conditions, RTH-only 4H bars differ from futures; not coded in the time budget."
-   }
+   },
+   "video": [
+    "jsUTbjwpFVk",
+    "4BgkLlwgpvo",
+    "UIGZtoGGPH4"
+   ],
+   "source": "Chart Fanatics · Okala, Dylan O'Neal, Darcy"
   },
   {
    "id": "C16",
@@ -3168,7 +3245,11 @@
     "stop": "none",
     "variants": "2 variants (next-open entry/exit vs same-day close entry/exit); IS picked next open.",
     "notes": "SPY used as an ES proxy. In the market about 25% of the time, so it passes on Sharpe/drawdown, not return. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "TyHTEtArsS4"
+   ],
+   "source": "Chart Fanatics · Noel T."
   },
   {
    "id": "C17",
@@ -3211,7 +3292,11 @@
     "stop": "Entry minus 1x ATR(14) (14-day average true range), checked from the next day.",
     "variants": "RSI(14) vs RSI(2) x buy Thursday close vs Friday open = 4 variants; IS picked RSI(14), Thursday close.",
     "notes": "In the market about 10% of the time; passes on Sharpe/drawdown, not return. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "TyHTEtArsS4"
+   ],
+   "source": "Chart Fanatics · Noel T."
   },
   {
    "id": "C18",
@@ -3253,7 +3338,11 @@
     "stop": "Base low (prior 8-week low), checked intraday including the entry day.",
     "variants": "Exit below 10-week vs 30-week SMA x base-low stop on/off = 4; IS picked 10-week + stop. (30-week, no stop: 3.2% -> 6.3% CAGR, not the pick.)",
     "notes": "Discretionary 'first base in stage 2' reduced to the 8-week < 25% range. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "VDK200OHNSo"
+   ],
+   "source": "Chart Fanatics · Ted Zhang"
   },
   {
    "id": "C19",
@@ -3292,7 +3381,11 @@
     "stop": "none",
     "variants": "100- vs 200-day lookback x exit (50-day low / 5-day hold / post-breakout pullback entry) = 6; IS picked 200-day breakout, 50-day-low exit.",
     "notes": "Video credited as 'Harvell Key' in code. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "_wpg45NdMkM"
+   ],
+   "source": "Chart Fanatics · Harvell Key"
   },
   {
    "id": "C20",
@@ -3334,7 +3427,11 @@
     "stop": "none",
     "variants": "100- vs 200-day lookback x exit (50-day low / 5-day hold / post-breakout pullback entry) = 6; IS picked 100-day breakout, 50-day-low exit.",
     "notes": "Strong 2016-2020 momentum regime; failed OOS. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "_wpg45NdMkM"
+   ],
+   "source": "Chart Fanatics · Harvell Key"
   },
   {
    "id": "C21",
@@ -3376,7 +3473,11 @@
     "stop": "none",
     "variants": "Drop 6% or 7% x 200-day SMA filter on/off = 4; IS picked 6%, no filter.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "_wpg45NdMkM"
+   ],
+   "source": "Chart Fanatics · Harvell Key"
   },
   {
    "id": "C22",
@@ -3418,7 +3519,11 @@
     "stop": "none",
     "variants": "Drop 6% or 7% x 200-day SMA filter on/off = 4; IS picked 6%, no filter.",
     "notes": "Ranking by drop size picks meme/biotech blow-offs; heavy OOS losses. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "_wpg45NdMkM"
+   ],
+   "source": "Chart Fanatics · Harvell Key"
   },
   {
    "id": "C23",
@@ -3459,7 +3564,11 @@
     "stop": "10-day lowest low.",
     "variants": "Buy at signal close vs next open (2 per universe); IS picked signal close for both.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "EZ_L7zovyrw"
+   ],
+   "source": "Chart Fanatics · Anthony Crudele"
   },
   {
    "id": "C24",
@@ -3500,7 +3609,11 @@
     "stop": "10-day lowest low as of the signal day; on the entry day only a close below it counts.",
     "variants": "Strict vs loose (>= 3 lower highs, volume >= 2x) x 3 exits (trail prior-bar low + target, target with 20-day max, trail only) = 6; IS picked strict, target SMA20, 20-day max.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "_qeFh1ADss8"
+   ],
+   "source": "Chart Fanatics · Lance Breitstein"
   },
   {
    "id": "C25",
@@ -3541,7 +3654,11 @@
     "stop": "Setup-day low (prior-day low at entry); on the entry day only a close below it counts.",
     "variants": "Exit below EMA10 vs EMA20 x partial profits (1/3 at +2 ADR with stop to break-even, 1/3 at SMA50 + 9 ATR) on/off = 4; IS picked EMA20, no partials.",
     "notes": "No theme strength, news grading, earnings avoidance or 5-minute entries. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "0_NSmOWVbpA"
+   ],
+   "source": "Chart Fanatics · Clement"
   },
   {
    "id": "C26",
@@ -3582,7 +3699,11 @@
     "stop": "5-day low as of the signal day; on the entry day only a close below it counts.",
     "variants": "QQQ market filter on/off; IS picked filter on.",
     "notes": "Bates' 'linear/super-stock' quality and catalyst filters dropped. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "kCSvDVicpwU"
+   ],
+   "source": "Chart Fanatics · Connor Bates"
   },
   {
    "id": "C27",
@@ -3623,7 +3744,11 @@
     "stop": "none (exit rules only)",
     "variants": "QQQ-above-rising-EMA21 filter on/off; IS picked no filter.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "kCSvDVicpwU"
+   ],
+   "source": "Chart Fanatics · Connor Bates"
   },
   {
    "id": "C28",
@@ -3664,7 +3789,11 @@
     "stop": "Entry-day low, active from day 2.",
     "variants": "24: gap 4%/8% x catalyst (none / earnings day) x hold 1/5/20/60 days at the open, plus gap 4%/8% x relvol entry x 4 holds. IS picked 8% gap, relvol, 60 days. Runner-up (8% gap + earnings day, open entry, 60d): 13.4% -> 7.4% CAGR, not the pick.",
     "notes": "Daily volume cannot be known at the open, so the first 5-minute bar is used. Exact relative-volume baseline not recorded in the screen. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "mDNcx2Dhhms"
+   ],
+   "source": "Chart Fanatics · Pradeep Bonde"
   },
   {
    "id": "C29",
@@ -3705,7 +3834,11 @@
     "stop": "Signal-day low.",
     "variants": "3: EMA10 exit only after +1R, plain EMA10 exit, or ranking by prior $ volume; IS picked plain EMA10 exit ranked by volume ratio.",
     "notes": "Liquidity measured on prior days; counting the signal day's volume filled the set with pump-and-dump microcaps. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
+   "source": "Chart Fanatics · Ariel"
   },
   {
    "id": "C30",
@@ -3746,7 +3879,11 @@
     "stop": "Entry-day low, active from the next day.",
     "variants": "3: +1R-armed EMA10 exit vs plain, ranked by volume ratio or prior $ volume; IS picked plain EMA10 exit ranked by prior $ volume.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
+   "source": "Chart Fanatics · Ariel"
   },
   {
    "id": "C31",
@@ -3787,7 +3924,11 @@
     "stop": "Prior-day (signal-day) low; on the entry day only a close below it counts.",
     "variants": "Base range < 15% vs < 10%; IS picked 10%.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
+   "source": "Chart Fanatics · Ariel"
   },
   {
    "id": "C32",
@@ -3829,7 +3970,11 @@
     "stop": "Undercut low (3-day low).",
     "variants": "EMA10 exit immediately vs only after +1R; IS picked after +1R.",
     "notes": "Borderline PASS: OOS 12.2% vs SPY 13.5%, worse drawdown, weak IS (3.8%). Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
+   "source": "Chart Fanatics · Ariel"
   },
   {
    "id": "C33",
@@ -3870,7 +4015,11 @@
     "stop": "none beyond the close-below-line exit",
     "variants": "One variant only.",
     "notes": "Marci's method is short-side; the long inversion was tested as the rules file allows. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "AVVM-FyewLg"
+   ],
+   "source": "Chart Fanatics · Marci Silfrain"
   },
   {
    "id": "C34",
@@ -3911,7 +4060,11 @@
     "stop": "none beyond the safety-line exit",
     "variants": "5: 3-touch line (touch tolerance 0.5 or 1.0 ATR, entry within 1 or 2 ATR) and 2-touch line (within 1 or 2 ATR). IS picked 2-touch, within 1 ATR, although the row is labelled 3-touch.",
     "notes": "Only 6 OOS trades: inconclusive. Tori's own timeframe is 4H metals futures. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   }
+   },
+   "video": [
+    "VTEQ2fhGLqE"
+   ],
+   "source": "Chart Fanatics · Tori Trades"
   },
   {
    "id": "C35",
@@ -3970,7 +4123,11 @@
     "stop": "75% above the open price; the opening bar's high counts against it.",
     "variants": "Stop 75/100/150% x premarket share volume 0/1M/5M = 9; IS picked 75% stop, 1M. All 9 positive in both periods.",
     "notes": "Edge decaying: +11-18%/trade 2021-23 vs +2-5% 2024-26. Hard-to-borrow fees likely eat much of it. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "EcTRlLYvhXU"
+   ],
+   "source": "Chart Fanatics · Chris Verma"
   },
   {
    "id": "C36",
@@ -4023,7 +4180,11 @@
     "stop": "75% above the open price; the opening bar's high counts against it.",
     "variants": "Stop 75/100/150% x premarket share volume 0/1M/5M = 9; IS picked 75%, 1M.",
     "notes": "Worse than plain hold-to-close; 2026 negative. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "EcTRlLYvhXU"
+   ],
+   "source": "Chart Fanatics · Chris Verma"
   },
   {
    "id": "C37",
@@ -4082,7 +4243,11 @@
     "stop": "A 1-minute close above prior close x 1.01, including the entry bar.",
     "variants": "48: run 75/100/200% x up days 3/4 x gap-down entries on/off x partial (50% at -15%) on/off x stop buffer 1%/3%. IS picked 200%, 4 days, no gap-down, no partial, 1%. Positive in % terms in all 48.",
     "notes": "R and CAGR inflated by the tight nominal stop (realised stop losses average -1.9R); judge on % per trade. Median trade -2%. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "Jx5cJ_qb31U"
+   ],
+   "source": "Chart Fanatics · Alex Temiz"
   },
   {
    "id": "C38",
@@ -4133,7 +4298,11 @@
     "stop": "High of day at entry x 1.01.",
     "variants": "Run 80/100/150% x exit (close / 2R / 10%) = 9; IS picked 150%, exit at close.",
     "notes": "IS +0.25R collapsed to +0.02R OOS; negative at 50 bp or 1% borrow; write-up says treat as FAIL. Discretionary A+ grading not reproducible. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "2Ug0jyDvoek"
+   ],
+   "source": "Chart Fanatics · Kyle Williams"
   },
   {
    "id": "C39",
@@ -4192,7 +4361,11 @@
     "stop": "High of day at entry.",
     "variants": "Gain 300/500% x big days 1/2 x target 20%/30%/none x min reward:risk 0/3 = 24; IS picked 500%, 2, no target.",
     "notes": "94% of OOS profit from the top 5% of trades; median trade -0.2%. Only day t shorted, not the video's 2-day window. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "SInAfwX3X3A"
+   ],
+   "source": "Chart Fanatics · Mario D."
   },
   {
    "id": "C40",
@@ -4251,7 +4424,11 @@
     "stop": "Consolidation high.",
     "variants": "Consolidation filter on/off x target 24%/none x premarket volume 0/1M = 8; IS picked filter on, no target, no premarket filter.",
     "notes": "Tiny sample (15 IS / 26 OOS trades). Looser no-consolidation version: 181 OOS trades, +0.15R. Float, sector and premarket-volume tiers not reproduced. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "52ZsDmFHqyY"
+   ],
+   "source": "Chart Fanatics · Steven Dux"
   },
   {
    "id": "C41",
@@ -4290,7 +4467,11 @@
     "stop": "1% above the highest high of the 5 sessions before the trade day; if the day's high reaches it, stopped (checked before the target).",
     "variants": "Run 100/200/300% x target 25%/none = 6; IS picked 200%, 25% target. Negative OOS in every variant.",
     "notes": "Daily-bar version only; stop very wide (median 58-85%). Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "52ZsDmFHqyY"
+   ],
+   "source": "Chart Fanatics · Steven Dux"
   },
   {
    "id": "C42",
@@ -4329,7 +4510,11 @@
     "stop": "Signal bar's high + $0.05 (low - $0.05 for longs).",
     "variants": "Gap 0.3%/1% x retest zone prior-day low vs prior close x target 2R/1.5R = 8; IS picked 1%, prior-day low, 1.5R. All 8 negative OOS.",
     "notes": "5-minute EMA21 filter and premarket congestion levels omitted (no pre-09:30 history pulled). Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   }
+   },
+   "video": [
+    "yZpzG8R3Ayk"
+   ],
+   "source": "Chart Fanatics · Rajan D"
   },
   {
    "id": "M1",
@@ -4367,7 +4552,11 @@
     "variants": "IS grid: MA length 150/200/220/250/260/300 × signal on QQQ or on the 3x price, chosen by IS Sharpe (picked MA150 on QQQ). The literal MA250 rule from the video is reported as the headline; MA150 IS pick shown separately. No multiple-testing correction.",
     "baseline": "QQQ buy-and-hold, TQQQ buy-and-hold, and the project's QQQ>MA200 rotation (5 bp costs) on the same windows.",
     "notes": "This is the only rule the video discloses. Synthetic 3x tracks real TQQQ 2010-26 with 0.999 daily correlation. Nasdaq-100 before 1999 is price only (no dividends, about 0.5-1%/yr understated)."
-   }
+   },
+   "video": [
+    "rcFaAWRE32E"
+   ],
+   "source": "Be the Trader · Malik"
   },
   {
    "id": "M2",
@@ -4405,7 +4594,11 @@
     "variants": "IS grid of MA length 150/200/220/250/260/300 by IS Sharpe (picked 250). Literal MA250 reported. No multiple-testing correction.",
     "baseline": "QQQ and TQQQ buy-and-hold, the long-only MA250 rule (M1), and the QQQ>MA200 rotation.",
     "notes": "The SQQQ short side is only hinted in the video; this is our literal reading of it."
-   }
+   },
+   "video": [
+    "rcFaAWRE32E"
+   ],
+   "source": "Be the Trader · Malik"
   },
   {
    "id": "M3",
@@ -4448,7 +4641,11 @@
     "variants": "Volatility target grid 15/20/25/30% with MA fixed at 250, chosen by IS Sharpe (picked 15%). No multiple-testing correction.",
     "baseline": "Unsized MA250 trend (M1), QQQ/TQQQ buy-and-hold, QQQ>MA200 rotation.",
     "notes": "Volatility sizing is only hinted in the video; the 15%/σ20 formula and 10-point rebalance band are our implementation."
-   }
+   },
+   "video": [
+    "rcFaAWRE32E"
+   ],
+   "source": "Be the Trader · Malik"
   },
   {
    "id": "M4",
@@ -4486,7 +4683,11 @@
     "variants": "Grid: RSI2 threshold 5/10/15 × trend filter none/SMA200/SMA250, chosen by IS Sharpe (picked RSI2<15, SMA250). No multiple-testing correction.",
     "baseline": "QQQ/TQQQ buy-and-hold and the QQQ>MA200 rotation; noted as nearly the same as the Noel RSI2 sleeve.",
     "notes": "The video only names a mean-reversion strategy; these rules are a generic proxy we chose, not Malik's."
-   }
+   },
+   "video": [
+    "rcFaAWRE32E"
+   ],
+   "source": "Be the Trader · Malik"
   },
   {
    "id": "M5",
@@ -4527,7 +4728,11 @@
     "variants": "RSI2 threshold 80/90/95 with MA fixed at 250, chosen by IS Sharpe (picked 90). No multiple-testing correction.",
     "baseline": "QQQ/TQQQ buy-and-hold and the QQQ>MA200 rotation.",
     "notes": "The video only names short strategies; this is a generic proxy we chose. About 2 trades a year."
-   }
+   },
+   "video": [
+    "rcFaAWRE32E"
+   ],
+   "source": "Be the Trader · Malik"
   },
   {
    "id": "M6",
@@ -4565,7 +4770,11 @@
     "variants": "No new search; combos built from the IS-picked sleeve parameters. Strategies 6 and 7 are never described in the video and are not modelled.",
     "baseline": "The video's claimed 62% CAGR / −51% drawdown (1985-2026), QQQ/TQQQ buy-and-hold, QQQ>MA200 rotation.",
     "notes": "Proxy for a 7-strategy portfolio whose rules are private, so the claim cannot be reproduced or verified."
-   }
+   },
+   "video": [
+    "rcFaAWRE32E"
+   ],
+   "source": "Be the Trader · Malik"
   },
   {
    "id": "B1",
@@ -4595,7 +4804,8 @@
     "variants": "About 25 precursors (relative volume, 5d/60d volatility expansion, Bollinger width, NR7, 5/10-day returns vs SPY and sector, distance from moving averages and 52-week high/low, gaps, VIX, breadth, insider buys, Wikipedia views) tested by AUC and decile lift; plus logistic regression (C=0.1) and gradient boosting (200 iterations, lr 0.05, 15 leaves, min 500 per leaf). Benjamini-Hochberg FDR across 3,991 bucket tests.",
     "baseline": "Base rate of big moves (4.4% IS / 3.7% OOS unscheduled; 24%/27% on earnings), plus matched control days (same stock/year/volatility quintile, and other stocks same date/quintile) and non-event earnings.",
     "notes": "Top-1%-per-stock-year event definition rerun as a check (52,193 events). Earnings timing inferred (~7% wrong). FDR p-values ignore clustering of overlapping windows and same-date moves, so they are optimistic; 2020 dominates IS."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "B2",
@@ -4626,7 +4836,8 @@
     "variants": "Same ~25 precursors as B1, plus 6 direction model fits; Benjamini-Hochberg FDR across bucket tests (76 direction buckets survived, all unscheduled, none on earnings).",
     "baseline": "Coin flip (AUC 0.5) and the majority-direction rate (53% for unscheduled).",
     "notes": "FDR p-values ignore clustering. Wikipedia trend direction flips below 0.5 in 2018, 2022 and 2026."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "B3",
@@ -4660,7 +4871,8 @@
     "costs": "1 bp per side plus $0.005 per share (IBKR) per side on the raw price.",
     "variants": "Five signal sets above, thresholds fixed from IS quantiles; no extra search on the trade rules.",
     "baseline": "Random entry on all eligible stock-days, SPY over the same days, and a t-test of excess vs random grouped by date."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "B4",
@@ -4696,7 +4908,8 @@
     "variants": "Model score buckets top 10% / top 20% / bottom 50% vs all priced events; no further search.",
     "baseline": "All priced earnings straddles (−8.2% of premium) and the realized-vs-implied move rate (34% overall).",
     "notes": "No bid/ask history, so fills are estimated from trade prints. Short straddles were not tested here because a cash account can't place them."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "B5",
@@ -4725,7 +4938,8 @@
     "variants": "Each tested by AUC and decile lift for any / scheduled / unscheduled big moves, inside the B1 BH-FDR set.",
     "baseline": "Base rate of big moves and matched control days, as in B1.",
     "notes": "Purchase dollar values capped at $500M per row; duplicate filings dropped."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "B6",
@@ -4759,7 +4973,8 @@
     "variants": "Consumer vs other stocks, scheduled vs unscheduled, earnings beats and large surprises; inside the B1 BH-FDR set.",
     "baseline": "AUC 0.5, random entry (+0.29% over 10 days) and SPY on the same days.",
     "notes": "Only each article's current title is counted (redirects and old titles lost). A crude stand-in for Camillo-style social arbitrage, not a test of his product-trend method."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "B7",
@@ -4785,7 +5000,8 @@
     "universe": "Planned: Google Trends search interest for a sample of consumer names, and Reddit ticker mentions.",
     "entry": "Not run. Google Trends returned HTTP 429 (blocked) twice so it was dropped; Reddit was skipped because Pushshift is dead and Arctic Shift timed out on the test query.",
     "notes": "No result exists; listed only to record that these attention sources could not be tested with free data."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "X1",
@@ -4824,7 +5040,8 @@
     "variants": "9 filters (all, QQQ < MA200, SPY first bar red, SPY below open at entry, both SPY conditions, gap down, gap ≤ −0.5 ATR, and two combos) × 2 universes × 3 cost levels. Chosen on IS; no multiple-testing correction.",
     "baseline": "Zero (break-even after costs) and the same filter at IBKR costs.",
     "notes": "SPY-below-open is a VWAP proxy because the SPY 1-minute file has no volume. Capital.com listing is approximated by price and liquidity."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "X2",
@@ -4865,7 +5082,8 @@
     "costs": "5 bp per side CFD spread (base), 3 bp alternative, IBKR 1 bp + $0.0035/share reference.",
     "variants": "One of 9 filters × 2 universes × 3 cost levels; no multiple-testing correction.",
     "baseline": "Break-even after costs; the unfiltered ORB short."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "X3",
@@ -4903,7 +5121,8 @@
     "costs": "Capital.com spread 5 bp per side (3 bp alternative); short overnight funding (4% − SOFR, using average Fed funds as SOFR proxy) ÷ 360 per night only on leveraged versions; 1:1 positions pay none.",
     "variants": "16 IS variants: RSI2 95/98 × stop none/3 ATR × regime all/QQQ < MA200 × 2 universes; all ≤ 0 IS at 5 bp + funding, best picked anyway. No multiple-testing correction.",
     "baseline": "Break-even after costs."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "X4",
@@ -4943,7 +5162,12 @@
     "variants": "No new search; IS-chosen parameters from cf_smallcap.py re-costed.",
     "baseline": "Break-even after costs.",
     "notes": "These are sub-$1B small caps Capital.com very likely doesn't list or let you short; halts and squeezes can lose more than 100% of notional and are not modelled."
-   }
+   },
+   "video": [
+    "EcTRlLYvhXU",
+    "Jx5cJ_qb31U"
+   ],
+   "source": "Chart Fanatics · Chris Verma, Alex Temiz"
   },
   {
    "id": "X5",
@@ -4981,7 +5205,8 @@
     "variants": "No new search.",
     "baseline": "Gross edge per trade, to show what share the spread eats; bootstrap of OOS days for the chance of dropping below $125 in 3 years.",
     "notes": "Minimum size 0.1 share assumed; if a name needs 1 share, $50 fails for ~45% of ORB names."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "X6",
@@ -5017,7 +5242,8 @@
     "variants": "No new search.",
     "baseline": "The $50-per-position version (X5). Ruin: bootstrap 4,000 three-year paths of OOS days; close-out when equity < 50% of the margin for 5 positions.",
     "notes": "Capital.com close-out at 50% of margin and negative-balance protection modelled as equity floored at zero."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "X7",
@@ -5052,7 +5278,8 @@
     "variants": "8 fixed mixes; no search.",
     "baseline": "Live ORB + rotation 50/50 (19.1% CAGR, −12.5% drawdown).",
     "notes": "The rotation already moves to bonds/gold/cash when QQQ < MA200, so a down-market short adds little."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I1",
@@ -5087,7 +5314,8 @@
     "variants": "About 12 option features × earnings/unscheduled × direction and 1/5/20-day returns; Benjamini-Hochberg FDR across all OOS AUC tests; incremental AUC when added to the price-control model.",
     "baseline": "Coin flip (AUC 0.5), the existing price/volatility control model (AUC 0.532), same-date universe average return, and control days for detection.",
     "notes": "No quotes on the free plan, so IV comes from last trades. Liquid names only, so typical small-cap M&A targets are mostly excluded. Only ~15 months OOS."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I2",
@@ -5122,7 +5350,8 @@
     "variants": "SI and short-volume features × event types × horizons; BH FDR across all OOS tests; incremental AUC vs the price-control model; checked within volatility quintiles.",
     "baseline": "Coin flip, the price-control model (OOS AUC 0.575), random entry on the same dates.",
     "notes": "No free borrow-fee history, so borrow costs are not modelled."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I3",
@@ -5157,7 +5386,8 @@
     "variants": "Chamber (House/Senate), side, and 3 horizons; no parameter search.",
     "baseline": "SPY and the same-date equal-weight universe (random picks); also trade-date → filing-date drift.",
     "notes": "Median filing lag 31 days; 27% filed after the 45-day limit. No dividends in the price panel."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I4",
@@ -5194,7 +5424,8 @@
     "variants": "None; per-trade 5/20/60-day results vs QQQ also reported.",
     "baseline": "QQQ and SPY buy-and-hold.",
     "notes": "Deep in-the-money call option trades (33 rows) were treated as stock because there are no option prices before 2024."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I5",
@@ -5227,7 +5458,8 @@
     "costs": "IBKR 1 bp + $0.005/share for longs.",
     "baseline": "SPY (trade-weighted) and same-date random picks (date-weighted), bootstrap CI over filing dates.",
     "notes": "Median 68 days from trade to filing; effectively 8-13 independent observations, so no conclusion is possible."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I6",
@@ -5263,7 +5495,8 @@
     "costs": "not recorded (fund return vs total-return benchmarks).",
     "variants": "None.",
     "baseline": "SPY and QQQ total return over the same dates; beta and correlation to QQQ."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I7",
@@ -5298,7 +5531,8 @@
     "variants": "Trigger families and thresholds above × 3 horizons; best picked on the early half, checked on the late half; bootstrap CIs clustered by date.",
     "baseline": "The same asset's unconditional drift in the same direction over all 2021-2026 entry dates.",
     "notes": "Mapping file written before any test. Many small cells are 3-10 dates."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "I8",
@@ -5334,7 +5568,8 @@
     "costs": "3 bp in regular hours; 15-25 bp in extended hours; plus 3 bp (long) or 5 bp (short) leg cost.",
     "variants": "3 trigger types × 3 entry delays × 2 horizons; no correction.",
     "baseline": "Next-open entry and the move from the trigger time."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "P1",
@@ -5371,7 +5606,8 @@
     "variants": "5 event types × 1/5/20-day holds, chosen by IS mean excess vs SPY after 1 bp; also an 'unanticipated milestone' cut. No multiple-testing correction; bootstrap CIs clustered by bill.",
     "baseline": "Abnormal return = asset − β × SPY (β from days −260 to −20), and matched random dates for the same asset (±1 year).",
     "notes": "Mappings and expected directions were written before any returns were computed."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "P2",
@@ -5408,7 +5644,8 @@
     "variants": "3 entry delays; no search.",
     "baseline": "Next-open entry on the same events.",
     "notes": "Senate, committee and presidential actions are date-only, so they were skipped."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "P3",
@@ -5445,7 +5682,8 @@
     "variants": "Award-size buckets (top 10%, 5-1%, top 1%) × holds 1/5/20 days; picked on IS mean excess vs SPY. No multiple-testing correction.",
     "baseline": "Excess vs SPY, plus a control drift: all days for the same tickers with β = 1 (+0.41% per 20 days IS, +0.06% OOS).",
     "notes": "USAspending action dates are only a proxy for the 5 pm DoD announcement (defense.gov blocked); a spot check found announced amounts don't match obligated amounts."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "P4",
@@ -5479,7 +5717,8 @@
     "variants": "3 entry delays; no search.",
     "baseline": "Next-open entry; the share of the 20-day move from the last pre-release print that comes after the next open.",
     "notes": "Only 5.9% of large awards had a print within 10 minutes (median ~700 shares). Award dates are a USAspending proxy."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "P5",
@@ -5517,7 +5756,8 @@
     "variants": "Two signals (jump, intensity) × top decile / quintile; jump was the IS pick. No multiple-testing correction.",
     "baseline": "Equal-weight universe of all large lobbyers, and SPY.",
     "notes": "The ≥ $250k cut understates spend and limits the universe. Only 10 annual observations; 2025 alone drives most of the OOS edge; small-cap tilt."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "P6",
@@ -5554,7 +5794,8 @@
     "variants": "Top decile and quintile; yearly rank IC also measured. No multiple-testing correction.",
     "baseline": "Equal-weight lobbyer universe and SPY.",
     "notes": "Based on the Chen-Parsley-Yang (2015) idea. Rank IC flips sign year to year (−0.18 to +0.16)."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V1",
@@ -5586,7 +5827,8 @@
     "variants": "Bin sizes 0.02%, fixed $0.05 SPY / $0.10 QQQ, 0.05%; tolerance 1 tick or 0.05%. ATR = mean RTH high-low of the prior 14 sessions.",
     "baseline": "Random day: the same signed ATR-scaled distance from the open applied to 40 random days in the same period; mirror: the same distance on the other side of the open, same day.",
     "notes": "ETF proxies, not futures. Raw prices, so ex-dividend opens add a small artificial gap."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V2",
@@ -5618,7 +5860,8 @@
     "variants": "Two overnight windows, same bin/tolerance sensitivity runs as V1.",
     "baseline": "Random-day and mirror levels at the same ATR-scaled distance from the open.",
     "notes": "ETF extended hours stand in for the futures Globex session; there are no ETF bars 20:00-04:00 (incl. the Sunday open), and ETH volume is thin (1-2% of RTH), so the overnight POC is noisy, especially before 2018."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V3",
@@ -5649,7 +5892,8 @@
     "entry": "Not a trade: splits of the prior-RTH-POC test rate by open location (inside the prior value area, above/below VA inside the prior range, gap beyond the prior high/low), by ATR distance from the open, by weekday, and Monday vs Friday's RTH POC vs the Monday extended overnight POC (Fri 16:00-20:00 + Mon 04:00-09:30).",
     "variants": "Value area = standard 70% expansion from the POC. Benjamini-Hochberg FDR over 120 day-of-week tests.",
     "baseline": "Each weekday vs the other days, and the random-day level at the same distance."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V4",
@@ -5682,7 +5926,8 @@
     "entry": "Not a trade: at the first touch of the level after 09:31 ET, coming from the open side, race over the next 15 or 30 minutes between a bounce of N × ATR back and a push of N × ATR through (N = 0.05 or 0.1 ATR).",
     "variants": "4 levels × 2 tickers × 2 N × 2 horizons.",
     "baseline": "First touch of a random-day level at the same distance from the open."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V5",
@@ -5722,7 +5967,8 @@
     "variants": "663 variants (levels, distance bands, inside/outside VA, stop sizes) across rule families A and B; best IS net picked. Only 2.0% of variants were positive in both periods; IS/OOS correlation 0.23.",
     "baseline": "Zero after costs.",
     "notes": "QQQ IS pick (overnight POC, 0.2-1 ATR, outside VA) went from +7.3 bp IS to −7.7 bp OOS."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V6",
@@ -5760,7 +6006,8 @@
     "costs": "1 bp per side + $0.0035/share; 3 bp stress.",
     "variants": "Part of the 663-variant grid; best IS picked.",
     "baseline": "Zero after costs."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V7",
@@ -5795,7 +6042,8 @@
     "costs": "1 bp per side + fees; 3 bp stress.",
     "variants": "4 cutoffs × confirmation types × targets; splits by weekday, open location, gap, range/ATR; BH FDR over 460 split tests (min q 0.47).",
     "baseline": "Driftless random-walk odds (entry − stop)/(EH − stop), and the same procedure on a random window starting 10:00-13:30."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V8",
@@ -5830,7 +6078,8 @@
     "costs": "1 bp per side + $0.0035/share; 3 bp stress; futures mapping 1 tick + $4 round trip (mini) or $1.50 (micro), using SPY×10 → ES and QQQ×41 → NQ.",
     "variants": "1,344 probability cells (2 tickers × 2 sides × 6 definitions × 2 modes × 4 bounce groups × 7 targets) and 3,788 trade variants; IS picks with n ≥ 150; BH FDR per baseline over 3,631 split tests.",
     "baseline": "Driftless implied odds, random-day geometry, same-day mirror, and the rule on random 10:30-12:00 windows."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V9",
@@ -5886,7 +6135,8 @@
     "variants": "1 of ~1,300 gap-subset variants from the V8 splits; no correction for that selection.",
     "baseline": "Same rule on SPY; same-day mirror.",
     "notes": "QQQ is used as an NQ proxy via a fixed ×41 point ratio; real futures levels, basis and overnight moves are not modelled. Now in a paper forward test only."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "V10",
@@ -5924,7 +6174,8 @@
     "variants": "12 filters × 2 modes (skip uptrend / only uptrend) × 2 tickers; BH FDR and Bonferroni over 48 kept-vs-skipped Welch t-tests per period; OOS year-by-year check.",
     "baseline": "The unfiltered rule (all gap-up rejection shorts).",
     "notes": "Filters use only data known at the prior close."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "D1",
@@ -5960,7 +6211,8 @@
     "variants": "8 signal families plus G (staged 1/3 at C or D, E, F), a price > $5 subset and drawdown windows (2018 Q4, 2020 Covid, 2022 bear).",
     "baseline": "Any eligible stock-day and any setup day, sampled every 10th session.",
     "notes": "Survivorship bias: delisted names are under-represented, so hold-forever figures are upper bounds. Utilities ETF (XLU) choice was ours."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "D2",
@@ -5995,7 +6247,8 @@
     "costs": "1 bp + $0.005/share on the raw price (3 bp also reported).",
     "variants": "264 variants: methods × group filters (none, sector ETF > SMA20, breadth gate, IWM not at a new low) × exits (trigger or setup-low stop or none × 20/60/120 days, 50-day trend exit, hold forever). IS→OOS Sharpe rank correlation −0.02. No multiple-testing correction.",
     "baseline": "Buy-and-hold of sector ETFs XSD and SMH over 2021-2026."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "D3",
@@ -6032,7 +6285,8 @@
     "costs": "1 bp + $0.005/share; 3 bp also reported.",
     "variants": "One of three group filters tested across all methods and exits.",
     "baseline": "Same signals without the gate, and any setup day under the gate."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "D4",
@@ -6067,7 +6321,8 @@
     "variants": "Score ≥ 3 and ≥ 4 buckets, filters (i)/(iii) across methods.",
     "baseline": "Unfiltered signals and score buckets 0-5.",
     "notes": "The group-turn leg is on 90% of days because QQQ/IWM are almost never at 20-day lows, so the score barely discriminates."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "D5",
@@ -6102,7 +6357,8 @@
     "variants": "In-setup vs blind; filter × exit grid as in D2.",
     "baseline": "Any setup day and any eligible day.",
     "notes": "Kept as a watch-list alert only, not a buy signal."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "N1",
@@ -6141,7 +6397,8 @@
     "variants": "200 cells = 5 filters × 5 stops × 4 gap rules × 2 tickers; Benjamini-Hochberg FDR over all 200 per period (t-test of per-trade net return) and over 160 stop-vs-no-stop tests.",
     "baseline": "QQQ/SPY buy-and-hold (total return) and the QQQ>MA200 rotation.",
     "notes": "MNQ/MES results are a proxy from ETF prices with a fixed point ratio."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "N2",
@@ -6178,7 +6435,8 @@
     "costs": "1 bp or 3 bp slippage per side + IBKR tiered fees (max($0.35, $0.0035/share) capped at 1%, + $0.0032/share pass-through, + SEC fee on sells). Dividends credited to the night spanning the ex-date.",
     "variants": "3 entry times (15:00, 15:30, close) × 4 exits × modes; no selection for this row.",
     "baseline": "QQQ buy-and-hold and the day-session (open-to-close) return."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "N3",
@@ -6216,7 +6474,8 @@
     "costs": "1 bp or 3 bp slippage per side + IBKR tiered fees.",
     "variants": "34 single conditions (weekday, calendar, trend, VIX, events) tested with Benjamini-Hochberg FDR per period, plus the model; top-30% threshold fixed from IS.",
     "baseline": "Hold every night (N2), QQQ buy-and-hold (15.7% OOS) and the QQQ>MA200 rotation (22.3% OOS)."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "N4",
@@ -6267,7 +6526,8 @@
     "variants": "No search beyond N3's model; compared with dollar stops in N5-N7.",
     "baseline": "The same rule with $100/$200/$250/$500/$1,000 stops; prop-firm trailing drawdown limits for context.",
     "notes": "QQQ is the MNQ proxy; ETF prints are missing 20:00-04:00 ET, so overnight adverse moves are understated. Futures pay no dividends."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "N5",
@@ -6319,7 +6579,8 @@
     "variants": "Stop grid none/$100/$200/$250/$500/$1,000 per MNQ; $100 was the user's choice, not optimized.",
     "baseline": "The no-stop rule (N4).",
     "notes": "20:00-04:00 ET is unobserved, so stop fills in that gap are only seen at the first pre-market bar's open; results are optimistic."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "N6",
@@ -6373,7 +6634,8 @@
     "variants": "One point on the stop grid (none/$100/$200/$250/$500/$1,000); not optimized.",
     "baseline": "The no-stop rule (N4).",
     "notes": "20:00-04:00 ET unobserved."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "N7",
@@ -6424,7 +6686,8 @@
     "variants": "One point on the stop grid; not optimized.",
     "baseline": "The no-stop rule (N4).",
     "notes": "20:00-04:00 ET unobserved."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "K1",
@@ -6464,7 +6727,8 @@
     "variants": "3,200 standalone variants (signals × thresholds/percentiles × exits at percentile 80/90/95 or none × holds 20/60/120/250 × QQQ/SPY); Benjamini-Hochberg FDR per period (this rule q 0.24 OOS).",
     "baseline": "Random entries with the same exposure (block permutation of the in/out run lengths, 2,000 draws), QQQ buy-and-hold, and the QQQ>MA200 rotation.",
     "notes": "Only 7 OOS trades. A lag-0 (signal-close) entry and leveraged/MNQ versions were reported separately for prop context."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "K2",
@@ -6502,7 +6766,8 @@
     "costs": "1 bp and 3 bp per side per leg plus IBKR Tiered fees.",
     "variants": "No separate search; same parameters as K1.",
     "baseline": "Random entries with the same exposure (block permutation), SPY buy-and-hold."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "K3",
@@ -6541,7 +6806,8 @@
     "variants": "Part of the 3,200-variant grid (thresholds 0.8/0.9, percentile and time exits); picked by IS Sharpe; BH q 0.45 OOS.",
     "baseline": "Same-exposure random entries, QQQ buy-and-hold, QQQ>MA200 rotation.",
     "notes": "Only 2 OOS trades."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "K4",
@@ -6580,7 +6846,8 @@
     "variants": "Part of the 3,200-variant grid; BH FDR per period.",
     "baseline": "Same-exposure random entries, QQQ buy-and-hold, rotation.",
     "notes": "The actual CNN series was not downloaded; breadth is survivorship-free from the Alpaca panel."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "K5",
@@ -6618,7 +6885,8 @@
     "variants": "Part of the 3,200-variant grid; BH FDR per period.",
     "baseline": "Same-exposure random entries and QQQ buy-and-hold.",
     "notes": "AAII data has a gap from 2024-07 to 2026-05 (including the April 2025 panic), so OOS has only 3 trades."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "K6",
@@ -6653,7 +6921,8 @@
     "costs": "1 bp and 3 bp per side plus IBKR Tiered fees on $10k orders.",
     "variants": "1,116 overlays: 18 signals × fear percentile 5/10/20 × exit 90/95/none × hold 60/120 × add 50/100% × trim 0/50%, plus trim-only. Paired monthly-difference t-test vs the rotation, BH FDR per period.",
     "baseline": "The plain rotation (OOS 22.6-22.9%, drawdown −16.6%)."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "K7",
@@ -6688,7 +6957,8 @@
     "costs": "1 bp and 3 bp per side plus IBKR Tiered fees.",
     "variants": "Trim-only variants at percentile 90/95 for 18 signals, within the 1,116 overlays; paired monthly t-test vs the rotation (t 0.24), BH FDR.",
     "baseline": "The plain rotation."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "A1",
@@ -6909,7 +7179,8 @@
     "variants": "Two signals only (spend intensity and spend jump); IS pick = higher IS excess return vs the lobbyer universe (intensity). No BH correction recorded.",
     "baseline": "Equal-weight lobbyer universe and SPY.",
     "notes": "Spend = in-house expenses or outside-firm income summed over registrants. OOS excess comes mostly from 2024-25."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "L2",
@@ -6944,7 +7215,8 @@
     "variants": "Two signals only (spend intensity and spend jump); IS pick = higher IS excess return vs the lobbyer universe (intensity). No BH correction recorded. Jump was the non-picked signal.",
     "baseline": "Equal-weight lobbyer universe and SPY.",
     "notes": "An earlier annual-data version had shown a lead for the jump signal; it disappears on full quarterly data."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "KB1",
@@ -7053,7 +7325,8 @@
     "variants": "1,640 pair x k x horizon tests with >= 30 IS events. Selection on IS with BH q=0.10 and Bonferroni; OOS blind.",
     "baseline": "Peer's unconditional long return over the same horizon (~0) and the IS beta-implied gap.",
     "notes": "Pre-de-SPAC shells and reused tickers masked, so space/quantum/nuclear pairs barely exist in IS. t-stats clustered by day. All 31 IS survivors were airline->JETS; JETS traded in only 14% of minutes in 2017, so the IS lag was stale prices."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "SY2",
@@ -7092,7 +7365,8 @@
     "variants": "540 tests (pairs x k x horizon). BH q=0.10 on IS: 0 survivors; top-5 IS pairs tracked OOS.",
     "baseline": "Sector-picked pairs and the peer's unconditional return.",
     "notes": "Pre-de-SPAC shells and reused tickers masked, so space/quantum/nuclear pairs barely exist in IS. t-stats clustered by day."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "SY3",
@@ -7128,7 +7402,8 @@
     "costs": "2bp per side for large caps and liquid ETFs; 10bp per side for small caps (UFO/ARKX counted as small).",
     "variants": "144 tests (138 sector + 6 correlation pairs with >= 10 IS events). BH on IS: 0 survivors; best IS pick tracked OOS.",
     "baseline": "Peer's unconditional return."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "SY4",
@@ -7162,7 +7437,8 @@
     "variants": "No selection; descriptive event study (SPCX 60-64 events per peer).",
     "baseline": "Round-trip cost (~4bp large caps, ~20bp small caps).",
     "notes": "Descriptive only; SPCX sample far too small to conclude anything. PARA->NFLX not significant after correction."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "IM1",
@@ -7422,7 +7698,8 @@
     "variants": "Part of 12 slot books (adds/deletes, horizons, 5/10 slots); IS pick = best IS CAGR. No BH recorded.",
     "baseline": "Abnormal return vs SPY over the same window.",
     "notes": "OOS gain is look-ahead: for off-cycle adds the proxy enters before the real announcement. 4 ticker-reuse artifacts (> 35% day) dropped."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "IX2",
@@ -7458,7 +7735,8 @@
     "costs": "5bp per side; idle cash in BIL.",
     "variants": "IS pick = best IS CAGR of 12 books. No BH recorded.",
     "baseline": "SPY (abnormal returns) and SPY buy-and-hold."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "IX3",
@@ -7494,7 +7772,8 @@
     "variants": "Single rule, no search.",
     "baseline": "Zero spread.",
     "notes": "Near-cutoff small-cap stock proxy skipped: no market-cap/float data."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "KC1",
@@ -7532,7 +7811,8 @@
     "costs": "QQQ/SPY daily 1bp per side; stocks 3bp per side + IBKR Tiered fees; QQQ 5-min as MNQ = $82 per QQQ point minus $3.40 round trip ($1.20/side + 1 tick).",
     "variants": "96 MR variants per universe: N 10/20 x k 1.5/2/2.5 x M 10/20 x exit middle/upper x stop on/off x MA200 filter on/off. IS pick by Sharpe. No BH recorded.",
     "baseline": "BB(20,2) and KoliEr mean reversion (82-100% signal overlap with BB), buy-and-hold, ORB+rotation combo."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "KC2",
@@ -7569,7 +7849,8 @@
     "costs": "QQQ/SPY daily 1bp per side; stocks 3bp per side + IBKR Tiered fees; QQQ 5-min as MNQ = $82 per QQQ point minus $3.40 round trip ($1.20/side + 1 tick).",
     "variants": "72 breakout variants (12 bands x 3 exits x MA200 on/off); IS pick by Sharpe (QQQ OOS rank 13/72, rank corr 0.67). No BH recorded.",
     "baseline": "Buy-and-hold TR (QQQ OOS 16.0%), SPY TR, the QQQ rotation (corr 0.62)."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "KC3",
@@ -7626,7 +7907,8 @@
     "variants": "Intraday grid of 12 bands x MR/BO x long/short/both x exits x MA200 filter; IS pick by Sharpe with >= 20 trades/yr. All 36 long-breakout variants positive OOS, but IS median Sharpe only 0.09. No BH.",
     "baseline": "Exposure-matched long drift (~$60/yr); correlation with ORB + rotation 0.0-0.2.",
     "notes": "~76% of trades are the 09:35 entry. Vol-regime dependent; QQQ proxy, not real futures."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "SQ1",
@@ -7665,7 +7947,8 @@
     "variants": "160 variants per direction family (squeeze type x M x band x momentum filter x exit). IS pick by Sharpe (intraday >= 20 trades/yr). No BH; IS/OOS rank correlation reported.",
     "baseline": "Buy-and-hold TR (QQQ OOS 16.0%), drift base rate, rotation and ORB+rotation.",
     "notes": "IS picks were mostly the NR7 control, not a true squeeze."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "SQ2",
@@ -7703,7 +7986,8 @@
     "costs": "Longs 3bp per side + IBKR fees; shorts CFD 5bp per side + 8%/yr financing.",
     "variants": "160 variants per direction family (squeeze type x M x band x momentum filter x exit). IS pick by Sharpe (intraday >= 20 trades/yr). No BH; IS/OOS rank correlation reported. Long IS pick = NR M2 BB 3R (the control).",
     "baseline": "SPY TR (14.7% OOS) and the drift base rate."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "SQ3",
@@ -7740,7 +8024,8 @@
     "costs": "$82 per QQQ point minus $3.40 round trip per MNQ.",
     "variants": "160 variants per direction family (squeeze type x M x band x momentum filter x exit). IS pick by Sharpe (intraday >= 20 trades/yr). No BH; IS/OOS rank correlation reported. Long pick NR M2 KC momentum 3R; short pick P10 M6 KC momentum 3R.",
     "baseline": "Keltner 5-min breakout KC10/2.5/10 (trade overlap 11-33%) and zero."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "R1",
@@ -7775,7 +8060,8 @@
     "variants": "35,514 variants across 6 families x long/short/both. IS pick by Sharpe; BH on one-sided trade t (variants with < 30 trades set p=1): 0 pass IS or OOS.",
     "baseline": "Cost-adjusted zero and the Keltner 5-min breakout.",
     "notes": "Direction filters: prior-day close > MA50/MA200, EMA20 rising vs 5 days; last 1h close > EMA50, EMA20 > EMA50; or daily and 1h agree."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "CP1",
@@ -7811,7 +8097,8 @@
     "variants": "892 tests (universe x pattern x strategy x side); zigzag k 1.5/2/3 and pole N 2.5/3.5/5 picked IS by t of net R. BH across all 892.",
     "baseline": "5 date/vol-matched random entries and 5 plain 20-bar breakouts per trade, same ATR bracket.",
     "notes": "Several geometry rules are assumptions (e.g. flatness |slope| x width <= 0.2 x height); listed in the strategy write-up."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "NS1",
@@ -7848,7 +8135,8 @@
     "variants": "3,840 variants (4 groups x 5 spike types x 3 news subsets x 2 directions x 2 entries x 8 exits x 2 stops). BH per group: 0 pass.",
     "baseline": "Fade (opposite) direction as control; news vs no-news average paths.",
     "notes": "RTH ETFs are proxies for 24h futures; overnight shocks invisible. News coverage thin for CPER, SLV, ags; index news only through 2022-03."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "FA1",
@@ -7884,7 +8172,11 @@
     "variants": "Filters: body >= 0/0.5/1.0 x ATR14 (1-min); close in top/bottom 25% of bar on/off; volume >= 1.5x prior-20 mean on/off; skip days with IB range below 33rd/50th pct of prior 60 days; untested supply/demand zone on/off; x 2 setups x 2 stops x 2 markets. 402 variants reported; chosen on IS t; BH across all on OOS: 0 pass.",
     "baseline": "Cost-adjusted zero; the same video's unfiltered rules (all negative OOS).",
     "notes": "Turns the video's discretionary judgement into measurable filters; zone = 3-bar base (range <= 1 ATR) followed within 10 bars by a >= 2 ATR impulse."
-   }
+   },
+   "video": [
+    "LfSeAMzKjwM"
+   ],
+   "source": "Fit Mom Trader (likely)"
   },
   {
    "id": "FA2",
@@ -7918,7 +8210,11 @@
     "costs": "1 tick slippage per side + $2.50 per side per micro ($6.00 round trip MNQ, $7.50 MES); stress 2 ticks per side.",
     "variants": "128 variants per market (setup x timeframe x manipulation one/both x stop x R:R filter x entry deadline x body k). IS pick = highest IS t; BH across all 256: 0 pass (min q 0.50).",
     "baseline": "Base rate of up/down days after sweeps (10:30->16:00) and buy-and-hold 1 contract."
-   }
+   },
+   "video": [
+    "Du_dcXjVeKs"
+   ],
+   "source": "LuxAlgo"
   },
   {
    "id": "FA3",
@@ -7953,7 +8249,11 @@
     "costs": "1 tick slippage per side + $2.50 per side per micro ($6.00 round trip MNQ, $7.50 MES); stress 2 ticks per side.",
     "variants": "64 variants: 2 setups x long/short x k 3/6 x buffer 0.05/0.15 x LVN ratio <= 0.3 vs 0.3-0.5 x 2 markets. IS picks reported; BH: 0 pass (min q 0.82).",
     "baseline": "Cost-adjusted zero."
-   }
+   },
+   "video": [
+    "GEYpdjzUwEc"
+   ],
+   "source": "Volume-profile video"
   },
   {
    "id": "FA4",
@@ -8011,7 +8311,11 @@
     "variants": "5/15-min x range 4/8 bars x 1R/BE-2R x 4h window (02:00-06:00 or 05:30-09:30 ET) x bias aligned/none/against x resistance filter. Reported tf5 N8 1R no-bias variant was chosen after seeing results; BH computed only on bias-aligned variants.",
     "baseline": "Bias-alone hit rate (coin flip) and cost-adjusted zero.",
     "notes": "Post-hoc pick and net IS ~0, so a lead, not a pass. Stop-order slippage at the open may exceed 1 tick; 'clean zone' and weekly story not coded."
-   }
+   },
+   "video": [
+    "Rk2G9E7axXw"
+   ],
+   "source": "IQCapital · Harry Sharp"
   },
   {
    "id": "OF6F",
@@ -8065,7 +8369,11 @@
     "variants": "Fixed mechanics; 7 signal definitions compared side by side. No BH.",
     "baseline": "BIG (any strong candle) as the plain baseline for OF6's filters.",
     "notes": "NQ improvement after 2021 tracks rising price level vs fixed $6 cost; IS negative, so any positive version is post-hoc."
-   }
+   },
+   "video": [
+    "Khgj5q1-ln8"
+   ],
+   "source": "Fabio Valentini (Fabervaale)"
   },
   {
    "id": "FEN1",
@@ -8116,7 +8424,11 @@
     "variants": "24: stop {half, bar} × cutoff {10:30, 11:00, 12:00} × 20-SMA filter {skip trades against a sloping 20-SMA, none} × target {1.5R, 2R}.",
     "baseline": "Same entries and stop distance with a coin-flip direction (20 runs).",
     "notes": "Video's 'nearby support' stop and retest timing are vague; assumptions as above. Video shows 4 of 5 recent winners on QQQ; not a sample."
-   }
+   },
+   "video": [
+    "F9_uLdSYOrc"
+   ],
+   "source": "Steven (fence bar)"
   },
   {
    "id": "RAS1",
@@ -8150,7 +8462,11 @@
     "baseline": "Hit rate of non-spike bars, also weighted to the spikes' time-of-day mix.",
     "costs": "Moves in points before costs; $6 RT per MNQ = 3 pts.",
     "notes": "Interview claim (Titans of Tomorrow, caLSbXnkaj4). Her 'near a swing' may be looser than our 1-tick touch, which would raise both rates."
-   }
+   },
+   "video": [
+    "caLSbXnkaj4"
+   ],
+   "source": "Linda Raschke interview"
   },
   {
    "id": "EV1",
@@ -8200,7 +8516,11 @@
     "variants": "12 per market: exit {EMA9 close, 1.5 ATR/3R} × entry window {first 60, 120 min, all day} × daily cap {2 losers, none}.",
     "baseline": "Same entry times, random direction.",
     "notes": "Original trader used options; we test the underlying futures. ADX chop filter (presenter's ≥36) not tested. Presenter's own longer backtest also failed."
-   }
+   },
+   "video": [
+    "dPfo7ihwbvo"
+   ],
+   "source": "EMA9/VWAP video"
   },
   {
    "id": "AMT1",
@@ -8236,7 +8556,11 @@
     "costs": "$6 RT per MNQ ($2/pt).",
     "baseline": "All days' next-session open→close (drift +2.0 IS, +2.8 OOS pts).",
     "notes": "Tests only the daily bias claim. His intraday entries (pullback to low value area / delta peak after acceptance) overlap earlier FAIL tests: Cimi VA acceptance + pullback, Kammerer POC migration, and OF6 (his own setup)."
-   }
+   },
+   "video": [
+    "VHhvg96W6lc"
+   ],
+   "source": "Fabio Valentini"
   },
   {
    "id": "EC1",
@@ -8273,7 +8597,8 @@
     "variants": "240 variants (48 entry tests x 5 exits). IS pick by pooled Sharpe. BH on tranche 120-day return minus unconditional, clustered by event month: 0 pass (min q 0.58).",
     "baseline": "Buy-and-hold (OOS 13.4%, -34%), monthly DCA.",
     "notes": "~7 independent crash episodes per period. Breadth gate panel ends 2026-10-21."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "EC2",
@@ -8308,7 +8633,8 @@
     "costs": "1bp per side (3bp also run) + IBKR $0.005/share, $1 min, on a $1,000 tranche ($3,000 all-in): ~10bp per side per tranche, ~3.3bp all-in. Cash earns 0.",
     "variants": "60 variants (2 rules x 6 crash definitions x 5 exits); IS pick (VIX > 35, 252-day stop) by Sharpe. BH together with the 240 originals: 0 pass (min q 0.61).",
     "baseline": "Buy-and-hold (13.4%, -34%)."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "EC3",
@@ -8344,7 +8670,8 @@
     "variants": "3 approaches x 60/120-day wait. No BH recorded.",
     "baseline": "Buying at the signal close and holding 252 days.",
     "notes": "Signals whose 1-year outcome isn't known yet are excluded."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "EC4",
@@ -8378,7 +8705,8 @@
     "costs": "1bp per side (3bp also run) plus ~$1 minimum on $10k.",
     "variants": "225 variants (3 reserve sizes x 3 deploy rules x 5 signals x 5 refill rules). IS picks by CAGR and Sharpe. BH: 0 pass (min q 0.48).",
     "baseline": "100% buy-and-hold, static 90/10, 80/20, 70/30 on a 5pt band, 200-day SMA timing."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "EC5",
@@ -8416,7 +8744,8 @@
     "costs": "5bp per unit of turnover; 10bp stress.",
     "variants": "28 variants (7 signals x 2 universes x 2 weightings). IS pick sma200 core10 inverse-vol. BH vs equal-weight B&H: 0 pass (min q 0.58).",
     "baseline": "SPY, QQQ, 60/40, equal-weight buy-and-hold of the same ETFs."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "LG1",
@@ -8450,7 +8779,8 @@
     "variants": "Single rule; 11 events (20-day spacing). No search.",
     "baseline": "SPY and QQQ over the same windows.",
     "notes": "NANC trades in only ~34 of 78 5-min bars per day; intraday lag is stale prints."
-   }
+   },
+   "source": "Jen Hsieh"
   },
   {
    "id": "LG2",
@@ -8557,7 +8887,11 @@
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "variants": "12 combos (buy line tiered/−3/−4 × 10%/5% size × close/next open).",
     "baseline": "SPY buy-and-hold OOS 15.1% (DD −24.5%), QQQ 16.4%, our QQQ rotation 22.3%."
-   }
+   },
+   "video": [
+    "xhSbYE7X4ZA"
+   ],
+   "source": "Revelio Trading"
   },
   {
    "id": "RV2",
@@ -8592,7 +8926,11 @@
     "sizing": "5% of equity per stock, max 20.",
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "baseline": "SPY buy-and-hold OOS 15.1% (DD −24.5%)."
-   }
+   },
+   "video": [
+    "xhSbYE7X4ZA"
+   ],
+   "source": "Revelio Trading"
   },
   {
    "id": "TT1",
@@ -8621,7 +8959,11 @@
     "exit": "Event study, no trade.",
     "stop": "n/a",
     "baseline": "5 random placebo levels per real level, drawn at the same distance from the open."
-   }
+   },
+   "video": [
+    "NnvdErTmHLs"
+   ],
+   "source": "Titans Of Tomorrow · Adam Grimes"
   },
   {
    "id": "TT2",
@@ -8656,7 +8998,11 @@
     "sizing": "1 micro contract.",
     "costs": "1 tick per side plus $2.50 per side per micro; stress 2 ticks.",
     "baseline": "NQ buy-and-hold ≈ +$4.2k/yr per MNQ OOS."
-   }
+   },
+   "video": [
+    "NnvdErTmHLs"
+   ],
+   "source": "Titans Of Tomorrow · Adam Grimes"
   },
   {
    "id": "TT3",
@@ -8686,7 +9032,11 @@
     "exit": "Event study: next 20-day realized volatility and next 1/20-day return.",
     "stop": "n/a",
     "baseline": "The same measures when above the average. Timing with the 200-day is already covered by earlier trend rows."
-   }
+   },
+   "video": [
+    "NnvdErTmHLs"
+   ],
+   "source": "Titans Of Tomorrow · Adam Grimes"
   },
   {
    "id": "TT4",
@@ -8721,7 +9071,11 @@
     "sizing": "100% in one ETF.",
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "baseline": "QQQ buy-and-hold OOS 16.1% (DD −35%)."
-   }
+   },
+   "video": [
+    "NnvdErTmHLs"
+   ],
+   "source": "Titans Of Tomorrow · Adam Grimes"
   },
   {
    "id": "TT5",
@@ -8757,7 +9111,31 @@
     "sizing": "10 slots, 10% each, long-only cash account.",
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "baseline": "SPY buy-and-hold OOS 15.0% (DD −24.5%); random below-200 entries with the same hold."
-   }
+   },
+   "video": [
+    "NnvdErTmHLs"
+   ],
+   "source": "Titans Of Tomorrow · Adam Grimes"
   }
- ]
+ ],
+ "fwd_sources": {
+  "fut_choch": {
+   "video": [
+    "z97PnFIPoFg"
+   ],
+   "source": "Brendan (AI trading)"
+  },
+  "faber_of6": {
+   "video": [
+    "Khgj5q1-ln8"
+   ],
+   "source": "Fabio Valentini (Fabervaale)"
+  },
+  "harry_nyopen": {
+   "video": [
+    "Rk2G9E7axXw"
+   ],
+   "source": "IQCapital · Harry Sharp"
+  }
+ }
 }

@@ -633,3 +633,7 @@ body.lb-open { overflow: hidden; }
 .x-method dt { font-weight: 600; opacity: .75; }
 .x-method dd { margin: 0; white-space: normal; }
 @media (max-width: 640px) { .x-method dl { grid-template-columns: 1fr; } .x-method dt { margin-top: .3rem; } }
+
+/* source credit (YouTube video a test came from) */
+.x-src__link { color: var(--text-primary); text-decoration: underline; text-decoration-color: var(--stroke-primary); text-underline-offset: 2px; font-weight: var(--weight-medium); }
+.x-src__link:hover, .x-src__link:focus-visible { text-decoration-color: currentColor; }

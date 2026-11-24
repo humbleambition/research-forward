@@ -55,7 +55,15 @@
   /* ---------- 2. Results ---------- */
   var COLS = [["tr_yr", "Tr/yr"], ["win", "Win %"], ["avg", "Avg / trade"], ["cagr", "CAGR"], ["max_dd", "Max DD"], ["result", "IS → OOS"]];
   var ORDER = ["PASS", "WEAK", "FAIL", "INCONCLUSIVE"];
-  var testsById = {}, showPlaceholder = false;
+  var testsById = {}, showPlaceholder = false, FWD_SOURCES = {};
+  /* a forward test's source: fwd_sources[id] in tests.json, else the first backtest code (e.g. "FA4") that has one */
+  function fwdSource(t) {
+    var f = FWD_SOURCES[t.id];
+    if (f && (hasSrc(f) || str(f.source))) return f;
+    var codes = str(t.code).split(/[^A-Za-z0-9]+/);
+    for (var i = 0; i < codes.length; i++) { var b = testsById[codes[i]]; if (b && (hasSrc(b) || str(b.source))) return b; }
+    return null;
+  }
 
   function countLine(list) {
     var c = {};
@@ -109,7 +117,28 @@
   var MKEYS = [["universe", "Market / data"], ["period", "Test periods"], ["entry", "Entry"], ["exit", "Exit"],
     ["stop", "Stop"], ["sizing", "Sizing / limits"], ["costs", "Costs"], ["variants", "Variants tried"],
     ["baseline", "Compared with"], ["notes", "Notes"]];
-  function methodBlock(host, m) {
+  /* source credit: t.video = [YouTube ids], t.source = "Channel · presenter" */
+  function srcLinks(host, t) {
+    t.video.forEach(function (id, i) {
+      var a = el("a", i === 0 ? (str(t.source) || "YouTube video") + " \u25B6" : "\u25B6 " + (i + 1), "x-src__link");
+      a.href = "https://www.youtube.com/watch?v=" + encodeURIComponent(id);
+      a.target = "_blank"; a.rel = "noopener";
+      a.title = "Watch the source video on YouTube" + (t.video.length > 1 ? " (" + (i + 1) + " of " + t.video.length + ")" : "");
+      a.addEventListener("click", function (e) { e.stopPropagation(); });
+      a.addEventListener("keydown", function (e) { e.stopPropagation(); });
+      if (i) host.appendChild(doc.createTextNode(" "));
+      host.appendChild(a);
+    });
+  }
+  function hasSrc(t) { return !!(t && Array.isArray(t.video) && t.video.length); }
+  function srcText(t) { return t && !hasSrc(t) && str(t.source) ? str(t.source) : ""; }   /* unlinked credit, e.g. "Jen Hsieh" */
+  function sourceLine(parent, t) {
+    if (!hasSrc(t) && !srcText(t)) return;
+    var sm = el("small", "Source: " + srcText(t), "x-src");
+    if (hasSrc(t)) srcLinks(sm, t);
+    parent.appendChild(sm);
+  }
+  function methodBlock(host, m, t) {
     if (!m) return;
     var d = doc.createElement("details"); d.className = "x-method";
     d.appendChild(el("summary", "Method"));
@@ -118,6 +147,7 @@
       if (!str(m[k[0]])) return;
       dl.appendChild(el("dt", k[1])); dl.appendChild(el("dd", m[k[0]]));
     });
+    if (hasSrc(t) || srcText(t)) { var dd = el("dd", srcText(t), "x-src"); if (hasSrc(t)) srcLinks(dd, t); dl.appendChild(el("dt", "Source")); dl.appendChild(dd); }
     d.appendChild(dl); host.appendChild(d);
   }
 
@@ -128,8 +158,9 @@
     th.setAttribute("scope", "row");
     small(th, t.data);
     small(th, t.script);
+    sourceLine(th, t);
     mediaButtons(th, t);
-    methodBlock(th, t.method);
+    methodBlock(th, t.method, t);
     tr.appendChild(th);
     var stats = t.stats || {}, cls = t.cls || {};
     COLS.forEach(function (c) {
@@ -179,6 +210,7 @@
     showPlaceholder = data.media_placeholder === true;
     var by = {};
     data.tests.forEach(function (t) { (by[t.area] = by[t.area] || []).push(t); testsById[t.id] = t; });
+    FWD_SOURCES = data.fwd_sources || {};
     var frag = doc.createDocumentFragment(), tfrag = doc.createDocumentFragment();
     data.areas.forEach(function (a) {
       var list = by[a.id] || [];
@@ -204,7 +236,7 @@
   function prose(d) { return d.querySelector(".prose").textContent; }
   function rowText(t) {
     var s = t.stats || {};
-    return [t.id, t.name, t.data, t.script, s.tr_yr, s.win, s.avg, s.cagr, s.max_dd, t.result, t.verdict, t.verdict_note].concat(t.method ? MKEYS.map(function (k) { return t.method[k[0]]; }) : []).map(str).join(" ");
+    return [t.id, t.name, t.data, t.script, s.tr_yr, s.win, s.avg, s.cagr, s.max_dd, t.result, t.verdict, t.verdict_note, t.source].concat(t.method ? MKEYS.map(function (k) { return t.method[k[0]]; }) : []).map(str).join(" ");
   }
 
   function openHash() {
@@ -267,6 +299,7 @@
     var th = el("th", str(t.name) + (retired ? " (retired)" : ""));
     th.setAttribute("scope", "row");
     small(th, t.code);
+    sourceLine(th, fwdSource(t));
     fwdThumb(th, t);
     tr.appendChild(th);
     var what = el("td", t.what || "–"); small(what, t.data); tr.appendChild(what);
@@ -322,6 +355,8 @@
     var text = [t.what, t.data, t.note].map(str).filter(function (s) { return s && s !== "–"; })
       .map(function (s) { return /[.!?]$/.test(s) ? s : s + "."; }).join(" ");
     if (text) panel.appendChild(el("p", text));
+    var src = fwdSource(t);
+    if (src) { var sp = el("p", "Source: " + srcText(src), "x-src"); if (hasSrc(src)) srcLinks(sp, src); panel.appendChild(sp); }
     var log = t.log && typeof t.log === "object" ? t.log : {};
     var rows = Array.isArray(log.rows) ? log.rows : [];
     panel.appendChild(rows.length ? logTable(log.columns, rows) : el("p", "No trades in the record yet."));
@@ -355,7 +390,7 @@
     });
     return tr;
   }
-  function loadForward() {
+  function loadForward(testsReady) {
     var body = $("x-fwd-body"), status = $("x-fwd-status"), box = body.closest(".x-fwd");
     function fit() {
       var cs = getComputedStyle(box);
@@ -366,6 +401,7 @@
     if (!window.fetch || location.protocol === "file:" || /\.s3[.-]/.test(location.hostname)) return;
     fetch("forward.json", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) { return testsReady.catch(function () {}).then(function () { return d; }); })
       .then(function (d) {
         if (!d || !Array.isArray(d.tests) || !d.tests.length) throw new Error("empty");
         var frag = doc.createDocumentFragment();
@@ -519,9 +555,9 @@
   stage.addEventListener("pointercancel", up);
 
   /* ---------- start ---------- */
-  loadTests().then(function (d) { renderResults(d); openHash(); syncNav(true); })
-    .catch(function () { $("x-areas").appendChild(el("p", "Results failed to load. Raw data: data/tests.json", "fineprint")); });
-  loadForward();
+  var testsReady = loadTests().then(function (d) { renderResults(d); openHash(); syncNav(true); });
+  testsReady.catch(function () { $("x-areas").appendChild(el("p", "Results failed to load. Raw data: data/tests.json", "fineprint")); });
+  loadForward(testsReady);
   if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(function () { syncNav(true); });
   syncNav(true);
 })();
