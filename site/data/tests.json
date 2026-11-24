@@ -242,6 +242,14 @@
    "short": "Dip buying and key levels",
    "intro_html": "<p>Two videos checked on 2016–2020 and blind on 2021–2026 with costs. Revelio Trading buys mega-caps that fall far below their 10-year trend line: it holds up, with a shallow drawdown, but trails simply holding SPY. Adam Grimes (Titans of Tomorrow) says the prior day's high and low and the 200-day average matter. Prior-day levels behave like random lines and fading them loses money. Below the 200-day, volatility really does run higher, but there is no direction edge to trade.</p>",
    "date_note": "Nov 20"
+  },
+  {
+   "id": "r30",
+   "num": "3.30",
+   "title": "Direction signals below the 200-day average (Nov 23)",
+   "short": "Direction below the 200-day",
+   "intro_html": "<p>Below its 200-day average, the index moves about twice as much but in no particular direction. We paired that regime with five common direction indicators on QQQ and real NQ futures, chose settings on 2016–2020 and tested blind on 2021–2026 with costs. None survive multiple-testing correction. RSI2 dip buying is the only weak lead. The 2016–2020 sample has few below-200 days, so in-sample choices rest on 10–45 trades.</p>",
+   "date_note": "Nov 23"
   }
  ],
  "tests": [
@@ -756,6 +764,10 @@
    "result": "Video sizing (2% risk, up to 4x leverage): OOS 27.1%/−41.7%, matches claim; per-trade no better than random entries (p 0.29). Cash 1x: OOS 16.4%/−24.7% (3-ATR stop 21.4%/−19.6%) vs equal-weight B&H 19.3%/−35.6%. Flat-at-16:30 version hurts on real NQ/ES futures.",
    "data": "Alpaca daily ETFs + yfinance BTC 2016–2026; Databento NQ/ES 1-min",
    "script": "turtle.py",
+   "source": "Reveglio",
+   "video": [
+    "H_w4c63UF2c"
+   ],
    "date": "2026-11-11",
    "diagram": null,
    "clip": null,
@@ -778,11 +790,7 @@
     "variants": "8 variants: entry 20/55, trail 10/20, stop 2/3 N; IS pick by Sharpe (3N for cash). No FDR.",
     "baseline": "Random entries (same count and hold, 300 sims), equal-weight buy-and-hold of the 5 assets, QQQ rotation.",
     "notes": "Script turtle.py / turtle_fut.py. Video used CFDs on SPX, NDX, gold, silver, BTC; ETFs are proxies. BTC drives IS."
-   },
-   "video": [
-    "H_w4c63UF2c"
-   ],
-   "source": "Reveglio"
+   }
   },
   {
    "id": "O1",
@@ -2394,6 +2402,10 @@
    "result": "QQQ IS −0.05R → +0.04R; −0.03R at 3bp",
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Matteo Conte",
+   "video": [
+    "yW6c0K8uGvw"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -2434,11 +2446,7 @@
     "stop": "Opening-range low.",
     "variants": "No grid: fixed 1R (2R tested as a separate row).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Row reports QQQ; SPY failed (OOS -0.04R)."
-   },
-   "video": [
-    "yW6c0K8uGvw"
-   ],
-   "source": "Chart Fanatics · Matteo Conte"
+   }
   },
   {
    "id": "C2",
@@ -2455,6 +2463,10 @@
    "result": "IS −0.04R; SPY FAIL",
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Matteo Conte",
+   "video": [
+    "yW6c0K8uGvw"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -2489,11 +2501,7 @@
     "stop": "Opening-range low.",
     "variants": "No grid: fixed 2R (1R tested as a separate row).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Row reports QQQ; SPY OOS -0.00R (FAIL)."
-   },
-   "video": [
-    "yW6c0K8uGvw"
-   ],
-   "source": "Chart Fanatics · Matteo Conte"
+   }
   },
   {
    "id": "C3",
@@ -2510,6 +2518,10 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Matteo Conte",
+   "video": [
+    "yW6c0K8uGvw"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -2547,11 +2559,7 @@
     "stop": "none",
     "variants": "Warm-up 0/5/15/30 minutes; IS picked 15 for QQQ and 30 for SPY.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Gross edge real (QQQ +20%/+26% CAGR at 1x, about 3,500 flips/yr) but costs make it untradeable."
-   },
-   "video": [
-    "yW6c0K8uGvw"
-   ],
-   "source": "Chart Fanatics · Matteo Conte"
+   }
   },
   {
    "id": "C4",
@@ -2568,6 +2576,10 @@
    "result": "negative at 3bp",
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Matteo Conte",
+   "video": [
+    "yW6c0K8uGvw"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -2590,11 +2602,7 @@
     "stop": "none",
     "variants": "None.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. QQQ gross 14.5%/yr IS and 9.4% OOS, below buy-and-hold; turns negative at 3 bp."
-   },
-   "video": [
-    "yW6c0K8uGvw"
-   ],
-   "source": "Chart Fanatics · Matteo Conte"
+   }
   },
   {
    "id": "C5",
@@ -2611,6 +2619,10 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · JJ Simon",
+   "video": [
+    "KHEQ5g55dQ4"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -2648,11 +2660,7 @@
     "stop": "S = stop % x open (continuation stop doubled if the first candle's range exceeds S).",
     "variants": "Stop 0.08% or 0.125% of price (25/38 NQ points scaled) x target open/fixed = 4 combos. IS picked 0.125% with target = open for QQQ, 0.125% with fixed target for SPY.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. NQ point distances converted to % of price."
-   },
-   "video": [
-    "KHEQ5g55dQ4"
-   ],
-   "source": "Chart Fanatics · JJ Simon"
+   }
   },
   {
    "id": "C6",
@@ -2669,6 +2677,10 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Candice",
+   "video": [
+    "-kGVL93XfyE"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -2706,11 +2718,7 @@
     "stop": "Sweep extreme minus 1 cent; trade skipped if risk > 0.2% of price (40 NQ points).",
     "variants": "Premarket pool on/off x 'discount' filter (longs only below prior-day midpoint) on/off = 4 combos. IS picked premarket on, no discount (QQQ); premarket off, no discount (SPY).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. No trailing; NY window only."
-   },
-   "video": [
-    "-kGVL93XfyE"
-   ],
-   "source": "Chart Fanatics · Candice"
+   }
   },
   {
    "id": "C7",
@@ -2727,6 +2735,10 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Jadecap",
+   "video": [
+    "8OX-mcSHWhg"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -2764,11 +2776,7 @@
     "stop": "Lowest low (highest high) since the sweep, plus/minus 1 cent.",
     "variants": "Day filter (longs only below the day's open) on/off; IS picked off for both ETFs.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md."
-   },
-   "video": [
-    "8OX-mcSHWhg"
-   ],
-   "source": "Chart Fanatics · Jadecap"
+   }
   },
   {
    "id": "C8",
@@ -2785,6 +2793,10 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Jadecap",
+   "video": [
+    "8OX-mcSHWhg"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -2822,11 +2834,7 @@
     "stop": "Highest high (lowest low) since the raid, plus/minus 1 cent.",
     "variants": "None (single rule set).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Proxy for the video's setup 2 (session-range raid)."
-   },
-   "video": [
-    "8OX-mcSHWhg"
-   ],
-   "source": "Chart Fanatics · Jadecap"
+   }
   },
   {
    "id": "C9",
@@ -2840,6 +2848,10 @@
    "result": "n < 30",
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Omar",
+   "video": [
+    "IB-fyWI5j8w"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -2874,11 +2886,7 @@
     "stop": "90% retracement of the range.",
     "variants": "Body k 0.5/1.0/1.5 x extension 0/0.28 = 6 combos; no combo had 30 IS trades. Picked k 1.5, ext 0.28 (QQQ); k 0.5, ext 0.28 (SPY).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Requiring all conditions on one bar gives about 0.5-5 trades/yr; not loosened (would be tuning). Forced FAIL on n < 30."
-   },
-   "video": [
-    "IB-fyWI5j8w"
-   ],
-   "source": "Chart Fanatics · Omar"
+   }
   },
   {
    "id": "C10",
@@ -2895,6 +2903,10 @@
    "result": "QQQ IS −0.15R → +0.17R",
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Trader Kane",
+   "video": [
+    "HNuRp9Z1bMs"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -2929,11 +2941,7 @@
     "stop": "Sweep extreme plus/minus 1 cent.",
     "variants": "Level (09:00 hour / prior day) x trend filter (prior close vs EMA20 and prior candle colour) on/off x target (day / prior-day mid) = 8 combos. IS picked 09:00 hour, no filter, prior-day mid (QQQ); prior day, no filter, prior-day mid (SPY).",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Setup cancelled if the other ETF sweeps before the trigger; break-even rule not modelled. QQQ about 45 OOS trades; SPY failed."
-   },
-   "video": [
-    "HNuRp9Z1bMs"
-   ],
-   "source": "Chart Fanatics · Trader Kane"
+   }
   },
   {
    "id": "C11",
@@ -2950,6 +2958,11 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Marco",
+   "video": [
+    "DAnXM7C16h0",
+    "T_djSNBmV00"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -2987,12 +3000,7 @@
     "stop": "Sweep bar's high (low) plus/minus 1 cent.",
     "variants": "ATR multiple k 0.5/1.0; IS picked 1.0 for both ETFs.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Covers two videos (DAnXM7C16h0, T_djSNBmV00); the 'after a BOS' qualifier and the limit order at the engineered low are not modelled."
-   },
-   "video": [
-    "DAnXM7C16h0",
-    "T_djSNBmV00"
-   ],
-   "source": "Chart Fanatics · Marco"
+   }
   },
   {
    "id": "C12",
@@ -3009,6 +3017,10 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Desi",
+   "video": [
+    "SMSqQTBxjc0"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3046,11 +3058,7 @@
     "stop": "Lower of the retest low and level minus 0.2 ATR (mirrored for shorts).",
     "variants": "Exit mode full/half; IS picked half for QQQ, full for SPY.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. The setup is cancelled if price closes back through the level; the video's no-trade zone is not modelled."
-   },
-   "video": [
-    "SMSqQTBxjc0"
-   ],
-   "source": "Chart Fanatics · Desi"
+   }
   },
   {
    "id": "C13",
@@ -3067,6 +3075,10 @@
    "result": null,
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Gala",
+   "video": [
+    "70UtrLU6RAg"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3104,11 +3116,7 @@
     "stop": "Retest bar's low (high) minus/plus 1 cent.",
     "variants": "None.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md."
-   },
-   "video": [
-    "70UtrLU6RAg"
-   ],
-   "source": "Chart Fanatics · Gala"
+   }
   },
   {
    "id": "C14",
@@ -3122,6 +3130,10 @@
    "result": "n < 30",
    "data": "QQQ/SPY 1-min",
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Forest Knight",
+   "video": [
+    "q_MdVlZ1SH4"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -3156,11 +3168,7 @@
     "stop": "Signal bar's high (low) plus/minus 1 cent.",
     "variants": "None.",
     "notes": "QQQ/SPY stand in for NQ/ES futures; prior-day high/low are regular-session levels, not Globex; no data 20:00-04:00 ET, so premarket 04:00-09:29 stands in for overnight liquidity. Rules mechanised from the video per strategies/cf/<id>.md. Volume profile is an approximation of true volume-at-price. Under 1 trade/yr, forced FAIL on n < 30."
-   },
-   "video": [
-    "q_MdVlZ1SH4"
-   ],
-   "source": "Chart Fanatics · Forest Knight"
+   }
   },
   {
    "id": "C15",
@@ -3171,6 +3179,12 @@
    "result": "untestable / skipped",
    "data": null,
    "script": "cf_index.py",
+   "source": "Chart Fanatics · Okala, Dylan O'Neal, Darcy",
+   "video": [
+    "jsUTbjwpFVk",
+    "4BgkLlwgpvo",
+    "UIGZtoGGPH4"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -3186,13 +3200,7 @@
     "universe": "Intended for NQ/ES futures intraday; no backtest data run. Listed with the QQQ/SPY 1-min screen (backtests/cf_index.py, SKIPPED list).",
     "entry": "Not backtested. Rules from the videos: Okala, reactions at NQ round-number '80/20' levels (3-point touch tolerance, 10-point stop, 15-point first target); Dylan O'Neal, ES break of prior-day low/high confirmed by VIX at its prior-day high/low, plus fading when ES and VIX are both +/-1%; Darcy, monthly/daily liquidity sweep then 4H FVG inversion, 15m FVG, 1m inverse FVG.",
     "notes": "Okala untestable: mapping QQQ to NQ levels via the NQ/QQQ ratio is off by a median 4-14 NQ points/day, larger than the touch tolerance. Dylan untestable: needs intraday VIX, only daily VIX available. Darcy skipped: five nested multi-timeframe conditions, RTH-only 4H bars differ from futures; not coded in the time budget."
-   },
-   "video": [
-    "jsUTbjwpFVk",
-    "4BgkLlwgpvo",
-    "UIGZtoGGPH4"
-   ],
-   "source": "Chart Fanatics · Okala, Dylan O'Neal, Darcy"
+   }
   },
   {
    "id": "C16",
@@ -3209,6 +3217,10 @@
    "result": "Sharpe 0.31 → 1.07",
    "data": "SPY daily",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Noel T.",
+   "video": [
+    "TyHTEtArsS4"
+   ],
    "date": null,
    "highlight": true,
    "cls": {
@@ -3235,11 +3247,7 @@
     "stop": "none",
     "variants": "2 variants (next-open entry/exit vs same-day close entry/exit); IS picked next open.",
     "notes": "SPY used as an ES proxy. In the market about 25% of the time, so it passes on Sharpe/drawdown, not return. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "TyHTEtArsS4"
-   ],
-   "source": "Chart Fanatics · Noel T."
+   }
   },
   {
    "id": "C17",
@@ -3256,6 +3264,10 @@
    "result": "Sharpe 1.12 → 0.83",
    "data": "GLD daily",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Noel T.",
+   "video": [
+    "TyHTEtArsS4"
+   ],
    "date": null,
    "highlight": true,
    "cls": {
@@ -3282,11 +3294,7 @@
     "stop": "Entry minus 1x ATR(14) (14-day average true range), checked from the next day.",
     "variants": "RSI(14) vs RSI(2) x buy Thursday close vs Friday open = 4 variants; IS picked RSI(14), Thursday close.",
     "notes": "In the market about 10% of the time; passes on Sharpe/drawdown, not return. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "TyHTEtArsS4"
-   ],
-   "source": "Chart Fanatics · Noel T."
+   }
   },
   {
    "id": "C18",
@@ -3303,6 +3311,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Ted Zhang",
+   "video": [
+    "VDK200OHNSo"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3328,11 +3340,7 @@
     "stop": "Base low (prior 8-week low), checked intraday including the entry day.",
     "variants": "Exit below 10-week vs 30-week SMA x base-low stop on/off = 4; IS picked 10-week + stop. (30-week, no stop: 3.2% -> 6.3% CAGR, not the pick.)",
     "notes": "Discretionary 'first base in stage 2' reduced to the 8-week < 25% range. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "VDK200OHNSo"
-   ],
-   "source": "Chart Fanatics · Ted Zhang"
+   }
   },
   {
    "id": "C19",
@@ -3349,6 +3357,10 @@
    "result": "Sharpe 1.01 → 0.44",
    "data": "SPY/QQQ/IWM/DIA",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Harvell Key",
+   "video": [
+    "_wpg45NdMkM"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -3371,11 +3383,7 @@
     "stop": "none",
     "variants": "100- vs 200-day lookback x exit (50-day low / 5-day hold / post-breakout pullback entry) = 6; IS picked 200-day breakout, 50-day-low exit.",
     "notes": "Video credited as 'Harvell Key' in code. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "_wpg45NdMkM"
-   ],
-   "source": "Chart Fanatics · Harvell Key"
+   }
   },
   {
    "id": "C20",
@@ -3392,6 +3400,10 @@
    "result": null,
    "data": "stocks, $50M",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Harvell Key",
+   "video": [
+    "_wpg45NdMkM"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3417,11 +3429,7 @@
     "stop": "none",
     "variants": "100- vs 200-day lookback x exit (50-day low / 5-day hold / post-breakout pullback entry) = 6; IS picked 100-day breakout, 50-day-low exit.",
     "notes": "Strong 2016-2020 momentum regime; failed OOS. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "_wpg45NdMkM"
-   ],
-   "source": "Chart Fanatics · Harvell Key"
+   }
   },
   {
    "id": "C21",
@@ -3438,6 +3446,10 @@
    "result": null,
    "data": "index ETFs",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Harvell Key",
+   "video": [
+    "_wpg45NdMkM"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3463,11 +3475,7 @@
     "stop": "none",
     "variants": "Drop 6% or 7% x 200-day SMA filter on/off = 4; IS picked 6%, no filter.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "_wpg45NdMkM"
-   ],
-   "source": "Chart Fanatics · Harvell Key"
+   }
   },
   {
    "id": "C22",
@@ -3484,6 +3492,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Harvell Key",
+   "video": [
+    "_wpg45NdMkM"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3509,11 +3521,7 @@
     "stop": "none",
     "variants": "Drop 6% or 7% x 200-day SMA filter on/off = 4; IS picked 6%, no filter.",
     "notes": "Ranking by drop size picks meme/biotech blow-offs; heavy OOS losses. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "_wpg45NdMkM"
-   ],
-   "source": "Chart Fanatics · Harvell Key"
+   }
   },
   {
    "id": "C23",
@@ -3529,6 +3537,10 @@
    "result": null,
    "data": "ETFs; stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Anthony Crudele",
+   "video": [
+    "EZ_L7zovyrw"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3554,11 +3566,7 @@
     "stop": "10-day lowest low.",
     "variants": "Buy at signal close vs next open (2 per universe); IS picked signal close for both.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "EZ_L7zovyrw"
-   ],
-   "source": "Chart Fanatics · Anthony Crudele"
+   }
   },
   {
    "id": "C24",
@@ -3574,6 +3582,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Lance Breitstein",
+   "video": [
+    "_qeFh1ADss8"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3599,11 +3611,7 @@
     "stop": "10-day lowest low as of the signal day; on the entry day only a close below it counts.",
     "variants": "Strict vs loose (>= 3 lower highs, volume >= 2x) x 3 exits (trail prior-bar low + target, target with 20-day max, trail only) = 6; IS picked strict, target SMA20, 20-day max.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "_qeFh1ADss8"
-   ],
-   "source": "Chart Fanatics · Lance Breitstein"
+   }
   },
   {
    "id": "C25",
@@ -3619,6 +3627,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Clement",
+   "video": [
+    "0_NSmOWVbpA"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3644,11 +3656,7 @@
     "stop": "Setup-day low (prior-day low at entry); on the entry day only a close below it counts.",
     "variants": "Exit below EMA10 vs EMA20 x partial profits (1/3 at +2 ADR with stop to break-even, 1/3 at SMA50 + 9 ATR) on/off = 4; IS picked EMA20, no partials.",
     "notes": "No theme strength, news grading, earnings avoidance or 5-minute entries. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "0_NSmOWVbpA"
-   ],
-   "source": "Chart Fanatics · Clement"
+   }
   },
   {
    "id": "C26",
@@ -3664,6 +3672,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Connor Bates",
+   "video": [
+    "kCSvDVicpwU"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3689,11 +3701,7 @@
     "stop": "5-day low as of the signal day; on the entry day only a close below it counts.",
     "variants": "QQQ market filter on/off; IS picked filter on.",
     "notes": "Bates' 'linear/super-stock' quality and catalyst filters dropped. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "kCSvDVicpwU"
-   ],
-   "source": "Chart Fanatics · Connor Bates"
+   }
   },
   {
    "id": "C27",
@@ -3709,6 +3717,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Connor Bates",
+   "video": [
+    "kCSvDVicpwU"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3734,11 +3746,7 @@
     "stop": "none (exit rules only)",
     "variants": "QQQ-above-rising-EMA21 filter on/off; IS picked no filter.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "kCSvDVicpwU"
-   ],
-   "source": "Chart Fanatics · Connor Bates"
+   }
   },
   {
    "id": "C28",
@@ -3754,6 +3762,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Pradeep Bonde",
+   "video": [
+    "mDNcx2Dhhms"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3779,11 +3791,7 @@
     "stop": "Entry-day low, active from day 2.",
     "variants": "24: gap 4%/8% x catalyst (none / earnings day) x hold 1/5/20/60 days at the open, plus gap 4%/8% x relvol entry x 4 holds. IS picked 8% gap, relvol, 60 days. Runner-up (8% gap + earnings day, open entry, 60d): 13.4% -> 7.4% CAGR, not the pick.",
     "notes": "Daily volume cannot be known at the open, so the first 5-minute bar is used. Exact relative-volume baseline not recorded in the screen. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "mDNcx2Dhhms"
-   ],
-   "source": "Chart Fanatics · Pradeep Bonde"
+   }
   },
   {
    "id": "C29",
@@ -3799,6 +3807,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Ariel",
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3824,11 +3836,7 @@
     "stop": "Signal-day low.",
     "variants": "3: EMA10 exit only after +1R, plain EMA10 exit, or ranking by prior $ volume; IS picked plain EMA10 exit ranked by volume ratio.",
     "notes": "Liquidity measured on prior days; counting the signal day's volume filled the set with pump-and-dump microcaps. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "YzYDUEUOZ4k"
-   ],
-   "source": "Chart Fanatics · Ariel"
+   }
   },
   {
    "id": "C30",
@@ -3844,6 +3852,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Ariel",
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3869,11 +3881,7 @@
     "stop": "Entry-day low, active from the next day.",
     "variants": "3: +1R-armed EMA10 exit vs plain, ranked by volume ratio or prior $ volume; IS picked plain EMA10 exit ranked by prior $ volume.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "YzYDUEUOZ4k"
-   ],
-   "source": "Chart Fanatics · Ariel"
+   }
   },
   {
    "id": "C31",
@@ -3889,6 +3897,10 @@
    "result": null,
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Ariel",
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -3914,11 +3926,7 @@
     "stop": "Prior-day (signal-day) low; on the entry day only a close below it counts.",
     "variants": "Base range < 15% vs < 10%; IS picked 10%.",
     "notes": "Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "YzYDUEUOZ4k"
-   ],
-   "source": "Chart Fanatics · Ariel"
+   }
   },
   {
    "id": "C32",
@@ -3934,6 +3942,10 @@
    "result": "Sharpe 0.29 → 0.59 (borderline)",
    "data": "stocks",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Ariel",
+   "video": [
+    "YzYDUEUOZ4k"
+   ],
    "date": null,
    "highlight": true,
    "cls": {
@@ -3960,11 +3972,7 @@
     "stop": "Undercut low (3-day low).",
     "variants": "EMA10 exit immediately vs only after +1R; IS picked after +1R.",
     "notes": "Borderline PASS: OOS 12.2% vs SPY 13.5%, worse drawdown, weak IS (3.8%). Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "YzYDUEUOZ4k"
-   ],
-   "source": "Chart Fanatics · Ariel"
+   }
   },
   {
    "id": "C33",
@@ -3980,6 +3988,10 @@
    "result": null,
    "data": "index ETFs",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Marci Silfrain",
+   "video": [
+    "AVVM-FyewLg"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -4005,11 +4017,7 @@
     "stop": "none beyond the close-below-line exit",
     "variants": "One variant only.",
     "notes": "Marci's method is short-side; the long inversion was tested as the rules file allows. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "AVVM-FyewLg"
-   ],
-   "source": "Chart Fanatics · Marci Silfrain"
+   }
   },
   {
    "id": "C34",
@@ -4025,6 +4033,10 @@
    "result": null,
    "data": "index ETFs",
    "script": "cf_daily.py",
+   "source": "Chart Fanatics · Tori Trades",
+   "video": [
+    "VTEQ2fhGLqE"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -4050,11 +4062,7 @@
     "stop": "none beyond the safety-line exit",
     "variants": "5: 3-touch line (touch tolerance 0.5 or 1.0 ATR, entry within 1 or 2 ATR) and 2-touch line (within 1 or 2 ATR). IS picked 2-touch, within 1 ATR, although the row is labelled 3-touch.",
     "notes": "Only 6 OOS trades: inconclusive. Tori's own timeframe is 4H metals futures. Gap-through stops fill at the open; stop checked before target on the same bar. Dividends excluded. Idle cash earns 0."
-   },
-   "video": [
-    "VTEQ2fhGLqE"
-   ],
-   "source": "Chart Fanatics · Tori Trades"
+   }
   },
   {
    "id": "C35",
@@ -4072,6 +4080,10 @@
    "result": "all 9 variants positive; edge decaying 2024–26",
    "data": "small caps 1-min, 3bp + $0.005",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Chris Verma",
+   "video": [
+    "EcTRlLYvhXU"
+   ],
    "date": null,
    "highlight": true,
    "diagram": null,
@@ -4113,11 +4125,7 @@
     "stop": "75% above the open price; the opening bar's high counts against it.",
     "variants": "Stop 75/100/150% x premarket share volume 0/1M/5M = 9; IS picked 75% stop, 1M. All 9 positive in both periods.",
     "notes": "Edge decaying: +11-18%/trade 2021-23 vs +2-5% 2024-26. Hard-to-borrow fees likely eat much of it. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "EcTRlLYvhXU"
-   ],
-   "source": "Chart Fanatics · Chris Verma"
+   }
   },
   {
    "id": "C36",
@@ -4135,6 +4143,10 @@
    "result": "2026 negative",
    "data": "small caps 1-min, 3bp + $0.005",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Chris Verma",
+   "video": [
+    "EcTRlLYvhXU"
+   ],
    "date": null,
    "highlight": true,
    "diagram": null,
@@ -4170,11 +4182,7 @@
     "stop": "75% above the open price; the opening bar's high counts against it.",
     "variants": "Stop 75/100/150% x premarket share volume 0/1M/5M = 9; IS picked 75%, 1M.",
     "notes": "Worse than plain hold-to-close; 2026 negative. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "EcTRlLYvhXU"
-   ],
-   "source": "Chart Fanatics · Chris Verma"
+   }
   },
   {
    "id": "C37",
@@ -4192,6 +4200,10 @@
    "result": "positive in all 48 variants",
    "data": "small caps 1-min, 3bp + $0.005",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Alex Temiz",
+   "video": [
+    "Jx5cJ_qb31U"
+   ],
    "date": null,
    "highlight": true,
    "diagram": null,
@@ -4233,11 +4245,7 @@
     "stop": "A 1-minute close above prior close x 1.01, including the entry bar.",
     "variants": "48: run 75/100/200% x up days 3/4 x gap-down entries on/off x partial (50% at -15%) on/off x stop buffer 1%/3%. IS picked 200%, 4 days, no gap-down, no partial, 1%. Positive in % terms in all 48.",
     "notes": "R and CAGR inflated by the tight nominal stop (realised stop losses average -1.9R); judge on % per trade. Median trade -2%. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "Jx5cJ_qb31U"
-   ],
-   "source": "Chart Fanatics · Alex Temiz"
+   }
   },
   {
    "id": "C38",
@@ -4254,6 +4262,10 @@
    "result": "IS +0.25R → OOS +0.02R; write-up says treat as FAIL",
    "data": "small caps 1-min, 3bp + $0.005",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Kyle Williams",
+   "video": [
+    "2Ug0jyDvoek"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -4288,11 +4300,7 @@
     "stop": "High of day at entry x 1.01.",
     "variants": "Run 80/100/150% x exit (close / 2R / 10%) = 9; IS picked 150%, exit at close.",
     "notes": "IS +0.25R collapsed to +0.02R OOS; negative at 50 bp or 1% borrow; write-up says treat as FAIL. Discretionary A+ grading not reproducible. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "2Ug0jyDvoek"
-   ],
-   "source": "Chart Fanatics · Kyle Williams"
+   }
   },
   {
    "id": "C39",
@@ -4310,6 +4318,10 @@
    "result": "top 5% of trades = 94% of profit",
    "data": "small caps 1-min, 3bp + $0.005",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Mario D.",
+   "video": [
+    "SInAfwX3X3A"
+   ],
    "date": null,
    "highlight": true,
    "diagram": null,
@@ -4351,11 +4363,7 @@
     "stop": "High of day at entry.",
     "variants": "Gain 300/500% x big days 1/2 x target 20%/30%/none x min reward:risk 0/3 = 24; IS picked 500%, 2, no target.",
     "notes": "94% of OOS profit from the top 5% of trades; median trade -0.2%. Only day t shorted, not the video's 2-day window. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "SInAfwX3X3A"
-   ],
-   "source": "Chart Fanatics · Mario D."
+   }
   },
   {
    "id": "C40",
@@ -4373,6 +4381,10 @@
    "result": "15 IS / 26 OOS trades",
    "data": "small caps 1-min, 3bp + $0.005",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Steven Dux",
+   "video": [
+    "52ZsDmFHqyY"
+   ],
    "date": null,
    "highlight": true,
    "diagram": null,
@@ -4414,11 +4426,7 @@
     "stop": "Consolidation high.",
     "variants": "Consolidation filter on/off x target 24%/none x premarket volume 0/1M = 8; IS picked filter on, no target, no premarket filter.",
     "notes": "Tiny sample (15 IS / 26 OOS trades). Looser no-consolidation version: 181 OOS trades, +0.15R. Float, sector and premarket-volume tiers not reproduced. Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "52ZsDmFHqyY"
-   ],
-   "source": "Chart Fanatics · Steven Dux"
+   }
   },
   {
    "id": "C41",
@@ -4435,6 +4443,10 @@
    "result": "negative in every variant",
    "data": "small caps, 3bp + $0.005",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Steven Dux",
+   "video": [
+    "52ZsDmFHqyY"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -4457,11 +4469,7 @@
     "stop": "1% above the highest high of the 5 sessions before the trade day; if the day's high reaches it, stopped (checked before the target).",
     "variants": "Run 100/200/300% x target 25%/none = 6; IS picked 200%, 25% target. Negative OOS in every variant.",
     "notes": "Daily-bar version only; stop very wide (median 58-85%). Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "52ZsDmFHqyY"
-   ],
-   "source": "Chart Fanatics · Steven Dux"
+   }
   },
   {
    "id": "C42",
@@ -4478,6 +4486,10 @@
    "result": "all 8 variants negative",
    "data": "10 mega caps",
    "script": "cf_smallcap.py",
+   "source": "Chart Fanatics · Rajan D",
+   "video": [
+    "yZpzG8R3Ayk"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -4500,11 +4512,7 @@
     "stop": "Signal bar's high + $0.05 (low - $0.05 for longs).",
     "variants": "Gap 0.3%/1% x retest zone prior-day low vs prior close x target 2R/1.5R = 8; IS picked 1%, prior-day low, 1.5R. All 8 negative OOS.",
     "notes": "5-minute EMA21 filter and premarket congestion levels omitted (no pre-09:30 history pulled). Short side cannot be traded in a cash account. Pessimistic intrabar: stop checked first on every bar, including the entry bar."
-   },
-   "video": [
-    "yZpzG8R3Ayk"
-   ],
-   "source": "Chart Fanatics · Rajan D"
+   }
   },
   {
    "id": "M1",
@@ -4520,6 +4528,10 @@
    "result": "1986–2026 3x 23.2% / −87%",
    "data": "real TQQQ 2016–2026; synthetic 1986–2026",
    "script": "malik.py",
+   "source": "Be the Trader · Malik",
+   "video": [
+    "rcFaAWRE32E"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -4542,11 +4554,7 @@
     "variants": "IS grid: MA length 150/200/220/250/260/300 × signal on QQQ or on the 3x price, chosen by IS Sharpe (picked MA150 on QQQ). The literal MA250 rule from the video is reported as the headline; MA150 IS pick shown separately. No multiple-testing correction.",
     "baseline": "QQQ buy-and-hold, TQQQ buy-and-hold, and the project's QQQ>MA200 rotation (5 bp costs) on the same windows.",
     "notes": "This is the only rule the video discloses. Synthetic 3x tracks real TQQQ 2010-26 with 0.999 daily correlation. Nasdaq-100 before 1999 is price only (no dividends, about 0.5-1%/yr understated)."
-   },
-   "video": [
-    "rcFaAWRE32E"
-   ],
-   "source": "Be the Trader · Malik"
+   }
   },
   {
    "id": "M2",
@@ -4562,6 +4570,10 @@
    "result": "inverse leg −15 to −22%/yr",
    "data": "real TQQQ/SQQQ 2016–2026",
    "script": "malik.py",
+   "source": "Be the Trader · Malik",
+   "video": [
+    "rcFaAWRE32E"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -4584,11 +4596,7 @@
     "variants": "IS grid of MA length 150/200/220/250/260/300 by IS Sharpe (picked 250). Literal MA250 reported. No multiple-testing correction.",
     "baseline": "QQQ and TQQQ buy-and-hold, the long-only MA250 rule (M1), and the QQQ>MA200 rotation.",
     "notes": "The SQQQ short side is only hinted in the video; this is our literal reading of it."
-   },
-   "video": [
-    "rcFaAWRE32E"
-   ],
-   "source": "Be the Trader · Malik"
+   }
   },
   {
    "id": "M3",
@@ -4605,6 +4613,10 @@
    "result": "best DD reducer; 1986–2026 −71%",
    "data": "real TQQQ 2016–2026; synthetic 1986–2026",
    "script": "malik.py",
+   "source": "Be the Trader · Malik",
+   "video": [
+    "rcFaAWRE32E"
+   ],
    "date": null,
    "highlight": true,
    "cls": {
@@ -4631,11 +4643,7 @@
     "variants": "Volatility target grid 15/20/25/30% with MA fixed at 250, chosen by IS Sharpe (picked 15%). No multiple-testing correction.",
     "baseline": "Unsized MA250 trend (M1), QQQ/TQQQ buy-and-hold, QQQ>MA200 rotation.",
     "notes": "Volatility sizing is only hinted in the video; the 15%/σ20 formula and 10-point rebalance band are our implementation."
-   },
-   "video": [
-    "rcFaAWRE32E"
-   ],
-   "source": "Be the Trader · Malik"
+   }
   },
   {
    "id": "M4",
@@ -4651,6 +4659,10 @@
    "result": "≈ Noel RSI2 sleeve",
    "data": "real TQQQ 2016–2026",
    "script": "malik.py",
+   "source": "Be the Trader · Malik",
+   "video": [
+    "rcFaAWRE32E"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -4673,11 +4685,7 @@
     "variants": "Grid: RSI2 threshold 5/10/15 × trend filter none/SMA200/SMA250, chosen by IS Sharpe (picked RSI2<15, SMA250). No multiple-testing correction.",
     "baseline": "QQQ/TQQQ buy-and-hold and the QQQ>MA200 rotation; noted as nearly the same as the Noel RSI2 sleeve.",
     "notes": "The video only names a mean-reversion strategy; these rules are a generic proxy we chose, not Malik's."
-   },
-   "video": [
-    "rcFaAWRE32E"
-   ],
-   "source": "Be the Trader · Malik"
+   }
   },
   {
    "id": "M5",
@@ -4693,6 +4701,10 @@
    "result": null,
    "data": "real SQQQ 2016–2026",
    "script": "malik.py",
+   "source": "Be the Trader · Malik",
+   "video": [
+    "rcFaAWRE32E"
+   ],
    "date": null,
    "cls": {
     "result": "plain"
@@ -4718,11 +4730,7 @@
     "variants": "RSI2 threshold 80/90/95 with MA fixed at 250, chosen by IS Sharpe (picked 90). No multiple-testing correction.",
     "baseline": "QQQ/TQQQ buy-and-hold and the QQQ>MA200 rotation.",
     "notes": "The video only names short strategies; this is a generic proxy we chose. About 2 trades a year."
-   },
-   "video": [
-    "rcFaAWRE32E"
-   ],
-   "source": "Be the Trader · Malik"
+   }
   },
   {
    "id": "M6",
@@ -4738,6 +4746,10 @@
    "result": "can't reproduce; rules private",
    "data": "real TQQQ 2016–2026; synthetic 1986–2026",
    "script": "malik.py",
+   "source": "Be the Trader · Malik",
+   "video": [
+    "rcFaAWRE32E"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -4760,11 +4772,7 @@
     "variants": "No new search; combos built from the IS-picked sleeve parameters. Strategies 6 and 7 are never described in the video and are not modelled.",
     "baseline": "The video's claimed 62% CAGR / −51% drawdown (1985-2026), QQQ/TQQQ buy-and-hold, QQQ>MA200 rotation.",
     "notes": "Proxy for a 7-strategy portfolio whose rules are private, so the claim cannot be reproduced or verified."
-   },
-   "video": [
-    "rcFaAWRE32E"
-   ],
-   "source": "Be the Trader · Malik"
+   }
   },
   {
    "id": "B1",
@@ -5120,6 +5128,11 @@
    "result": "names very likely not on Capital.com",
    "data": "entry ≥ $5 subset",
    "script": "shorts_cfd.py",
+   "source": "Chart Fanatics · Chris Verma, Alex Temiz",
+   "video": [
+    "EcTRlLYvhXU",
+    "Jx5cJ_qb31U"
+   ],
    "date": null,
    "diagram": null,
    "clip": null,
@@ -5142,12 +5155,7 @@
     "variants": "No new search; IS-chosen parameters from cf_smallcap.py re-costed.",
     "baseline": "Break-even after costs.",
     "notes": "These are sub-$1B small caps Capital.com very likely doesn't list or let you short; halts and squeezes can lose more than 100% of notional and are not modelled."
-   },
-   "video": [
-    "EcTRlLYvhXU",
-    "Jx5cJ_qb31U"
-   ],
-   "source": "Chart Fanatics · Chris Verma, Alex Temiz"
+   }
   },
   {
    "id": "X5",
@@ -8066,6 +8074,10 @@
    "result": "0/402 pass BH",
    "data": "NQ/ES futures · YouTube LfSeAMzKjwM",
    "script": null,
+   "source": "Fit Mom Trader (likely)",
+   "video": [
+    "LfSeAMzKjwM"
+   ],
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
@@ -8088,11 +8100,7 @@
     "variants": "Filters: body >= 0/0.5/1.0 x ATR14 (1-min); close in top/bottom 25% of bar on/off; volume >= 1.5x prior-20 mean on/off; skip days with IB range below 33rd/50th pct of prior 60 days; untested supply/demand zone on/off; x 2 setups x 2 stops x 2 markets. 402 variants reported; chosen on IS t; BH across all on OOS: 0 pass.",
     "baseline": "Cost-adjusted zero; the same video's unfiltered rules (all negative OOS).",
     "notes": "Turns the video's discretionary judgement into measurable filters; zone = 3-bar base (range <= 1 ATR) followed within 10 bars by a >= 2 ATR impulse."
-   },
-   "video": [
-    "LfSeAMzKjwM"
-   ],
-   "source": "Fit Mom Trader (likely)"
+   }
   },
   {
    "id": "FA2",
@@ -8105,6 +8113,10 @@
    "result": "sweep bias no better than the base up/down rate; 0/256 pass BH",
    "data": "real NQ/ES 1-min · YouTube Du_dcXjVeKs",
    "script": null,
+   "source": "LuxAlgo",
+   "video": [
+    "Du_dcXjVeKs"
+   ],
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
@@ -8126,11 +8138,7 @@
     "costs": "1 tick slippage per side + $2.50 per side per micro ($6.00 round trip MNQ, $7.50 MES); stress 2 ticks per side.",
     "variants": "128 variants per market (setup x timeframe x manipulation one/both x stop x R:R filter x entry deadline x body k). IS pick = highest IS t; BH across all 256: 0 pass (min q 0.50).",
     "baseline": "Base rate of up/down days after sweeps (10:30->16:00) and buy-and-hold 1 contract."
-   },
-   "video": [
-    "Du_dcXjVeKs"
-   ],
-   "source": "LuxAlgo"
+   }
   },
   {
    "id": "FA3",
@@ -8144,6 +8152,10 @@
    "result": "0/64 pass BH (min q 0.82)",
    "data": "real NQ/ES · YouTube GEYpdjzUwEc",
    "script": null,
+   "source": "Volume-profile video",
+   "video": [
+    "GEYpdjzUwEc"
+   ],
    "date": "2026-11-04",
    "diagram": null,
    "clip": null,
@@ -8165,11 +8177,7 @@
     "costs": "1 tick slippage per side + $2.50 per side per micro ($6.00 round trip MNQ, $7.50 MES); stress 2 ticks per side.",
     "variants": "64 variants: 2 setups x long/short x k 3/6 x buffer 0.05/0.15 x LVN ratio <= 0.3 vs 0.3-0.5 x 2 markets. IS picks reported; BH: 0 pass (min q 0.82).",
     "baseline": "Cost-adjusted zero."
-   },
-   "video": [
-    "GEYpdjzUwEc"
-   ],
-   "source": "Volume-profile video"
+   }
   },
   {
    "id": "FA4",
@@ -8186,6 +8194,10 @@
    "result": "bias alone a coin flip (FAIL); variant chosen after seeing results and all net edge is OOS, so a lead, not a pass",
    "data": "NQ · YouTube Rk2G9E7axXw",
    "script": null,
+   "source": "IQCapital · Harry Sharp",
+   "video": [
+    "Rk2G9E7axXw"
+   ],
    "date": "2026-11-04",
    "highlight": true,
    "diagram": null,
@@ -8227,11 +8239,7 @@
     "variants": "5/15-min x range 4/8 bars x 1R/BE-2R x 4h window (02:00-06:00 or 05:30-09:30 ET) x bias aligned/none/against x resistance filter. Reported tf5 N8 1R no-bias variant was chosen after seeing results; BH computed only on bias-aligned variants.",
     "baseline": "Bias-alone hit rate (coin flip) and cost-adjusted zero.",
     "notes": "Post-hoc pick and net IS ~0, so a lead, not a pass. Stop-order slippage at the open may exceed 1 tick; 'clean zone' and weekly story not coded."
-   },
-   "video": [
-    "Rk2G9E7axXw"
-   ],
-   "source": "IQCapital · Harry Sharp"
+   }
   },
   {
    "id": "OF6F",
@@ -8245,6 +8253,10 @@
    "result": "Same entry/stop/3R for all. The low-volume (effort vs result) filter makes it worse, not better; delta adds nothing; FVG zones are worst. NQ 2016–20 all negative; any-strong-candle version positive only since 2021 (post-hoc). Stocks: all negative.",
    "data": "Databento NQ 1-min 2016–2026 (+aggressor delta Mar–Oct 2026); Alpaca 1-min stocks in play",
    "script": "of6_vs_fvg.py",
+   "source": "Fabio Valentini (Fabervaale)",
+   "video": [
+    "Khgj5q1-ln8"
+   ],
    "date": "2026-11-11",
    "diagram": null,
    "clip": null,
@@ -8285,11 +8297,7 @@
     "variants": "Fixed mechanics; 7 signal definitions compared side by side. No BH.",
     "baseline": "BIG (any strong candle) as the plain baseline for OF6's filters.",
     "notes": "NQ improvement after 2021 tracks rising price level vs fixed $6 cost; IS negative, so any positive version is post-hoc."
-   },
-   "video": [
-    "Khgj5q1-ln8"
-   ],
-   "source": "Fabio Valentini (Fabervaale)"
+   }
   },
   {
    "id": "FEN1",
@@ -8306,6 +8314,10 @@
    "result": "0 of 24 variants positive OOS; every variant negative IS. IS pick −$830 → −$573/yr per MNQ; video default −$1,257 → −$201/yr. Random-direction baseline about as bad (−$505 to −$751/yr).",
    "data": "Databento NQ 1-min RTH 2016–2026 → 5-min",
    "script": "fence_bar.py",
+   "source": "Steven (fence bar)",
+   "video": [
+    "F9_uLdSYOrc"
+   ],
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
@@ -8340,11 +8352,7 @@
     "variants": "24: stop {half, bar} × cutoff {10:30, 11:00, 12:00} × 20-SMA filter {skip trades against a sloping 20-SMA, none} × target {1.5R, 2R}.",
     "baseline": "Same entries and stop distance with a coin-flip direction (20 runs).",
     "notes": "Video's 'nearby support' stop and retest timing are vague; assumptions as above. Video shows 4 of 5 recent winners on QQQ; not a sample."
-   },
-   "video": [
-    "F9_uLdSYOrc"
-   ],
-   "source": "Steven (fence bar)"
+   }
   },
   {
    "id": "RAS1",
@@ -8359,6 +8367,10 @@
    "result": "Spikes touch a prior 1-min swing level 39% of the time vs 20% for normal bars (5-min swings: 17% vs 4%). Real effect, far from 80%. Trading the break after a spike: +0.17 pts IS → +0.65 pts OOS over 15 min (t < 1), below costs.",
    "data": "Databento NQ 1-min RTH 2016–2026",
    "script": "raschke_volspike.py",
+   "source": "Linda Raschke interview",
+   "video": [
+    "caLSbXnkaj4"
+   ],
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
@@ -8378,11 +8390,7 @@
     "baseline": "Hit rate of non-spike bars, also weighted to the spikes' time-of-day mix.",
     "costs": "Moves in points before costs; $6 RT per MNQ = 3 pts.",
     "notes": "Interview claim (Titans of Tomorrow, caLSbXnkaj4). Her 'near a swing' may be looser than our 1-tick touch, which would raise both rates."
-   },
-   "video": [
-    "caLSbXnkaj4"
-   ],
-   "source": "Linda Raschke interview"
+   }
   },
   {
    "id": "EV1",
@@ -8398,6 +8406,10 @@
    "result": "Video rules (exit on close back through the 9 EMA, all day): NQ −$4,061 → −$3,421/yr per MNQ, ES −$3,219 → −$2,344/yr per MES; ~700 trades/yr, 24–32% wins. 0 of 24 variants positive IS; ES 1.5 ATR/3R variants scrape +$7 to +$301/yr OOS (t ≤ 0.5).",
    "data": "Databento NQ/ES 1-min RTH 2016–2026 → 3-min",
    "script": "ema9_vwap.py",
+   "source": "EMA9/VWAP video",
+   "video": [
+    "dPfo7ihwbvo"
+   ],
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
@@ -8432,11 +8444,7 @@
     "variants": "12 per market: exit {EMA9 close, 1.5 ATR/3R} × entry window {first 60, 120 min, all day} × daily cap {2 losers, none}.",
     "baseline": "Same entry times, random direction.",
     "notes": "Original trader used options; we test the underlying futures. ADX chop filter (presenter's ≥36) not tested. Presenter's own longer backtest also failed."
-   },
-   "video": [
-    "dPfo7ihwbvo"
-   ],
-   "source": "EMA9/VWAP video"
+   }
   },
   {
    "id": "AMT1",
@@ -8451,6 +8459,10 @@
    "result": "'Acceptance' (POC beyond prior VAH/VAL) happens on ~73% of days, so it isn't a rare signal. Next RTH session in signal direction: IS up −3.5 pts, down −9.6 pts (reverses); OOS up +12.0 pts (t 1.7, mostly bull drift), down −2.8. Trading it open→close: IS −$3,203/yr → OOS +$928/yr per MNQ.",
    "data": "Databento NQ 1-min RTH 2016–2026",
    "script": "amt_acceptance.py",
+   "source": "Fabio Valentini",
+   "video": [
+    "VHhvg96W6lc"
+   ],
    "date": "2026-11-12",
    "diagram": null,
    "clip": null,
@@ -8472,11 +8484,7 @@
     "costs": "$6 RT per MNQ ($2/pt).",
     "baseline": "All days' next-session open→close (drift +2.0 IS, +2.8 OOS pts).",
     "notes": "Tests only the daily bias claim. His intraday entries (pullback to low value area / delta peak after acceptance) overlap earlier FAIL tests: Cimi VA acceptance + pullback, Kammerer POC migration, and OF6 (his own setup)."
-   },
-   "video": [
-    "VHhvg96W6lc"
-   ],
-   "source": "Fabio Valentini"
+   }
   },
   {
    "id": "EC1",
@@ -8776,6 +8784,10 @@
    "result": "trails SPY OOS 15.1% (−24.5%); never sells losers (worst open −64%); survivor-only universe flatters it",
    "data": "US stocks >$50B, yfinance daily 2005–2026",
    "script": "revelio_sd.py",
+   "source": "Revelio Trading",
+   "video": [
+    "xhSbYE7X4ZA"
+   ],
    "date": "2026-11-20",
    "diagram": null,
    "clip": null,
@@ -8797,11 +8809,7 @@
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "variants": "12 combos (buy line tiered/−3/−4 × 10%/5% size × close/next open).",
     "baseline": "SPY buy-and-hold OOS 15.1% (DD −24.5%), QQQ 16.4%, our QQQ rotation 22.3%."
-   },
-   "video": [
-    "xhSbYE7X4ZA"
-   ],
-   "source": "Revelio Trading"
+   }
   },
   {
    "id": "RV2",
@@ -8816,6 +8824,10 @@
    "result": "Sharpe ≈ SPY with a much smaller drawdown, but half the return; 44% invested",
    "data": "US stocks >$50B, yfinance daily 2005–2026",
    "script": "revelio_sd.py",
+   "source": "Revelio Trading",
+   "video": [
+    "xhSbYE7X4ZA"
+   ],
    "date": "2026-11-20",
    "diagram": null,
    "clip": null,
@@ -8836,11 +8848,7 @@
     "sizing": "5% of equity per stock, max 20.",
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "baseline": "SPY buy-and-hold OOS 15.1% (DD −24.5%)."
-   },
-   "video": [
-    "xhSbYE7X4ZA"
-   ],
-   "source": "Revelio Trading"
+   }
   },
   {
    "id": "TT1",
@@ -8851,6 +8859,10 @@
    "result": "bounce rate vs random lines: NQ −2 to −4 pts (slightly more breaks), ES ≈ 0; 30-min move identical; Fibonacci levels faded OOS",
    "data": "real NQ/ES 1-min 2016–2026",
    "script": "titans_levels.py",
+   "source": "Titans Of Tomorrow · Adam Grimes",
+   "video": [
+    "NnvdErTmHLs"
+   ],
    "date": "2026-11-20",
    "diagram": null,
    "clip": null,
@@ -8869,11 +8881,7 @@
     "exit": "Event study, no trade.",
     "stop": "n/a",
     "baseline": "5 random placebo levels per real level, drawn at the same distance from the open."
-   },
-   "video": [
-    "NnvdErTmHLs"
-   ],
-   "source": "Titans Of Tomorrow · Adam Grimes"
+   }
   },
   {
    "id": "TT2",
@@ -8888,6 +8896,10 @@
    "result": "OOS −$3,189/yr per MNQ (t −3.6); ES −$1,734/yr per MES; random levels lose about the same",
    "data": "real NQ/ES 1-min 2016–2026",
    "script": "titans_levels.py",
+   "source": "Titans Of Tomorrow · Adam Grimes",
+   "video": [
+    "NnvdErTmHLs"
+   ],
    "date": "2026-11-20",
    "diagram": null,
    "clip": null,
@@ -8908,11 +8920,7 @@
     "sizing": "1 micro contract.",
     "costs": "1 tick per side plus $2.50 per side per micro; stress 2 ticks.",
     "baseline": "NQ buy-and-hold ≈ +$4.2k/yr per MNQ OOS."
-   },
-   "video": [
-    "NnvdErTmHLs"
-   ],
-   "source": "Titans Of Tomorrow · Adam Grimes"
+   }
   },
   {
    "id": "TT3",
@@ -8924,6 +8932,10 @@
    "result": "next-20-day vol below vs above: SPY 1.9×, QQQ 1.8×, IWM 1.3×, DIA 1.6×; same at 150/190/210/250 days; next-day return no consistent sign",
    "data": "SPY/QQQ/IWM/DIA total-return daily",
    "script": "titans_daily.py",
+   "source": "Titans Of Tomorrow · Adam Grimes",
+   "video": [
+    "NnvdErTmHLs"
+   ],
    "date": "2026-11-20",
    "diagram": null,
    "clip": null,
@@ -8942,11 +8954,7 @@
     "exit": "Event study: next 20-day realized volatility and next 1/20-day return.",
     "stop": "n/a",
     "baseline": "The same measures when above the average. Timing with the 200-day is already covered by earlier trend rows."
-   },
-   "video": [
-    "NnvdErTmHLs"
-   ],
-   "source": "Titans Of Tomorrow · Adam Grimes"
+   }
   },
   {
    "id": "TT4",
@@ -8961,6 +8969,10 @@
    "result": "indexes revert slightly more than bonds/FX/gold (+4 to +23 bp, t ≤ 1.4), not significant; QQQ B&H 16.1%",
    "data": "ETF total-return daily",
    "script": "titans_daily.py",
+   "source": "Titans Of Tomorrow · Adam Grimes",
+   "video": [
+    "NnvdErTmHLs"
+   ],
    "date": "2026-11-20",
    "diagram": null,
    "clip": null,
@@ -8981,11 +8993,7 @@
     "sizing": "100% in one ETF.",
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "baseline": "QQQ buy-and-hold OOS 16.1% (DD −35%)."
-   },
-   "video": [
-    "NnvdErTmHLs"
-   ],
-   "source": "Titans Of Tomorrow · Adam Grimes"
+   }
   },
   {
    "id": "TT5",
@@ -9001,6 +9009,10 @@
    "result": "+0.23% a trade vs −0.15% for random below-200 entries, but far below SPY 15.0%; SPY-only version 0.9%",
    "data": "US stocks incl. delisted",
    "script": "titans_daily.py, titans_port.py",
+   "source": "Titans Of Tomorrow · Adam Grimes",
+   "video": [
+    "NnvdErTmHLs"
+   ],
    "date": "2026-11-20",
    "diagram": null,
    "clip": null,
@@ -9021,11 +9033,202 @@
     "sizing": "10 slots, 10% each, long-only cash account.",
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "baseline": "SPY buy-and-hold OOS 15.0% (DD −24.5%); random below-200 entries with the same hold."
+   }
+  },
+  {
+   "id": "V2A",
+   "name": "Below the 200-day: RSI2 extremes (buy <k, short >100−k) on QQQ and NQ",
+   "area": "r30",
+   "verdict": "WEAK",
+   "stats": {
+    "tr_yr": "4.0 QQQ / 9.6 NQ (longs)",
+    "win": "39% QQQ / 70% NQ",
+    "avg": "+0.41% QQQ / +$200 per MNQ",
+    "cagr": "0.9% QQQ OOS; NQ +$1,909/yr per MNQ",
+    "max_dd": "−21% QQQ; −$4,419 per MNQ"
    },
-   "video": [
-    "NnvdErTmHLs"
+   "result": "OOS longs: QQQ +0.41%/trade (t 0.38; above-200 +0.36%, all days +0.44%); NQ +$200/MNQ a trade, +$1,909/yr (t 1.86; above-200 +$1, all days +$66). Shorts: QQQ −0.08%, NQ −$45/trade. 0 of 720 in-sample variants and 0 of 20 picks pass the multiple-testing check; vs QQQ 16.4% and NQ +$4,067/yr buy-and-hold; the NQ long pick (RSI2<15, 1 day, 1.5 ATR stop) is the only positive one but lost in-sample",
+   "data": "QQQ daily total return (Alpaca); NQ 1-min futures (Databento) as daily 09:30–16:00 bars; VIX/VIX3M from CBOE",
+   "script": "vol200_dir.py",
+   "date": "2026-11-23",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V2A/schematic.webp",
+     "thumb": "media/tests/V2A/schematic_t.webp",
+     "label": "Rules card"
+    }
    ],
-   "source": "Titans Of Tomorrow · Adam Grimes"
+   "method": {
+    "universe": "QQQ (long side tradeable at IBKR; shorts are a CFD reference) and NQ futures, $ per Micro (MNQ).",
+    "period": "Variant picked on 2016–2020 (below-200 days start Oct 2016, only 10–45 trades per pick); OOS 2021–2026-10.",
+    "entry": "Close below its 200-day average and the indicator gives a direction (k = 5/10/15): enter at the next open, long and short tested separately.",
+    "exit": "At the open 1, 5 or 10 trading days later (picked in-sample).",
+    "stop": "None or 1.5/2/3 × ATR14 (picked in-sample), checked on daily highs/lows.",
+    "sizing": "One position at a time per side; QQQ 100% of the account, NQ 1 MNQ.",
+    "costs": "QQQ 1 bp per side plus IBKR fees, stress 3 bp; NQ 1 tick + $2.50 per side per MNQ, stress 2 ticks.",
+    "variants": "3 signal versions × 3 holds × 4 stops, per instrument and side; Benjamini-Hochberg across all 720 in-sample variants.",
+    "baseline": "Same signal above the 200-day and on all days; QQQ buy-and-hold OOS 16.4% (DD −35%); NQ +$4,067/yr per MNQ.",
+    "notes": "Below the 200-day moves are ~1.8× bigger (TT3), but none of the five indicators makes their direction predictable. Use the regime for sizing, not direction."
+   }
+  },
+  {
+   "id": "V2B",
+   "name": "Below the 200-day: 20/50-day trend (follow or fade) on QQQ and NQ",
+   "area": "r30",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "5.2 QQQ / 8.9 NQ (longs)",
+    "win": "47% QQQ / 45% NQ",
+    "avg": "+0.12% QQQ / −$29 per MNQ",
+    "cagr": "−0.3% QQQ OOS; NQ −$254/yr per MNQ",
+    "max_dd": "−30% QQQ; −$3,858 per MNQ"
+   },
+   "result": "OOS longs: QQQ +0.12%/trade (t 0.12; above-200 +0.65%, all days +0.63%); NQ −$29/MNQ a trade, −$254/yr (t -0.44; above-200 +$11, all days +$8). Shorts: QQQ +0.40%, NQ −$71/trade. 0 of 720 in-sample variants and 0 of 20 picks pass the multiple-testing check; vs QQQ 16.4% and NQ +$4,067/yr buy-and-hold",
+   "data": "QQQ daily total return (Alpaca); NQ 1-min futures (Databento) as daily 09:30–16:00 bars; VIX/VIX3M from CBOE",
+   "script": "vol200_dir.py",
+   "date": "2026-11-23",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V2B/schematic.webp",
+     "thumb": "media/tests/V2B/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "QQQ (long side tradeable at IBKR; shorts are a CFD reference) and NQ futures, $ per Micro (MNQ).",
+    "period": "Variant picked on 2016–2020 (below-200 days start Oct 2016, only 10–45 trades per pick); OOS 2021–2026-10.",
+    "entry": "Close below its 200-day average and the indicator gives a direction (20>50 cross, 20-SMA slope, or both; follow or fade): enter at the next open, long and short tested separately.",
+    "exit": "At the open 1, 5 or 10 trading days later (picked in-sample).",
+    "stop": "None or 1.5/2/3 × ATR14 (picked in-sample), checked on daily highs/lows.",
+    "sizing": "One position at a time per side; QQQ 100% of the account, NQ 1 MNQ.",
+    "costs": "QQQ 1 bp per side plus IBKR fees, stress 3 bp; NQ 1 tick + $2.50 per side per MNQ, stress 2 ticks.",
+    "variants": "6 signal versions × 3 holds × 4 stops, per instrument and side; Benjamini-Hochberg across all 720 in-sample variants.",
+    "baseline": "Same signal above the 200-day and on all days; QQQ buy-and-hold OOS 16.4% (DD −35%); NQ +$4,067/yr per MNQ.",
+    "notes": "Below the 200-day moves are ~1.8× bigger (TT3), but none of the five indicators makes their direction predictable. Use the regime for sizing, not direction."
+   }
+  },
+  {
+   "id": "V2C",
+   "name": "Below the 200-day: VIX/VIX3M term structure (follow or contrarian) on QQQ and NQ",
+   "area": "r30",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "24.2 QQQ / 10.1 NQ (longs)",
+    "win": "51% QQQ / 48% NQ",
+    "avg": "−0.02% QQQ / −$35 per MNQ",
+    "cagr": "−1.0% QQQ OOS; NQ −$352/yr per MNQ",
+    "max_dd": "−24% QQQ; −$9,242 per MNQ"
+   },
+   "result": "OOS longs: QQQ −0.02%/trade (t -0.15; above-200 +0.07%, all days +0.01%); NQ −$35/MNQ a trade, −$352/yr (t -0.25; above-200 +$70, all days +$45). Shorts: QQQ −1.17%, NQ −$348/trade. 0 of 720 in-sample variants and 0 of 20 picks pass the multiple-testing check; vs QQQ 16.4% and NQ +$4,067/yr buy-and-hold",
+   "data": "QQQ daily total return (Alpaca); NQ 1-min futures (Databento) as daily 09:30–16:00 bars; VIX/VIX3M from CBOE",
+   "script": "vol200_dir.py",
+   "date": "2026-11-23",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V2C/schematic.webp",
+     "thumb": "media/tests/V2C/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "QQQ (long side tradeable at IBKR; shorts are a CFD reference) and NQ futures, $ per Micro (MNQ).",
+    "period": "Variant picked on 2016–2020 (below-200 days start Oct 2016, only 10–45 trades per pick); OOS 2021–2026-10.",
+    "entry": "Close below its 200-day average and the indicator gives a direction (follow (backwardation short, contango long) or contrarian): enter at the next open, long and short tested separately.",
+    "exit": "At the open 1, 5 or 10 trading days later (picked in-sample).",
+    "stop": "None or 1.5/2/3 × ATR14 (picked in-sample), checked on daily highs/lows.",
+    "sizing": "One position at a time per side; QQQ 100% of the account, NQ 1 MNQ.",
+    "costs": "QQQ 1 bp per side plus IBKR fees, stress 3 bp; NQ 1 tick + $2.50 per side per MNQ, stress 2 ticks.",
+    "variants": "2 signal versions × 3 holds × 4 stops, per instrument and side; Benjamini-Hochberg across all 720 in-sample variants.",
+    "baseline": "Same signal above the 200-day and on all days; QQQ buy-and-hold OOS 16.4% (DD −35%); NQ +$4,067/yr per MNQ.",
+    "notes": "Below the 200-day moves are ~1.8× bigger (TT3), but none of the five indicators makes their direction predictable. Use the regime for sizing, not direction."
+   }
+  },
+  {
+   "id": "V2D",
+   "name": "Below the 200-day: 20-day breakout (follow or fade) on QQQ and NQ",
+   "area": "r30",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "4.2 QQQ / 5.2 NQ (longs)",
+    "win": "46% QQQ / 42% NQ",
+    "avg": "+0.14% QQQ / +$86 per MNQ",
+    "cagr": "−0.2% QQQ OOS; NQ +$445/yr per MNQ",
+    "max_dd": "−25% QQQ; −$7,714 per MNQ"
+   },
+   "result": "OOS longs: QQQ +0.14%/trade (t 0.13; above-200 +0.66%, all days +0.36%); NQ +$86/MNQ a trade, +$445/yr (t 0.28; above-200 +$286, all days +$132). Shorts: QQQ −0.38%, NQ −$204/trade. 0 of 720 in-sample variants and 0 of 20 picks pass the multiple-testing check; vs QQQ 16.4% and NQ +$4,067/yr buy-and-hold",
+   "data": "QQQ daily total return (Alpaca); NQ 1-min futures (Databento) as daily 09:30–16:00 bars; VIX/VIX3M from CBOE",
+   "script": "vol200_dir.py",
+   "date": "2026-11-23",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V2D/schematic.webp",
+     "thumb": "media/tests/V2D/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "QQQ (long side tradeable at IBKR; shorts are a CFD reference) and NQ futures, $ per Micro (MNQ).",
+    "period": "Variant picked on 2016–2020 (below-200 days start Oct 2016, only 10–45 trades per pick); OOS 2021–2026-10.",
+    "entry": "Close below its 200-day average and the indicator gives a direction (close vs prior 20-day closing high/low; follow or fade): enter at the next open, long and short tested separately.",
+    "exit": "At the open 1, 5 or 10 trading days later (picked in-sample).",
+    "stop": "None or 1.5/2/3 × ATR14 (picked in-sample), checked on daily highs/lows.",
+    "sizing": "One position at a time per side; QQQ 100% of the account, NQ 1 MNQ.",
+    "costs": "QQQ 1 bp per side plus IBKR fees, stress 3 bp; NQ 1 tick + $2.50 per side per MNQ, stress 2 ticks.",
+    "variants": "2 signal versions × 3 holds × 4 stops, per instrument and side; Benjamini-Hochberg across all 720 in-sample variants.",
+    "baseline": "Same signal above the 200-day and on all days; QQQ buy-and-hold OOS 16.4% (DD −35%); NQ +$4,067/yr per MNQ.",
+    "notes": "Below the 200-day moves are ~1.8× bigger (TT3), but none of the five indicators makes their direction predictable. Use the regime for sizing, not direction."
+   }
+  },
+  {
+   "id": "V2E",
+   "name": "Below the 200-day: last week's direction (follow or fade) on QQQ and NQ",
+   "area": "r30",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "6.1 QQQ / 6.4 NQ (longs)",
+    "win": "57% QQQ / 53% NQ",
+    "avg": "−0.33% QQQ / +$29 per MNQ",
+    "cagr": "−2.5% QQQ OOS; NQ +$186/yr per MNQ",
+    "max_dd": "−31% QQQ; −$6,736 per MNQ"
+   },
+   "result": "OOS longs: QQQ −0.33%/trade (t -0.44; above-200 +0.21%, all days +0.17%); NQ +$29/MNQ a trade, +$186/yr (t 0.16; above-200 +$52, all days +$48). Shorts: QQQ −0.98%, NQ −$29/trade. 0 of 720 in-sample variants and 0 of 20 picks pass the multiple-testing check; vs QQQ 16.4% and NQ +$4,067/yr buy-and-hold",
+   "data": "QQQ daily total return (Alpaca); NQ 1-min futures (Databento) as daily 09:30–16:00 bars; VIX/VIX3M from CBOE",
+   "script": "vol200_dir.py",
+   "date": "2026-11-23",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/V2E/schematic.webp",
+     "thumb": "media/tests/V2E/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "QQQ (long side tradeable at IBKR; shorts are a CFD reference) and NQ futures, $ per Micro (MNQ).",
+    "period": "Variant picked on 2016–2020 (below-200 days start Oct 2016, only 10–45 trades per pick); OOS 2021–2026-10.",
+    "entry": "Close below its 200-day average and the indicator gives a direction (prior 5-day return sign; follow or fade): enter at the next open, long and short tested separately.",
+    "exit": "At the open 1, 5 or 10 trading days later (picked in-sample).",
+    "stop": "None or 1.5/2/3 × ATR14 (picked in-sample), checked on daily highs/lows.",
+    "sizing": "One position at a time per side; QQQ 100% of the account, NQ 1 MNQ.",
+    "costs": "QQQ 1 bp per side plus IBKR fees, stress 3 bp; NQ 1 tick + $2.50 per side per MNQ, stress 2 ticks.",
+    "variants": "2 signal versions × 3 holds × 4 stops, per instrument and side; Benjamini-Hochberg across all 720 in-sample variants.",
+    "baseline": "Same signal above the 200-day and on all days; QQQ buy-and-hold OOS 16.4% (DD −35%); NQ +$4,067/yr per MNQ.",
+    "notes": "Below the 200-day moves are ~1.8× bigger (TT3), but none of the five indicators makes their direction predictable. Use the regime for sizing, not direction."
+   }
   }
  ],
  "fwd_sources": {
