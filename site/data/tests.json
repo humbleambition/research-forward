@@ -240,7 +240,7 @@
    "num": "3.29",
    "title": "Long-term dip buying and key levels from YouTube (Nov 20)",
    "short": "Dip buying and key levels",
-   "intro_html": "<p>Two videos checked on 2016–2020 and blind on 2021–2026 with costs. Revelio Trading buys mega-caps that fall far below their 10-year trend line: it holds up, with a shallow drawdown, but trails simply holding SPY. Adam Grimes (Titans of Tomorrow) says the prior day's high and low and the 200-day average matter. Prior-day levels behave like random lines and fading them loses money. Below the 200-day, volatility really does run higher, but there is no direction edge to trade.</p>",
+   "intro_html": "<p>Two videos checked on 2016–2020 and blind on 2021–2026 with costs. Revelio Trading buys mega-caps that fall far below their 10-year trend line: it holds up, with a shallow drawdown, but trails simply holding SPY. Adam Grimes (Titans of Tomorrow) says the prior day's high and low and the 200-day average matter. Prior-day levels behave like random lines and fading them loses money. Below the 200-day, volatility really does run higher, but there is no direction edge to trade. Bald Investor's 30-year race (Nov 24) reproduces to the dollar: waiting for a 10% dip loses to buying $500 every month, and both lose to investing the money as soon as it arrives. The less the money waits, the more it ends up with.</p>",
    "date_note": "Nov 20"
   },
   {
@@ -9041,6 +9041,50 @@
     "sizing": "10 slots, 10% each, long-only cash account.",
     "costs": "1 bp per side plus IBKR tiered fees; stress 3 bp per side.",
     "baseline": "SPY buy-and-hold OOS 15.0% (DD −24.5%); random below-200 entries with the same hold."
+   }
+  },
+  {
+   "id": "DCA1",
+   "name": "Buy the dip (≥10% below the 52-week high) vs $500/month DCA vs investing at once",
+   "area": "r29",
+   "verdict": "FAIL",
+   "verdict_note": "less waiting wins",
+   "stats": {
+    "tr_yr": "~0.7 dip buys / 12 DCA buys",
+    "win": "dip beat DCA in 4 of 21 SPY 10-year windows (0 of 21 vs investing at once)",
+    "avg": "video reproduced: dip $1.122M vs DCA $1.156M vs lump $1.195M (SPY 1996–2025, $180k in)",
+    "cagr": "OOS money-weighted: SPY dip 13.0% / DCA 12.4% / lump 14.1%; QQQ 17.1% / 14.3% / 16.3%",
+    "max_dd": "SPY OOS −22% dip / −19% DCA / −25% lump"
+   },
+   "result": "The video's 30-year race reproduces to the dollar (19 dip buys on the same dates). Waiting for a 10% dip loses to monthly DCA by 3% (0.4% if the cash earns T-bills) and never beats putting the year's money in at once over any 10-year SPY window. 15–20% thresholds lose more and leave cash idle; 5% wins only because it invests almost at once. In 2016–26 every dip variant beats DCA, but investing at once beats DCA too; the IS-chosen picks vs investing at once OOS: SPY −3.1%, QQQ +1.4%.",
+   "data": "SPY 1993–2026 and QQQ 1999–2026 daily total return, ^IRX and BIL for cash (free yfinance)",
+   "script": "dca_vs_dip.py",
+   "source": "Bald Investor",
+   "video": [
+    "ITPzA3OUtRM"
+   ],
+   "date": "2026-11-24",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/DCA1/schematic.webp",
+     "thumb": "media/tests/DCA1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "SPY (S&P 500 ETF); QQQ as a second market. Daily closes, dividends reinvested (adjusted close); dip signal on the raw close.",
+    "period": "Video reproduction 1996-01-02 to 2025-12-31; long run to 2026-11-23 (QQQ from 2000); IS 2016–2020, blind OOS 2021-01 to 2026-11-23, each period starting fresh.",
+    "entry": "Everyone gets $6,000 on the year's first trading day. DCA: $500 at the close of each month's first trading day. Lump: all $6,000 that day. Dip: hold the cash and invest all of it at the first close at least X% below the 252-day closing high (X = 5/10/15/20%).",
+    "exit": "None: buy and hold, no selling.",
+    "stop": "none",
+    "sizing": "Contributions only; cash not yet invested earns 0% or T-bills (^IRX daily accrual for the long run, BIL total return for 2016–26).",
+    "costs": "None (a few ETF buys a year); no taxes.",
+    "variants": "4 dip thresholds x 2 cash yields per market and period; IS pick by money-weighted return (SPY 20% + BIL, QQQ 15% + BIL). Also every start year 1996–2025 (10-year windows and to the end).",
+    "baseline": "Monthly DCA and investing the year's money at once.",
+    "notes": "The all-time-high reading of 'its high' does not match the video's buy dates; the 52-week high does. Max drawdown is the time-weighted value including idle cash. Money-weighted return uses the same $6k-per-January flows for all three."
    }
   },
   {
