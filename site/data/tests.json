@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 24 2026",
+ "updated": "Nov 25 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -9085,6 +9085,50 @@
     "variants": "4 dip thresholds x 2 cash yields per market and period; IS pick by money-weighted return (SPY 20% + BIL, QQQ 15% + BIL). Also every start year 1996–2025 (10-year windows and to the end).",
     "baseline": "Monthly DCA and investing the year's money at once.",
     "notes": "The all-time-high reading of 'its high' does not match the video's buy dates; the 52-week high does. Max drawdown is the time-weighted value including idle cash. Money-weighted return uses the same $6k-per-January flows for all three."
+   }
+  },
+  {
+   "id": "FG1",
+   "name": "Buy at extreme fear (CNN Fear & Greed) and pick stocks with growing revenue that led past recoveries",
+   "area": "r29",
+   "verdict": "FAIL",
+   "verdict_note": "fear lines up with bottoms only in hindsight",
+   "stats": {
+    "tr_yr": "~1.4 fear signals a year",
+    "win": "beat SPY in 4 of 8 OOS episodes",
+    "avg": "+9.5% per 6-month hold vs SPY +10.2%, QQQ +14.0%, random stocks +6.8%",
+    "cagr": "n/a (episodes; 8 OOS)",
+    "max_dd": "worst episode −11.1% (Apr 2022)"
+   },
+   "result": "Real CNN Fear & Greed 2011–2026: 11 of 12 S&P falls of 8% or more did bottom within a day of extreme fear (below 25), but only 9 of 35 extreme-fear spells came near such a bottom. After the first fear day the S&P fell another 2.4% (median) and up to 28%. Six months after fear plus an 8% drop the S&P averaged +12.2% vs +7.1% on any day, close to the video's +12.8%, but timing the index on fear already failed our earlier test. Stocks bought at each signal that beat SPY in 3 of the last 4 recoveries and grew revenue year over year: blind 2021–2026 they made +9.5% per 6-month hold vs SPY +10.2% and QQQ +14.0% (t −0.41). Revenue growth alone: −3.5% vs SPY. Settings chosen on 2016–2020: +0.7% and +1.8% vs SPY. 0 of 126 tests pass multiple testing.",
+   "data": "CNN Fear & Greed 2011–2026, US stocks incl. delisted, SEC revenue filings (free)",
+   "script": "fear_revenue.py",
+   "source": "Ticker Symbol: YOU",
+   "video": [
+    "4lDl2CxlURY"
+   ],
+   "date": "2026-11-25",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/FG1/schematic.webp",
+     "thumb": "media/tests/FG1/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "Top 1,000 US common stocks by prior 20-day dollar volume, price above $5, including later-delisted names; SPY and QQQ as benchmarks.",
+    "period": "Signals from 2016-02; settings chosen on 2016–2020, blind OOS 2021-01 to 2026-10 (8 episodes for his rule). Claim checks on 2011–2026.",
+    "entry": "First close of a fear spell with Fear & Greed below 25 and SPY 8%+ under its 52-week high: next close, buy stocks that beat SPY after 3 of the last 4 signals and grew quarterly revenue year over year.",
+    "exit": "Sell after 6 months (126 sessions); 3 months also tested.",
+    "stop": "none",
+    "sizing": "Equal weight, $10k account; revenue only from 10-Qs/10-Ks already filed.",
+    "costs": "1 bp per side plus IBKR Tiered fees ($0.35 minimum per order); stress 3 bp.",
+    "variants": "3 fear levels × 3 drop sizes × 2 holds × 3 revenue cutoffs, for recovery-only, revenue-only and both baskets; best in-sample mean excess vs SPY.",
+    "baseline": "Buying SPY or QQQ at the same close, and a random basket of the same size from the same stocks.",
+    "notes": "Episodes, not stocks, are the unit: few signals and overlapping holds, so t-stats are rough. Latest signal 2026-11-19 (information only; stock data ends 2026-10-20)."
    }
   },
   {
