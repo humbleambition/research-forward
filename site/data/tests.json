@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 23 2026",
+ "updated": "Nov 24 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -250,6 +250,14 @@
    "short": "Direction below the 200-day",
    "intro_html": "<p>Below its 200-day average, the index moves about twice as much but in no particular direction. We paired that regime with five common direction indicators on QQQ and real NQ futures, chose settings on 2016–2020 and tested blind on 2021–2026 with costs. None survive multiple-testing correction. RSI2 dip buying is the only weak lead. The 2016–2020 sample has few below-200 days, so in-sample choices rest on 10–45 trades.</p>",
    "date_note": "Nov 23"
+  },
+  {
+   "id": "r31",
+   "num": "3.31",
+   "title": "Short-term index dip buying from YouTube (Nov 24)",
+   "short": "Short-term dip buying",
+   "intro_html": "<p>Michael Wallace (Titans of Tomorrow) buys S&amp;P and Nasdaq futures at the close after four down days, sells at the next close, uses no stop, and bets 50% more after each loss (a martingale). We tested only the one-contract version, with no adding, on real ES and NQ futures plus SPY and QQQ: settings picked on 2016–2020, then tested blind on 2021–2026 with costs. Buying after three down closes and selling at the first up close works out-of-sample in all four markets, but it was not significant in 2016–2020 and earns less than simply holding. The martingale was run for information only.</p>",
+   "date_note": "Nov 24"
   }
  ],
  "tests": [
@@ -9267,6 +9275,48 @@
     "variants": "None new: one frozen rule, two holds. Pooled t-stat across all four markets, plus a date-clustered t because they signal on mostly the same days.",
     "baseline": "Shorting random below-200 days with the same hold and costs (5,000 draws): rule beats fewer than 90% of draws in every market (rand p 0.24–0.88 over the whole period).",
     "notes": "The QQQ/NQ OOS t≈2.2 (26 trades) did not carry over: it was a pattern found by looking, not a transferable edge. Do not trade. Exploratory (Jen's last-rally idea, verdict unchanged): losses do pile up in the last rally before the close gets back above the 200-day (pooled 1-day: 28% win, −0.55%/trade, t −2.70), but the earlier rallies only break even (−0.03%/trade, t −0.21), and you can't tell which rally is the last in real time. Covering when the close crosses back above the 200-day barely helps (5-day pooled −0.88% → −0.72% a trade)."
+   }
+  },
+  {
+   "id": "TT6",
+   "name": "Wallace: buy index futures at the close after down days, sell at the first up close (one contract, no martingale)",
+   "area": "r31",
+   "verdict": "PASS",
+   "verdict_note": "Low confidence: not significant in 2016–2020 (0 of 324 variants pass multiple testing); his exact 4-down, 1-day rule is WEAK (loses in-sample); his martingale (bigger bets after losses) is not allowed and was run for information only.",
+   "stats": {
+    "tr_yr": "13.6 NQ / 10.9 ES / 14.0 QQQ / 11.6 SPY",
+    "win": "75% NQ / 75% ES / 75% QQQ / 78% SPY",
+    "avg": "+$198 per MNQ / +$94 per MES / +0.69% QQQ / +0.32% SPY",
+    "cagr": "OOS NQ +$2,692/yr per MNQ, ES +$1,019/yr per MES, QQQ 10.0%, SPY 3.7%",
+    "max_dd": "−$1,897 per MNQ / −$1,004 per MES / −4.9% QQQ / −7.8% SPY"
+   },
+   "result": "In-sample picks (all: 3 down closes, hold to first up close, max 5 days): 2016–20 NQ +$40/trade (t 1.1), ES +$23 (t 0.7) → OOS 2021–26 NQ +$198/MNQ (t 3.5), ES +$94/MES (t 3.0), QQQ +0.69% (t 4.1), SPY +0.32% (t 2.3); all four pass the multiple-testing check out-of-sample. In the market only 6–9% of days; less $ than buy-and-hold (NQ $4,067/yr, DD −$12,067; ES $2,561/yr) with a fraction of the drawdown. His literal rule (SPY 4 down → buy close, out next close): ES −$34 → +$171, NQ −$23 → +$286 per trade. Martingale (info only): 94–95% winning cycles OOS but 65–67% in 2016–20, worst cycle −$592/−$861 per base micro.",
+   "data": "Real ES/NQ futures 1-min → daily RTH (Databento), SPY/QQQ daily total return",
+   "script": "wallace_4down.py",
+   "source": "Titans Of Tomorrow · Michael Wallace",
+   "video": [
+    "9K4XnEtTa9Q"
+   ],
+   "date": "2026-11-24",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/TT6/schematic.webp",
+     "thumb": "media/tests/TT6/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "ES and NQ futures (per micro), SPY and QQQ.",
+    "period": "Picked on 2016–2020 (324 variants); OOS 2021–2026-10.",
+    "entry": "Buy at the close after N down closes in a row (N 3/4/5; pick 3). Futures signal from own closes or SPY.",
+    "exit": "Sell at the first up close, or after K closes (1/3/5; pick 5).",
+    "stop": "None, 1× or 2× ATR10 below entry (NQ/QQQ pick none; ES/SPY pick 2× with SMA50 > SMA100 filter).",
+    "sizing": "One contract or 100% in one ETF; never adds to a loser.",
+    "costs": "Futures 1 tick + $2.50 per side per micro (stress 2 ticks); ETFs 1 bp per side + IBKR fees (stress 3 bp).",
+    "baseline": "Buy-and-hold one micro / the ETF over the same period."
    }
   }
  ],
