@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 25 2026",
+ "updated": "Nov 26 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -1446,6 +1446,48 @@
     "variants": "Touch vs through fill; no search.",
     "baseline": "Original ORB (same engine).",
     "notes": "Script orb_stoprun.py; spec specs/stop_run_request.md."
+   }
+  },
+  {
+   "id": "O17",
+   "name": "5-minute opening-range breakout, long and short (Zarattini & Aziz) on QQQ, NQ and ES futures",
+   "area": "r2",
+   "verdict": "FAIL",
+   "verdict_note": "The short side needs futures (cash accounts are long-only). The video's 18%/yr version is reproduced, but only at 2¢/share costs; at 1 bp per side it drops to 9.8%/yr and at 3 bp it loses 25%/yr.",
+   "stats": {
+    "tr_yr": "~250",
+    "win": "10% QQQ / 10% NQ / 30% ES",
+    "avg": "+0.03R QQQ / +0.02R ($0.1) per MNQ / −0.06R ES",
+    "cagr": "OOS NQ +$38/yr per MNQ; QQQ −1.2%/yr (1% risk, 4x cap)",
+    "max_dd": "−$4,308 per MNQ / −43% QQQ"
+   },
+   "result": "In-sample picks (2016–20): QQQ 5% ATR stop, hold to close +0.29R (t 2.0) → OOS 2021–26 +0.03R (t 0.2); NQ −0.16R → +0.02R, +$38/yr per MNQ vs buy-and-hold +$4,177/yr; ES loses in every variant. 0 of 24 variants pass multiple testing. Shorts add nothing (QQQ long +0.12R, short −0.06R). Real direction beats coin-flip direction in 483–488 of 500 runs, but net is still ≈0. Uncorrelated with QQQ (+0.02).",
+   "data": "QQQ 1-min (Alpaca) and real NQ/ES 1-min (Databento), 2016–2026-10",
+   "script": "zarattini_orb5_ls.py",
+   "source": "Algovibes",
+   "video": [
+    "hrsyFccgOOE"
+   ],
+   "date": "2026-11-26",
+   "diagram": null,
+   "clip": null,
+   "gallery": [
+    {
+     "kind": "schematic",
+     "src": "media/tests/O17/schematic.webp",
+     "thumb": "media/tests/O17/schematic_t.webp",
+     "label": "Rules card"
+    }
+   ],
+   "method": {
+    "universe": "QQQ; NQ and ES futures (per micro).",
+    "period": "Picked on 2016–2020 (8 variants per market); OOS 2021–2026-10.",
+    "entry": "First 5-min candle 9:30–9:35 ET: green → buy at the 9:35 open, red → sell short, doji → no trade.",
+    "exit": "10R target else the close, or hold to the close.",
+    "stop": "Candle low/high, or 5/10/20% of the 14-day ATR from entry.",
+    "sizing": "R per trade; futures one micro; QQQ $25k risking 1% with at most 4x leverage.",
+    "costs": "QQQ 1 bp per side (2¢/share and 3 bp tested); futures 1 tick + $2.50 per side per micro (stress 2 ticks).",
+    "baseline": "Buy-and-hold QQQ / one micro; 500 random-direction runs."
    }
   },
   {
