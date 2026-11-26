@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T20:05:05-03:00",
+ "updated": "2026-11-26T20:04:05-03:00",
  "tests": [
   {
    "id": "orb_rotation",
@@ -2292,8 +2292,8 @@
    "cum": -450.5,
    "cum_label": "−$450",
    "last_trade": {
-    "date": "2026-11-19",
-    "result": "stop_gap −$555"
+    "date": "2026-11-24",
+    "result": "stop −$506"
    },
    "backtest_pace": "≈ +$1.1k/yr per MNQ",
    "status": "running",
@@ -2313,6 +2313,19 @@
      "Period"
     ],
     "rows": [
+     [
+      "2026-11-24",
+      "Long",
+      "16:00",
+      "26,285.00",
+      "26,035.00",
+      "",
+      "21:09",
+      "26,035.00",
+      "stop",
+      "−$506",
+      "record"
+     ],
      [
       "2026-11-19",
       "Long",
@@ -2366,16 +2379,16 @@
       "record"
      ],
      [
-      "2026-11-24",
-      "Long",
-      "16:00",
-      "26,285.00",
-      "26,035.00",
+      "2026-11-26",
+      "Short",
       "",
-      "21:09",
-      "26,035.00",
-      "stop",
-      "−$506",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "pending_signal",
+      "",
       "record"
      ],
      [
@@ -4366,7 +4379,7 @@
    },
    "backtest_pace": "+0.048R IS → +0.093R/trade OOS (BH fail)",
    "status": "running",
-   "note": "12 record sessions, regime on 3. About 1 day in 5 qualifies. Oct backfill: 2 trades −$480/MNQ.",
+   "note": "13 record sessions, regime on 4. About 1 day in 5 qualifies. Oct backfill: 2 trades −$480/MNQ.",
    "log": {
     "columns": [
      "Date",
@@ -4466,6 +4479,15 @@
       "Period"
      ],
      "rows": [
+      [
+       "2026-11-26",
+       "0.92",
+       "on",
+       "",
+       "no",
+       "$0",
+       "record"
+      ],
       [
        "2026-11-25",
        "1.15",
