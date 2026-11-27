@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "Nov 26 2026",
+ "updated": "Nov 27 2026",
  "since": "2026-10-24",
  "media_placeholder": false,
  "about": "Backtest results shown in the Results section. Edit with site_update.py; build with build_site.py.",
@@ -818,6 +818,24 @@
     "6A5RAgxd718"
    ],
    "date": "2026-11-26",
+   "diagram": null,
+   "clip": null
+  },
+  {
+   "id": "RC1",
+   "name": "Calmer switching for the QQQ 200-day rotation: buffers, confirmation, monthly checks, other MAs (140 variants)",
+   "area": "r1",
+   "verdict": "FAIL",
+   "verdict_note": "keep live rule",
+   "stats": {
+    "tr_yr": "0.6–0.9 vs 3",
+    "cagr": "blind 18.2% / 15.8% vs live 21.5% / 20.9%",
+    "max_dd": "−24% vs −18% (2021–26)"
+   },
+   "result": "Chosen on 2000–15 (QQQ>SMA150, 3 monthly closes to switch): 9.6%/yr vs live 3.1% there, but blind 2016–20 18.2% vs 21.5% and 2021–26 15.8% (DD −24%) vs 20.9% (−18%). Whole 2000–26: 12.5%/−36% vs live 10.1%/−42% vs QQQ 8.0%/−83%. Grid median blind Sharpe 0.91/0.82 vs live 1.11/1.19; 0 of 140 significantly better. Calmer rules fix 2003–15 whipsaws but exit late in 2022.",
+   "data": "free yfinance daily 1999–2026 (QQQ, IEF, TLT, GLD, UUP, ^IRX)",
+   "script": "rotation_calm.py",
+   "date": "2026-11-27",
    "diagram": null,
    "clip": null
   },
