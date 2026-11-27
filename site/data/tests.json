@@ -801,6 +801,27 @@
    }
   },
   {
+   "id": "BS1",
+   "name": "Bonds beating stocks (flight to safety) as a sell signal for QQQ/SPY, alone or on top of the 200-day rotation",
+   "area": "r1",
+   "verdict": "FAIL",
+   "stats": {
+    "tr_yr": "29 QQQ / 9 SPY / 8 filter",
+    "cagr": "OOS QQQ 7.2%, SPY 7.1%, rotation+filter 19.5%",
+    "max_dd": "−37% QQQ / −27% SPY / −17% filter"
+   },
+   "result": "In-sample picks (2016–20 best Sharpe) → OOS 2021–26: QQQ (IEF beats QQQ by >2% over 10 days → cash) 7.2%/yr, DD −37%, Sharpe 0.50, 29 switches/yr vs buy-and-hold 13.2%, −37%, 0.66; SPY 7.1% vs 13.1%; as an extra filter on the QQQ 200-day rotation 19.5% vs 20.9% without it. 2003–15 check also worse. 0 of 140 variants pass multiple testing. Helped in 2008 only; in 2022 stocks and bonds fell together, so no warning.",
+   "data": "free yfinance daily 2003–2026 (TLT, IEF, QQQ, SPY)",
+   "script": "bond_signal.py",
+   "source": "Bravos Research",
+   "video": [
+    "6A5RAgxd718"
+   ],
+   "date": "2026-11-26",
+   "diagram": null,
+   "clip": null
+  },
+  {
    "id": "O1",
    "name": "5-min ORB, 46 days (pessimistic vs optimistic intrabar)",
    "area": "r2",
